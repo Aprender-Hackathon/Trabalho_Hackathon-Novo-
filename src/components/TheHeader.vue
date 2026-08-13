@@ -2,26 +2,24 @@
   <header class="custom-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid px-4 align-items-center">
-        
         <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
           <img src="/src/assets/img/logo_aprender.png" alt="Logo Aprender+" class="logo-img" />
           <span class="brand-text">Aprender+</span>
         </a>
 
-        <button 
-          class="navbar-toggler" 
-          type="button" 
-          data-bs-toggle="collapse" 
-          data-bs-target="#headerNavbar" 
-          aria-controls="headerNavbar" 
-          aria-expanded="false" 
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#headerNavbar"
+          aria-controls="headerNavbar"
+          aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="headerNavbar">
-          
           <ul class="navbar-nav mx-auto align-items-center gap-2 my-2 my-lg-0">
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
@@ -31,7 +29,10 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
+              <a
+                class="nav-link nav-link-highlight d-flex align-items-center gap-2 active"
+                href="#"
+              >
                 <img src="/src/assets/img/explorar.png" alt="Explorar" class="nav-icon" />
                 <span>Explorar</span>
               </a>
@@ -52,7 +53,9 @@
             </li>
           </ul>
 
-          <div class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0">
+          <div
+            class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0"
+          >
             <button class="btn-icon" aria-label="Favoritos">
               <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
             </button>
@@ -60,21 +63,17 @@
               <img src="/src/assets/img/pessoa.png" alt="Perfil" class="action-icon" />
             </button>
           </div>
-
         </div>
-
       </div>
     </nav>
   </header>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
-
 .custom-header {
-  background-color: #fdfbf7; 
+  background-color: #fdfbf7;
   border-bottom: 1px solid #f0eae1;
   padding: 0.4rem 0;
 }
