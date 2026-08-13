@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+// preciso importar as paginas e colocar as rotas quando as paginas existirem
 import TheHeader from './components/TheHeader.vue'
 </script>
 
@@ -10,8 +10,8 @@ import TheHeader from './components/TheHeader.vue'
     <div class="wrapper">
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+       
+
       </nav>
     </div>
 
