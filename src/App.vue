@@ -1,9 +1,9 @@
 <script setup>
-
+import TheHeader from './components/TheHeader.vue'
 </script>
 
 <template>
-</template>
+  <TheHeader />
 
-<style scoped>
-</style>
+  <RouterView />
+</template>
