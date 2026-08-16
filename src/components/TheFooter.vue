@@ -21,7 +21,7 @@ library.add(fab, fas)
 <footer>
     <div class="conteudo">
         <h2>
-            <p>Aprender+</p>
+            <img src="/src/assets/logo.svg" alt="Logo"><p>Aprender+</p>
         </h2>
         <p>© 2026 - Aprender+ atividades anclusivas. Todos os direitos reservados</p>
 
@@ -84,5 +84,12 @@ border: none;
 background: none;
 line-height: 0; 
 align-items: center;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
 }
 </style>
