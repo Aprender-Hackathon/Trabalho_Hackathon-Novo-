@@ -1,21 +1,15 @@
 <script setup>
 import HeroSection from '../components/HeroSection.vue'
-import AudienceCards from '../components/AudienceCards.vue'
-import ProcessSteps from '../components/ProcessSteps.vue'
-import EventCategories from '../components/EventCategories.vue'
-import TeamSection from '../components/TeamSection.vue'
+import MissionSection from '../components/MissionSection.vue'
+import ProcessSection from '../components/ProcessSection.vue'
+import CategoriesSection from '../components/CategoriesSection.vue'
 </script>
 
 <template>
-  <main>
+  <div>
     <HeroSection />
-
-    <AudienceCards />
-
-    <ProcessSteps />
-
-    <EventCategories />
-
-    <TeamSection />
-  </main>
+    <MissionSection />
+    <ProcessSection />
+    <CategoriesSection />
+  </div>
 </template>
