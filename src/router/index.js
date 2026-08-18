@@ -1,22 +1,48 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import InicioView from '../views/InicioView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      name: 'inicio',
+      component: () => import('../views/InicioView.vue'),
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+   
+    //     {
+    //   path: '/', // url
+    //   name: 'inicio', // nome do componente
+    //   component: () => import('../views/InicioView.vue'), // importação do componente
+    // },
 
+    {
+      path: '/explorar-pag',
+      name: 'explorar',
+      component: () => import('../views/ExplorarView.vue'),
     },
+      {
+      path: '/atividades-praticas',
+      name: 'atividades',
+      component: () => import('../views/AtividadepraView.vue'),
+    },
+
+    {
+      path: '/sobre-nos',
+      name: 'sobre',
+      component: () => import('../views/SobrenosView.vue'),
+    },
+     {
+      path: '/salvo',
+      name: 'salvo',
+      component: () => import('../views/SalvosView.vue'),
+    },
+     {
+      path: '/usuario',
+      name: 'usuario',
+      component: () => import('../views/UsuarioView.vue'),
+    },
+
   ],
 })
 

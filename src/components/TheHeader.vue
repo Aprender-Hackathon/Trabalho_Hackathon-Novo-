@@ -24,7 +24,7 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <img src="/src/assets/img/casa.png" alt="Início" class="nav-icon" />
-                <span>Início</span>
+                <RouterLink to="/">Início</RouterLink >
               </a>
             </li>
 
@@ -34,21 +34,21 @@
                 href="#"
               >
                 <img src="/src/assets/img/explorar.png" alt="Explorar" class="nav-icon" />
-                <span>Explorar</span>
+                <RouterLink to="/explorar-pag">Explorar</RouterLink >
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <img src="/src/assets/img/atividade.png" alt="Atividades" class="nav-icon" />
-                <span>Atividades Práticas</span>
+                <RouterLink to="/atividades-praticas" >Atividades Práticas</RouterLink >
               </a>
             </li>
 
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
-                <span>Sobre Nós</span>
+                <RouterLink to="/sobre-nos">Sobre Nós</RouterLink >
               </a>
             </li>
           </ul>
@@ -56,10 +56,10 @@
           <div
             class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0"
           >
-            <button class="btn-icon" aria-label="Favoritos">
+            <button class="btn-icon" aria-label="Favoritos" @click="salvo">
               <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
             </button>
-            <button class="btn-icon" aria-label="Perfil">
+            <button class="btn-icon" aria-label="Perfil" @click="perfil">
               <img src="/src/assets/img/pessoa.png" alt="Perfil" class="action-icon" />
             </button>
           </div>
@@ -69,7 +69,19 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import router from '@/router';
+
+const salvo = () => {
+  router.push('/salvo');
+  // Lógica para ir para a página de salvos
+}
+
+const perfil = () => {
+  router.push('/usuario');
+  // Lógica para ir para a página de perfil
+}
+</script>
 
 <style scoped>
 .custom-header {
@@ -96,14 +108,11 @@
 .nav-link:hover {
   color: #e65261 !important;
 }
-
-.nav-link-highlight {
-  border: 1.5px solid #e65261;
-  color: #e65261 !important;
-  border-radius: 10px;
-  padding: 0.35rem 1.1rem !important;
-  background-color: transparent;
+a{
+  color: rgb(73, 73, 73);
+  text-decoration: none !important;
 }
+
 
 .nav-link-highlight:hover {
   background-color: #fde8ea;
@@ -141,4 +150,6 @@
   height: 30px !important;
   object-fit: contain;
 }
+
+
 </style>
