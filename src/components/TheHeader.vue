@@ -124,7 +124,6 @@
   transform: scale(1.1);
 }
 
-/* Tamanhos das Imagens Ajustados */
 .logo-img {
   width: 36px;
   height: 36px;
