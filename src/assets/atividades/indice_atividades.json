@@ -1,0 +1,2081 @@
+[
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Alfabetização",
+    "pdf_path": "Portugues/Fundamental_I/Alfabetiza_o/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Alfabetiza_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Letras e sons",
+    "pdf_path": "Portugues/Fundamental_I/Letras_e_sons/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Letras_e_sons/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Sílabas",
+    "pdf_path": "Portugues/Fundamental_I/S_labas/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/S_labas/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Formação de palavras",
+    "pdf_path": "Portugues/Fundamental_I/Forma_o_de_palavras/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Forma_o_de_palavras/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Leitura e interpretação",
+    "pdf_path": "Portugues/Fundamental_I/Leitura_e_interpreta_o/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Leitura_e_interpreta_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Produção de frases",
+    "pdf_path": "Portugues/Fundamental_I/Produ_o_de_frases/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Produ_o_de_frases/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Substantivos",
+    "pdf_path": "Portugues/Fundamental_I/Substantivos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Substantivos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Adjetivos",
+    "pdf_path": "Portugues/Fundamental_I/Adjetivos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Adjetivos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Artigos",
+    "pdf_path": "Portugues/Fundamental_I/Artigos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Artigos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Pronomes",
+    "pdf_path": "Portugues/Fundamental_I/Pronomes/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Pronomes/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Verbos",
+    "pdf_path": "Portugues/Fundamental_I/Verbos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Verbos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Conjugação verbal",
+    "pdf_path": "Portugues/Fundamental_I/Conjuga_o_verbal/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Conjuga_o_verbal/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Pontuação",
+    "pdf_path": "Portugues/Fundamental_I/Pontua_o/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Pontua_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Ortografia",
+    "pdf_path": "Portugues/Fundamental_I/Ortografia/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Ortografia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Acentuação",
+    "pdf_path": "Portugues/Fundamental_I/Acentua_o/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Acentua_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Sinônimos e antônimos",
+    "pdf_path": "Portugues/Fundamental_I/Sin_nimos_e_ant_nimos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Sin_nimos_e_ant_nimos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Gêneros textuais",
+    "pdf_path": "Portugues/Fundamental_I/G_neros_textuais/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/G_neros_textuais/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Produção de texto",
+    "pdf_path": "Portugues/Fundamental_I/Produ_o_de_texto/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Produ_o_de_texto/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Poemas e rimas",
+    "pdf_path": "Portugues/Fundamental_I/Poemas_e_rimas/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Poemas_e_rimas/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_I",
+    "conteudo": "Contos e fábulas",
+    "pdf_path": "Portugues/Fundamental_I/Contos_e_f_bulas/atividade.pdf",
+    "png_path": "Portugues/Fundamental_I/Contos_e_f_bulas/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Classes de palavras",
+    "pdf_path": "Portugues/Fundamental_II/Classes_de_palavras/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Classes_de_palavras/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Substantivo e adjetivo",
+    "pdf_path": "Portugues/Fundamental_II/Substantivo_e_adjetivo/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Substantivo_e_adjetivo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Pronomes",
+    "pdf_path": "Portugues/Fundamental_II/Pronomes/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Pronomes/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Verbos e tempos verbais",
+    "pdf_path": "Portugues/Fundamental_II/Verbos_e_tempos_verbais/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Verbos_e_tempos_verbais/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Concordância verbal",
+    "pdf_path": "Portugues/Fundamental_II/Concord_ncia_verbal/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Concord_ncia_verbal/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Concordância nominal",
+    "pdf_path": "Portugues/Fundamental_II/Concord_ncia_nominal/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Concord_ncia_nominal/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Regência básica",
+    "pdf_path": "Portugues/Fundamental_II/Reg_ncia_b_sica/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Reg_ncia_b_sica/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Frase oração e período",
+    "pdf_path": "Portugues/Fundamental_II/Frase_ora_o_e_per_odo/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Frase_ora_o_e_per_odo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Termos da oração",
+    "pdf_path": "Portugues/Fundamental_II/Termos_da_ora_o/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Termos_da_ora_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sujeito e predicado",
+    "pdf_path": "Portugues/Fundamental_II/Sujeito_e_predicado/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Sujeito_e_predicado/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Complementos verbais",
+    "pdf_path": "Portugues/Fundamental_II/Complementos_verbais/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Complementos_verbais/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Adjunto adverbial",
+    "pdf_path": "Portugues/Fundamental_II/Adjunto_adverbial/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Adjunto_adverbial/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Aposto e vocativo",
+    "pdf_path": "Portugues/Fundamental_II/Aposto_e_vocativo/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Aposto_e_vocativo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Pontuação e sentido",
+    "pdf_path": "Portugues/Fundamental_II/Pontua_o_e_sentido/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Pontua_o_e_sentido/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Coesão e coerência",
+    "pdf_path": "Portugues/Fundamental_II/Coes_o_e_coer_ncia/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Coes_o_e_coer_ncia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Figuras de linguagem",
+    "pdf_path": "Portugues/Fundamental_II/Figuras_de_linguagem/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Figuras_de_linguagem/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Gêneros jornalísticos",
+    "pdf_path": "Portugues/Fundamental_II/G_neros_jornal_sticos/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/G_neros_jornal_sticos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Crônica",
+    "pdf_path": "Portugues/Fundamental_II/Cr_nica/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Cr_nica/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Conto",
+    "pdf_path": "Portugues/Fundamental_II/Conto/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Conto/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Fundamental_II",
+    "conteudo": "Texto argumentativo",
+    "pdf_path": "Portugues/Fundamental_II/Texto_argumentativo/atividade.pdf",
+    "png_path": "Portugues/Fundamental_II/Texto_argumentativo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Variação linguística",
+    "pdf_path": "Portugues/Ensino_Medio/Varia_o_lingu_stica/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Varia_o_lingu_stica/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Funções da linguagem",
+    "pdf_path": "Portugues/Ensino_Medio/Fun_es_da_linguagem/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Fun_es_da_linguagem/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Gêneros discursivos",
+    "pdf_path": "Portugues/Ensino_Medio/G_neros_discursivos/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/G_neros_discursivos/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Coesão e coerência",
+    "pdf_path": "Portugues/Ensino_Medio/Coes_o_e_coer_ncia/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Coes_o_e_coer_ncia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Semântica",
+    "pdf_path": "Portugues/Ensino_Medio/Sem_ntica/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Sem_ntica/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Figuras de linguagem",
+    "pdf_path": "Portugues/Ensino_Medio/Figuras_de_linguagem/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Figuras_de_linguagem/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Morfologia",
+    "pdf_path": "Portugues/Ensino_Medio/Morfologia/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Morfologia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Sintaxe",
+    "pdf_path": "Portugues/Ensino_Medio/Sintaxe/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Sintaxe/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Período composto",
+    "pdf_path": "Portugues/Ensino_Medio/Per_odo_composto/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Per_odo_composto/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Orações coordenadas",
+    "pdf_path": "Portugues/Ensino_Medio/Ora_es_coordenadas/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Ora_es_coordenadas/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Orações subordinadas",
+    "pdf_path": "Portugues/Ensino_Medio/Ora_es_subordinadas/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Ora_es_subordinadas/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Concordância",
+    "pdf_path": "Portugues/Ensino_Medio/Concord_ncia/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Concord_ncia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Regência",
+    "pdf_path": "Portugues/Ensino_Medio/Reg_ncia/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Reg_ncia/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Crase",
+    "pdf_path": "Portugues/Ensino_Medio/Crase/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Crase/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Colocação pronominal",
+    "pdf_path": "Portugues/Ensino_Medio/Coloca_o_pronominal/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Coloca_o_pronominal/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Pontuação",
+    "pdf_path": "Portugues/Ensino_Medio/Pontua_o/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Pontua_o/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Romantismo",
+    "pdf_path": "Portugues/Ensino_Medio/Romantismo/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Romantismo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Realismo",
+    "pdf_path": "Portugues/Ensino_Medio/Realismo/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Realismo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Modernismo",
+    "pdf_path": "Portugues/Ensino_Medio/Modernismo/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Modernismo/atividade.png"
+  },
+  {
+    "materia": "Portugues",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Redação dissertativa",
+    "pdf_path": "Portugues/Ensino_Medio/Reda_o_dissertativa/atividade.pdf",
+    "png_path": "Portugues/Ensino_Medio/Reda_o_dissertativa/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Números naturais",
+    "pdf_path": "Matematica/Fundamental_I/N_meros_naturais/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/N_meros_naturais/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Adição",
+    "pdf_path": "Matematica/Fundamental_I/Adi_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Adi_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Subtração",
+    "pdf_path": "Matematica/Fundamental_I/Subtra_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Subtra_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Multiplicação",
+    "pdf_path": "Matematica/Fundamental_I/Multiplica_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Multiplica_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Divisão",
+    "pdf_path": "Matematica/Fundamental_I/Divis_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Divis_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Problemas matemáticos",
+    "pdf_path": "Matematica/Fundamental_I/Problemas_matem_ticos/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Problemas_matem_ticos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Sistema monetário",
+    "pdf_path": "Matematica/Fundamental_I/Sistema_monet_rio/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Sistema_monet_rio/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Frações básicas",
+    "pdf_path": "Matematica/Fundamental_I/Fra_es_b_sicas/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Fra_es_b_sicas/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Números decimais",
+    "pdf_path": "Matematica/Fundamental_I/N_meros_decimais/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/N_meros_decimais/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Medidas de comprimento",
+    "pdf_path": "Matematica/Fundamental_I/Medidas_de_comprimento/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Medidas_de_comprimento/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Medidas de massa",
+    "pdf_path": "Matematica/Fundamental_I/Medidas_de_massa/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Medidas_de_massa/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Medidas de capacidade",
+    "pdf_path": "Matematica/Fundamental_I/Medidas_de_capacidade/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Medidas_de_capacidade/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Tempo e calendário",
+    "pdf_path": "Matematica/Fundamental_I/Tempo_e_calend_rio/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Tempo_e_calend_rio/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Geometria plana",
+    "pdf_path": "Matematica/Fundamental_I/Geometria_plana/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Geometria_plana/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Sólidos geométricos",
+    "pdf_path": "Matematica/Fundamental_I/S_lidos_geom_tricos/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/S_lidos_geom_tricos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Perímetro",
+    "pdf_path": "Matematica/Fundamental_I/Per_metro/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Per_metro/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Área",
+    "pdf_path": "Matematica/Fundamental_I/rea/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/rea/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Tabelas e gráficos",
+    "pdf_path": "Matematica/Fundamental_I/Tabelas_e_gr_ficos/atividade.pdf",
+    "png_path": "Matematica/Fundamental_I/Tabelas_e_gr_ficos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Números inteiros",
+    "pdf_path": "Matematica/Fundamental_II/N_meros_inteiros/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/N_meros_inteiros/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Números racionais",
+    "pdf_path": "Matematica/Fundamental_II/N_meros_racionais/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/N_meros_racionais/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Potenciação",
+    "pdf_path": "Matematica/Fundamental_II/Potencia_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Potencia_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Radiciação",
+    "pdf_path": "Matematica/Fundamental_II/Radicia_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Radicia_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Razão e proporção",
+    "pdf_path": "Matematica/Fundamental_II/Raz_o_e_propor_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Raz_o_e_propor_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Regra de três",
+    "pdf_path": "Matematica/Fundamental_II/Regra_de_tr_s/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Regra_de_tr_s/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Porcentagem",
+    "pdf_path": "Matematica/Fundamental_II/Porcentagem/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Porcentagem/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Juros simples",
+    "pdf_path": "Matematica/Fundamental_II/Juros_simples/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Juros_simples/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Expressões algébricas",
+    "pdf_path": "Matematica/Fundamental_II/Express_es_alg_bricas/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Express_es_alg_bricas/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Produtos notáveis",
+    "pdf_path": "Matematica/Fundamental_II/Produtos_not_veis/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Produtos_not_veis/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Fatoração",
+    "pdf_path": "Matematica/Fundamental_II/Fatora_o/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Fatora_o/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Equações do 1º grau",
+    "pdf_path": "Matematica/Fundamental_II/Equa_es_do_1__grau/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Equa_es_do_1__grau/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistemas de equações",
+    "pdf_path": "Matematica/Fundamental_II/Sistemas_de_equa_es/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Sistemas_de_equa_es/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Inequações",
+    "pdf_path": "Matematica/Fundamental_II/Inequa_es/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Inequa_es/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Plano cartesiano",
+    "pdf_path": "Matematica/Fundamental_II/Plano_cartesiano/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Plano_cartesiano/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Função afim",
+    "pdf_path": "Matematica/Fundamental_II/Fun_o_afim/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Fun_o_afim/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Ângulos",
+    "pdf_path": "Matematica/Fundamental_II/ngulos/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/ngulos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Triângulos",
+    "pdf_path": "Matematica/Fundamental_II/Tri_ngulos/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Tri_ngulos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Teorema de Pitágoras",
+    "pdf_path": "Matematica/Fundamental_II/Teorema_de_Pit_goras/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Teorema_de_Pit_goras/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Estatística",
+    "pdf_path": "Matematica/Fundamental_II/Estat_stica/atividade.pdf",
+    "png_path": "Matematica/Fundamental_II/Estat_stica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Conjuntos",
+    "pdf_path": "Matematica/Ensino_Medio/Conjuntos/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Conjuntos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Função afim",
+    "pdf_path": "Matematica/Ensino_Medio/Fun_o_afim/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Fun_o_afim/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Função quadrática",
+    "pdf_path": "Matematica/Ensino_Medio/Fun_o_quadr_tica/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Fun_o_quadr_tica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Função exponencial",
+    "pdf_path": "Matematica/Ensino_Medio/Fun_o_exponencial/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Fun_o_exponencial/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Logaritmos",
+    "pdf_path": "Matematica/Ensino_Medio/Logaritmos/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Logaritmos/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Progressão aritmética",
+    "pdf_path": "Matematica/Ensino_Medio/Progress_o_aritm_tica/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Progress_o_aritm_tica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Progressão geométrica",
+    "pdf_path": "Matematica/Ensino_Medio/Progress_o_geom_trica/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Progress_o_geom_trica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Matemática financeira",
+    "pdf_path": "Matematica/Ensino_Medio/Matem_tica_financeira/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Matem_tica_financeira/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Trigonometria",
+    "pdf_path": "Matematica/Ensino_Medio/Trigonometria/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Trigonometria/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Geometria analítica",
+    "pdf_path": "Matematica/Ensino_Medio/Geometria_anal_tica/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Geometria_anal_tica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Matrizes",
+    "pdf_path": "Matematica/Ensino_Medio/Matrizes/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Matrizes/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Determinantes",
+    "pdf_path": "Matematica/Ensino_Medio/Determinantes/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Determinantes/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Sistemas lineares",
+    "pdf_path": "Matematica/Ensino_Medio/Sistemas_lineares/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Sistemas_lineares/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Análise combinatoria",
+    "pdf_path": "Matematica/Ensino_Medio/An_lise_combinatoria/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/An_lise_combinatoria/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Probabilidade",
+    "pdf_path": "Matematica/Ensino_Medio/Probabilidade/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Probabilidade/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Estatística",
+    "pdf_path": "Matematica/Ensino_Medio/Estat_stica/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Estat_stica/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Geometria espacial",
+    "pdf_path": "Matematica/Ensino_Medio/Geometria_espacial/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Geometria_espacial/atividade.png"
+  },
+  {
+    "materia": "Matematica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Polinômios",
+    "pdf_path": "Matematica/Ensino_Medio/Polin_mios/atividade.pdf",
+    "png_path": "Matematica/Ensino_Medio/Polin_mios/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Seres vivos",
+    "pdf_path": "Ciencias/Fundamental_I/Seres_vivos/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Seres_vivos/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Corpo humano",
+    "pdf_path": "Ciencias/Fundamental_I/Corpo_humano/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Corpo_humano/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Alimentação saudável",
+    "pdf_path": "Ciencias/Fundamental_I/Alimenta_o_saud_vel/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Alimenta_o_saud_vel/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Higiene e saúde",
+    "pdf_path": "Ciencias/Fundamental_I/Higiene_e_sa_de/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Higiene_e_sa_de/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Órgãos dos sentidos",
+    "pdf_path": "Ciencias/Fundamental_I/rg_os_dos_sentidos/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/rg_os_dos_sentidos/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Animais",
+    "pdf_path": "Ciencias/Fundamental_I/Animais/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Animais/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Plantas",
+    "pdf_path": "Ciencias/Fundamental_I/Plantas/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Plantas/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Ciclo de vida",
+    "pdf_path": "Ciencias/Fundamental_I/Ciclo_de_vida/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Ciclo_de_vida/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Água",
+    "pdf_path": "Ciencias/Fundamental_I/gua/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/gua/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Ar",
+    "pdf_path": "Ciencias/Fundamental_I/Ar/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Ar/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Solo",
+    "pdf_path": "Ciencias/Fundamental_I/Solo/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Solo/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Meio ambiente",
+    "pdf_path": "Ciencias/Fundamental_I/Meio_ambiente/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Meio_ambiente/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Recursos naturais",
+    "pdf_path": "Ciencias/Fundamental_I/Recursos_naturais/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Recursos_naturais/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_I",
+    "conteudo": "Energia",
+    "pdf_path": "Ciencias/Fundamental_I/Energia/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_I/Energia/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Célula",
+    "pdf_path": "Ciencias/Fundamental_II/C_lula/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/C_lula/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Níveis de organização",
+    "pdf_path": "Ciencias/Fundamental_II/N_veis_de_organiza_o/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/N_veis_de_organiza_o/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema digestório",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_digest_rio/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_digest_rio/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema respiratório",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_respirat_rio/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_respirat_rio/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema circulatório",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_circulat_rio/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_circulat_rio/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema nervoso",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_nervoso/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_nervoso/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema reprodutor",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_reprodutor/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_reprodutor/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Saúde e prevenção",
+    "pdf_path": "Ciencias/Fundamental_II/Sa_de_e_preven_o/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sa_de_e_preven_o/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Genética básica",
+    "pdf_path": "Ciencias/Fundamental_II/Gen_tica_b_sica/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Gen_tica_b_sica/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Ecossistemas",
+    "pdf_path": "Ciencias/Fundamental_II/Ecossistemas/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Ecossistemas/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Cadeias alimentares",
+    "pdf_path": "Ciencias/Fundamental_II/Cadeias_alimentares/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Cadeias_alimentares/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Relações ecológicas",
+    "pdf_path": "Ciencias/Fundamental_II/Rela_es_ecol_gicas/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Rela_es_ecol_gicas/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Ciclos da natureza",
+    "pdf_path": "Ciencias/Fundamental_II/Ciclos_da_natureza/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Ciclos_da_natureza/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Evolução",
+    "pdf_path": "Ciencias/Fundamental_II/Evolu_o/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Evolu_o/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Microrganismos",
+    "pdf_path": "Ciencias/Fundamental_II/Microrganismos/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Microrganismos/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Matéria e energia",
+    "pdf_path": "Ciencias/Fundamental_II/Mat_ria_e_energia/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Mat_ria_e_energia/atividade.png"
+  },
+  {
+    "materia": "Ciencias",
+    "etapa": "Fundamental_II",
+    "conteudo": "Sistema Solar",
+    "pdf_path": "Ciencias/Fundamental_II/Sistema_Solar/atividade.pdf",
+    "png_path": "Ciencias/Fundamental_II/Sistema_Solar/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Cinemática escalar",
+    "pdf_path": "Fisica/Ensino_Medio/Cinem_tica_escalar/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Cinem_tica_escalar/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Movimento uniforme",
+    "pdf_path": "Fisica/Ensino_Medio/Movimento_uniforme/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Movimento_uniforme/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Movimento uniformemente variado",
+    "pdf_path": "Fisica/Ensino_Medio/Movimento_uniformemente_variado/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Movimento_uniformemente_variado/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Leis de Newton",
+    "pdf_path": "Fisica/Ensino_Medio/Leis_de_Newton/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Leis_de_Newton/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Força de atrito",
+    "pdf_path": "Fisica/Ensino_Medio/For_a_de_atrito/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/For_a_de_atrito/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Trabalho e energia",
+    "pdf_path": "Fisica/Ensino_Medio/Trabalho_e_energia/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Trabalho_e_energia/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Impulso e quantidade de movimento",
+    "pdf_path": "Fisica/Ensino_Medio/Impulso_e_quantidade_de_movimento/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Impulso_e_quantidade_de_movimento/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Gravitação universal",
+    "pdf_path": "Fisica/Ensino_Medio/Gravita_o_universal/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Gravita_o_universal/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Hidrostática",
+    "pdf_path": "Fisica/Ensino_Medio/Hidrost_tica/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Hidrost_tica/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Termometria",
+    "pdf_path": "Fisica/Ensino_Medio/Termometria/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Termometria/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Calorimetria",
+    "pdf_path": "Fisica/Ensino_Medio/Calorimetria/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Calorimetria/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Gases perfeitos",
+    "pdf_path": "Fisica/Ensino_Medio/Gases_perfeitos/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Gases_perfeitos/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Termodinâmica",
+    "pdf_path": "Fisica/Ensino_Medio/Termodin_mica/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Termodin_mica/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Óptica geométrica",
+    "pdf_path": "Fisica/Ensino_Medio/ptica_geom_trica/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/ptica_geom_trica/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Ondas",
+    "pdf_path": "Fisica/Ensino_Medio/Ondas/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Ondas/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Eletrostática",
+    "pdf_path": "Fisica/Ensino_Medio/Eletrost_tica/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Eletrost_tica/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Eletrodinâmica",
+    "pdf_path": "Fisica/Ensino_Medio/Eletrodin_mica/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Eletrodin_mica/atividade.png"
+  },
+  {
+    "materia": "Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Magnetismo",
+    "pdf_path": "Fisica/Ensino_Medio/Magnetismo/atividade.pdf",
+    "png_path": "Fisica/Ensino_Medio/Magnetismo/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Estados físicos da matéria",
+    "pdf_path": "Quimica/Ensino_Medio/Estados_f_sicos_da_mat_ria/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Estados_f_sicos_da_mat_ria/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Misturas e separação",
+    "pdf_path": "Quimica/Ensino_Medio/Misturas_e_separa_o/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Misturas_e_separa_o/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Atomo e modelos atômicos",
+    "pdf_path": "Quimica/Ensino_Medio/Atomo_e_modelos_at_micos/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Atomo_e_modelos_at_micos/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Tabela periódica",
+    "pdf_path": "Quimica/Ensino_Medio/Tabela_peri_dica/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Tabela_peri_dica/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Ligações químicas",
+    "pdf_path": "Quimica/Ensino_Medio/Liga_es_qu_micas/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Liga_es_qu_micas/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Funções inorgânicas",
+    "pdf_path": "Quimica/Ensino_Medio/Fun_es_inorg_nicas/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Fun_es_inorg_nicas/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Reações químicas",
+    "pdf_path": "Quimica/Ensino_Medio/Rea_es_qu_micas/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Rea_es_qu_micas/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Estequiometria",
+    "pdf_path": "Quimica/Ensino_Medio/Estequiometria/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Estequiometria/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Mol e massa molar",
+    "pdf_path": "Quimica/Ensino_Medio/Mol_e_massa_molar/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Mol_e_massa_molar/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Soluções e concentração",
+    "pdf_path": "Quimica/Ensino_Medio/Solu_es_e_concentra_o/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Solu_es_e_concentra_o/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Termoquímica",
+    "pdf_path": "Quimica/Ensino_Medio/Termoqu_mica/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Termoqu_mica/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Cinética química",
+    "pdf_path": "Quimica/Ensino_Medio/Cin_tica_qu_mica/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Cin_tica_qu_mica/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Equilíbrio químico",
+    "pdf_path": "Quimica/Ensino_Medio/Equil_brio_qu_mico/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Equil_brio_qu_mico/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Eletroquímica",
+    "pdf_path": "Quimica/Ensino_Medio/Eletroqu_mica/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Eletroqu_mica/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Química orgânica",
+    "pdf_path": "Quimica/Ensino_Medio/Qu_mica_org_nica/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Qu_mica_org_nica/atividade.png"
+  },
+  {
+    "materia": "Quimica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Isomeria",
+    "pdf_path": "Quimica/Ensino_Medio/Isomeria/atividade.pdf",
+    "png_path": "Quimica/Ensino_Medio/Isomeria/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Citologia",
+    "pdf_path": "Biologia/Ensino_Medio/Citologia/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Citologia/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Membrana plasmática",
+    "pdf_path": "Biologia/Ensino_Medio/Membrana_plasm_tica/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Membrana_plasm_tica/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Organelas celulares",
+    "pdf_path": "Biologia/Ensino_Medio/Organelas_celulares/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Organelas_celulares/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Fotossíntese e respiração",
+    "pdf_path": "Biologia/Ensino_Medio/Fotoss_ntese_e_respira_o/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Fotoss_ntese_e_respira_o/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Divisão celular",
+    "pdf_path": "Biologia/Ensino_Medio/Divis_o_celular/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Divis_o_celular/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Histologia animal",
+    "pdf_path": "Biologia/Ensino_Medio/Histologia_animal/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Histologia_animal/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Histologia vegetal",
+    "pdf_path": "Biologia/Ensino_Medio/Histologia_vegetal/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Histologia_vegetal/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Genética e Mendel",
+    "pdf_path": "Biologia/Ensino_Medio/Gen_tica_e_Mendel/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Gen_tica_e_Mendel/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Biotecnologia",
+    "pdf_path": "Biologia/Ensino_Medio/Biotecnologia/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Biotecnologia/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Evolução e seleção natural",
+    "pdf_path": "Biologia/Ensino_Medio/Evolu_o_e_sele_o_natural/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Evolu_o_e_sele_o_natural/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Zoologia",
+    "pdf_path": "Biologia/Ensino_Medio/Zoologia/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Zoologia/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Botânica",
+    "pdf_path": "Biologia/Ensino_Medio/Bot_nica/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Bot_nica/atividade.png"
+  },
+  {
+    "materia": "Biologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Ecologia e biomas",
+    "pdf_path": "Biologia/Ensino_Medio/Ecologia_e_biomas/atividade.pdf",
+    "png_path": "Biologia/Ensino_Medio/Ecologia_e_biomas/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Família e comunidade",
+    "pdf_path": "Historia/Fundamental_I/Fam_lia_e_comunidade/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Fam_lia_e_comunidade/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Fontes históricas",
+    "pdf_path": "Historia/Fundamental_I/Fontes_hist_ricas/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Fontes_hist_ricas/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Povos indígenas",
+    "pdf_path": "Historia/Fundamental_I/Povos_ind_genas/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Povos_ind_genas/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Formação do Brasil",
+    "pdf_path": "Historia/Fundamental_I/Forma_o_do_Brasil/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Forma_o_do_Brasil/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Colonização",
+    "pdf_path": "Historia/Fundamental_I/Coloniza_o/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Coloniza_o/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Escravidão",
+    "pdf_path": "Historia/Fundamental_I/Escravid_o/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Escravid_o/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Independência do Brasil",
+    "pdf_path": "Historia/Fundamental_I/Independ_ncia_do_Brasil/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/Independ_ncia_do_Brasil/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Símbolos nacionais",
+    "pdf_path": "Historia/Fundamental_I/S_mbolos_nacionais/atividade.pdf",
+    "png_path": "Historia/Fundamental_I/S_mbolos_nacionais/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Antiguidade",
+    "pdf_path": "Historia/Fundamental_II/Antiguidade/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Antiguidade/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Egito e Grécia",
+    "pdf_path": "Historia/Fundamental_II/Egito_e_Gr_cia/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Egito_e_Gr_cia/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Roma Antiga",
+    "pdf_path": "Historia/Fundamental_II/Roma_Antiga/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Roma_Antiga/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Idade Média",
+    "pdf_path": "Historia/Fundamental_II/Idade_M_dia/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Idade_M_dia/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Feudalismo",
+    "pdf_path": "Historia/Fundamental_II/Feudalismo/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Feudalismo/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Renascimento",
+    "pdf_path": "Historia/Fundamental_II/Renascimento/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Renascimento/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Reforma Protestante",
+    "pdf_path": "Historia/Fundamental_II/Reforma_Protestante/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Reforma_Protestante/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Brasil Colonial",
+    "pdf_path": "Historia/Fundamental_II/Brasil_Colonial/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Brasil_Colonial/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Revolução Industrial",
+    "pdf_path": "Historia/Fundamental_II/Revolu_o_Industrial/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Revolu_o_Industrial/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Revolução Francesa",
+    "pdf_path": "Historia/Fundamental_II/Revolu_o_Francesa/atividade.pdf",
+    "png_path": "Historia/Fundamental_II/Revolu_o_Francesa/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Brasil Império",
+    "pdf_path": "Historia/Ensino_Medio/Brasil_Imp_rio/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Brasil_Imp_rio/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Proclamação da República",
+    "pdf_path": "Historia/Ensino_Medio/Proclama_o_da_Rep_blica/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Proclama_o_da_Rep_blica/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Primeira Guerra Mundial",
+    "pdf_path": "Historia/Ensino_Medio/Primeira_Guerra_Mundial/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Primeira_Guerra_Mundial/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Era Vargas",
+    "pdf_path": "Historia/Ensino_Medio/Era_Vargas/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Era_Vargas/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Segunda Guerra Mundial",
+    "pdf_path": "Historia/Ensino_Medio/Segunda_Guerra_Mundial/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Segunda_Guerra_Mundial/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Guerra Fria",
+    "pdf_path": "Historia/Ensino_Medio/Guerra_Fria/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Guerra_Fria/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Ditadura Militar no Brasil",
+    "pdf_path": "Historia/Ensino_Medio/Ditadura_Militar_no_Brasil/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Ditadura_Militar_no_Brasil/atividade.png"
+  },
+  {
+    "materia": "Historia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Redemocratização",
+    "pdf_path": "Historia/Ensino_Medio/Redemocratiza_o/atividade.pdf",
+    "png_path": "Historia/Ensino_Medio/Redemocratiza_o/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Espaço e paisagem",
+    "pdf_path": "Geografia/Fundamental_I/Espa_o_e_paisagem/atividade.pdf",
+    "png_path": "Geografia/Fundamental_I/Espa_o_e_paisagem/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Orientação e mapas",
+    "pdf_path": "Geografia/Fundamental_I/Orienta_o_e_mapas/atividade.pdf",
+    "png_path": "Geografia/Fundamental_I/Orienta_o_e_mapas/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Município e estado",
+    "pdf_path": "Geografia/Fundamental_I/Munic_pio_e_estado/atividade.pdf",
+    "png_path": "Geografia/Fundamental_I/Munic_pio_e_estado/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_I",
+    "conteudo": "Zona rural e urbana",
+    "pdf_path": "Geografia/Fundamental_I/Zona_rural_e_urbana/atividade.pdf",
+    "png_path": "Geografia/Fundamental_I/Zona_rural_e_urbana/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Cartografia e fusos",
+    "pdf_path": "Geografia/Fundamental_II/Cartografia_e_fusos/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Cartografia_e_fusos/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Relevo e solo",
+    "pdf_path": "Geografia/Fundamental_II/Relevo_e_solo/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Relevo_e_solo/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Clima e vegetação",
+    "pdf_path": "Geografia/Fundamental_II/Clima_e_vegeta_o/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Clima_e_vegeta_o/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Hidrografia",
+    "pdf_path": "Geografia/Fundamental_II/Hidrografia/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Hidrografia/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "População mundial",
+    "pdf_path": "Geografia/Fundamental_II/Popula_o_mundial/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Popula_o_mundial/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Urbanização",
+    "pdf_path": "Geografia/Fundamental_II/Urbaniza_o/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Urbaniza_o/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Industrialização",
+    "pdf_path": "Geografia/Fundamental_II/Industrializa_o/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Industrializa_o/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Fundamental_II",
+    "conteudo": "Geografia do Brasil",
+    "pdf_path": "Geografia/Fundamental_II/Geografia_do_Brasil/atividade.pdf",
+    "png_path": "Geografia/Fundamental_II/Geografia_do_Brasil/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Globalização",
+    "pdf_path": "Geografia/Ensino_Medio/Globaliza_o/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Globaliza_o/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Geopolítica mundial",
+    "pdf_path": "Geografia/Ensino_Medio/Geopol_tica_mundial/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Geopol_tica_mundial/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Quarta Revolução Industrial",
+    "pdf_path": "Geografia/Ensino_Medio/Quarta_Revolu_o_Industrial/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Quarta_Revolu_o_Industrial/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Agropecuária e espaço rural",
+    "pdf_path": "Geografia/Ensino_Medio/Agropecu_ria_e_espa_o_rural/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Agropecu_ria_e_espa_o_rural/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Questões ambientais",
+    "pdf_path": "Geografia/Ensino_Medio/Quest_es_ambientais/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Quest_es_ambientais/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Matriz energética",
+    "pdf_path": "Geografia/Ensino_Medio/Matriz_energ_tica/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Matriz_energ_tica/atividade.png"
+  },
+  {
+    "materia": "Geografia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Comércio internacional",
+    "pdf_path": "Geografia/Ensino_Medio/Com_rcio_internacional/atividade.pdf",
+    "png_path": "Geografia/Ensino_Medio/Com_rcio_internacional/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Introdução à Sociologia",
+    "pdf_path": "Sociologia/Ensino_Medio/Introdu_o___Sociologia/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Introdu_o___Sociologia/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Surgimento da Sociologia",
+    "pdf_path": "Sociologia/Ensino_Medio/Surgimento_da_Sociologia/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Surgimento_da_Sociologia/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Émile Durkheim",
+    "pdf_path": "Sociologia/Ensino_Medio/mile_Durkheim/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/mile_Durkheim/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Max Weber",
+    "pdf_path": "Sociologia/Ensino_Medio/Max_Weber/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Max_Weber/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Karl Marx",
+    "pdf_path": "Sociologia/Ensino_Medio/Karl_Marx/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Karl_Marx/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Cultura e sociedade",
+    "pdf_path": "Sociologia/Ensino_Medio/Cultura_e_sociedade/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Cultura_e_sociedade/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Socialização e instituições",
+    "pdf_path": "Sociologia/Ensino_Medio/Socializa_o_e_institui_es/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Socializa_o_e_institui_es/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Estratificação e desigualdade",
+    "pdf_path": "Sociologia/Ensino_Medio/Estratifica_o_e_desigualdade/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Estratifica_o_e_desigualdade/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Trabalho e capitalismo",
+    "pdf_path": "Sociologia/Ensino_Medio/Trabalho_e_capitalismo/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Trabalho_e_capitalismo/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Poder Estado e política",
+    "pdf_path": "Sociologia/Ensino_Medio/Poder_Estado_e_pol_tica/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Poder_Estado_e_pol_tica/atividade.png"
+  },
+  {
+    "materia": "Sociologia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Movimentos sociais",
+    "pdf_path": "Sociologia/Ensino_Medio/Movimentos_sociais/atividade.pdf",
+    "png_path": "Sociologia/Ensino_Medio/Movimentos_sociais/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Introdução à Filosofia",
+    "pdf_path": "Filosofia/Ensino_Medio/Introdu_o___Filosofia/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Introdu_o___Filosofia/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Mito e razão",
+    "pdf_path": "Filosofia/Ensino_Medio/Mito_e_raz_o/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Mito_e_raz_o/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Pré-socráticos",
+    "pdf_path": "Filosofia/Ensino_Medio/Pr_-socr_ticos/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Pr_-socr_ticos/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Sócrates e os Sofistas",
+    "pdf_path": "Filosofia/Ensino_Medio/S_crates_e_os_Sofistas/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/S_crates_e_os_Sofistas/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Platão",
+    "pdf_path": "Filosofia/Ensino_Medio/Plat_o/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Plat_o/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Aristóteles",
+    "pdf_path": "Filosofia/Ensino_Medio/Arist_teles/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Arist_teles/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Filosofia Medieval",
+    "pdf_path": "Filosofia/Ensino_Medio/Filosofia_Medieval/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Filosofia_Medieval/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Empirismo e Racionalismo",
+    "pdf_path": "Filosofia/Ensino_Medio/Empirismo_e_Racionalismo/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Empirismo_e_Racionalismo/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Iluminismo e Kant",
+    "pdf_path": "Filosofia/Ensino_Medio/Iluminismo_e_Kant/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Iluminismo_e_Kant/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Ética e moral",
+    "pdf_path": "Filosofia/Ensino_Medio/tica_e_moral/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/tica_e_moral/atividade.png"
+  },
+  {
+    "materia": "Filosofia",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Filosofia política",
+    "pdf_path": "Filosofia/Ensino_Medio/Filosofia_pol_tica/atividade.pdf",
+    "png_path": "Filosofia/Ensino_Medio/Filosofia_pol_tica/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_I",
+    "conteudo": "Alphabet and numbers",
+    "pdf_path": "Ingles/Fundamental_I/Alphabet_and_numbers/atividade.pdf",
+    "png_path": "Ingles/Fundamental_I/Alphabet_and_numbers/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_I",
+    "conteudo": "Colors and shapes",
+    "pdf_path": "Ingles/Fundamental_I/Colors_and_shapes/atividade.pdf",
+    "png_path": "Ingles/Fundamental_I/Colors_and_shapes/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_I",
+    "conteudo": "Family and greetings",
+    "pdf_path": "Ingles/Fundamental_I/Family_and_greetings/atividade.pdf",
+    "png_path": "Ingles/Fundamental_I/Family_and_greetings/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_I",
+    "conteudo": "Animals and food",
+    "pdf_path": "Ingles/Fundamental_I/Animals_and_food/atividade.pdf",
+    "png_path": "Ingles/Fundamental_I/Animals_and_food/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_II",
+    "conteudo": "Verb to be",
+    "pdf_path": "Ingles/Fundamental_II/Verb_to_be/atividade.pdf",
+    "png_path": "Ingles/Fundamental_II/Verb_to_be/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_II",
+    "conteudo": "Present continuous",
+    "pdf_path": "Ingles/Fundamental_II/Present_continuous/atividade.pdf",
+    "png_path": "Ingles/Fundamental_II/Present_continuous/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_II",
+    "conteudo": "Simple present",
+    "pdf_path": "Ingles/Fundamental_II/Simple_present/atividade.pdf",
+    "png_path": "Ingles/Fundamental_II/Simple_present/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Fundamental_II",
+    "conteudo": "Vocabulary and reading",
+    "pdf_path": "Ingles/Fundamental_II/Vocabulary_and_reading/atividade.pdf",
+    "png_path": "Ingles/Fundamental_II/Vocabulary_and_reading/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Text interpretation",
+    "pdf_path": "Ingles/Ensino_Medio/Text_interpretation/atividade.pdf",
+    "png_path": "Ingles/Ensino_Medio/Text_interpretation/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Simple past and past continuous",
+    "pdf_path": "Ingles/Ensino_Medio/Simple_past_and_past_continuous/atividade.pdf",
+    "png_path": "Ingles/Ensino_Medio/Simple_past_and_past_continuous/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Modal verbs",
+    "pdf_path": "Ingles/Ensino_Medio/Modal_verbs/atividade.pdf",
+    "png_path": "Ingles/Ensino_Medio/Modal_verbs/atividade.png"
+  },
+  {
+    "materia": "Ingles",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Passive voice",
+    "pdf_path": "Ingles/Ensino_Medio/Passive_voice/atividade.pdf",
+    "png_path": "Ingles/Ensino_Medio/Passive_voice/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Fundamental_II",
+    "conteudo": "Saludos y presentaciones",
+    "pdf_path": "Espanhol/Fundamental_II/Saludos_y_presentaciones/atividade.pdf",
+    "png_path": "Espanhol/Fundamental_II/Saludos_y_presentaciones/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Fundamental_II",
+    "conteudo": "Vocabulario básico",
+    "pdf_path": "Espanhol/Fundamental_II/Vocabulario_b_sico/atividade.pdf",
+    "png_path": "Espanhol/Fundamental_II/Vocabulario_b_sico/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Fundamental_II",
+    "conteudo": "Comprensión lectora",
+    "pdf_path": "Espanhol/Fundamental_II/Comprensi_n_lectora/atividade.pdf",
+    "png_path": "Espanhol/Fundamental_II/Comprensi_n_lectora/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Comprensión de textos",
+    "pdf_path": "Espanhol/Ensino_Medio/Comprensi_n_de_textos/atividade.pdf",
+    "png_path": "Espanhol/Ensino_Medio/Comprensi_n_de_textos/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Verbos en presente y pasado",
+    "pdf_path": "Espanhol/Ensino_Medio/Verbos_en_presente_y_pasado/atividade.pdf",
+    "png_path": "Espanhol/Ensino_Medio/Verbos_en_presente_y_pasado/atividade.png"
+  },
+  {
+    "materia": "Espanhol",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Falsos amigos",
+    "pdf_path": "Espanhol/Ensino_Medio/Falsos_amigos/atividade.pdf",
+    "png_path": "Espanhol/Ensino_Medio/Falsos_amigos/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_I",
+    "conteudo": "Cores primárias e secundárias",
+    "pdf_path": "Artes/Fundamental_I/Cores_prim_rias_e_secund_rias/atividade.pdf",
+    "png_path": "Artes/Fundamental_I/Cores_prim_rias_e_secund_rias/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_I",
+    "conteudo": "Desenho e pintura",
+    "pdf_path": "Artes/Fundamental_I/Desenho_e_pintura/atividade.pdf",
+    "png_path": "Artes/Fundamental_I/Desenho_e_pintura/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_I",
+    "conteudo": "Formas e texturas",
+    "pdf_path": "Artes/Fundamental_I/Formas_e_texturas/atividade.pdf",
+    "png_path": "Artes/Fundamental_I/Formas_e_texturas/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_II",
+    "conteudo": "Arte na Antiguidade",
+    "pdf_path": "Artes/Fundamental_II/Arte_na_Antiguidade/atividade.pdf",
+    "png_path": "Artes/Fundamental_II/Arte_na_Antiguidade/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_II",
+    "conteudo": "Arte Medieval e Renascimento",
+    "pdf_path": "Artes/Fundamental_II/Arte_Medieval_e_Renascimento/atividade.pdf",
+    "png_path": "Artes/Fundamental_II/Arte_Medieval_e_Renascimento/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Fundamental_II",
+    "conteudo": "Elementos das artes visuais",
+    "pdf_path": "Artes/Fundamental_II/Elementos_das_artes_visuais/atividade.pdf",
+    "png_path": "Artes/Fundamental_II/Elementos_das_artes_visuais/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Vanguardas europeias",
+    "pdf_path": "Artes/Ensino_Medio/Vanguardas_europeias/atividade.pdf",
+    "png_path": "Artes/Ensino_Medio/Vanguardas_europeias/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Arte moderna no Brasil",
+    "pdf_path": "Artes/Ensino_Medio/Arte_moderna_no_Brasil/atividade.pdf",
+    "png_path": "Artes/Ensino_Medio/Arte_moderna_no_Brasil/atividade.png"
+  },
+  {
+    "materia": "Artes",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Arte contemporânea",
+    "pdf_path": "Artes/Ensino_Medio/Arte_contempor_nea/atividade.pdf",
+    "png_path": "Artes/Ensino_Medio/Arte_contempor_nea/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Brincadeiras e jogos",
+    "pdf_path": "Educacao_Fisica/Fundamental_I/Brincadeiras_e_jogos/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_I/Brincadeiras_e_jogos/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Esportes de marca e precisão",
+    "pdf_path": "Educacao_Fisica/Fundamental_I/Esportes_de_marca_e_precis_o/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_I/Esportes_de_marca_e_precis_o/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_I",
+    "conteudo": "Ginástica geral",
+    "pdf_path": "Educacao_Fisica/Fundamental_I/Gin_stica_geral/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_I/Gin_stica_geral/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Esportes coletivos",
+    "pdf_path": "Educacao_Fisica/Fundamental_II/Esportes_coletivos/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_II/Esportes_coletivos/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Capacidades físicas",
+    "pdf_path": "Educacao_Fisica/Fundamental_II/Capacidades_f_sicas/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_II/Capacidades_f_sicas/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Fundamental_II",
+    "conteudo": "Lutas e jogos de oposição",
+    "pdf_path": "Educacao_Fisica/Fundamental_II/Lutas_e_jogos_de_oposi_o/atividade.pdf",
+    "png_path": "Educacao_Fisica/Fundamental_II/Lutas_e_jogos_de_oposi_o/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Saúde e qualidade de vida",
+    "pdf_path": "Educacao_Fisica/Ensino_Medio/Sa_de_e_qualidade_de_vida/atividade.pdf",
+    "png_path": "Educacao_Fisica/Ensino_Medio/Sa_de_e_qualidade_de_vida/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Exercício físico vs atividade física",
+    "pdf_path": "Educacao_Fisica/Ensino_Medio/Exerc_cio_f_sico_vs_atividade_f_sica/atividade.pdf",
+    "png_path": "Educacao_Fisica/Ensino_Medio/Exerc_cio_f_sico_vs_atividade_f_sica/atividade.png"
+  },
+  {
+    "materia": "Educacao_Fisica",
+    "etapa": "Ensino_Medio",
+    "conteudo": "Corpo e sociedade",
+    "pdf_path": "Educacao_Fisica/Ensino_Medio/Corpo_e_sociedade/atividade.pdf",
+    "png_path": "Educacao_Fisica/Ensino_Medio/Corpo_e_sociedade/atividade.png"
+  }
+]
