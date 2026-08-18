@@ -3,8 +3,8 @@
 
 <template>
     <div>
-        <a href="/src/images/atividade_de_alfabetizacao.png" download>
-            Baixar PDF <img src="/src/images/baixar.svg" alt="Baixar">
+        <a href="/public/images/atividade_de_alfabetizacao.png" download>
+            Baixar PDF <img src="/public/images/baixar.svg" alt="Baixar">
         </a>
     </div>
 </template>
