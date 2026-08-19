@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
 :root{
   --cream:#FDF6EA;
   --cream-soft:#FBF0DD;
@@ -81,6 +81,7 @@ section{padding:72px 0;}
   padding:15px 30px;
   font-size:1rem;
 }
+
 
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
