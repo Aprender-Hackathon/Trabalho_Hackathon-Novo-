@@ -1,3 +1,8 @@
+<script setup>
+defineProps({
+  materia: String,
+})
+</script>
 <template>
   <div class="card">
 
@@ -6,6 +11,9 @@
       class="imagem"
     >
     <div class="laranja">
+
+<a class="materia">{{ materia }}</a>
+
 
     </div>
 

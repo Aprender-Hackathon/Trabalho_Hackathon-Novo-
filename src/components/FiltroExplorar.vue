@@ -8,7 +8,7 @@
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
-          @click="materiaSelecionada = materia"
+          @click="materiaSelecionada = materia; emit('filtro', materia)"
         >
           {{ materia }}
           <span v-if="materiaSelecionada === materia && materia !== 'Tudo'" class="close-icon">×</span>
@@ -71,6 +71,8 @@ const conteudosAtuais = computed(() => {
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = 'Tudo'
 })
+
+const emit = defineEmits(['filtro'])
 </script>
 
 <style scoped>
