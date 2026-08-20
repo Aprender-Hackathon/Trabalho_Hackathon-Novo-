@@ -6,22 +6,16 @@
   <div class="container-banner">
     <div class="cartao-principal">
 
-      <!-- MANCHAS ORGANICAS NOS CANTOS -->
       <div class="mancha-topo-esquerda"></div>
       <div class="mancha-baixo-esquerda"></div>
       <div class="mancha-baixo-direita"></div>
 
-      <!-- LADO ESQUERDO: TEXTO E ICONES -->
       <div class="lado-texto">
-
-        <!-- CORAÇÃO FLUTUANTE À ESQUERDA -->
         <div class="icone-coracao">
           <svg viewBox="0 0 24 24" class="svg-coracao">
             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
           </svg>
         </div>
-
-        <!-- TÍTULO COM AS CORES DA IMAGEM -->
         <h1 class="titulo-principal">
           <span class="cor-azul-escuro bloco">Inspiração</span>
           <span class="linha-segunda">
@@ -34,7 +28,6 @@
           </span>
         </h1>
 
-        <!-- ESTRELA FLUTUANTE À DIREITA -->
         <div class="icone-estrela">
           <svg viewBox="0 0 24 24" class="svg-estrela">
             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
@@ -43,21 +36,14 @@
 
       </div>
 
-      <!-- LADO DIREITO: CÍRCULO E PINGUIM -->
       <div class="lado-pinguim">
-
-        <!-- TRÊS RISCOS VERMELHOS EM CIMA DO PINGUIM -->
         <div class="riscos-detalhe">
           <span></span>
           <span></span>
           <span></span>
         </div>
-
-        <!-- CÍRCULO AMARELO NO FUNDO -->
         <div class="circulo-amarelo"></div>
 
-        <!-- SUA IMAGEM DO PINGUIM -->
-        <!-- Substitua 'pinguim.png' pelo caminho correto no seu projeto -->
         <img src="@/assets/pinguim.png" alt="Pinguim de Cachecol" class="imagem-pinguim" />
 
       </div>
@@ -67,7 +53,7 @@
 </template>
 
 <style scoped>
-/* IMPORTAÇÃO DA FONTE REDONDINHA IGUAL À DA FOTO */
+
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
 
 .container-banner {
@@ -83,7 +69,7 @@
   position: relative;
   width: 100%;
   max-width: 980px;
-  background-color: #FAF7F2; /* Fundo creme claro da imagem */
+  background-color: #FAF7F2;
   border-radius: 24px;
   padding: 60px 50px;
   display: flex;
@@ -94,14 +80,13 @@
   box-sizing: border-box;
 }
 
-/* --- MANCHAS ORGANICAS DOS CANTOS --- */
 .mancha-topo-esquerda {
   position: absolute;
   top: 0;
   left: 0;
   width: 110px;
   height: 90px;
-  background-color: #319be8; /* Azul */
+  background-color: #319be8;
   border-radius: 0 0 80% 0;
 }
 
@@ -111,7 +96,7 @@
   left: 0;
   width: 90px;
   height: 90px;
-  background-color: #ee4256; /* Vermelho/Rosa */
+  background-color: #ee4256;
   border-radius: 0 80% 0 0;
 }
 
@@ -121,11 +106,10 @@
   right: 0;
   width: 120px;
   height: 100px;
-  background-color: #5cb76e; /* Verde */
+  background-color: #5cb76e;
   border-radius: 80% 0 0 0;
 }
 
-/* --- SEÇÃO DO TEXTO --- */
 .lado-texto {
   position: relative;
   flex: 1;
@@ -149,7 +133,7 @@
   display: block;
 }
 
-/* PALETA DE CORES DAS LETRAS */
+
 .cor-azul-escuro {
   color: #0e3e47;
 }
@@ -162,7 +146,6 @@
   color: #f0ab1a;
 }
 
-/* --- ÍCONES FLUTUANTES (CORAÇÃO E ESTRELA) --- */
 .icone-coracao {
   position: absolute;
   left: -25px;
@@ -189,7 +172,6 @@
   fill: #f0ab1a;
 }
 
-/* --- SEÇÃO DO PINGUIM --- */
 .lado-pinguim {
   position: relative;
   width: 420px;
@@ -220,7 +202,7 @@
   z-index: 2;
 }
 
-/* DETALHE DOS RISQUINHOS VERMELHOS EM CIMA DO PINGUIM */
+
 .riscos-detalhe {
   position: absolute;
   top: 15px;
@@ -252,7 +234,6 @@
   transform: rotate(25deg);
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 850px) {
   .cartao-principal {
     flex-direction: column;
