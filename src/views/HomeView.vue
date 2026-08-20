@@ -13,6 +13,30 @@
       v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Matemática'"
       materia="Matemática"
     />
+    <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Artes'"
+      materia="Artes"
+    />
+    <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Ciências'"
+      materia="Ciências"
+    />
+    <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Geografia'"
+      materia="Geografia"
+    />
+        <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'História'"
+      materia="História"
+    />
+    <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Língua Inglesa'"
+      materia="Língua Inglesa"
+    />
+    <BotaoExplorar
+      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Língua Portuguesa'"
+      materia="Língua Portuguesa"
+    />
 
   </div>
 
