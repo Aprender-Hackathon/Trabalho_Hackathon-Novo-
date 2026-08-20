@@ -176,7 +176,8 @@ html, body, #app {
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: rgb(78, 53, 53);
+  background-color: rgb(238, 226, 205);;
+  left: 0;
 
 }
 
