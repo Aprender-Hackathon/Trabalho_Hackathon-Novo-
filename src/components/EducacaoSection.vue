@@ -69,7 +69,6 @@
 
 <style scoped>
 .secao-missao {
-  background-color: #FAF7F2;
   padding: 60px 20px;
   font-family: 'Fredoka', sans-serif;
   color: #0e3e47;
