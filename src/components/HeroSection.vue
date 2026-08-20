@@ -1,15 +1,12 @@
 <script setup>
-
 </script>
 
 <template>
-  <div class="container-banner">
-    <div class="cartao-principal">
-
-      <div class="mancha-topo-esquerda"></div>
-      <div class="mancha-baixo-esquerda"></div>
-      <div class="mancha-baixo-direita"></div>
-
+  <section class="banner-gigante">
+    <div class="mancha mancha-topo-esquerda"></div>
+    <div class="mancha mancha-baixo-esquerda"></div>
+    <div class="mancha mancha-baixo-direita"></div>
+    <div class="conteudo-banner">
       <div class="lado-texto">
         <div class="icone-coracao">
           <svg viewBox="0 0 24 24" class="svg-coracao">
@@ -27,7 +24,6 @@
             <span class="cor-amarela">transformar</span>
           </span>
         </h1>
-
         <div class="icone-estrela">
           <svg viewBox="0 0 24 24" class="svg-estrela">
             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
@@ -35,262 +31,175 @@
         </div>
 
       </div>
-
       <div class="lado-pinguim">
-        <div class="riscos-detalhe">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <div class="circulo-amarelo"></div>
-
         <img src="@/assets/pinguim.png" alt="Pinguim de Cachecol" class="imagem-pinguim" />
 
       </div>
 
     </div>
-  </div>
+
+  </section>
+    <div class="linha-divisoria"></div>
 </template>
-
+<style>
+html, body, #app {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+</style>
 <style scoped>
-
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap');
-
-.container-banner {
-  width: 100%;
+.banner-gigante {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #FAF7F2;
+  padding: 100px 6%;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: 'Fredoka', cursive, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
 }
-
-.cartao-principal {
+.conteudo-banner {
   position: relative;
   width: 100%;
-  max-width: 980px;
-  background-color: #FAF7F2;
-  border-radius: 24px;
-  padding: 60px 50px;
+  max-width: 1600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
-  font-family: 'Fredoka', cursive, sans-serif;
-  box-sizing: border-box;
+  gap: 50px;
+  z-index: 2;
 }
-
-.mancha-topo-esquerda {
+.mancha {
   position: absolute;
+  z-index: 1;
+}
+.mancha-topo-esquerda {
   top: 0;
   left: 0;
-  width: 110px;
-  height: 90px;
+  width: 220px;
+  height: 180px;
   background-color: #319be8;
-  border-radius: 0 0 80% 0;
+  border-radius: 0 0 100% 0;
 }
-
 .mancha-baixo-esquerda {
-  position: absolute;
   bottom: 0;
   left: 0;
-  width: 90px;
-  height: 90px;
+  width: 190px;
+  height: 190px;
   background-color: #ee4256;
-  border-radius: 0 80% 0 0;
+  border-radius: 0 100% 0 0;
 }
-
 .mancha-baixo-direita {
-  position: absolute;
   bottom: 0;
   right: 0;
-  width: 120px;
-  height: 100px;
+  width: 240px;
+  height: 200px;
   background-color: #5cb76e;
-  border-radius: 80% 0 0 0;
+  border-radius: 100% 0 0 0;
 }
-
 .lado-texto {
   position: relative;
   flex: 1;
   z-index: 2;
-  padding-left: 20px;
 }
-
 .titulo-principal {
   margin: 0;
-  font-size: 3.4rem;
-  line-height: 1.15;
+  font-size: 6rem;
+  line-height: 1.05;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: -1.5px;
 }
-
-.bloco {
-  display: block;
-}
-
-.linha-segunda, .linha-terceira {
-  display: block;
-}
-
-
-.cor-azul-escuro {
-  color: #0e3e47;
-}
-
-.cor-rosa {
-  color: #da4b59;
-}
-
-.cor-amarela {
-  color: #f0ab1a;
-}
-
+.bloco { display: block; }
+.linha-segunda, .linha-terceira { display: block; }
+.cor-azul-escuro { color: #0e3e47; }
+.cor-rosa { color: #da4b59; }
+.cor-amarela { color: #f0ab1a; }
 .icone-coracao {
   position: absolute;
-  left: -25px;
-  top: 42%;
+  left: -65px;
+  top: 40%;
   transform: translateY(-50%) rotate(-12deg);
 }
-
 .svg-coracao {
-  width: 34px;
-  height: 34px;
+  width: 60px;
+  height: 60px;
   fill: #ee4256;
 }
-
 .icone-estrela {
   position: absolute;
-  right: 25px;
-  top: 48%;
+  right: 30px;
+  top: 45%;
   transform: rotate(15deg);
 }
-
 .svg-estrela {
-  width: 28px;
-  height: 28px;
+  width: 50px;
+  height: 50px;
   fill: #f0ab1a;
 }
-
 .lado-pinguim {
   position: relative;
-  width: 420px;
-  height: 380px;
+  width: 680px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
   flex-shrink: 0;
 }
-
 .circulo-amarelo {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 580px;
+  height: 580px;
   background-color: #f4cc44;
   border-radius: 50%;
-  right: 10px;
+  right: 0;
   top: 10px;
   z-index: 1;
 }
-
 .imagem-pinguim {
   position: relative;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   z-index: 2;
 }
-
-
-.riscos-detalhe {
+.linha-divisoria {
   position: absolute;
-  top: 15px;
-  left: 90px;
-  display: flex;
-  gap: 6px;
-  z-index: 3;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(78, 53, 53);
+
 }
 
-.riscos-detalhe span {
-  display: block;
-  width: 5px;
-  height: 18px;
-  background-color: #ee4256;
-  border-radius: 4px;
+@media (max-width: 1300px) {
+  .titulo-principal { font-size: 4.8rem; }
+  .lado-pinguim { width: 520px; height: 480px; }
+  .circulo-amarelo { width: 460px; height: 460px; }
 }
 
-.riscos-detalhe span:nth-child(1) {
-  transform: rotate(-25deg);
-}
+@media (max-width: 950px) {
+  .banner-gigante { padding: 60px 4%; }
+  .conteudo-banner { flex-direction: column; text-align: center; }
+  .titulo-principal { font-size: 3.5rem; }
+  .icone-coracao { left: 0; top: -30px; }
+  .icone-estrela { right: 0; bottom: -20px; top: auto; }
+  .lado-pinguim { width: 380px; height: 340px; }
+  .circulo-amarelo { width: 320px; height: 320px; right: auto; }
 
-.riscos-detalhe span:nth-child(2) {
-  transform: rotate(0deg);
-  height: 22px;
-  margin-top: -4px;
-}
-
-.riscos-detalhe span:nth-child(3) {
-  transform: rotate(25deg);
-}
-
-@media (max-width: 850px) {
-  .cartao-principal {
-    flex-direction: column;
-    padding: 50px 30px;
-    text-align: center;
-  }
-
-  .lado-texto {
-    padding-left: 0;
-    margin-bottom: 30px;
-  }
-
-  .titulo-principal {
-    font-size: 2.6rem;
-  }
-
-  .icone-coracao {
-    left: 0;
-    top: -10px;
-  }
-
-  .icone-estrela {
-    right: 0;
-    top: auto;
-    bottom: -15px;
-  }
-
-  .lado-pinguim {
-    width: 300px;
-    height: 300px;
-  }
-
-  .circulo-amarelo {
-    width: 270px;
-    height: 270px;
-    right: 15px;
-  }
-
-  .riscos-detalhe {
-    left: 50px;
-    top: 5px;
-  }
 }
 
 @media (max-width: 480px) {
-  .titulo-principal {
-    font-size: 2.1rem;
-  }
-
-  .lado-pinguim {
-    width: 240px;
-    height: 240px;
-  }
-
-  .circulo-amarelo {
-    width: 210px;
-    height: 210px;
-  }
+  .titulo-principal { font-size: 2.5rem; }
+  .lado-pinguim { width: 290px; height: 260px; }
+  .circulo-amarelo { width: 250px; height: 250px; }
 }
 </style>
