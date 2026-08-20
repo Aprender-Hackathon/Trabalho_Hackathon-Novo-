@@ -49,7 +49,7 @@ footer {
 }
 .conteudo {
     background-color: rgb(0, 121, 140, 0.500);
-    padding: 5vw 5vw;
+    padding: 2vw 5vw;
     color: #FFF7EE;
     display: flex;
     justify-content: center;
