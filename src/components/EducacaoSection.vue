@@ -64,6 +64,7 @@
 
     </div>
   </section>
+   <div class="linha-divisoria"></div>
 </template>
 
 <style scoped>
@@ -129,6 +130,13 @@
   font-size: 0.95rem;
   line-height: 1.4;
   margin: 0;
+}
+.linha-divisoria {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(238, 226, 205);;
+  left: 0;
 }
 @media (max-width: 900px) {
   .grid-publicos {
