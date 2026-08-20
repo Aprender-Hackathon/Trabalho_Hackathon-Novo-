@@ -1,6 +1,6 @@
 <script setup>
 import BannerSection from '@/components/BannerSection.vue';
-import MissionSection from '../components/MissionSection.vue'
+import EducacaoSection from '@/components/EducacaoSection.vue';
 import ProcessSection from '../components/ProcessSection.vue'
 import CategoriesSection from '../components/CategoriesSection.vue'
 
@@ -10,7 +10,7 @@ import CategoriesSection from '../components/CategoriesSection.vue'
   <div>
 
     <BannerSection />
-    <MissionSection />
+    <EducacaoSection/>
     <ProcessSection />
     <CategoriesSection />
 
