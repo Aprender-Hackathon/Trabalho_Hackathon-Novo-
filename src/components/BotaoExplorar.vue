@@ -14,18 +14,19 @@ defineProps({
       class="imagem"
     >
     <div class="laranja">
+<h2>{{ titulo || 'hgvcxz' }}</h2>
 
-      <h2>hgvcxz</h2>
-<a class="materia">{{ materia }}</a>
-<span class="conteudo">{{ conteudo }}</span>
 
+      <div class="textos">
+        <span v-if="materia" class="materia">{{ materia }}</span>
+        <span v-if="conteudo" class="conteudo">{{ conteudo }}</span>
+      </div>
     </div>
 
   </div>
 </template>
 
 <style scoped>
-
 .card {
   width: 240px;
   height: 300px;
@@ -38,7 +39,7 @@ defineProps({
 
 .imagem {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -49,27 +50,27 @@ defineProps({
   height: 100px;
   background: #F5893C;
   display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 10px 15px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 15px;
+  box-sizing: border-box;
+}
+
+h2 {
+  color: #1a1a1a;
+  font-size: 20px;
+  margin: 0;
+}
+
+.textos {
+  display: flex;
+  gap: 10px;
 }
 
 .materia {
-  margin-top: 50px;
-  font-size: 19px;
+  font-size: 17px;
   color: #333;
   text-decoration: underline;
-}
-
-.conteudo {
-  margin-top: 50px;
-  font-size: 19px;
-  color: #333;
-  text-decoration: underline;
-}
-h2 {
-color: #1a1a1a;
-  font-size: 20px;
-  margin: 5px;
 }
 </style>

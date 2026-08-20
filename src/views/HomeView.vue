@@ -15,7 +15,6 @@
     (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Contas')
   "
   materia="Matemática"
-  conteudo="Contas"
 />
     <BotaoExplorar
       v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Artes'"
