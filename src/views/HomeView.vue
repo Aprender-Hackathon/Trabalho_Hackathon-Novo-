@@ -4,15 +4,19 @@
 <template>
 
   <FiltroExplorar
-    @filtro="materiaEscolhida = $event"
+    @filtro="filtroEscolhido = $event"
   />
 
   <div class="cards">
 
-    <BotaoExplorar
-      v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Matemática'"
-      materia="Matemática"
-    />
+   <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Matemática') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Contas')
+  "
+  materia="Matemática"
+  conteudo="Contas"
+/>
     <BotaoExplorar
       v-if="materiaEscolhida === 'Tudo' || materiaEscolhida === 'Artes'"
       materia="Artes"
@@ -50,7 +54,10 @@ import { ref } from 'vue'
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
 
-const materiaEscolhida = ref('Tudo')
+const filtroEscolhido = ref({
+  materia: 'Tudo',
+  conteudo: 'Tudo'
+})
 
 </script>
 

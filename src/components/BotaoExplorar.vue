@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
   materia: String,
+  conteudo: String
 })
 </script>
 <template>
@@ -13,7 +14,7 @@ defineProps({
     <div class="laranja">
 
 <a class="materia">{{ materia }}</a>
-
+<span class="conteudo">{{ conteudo }}</span>
 
     </div>
 
@@ -44,6 +45,23 @@ defineProps({
   width: 100%;
   height: 100px;
   background: #F5893C;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
 }
 
+.materia {
+  margin-top: 50px;
+  font-size: 19px;
+  color: #333;
+  text-decoration: underline;
+}
+
+.conteudo {
+  margin-top: 50px;
+  font-size: 19px;
+  color: #333;
+  text-decoration: underline;
+}
 </style>

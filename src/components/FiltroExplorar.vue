@@ -8,7 +8,7 @@
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
-          @click="materiaSelecionada = materia; emit('filtro', materia)"
+          @click="materiaSelecionada = materia; conteudoSelecionado = 'Tudo'; emit('filtro', { materia, conteudo: 'Tudo' })"
         >
           {{ materia }}
           <span v-if="materiaSelecionada === materia && materia !== 'Tudo'" class="close-icon">×</span>
@@ -24,7 +24,7 @@
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
-          @click="conteudoSelecionado = conteudo"
+          @click="conteudoSelecionado = conteudo; emit('filtro', { materia: materiaSelecionada, conteudo })"
         >
           {{ conteudo }}
           <span v-if="conteudoSelecionado === conteudo && conteudo !== 'Tudo'" class="close-icon">×</span>
