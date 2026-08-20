@@ -1,18 +1,21 @@
 <script setup>
 defineProps({
   materia: String,
-  conteudo: String
+  conteudo: String,
+  titulo: String,
+  imagem: String
 })
 </script>
 <template>
   <div class="card">
 
     <img 
-      src="@/assets/google_foto-2120x848.webp" 
+      :src="imagem" 
       class="imagem"
     >
     <div class="laranja">
 
+      <h2>hgvcxz</h2>
 <a class="materia">{{ materia }}</a>
 <span class="conteudo">{{ conteudo }}</span>
 
@@ -63,5 +66,10 @@ defineProps({
   font-size: 19px;
   color: #333;
   text-decoration: underline;
+}
+h2 {
+color: #1a1a1a;
+  font-size: 20px;
+  margin: 5px;
 }
 </style>
