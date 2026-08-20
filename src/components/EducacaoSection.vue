@@ -15,9 +15,7 @@
       <div class="grid-publicos">
         <article class="cartao-publico card-educadores">
           <div class="circulo-icone icone-educadores">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ee4256" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="4.5"/>
-              <path d="M4 20c0-4.2 3.6-7.5 8-7.5s8 3.3 8 7.5"/>
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ee4256" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4.5"/><path d="M4 20c0-4.2 3.6-7.5 8-7.5s8 3.3 8 7.5"/>
             </svg>
           </div>
           <h3 class="titulo-cartao">Para Educadores</h3>
@@ -66,11 +64,11 @@
 
     </div>
   </section>
+   <div class="linha-divisoria"></div>
 </template>
 
 <style scoped>
 .secao-missao {
-  background-color: #FAF7F2;
   padding: 60px 20px;
   font-family: 'Fredoka', sans-serif;
   color: #0e3e47;
@@ -119,10 +117,10 @@
   justify-content: center;
   margin-bottom: 25px;
 }
-.icone-educadores  { background: #fce8eb; }
-.icone-familias    { background: #fef5e4; }
-.icone-voluntarios { background: #eaf6ed; }
-.icone-todos       { background: #e6f4fc; }
+.icone-educadores  { background: #efc5cb; }
+.icone-familias    { background: #fff9c7; }
+.icone-voluntarios { background: #d1f5da; }
+.icone-todos       { background: #d0edfd; }
 .titulo-cartao {
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -132,15 +130,22 @@
   line-height: 1.4;
   margin: 0;
 }
+.linha-divisoria {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(238, 226, 205);;
+  left: 0;
+}
 @media (max-width: 900px) {
   .grid-publicos {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 600px) {
   .grid-publicos {
     grid-template-columns: 1fr;
   }
 }
 </style>
+

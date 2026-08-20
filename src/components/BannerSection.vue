@@ -178,7 +178,6 @@ html, body, #app {
   height: 3px;
   background-color: rgb(238, 226, 205);;
   left: 0;
-
 }
 
 @media (max-width: 1300px) {
