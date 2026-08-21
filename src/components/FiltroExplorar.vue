@@ -8,7 +8,7 @@
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
-          @click="materiaSelecionada = materia; conteudoSelecionado = 'Tudo'; emit('filtro', { materia, conteudo: 'Tudo' })"
+          @click="materiaSelecionada = materia"
         >
           {{ materia }}
           <span v-if="materiaSelecionada === materia && materia !== 'Tudo'" class="close-icon">×</span>
@@ -24,7 +24,7 @@
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
-          @click="conteudoSelecionado = conteudo; emit('filtro', { materia: materiaSelecionada, conteudo })"
+          @click="conteudoSelecionado = conteudo"
         >
           {{ conteudo }}
           <span v-if="conteudoSelecionado === conteudo && conteudo !== 'Tudo'" class="close-icon">×</span>
@@ -71,8 +71,6 @@ const conteudosAtuais = computed(() => {
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = 'Tudo'
 })
-
-const emit = defineEmits(['filtro'])
 </script>
 
 <style scoped>
@@ -89,6 +87,7 @@ const emit = defineEmits(['filtro'])
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  width: 100vw;
 }
 
 .label {
