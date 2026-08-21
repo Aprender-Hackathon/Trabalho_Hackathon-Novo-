@@ -1,10 +1,12 @@
 <script setup>
+
 defineProps({
   materia: String,
   conteudo: String,
   titulo: String,
   imagem: String
 })
+
 </script>
 <template>
   <div class="card">
