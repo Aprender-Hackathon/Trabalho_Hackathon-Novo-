@@ -1,11 +1,11 @@
 <script setup>
 import BotaoSalvar from './components/BotaoSalvar.vue'
-import ProfileCard from './components/ProfileCard.vue'
+import ProfileCard from './components/PerfilUsuario.vue/index.js'
 </script>
 
 <template>
   <main>
-   
+
 
     <div class="main-container">
     <ProfileCard />
