@@ -84,9 +84,8 @@ h2{
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        gap: 25px;
-
-        padding: 35px 20px;
+        gap: 0;
+        padding: 15px 20px;
     }
 
     h2 {
@@ -106,20 +105,22 @@ h2{
         font-size: 14px;
         max-width: 350px;
         line-height: 1.4;
+        margin-top: 3px;
+        margin-bottom: 25px;
     }
 
     .as {
-        gap: 15px;
+        gap: 20px;
     }
 
     .redes-icone {
-        width: 50px;
-        height: 50px;
+        width: 65px;
+        height: 65px;
     }
 
     .redes-icone img {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
     }
 }
 </style>

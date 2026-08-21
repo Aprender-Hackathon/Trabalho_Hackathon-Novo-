@@ -1,6 +1,7 @@
 <script setup>
 import BaixarPdf from './BaixarPdf.vue';
 import { useRouter } from 'vue-router';
+import BotaoSalvar from './BotaoSalvar.vue';
 
 const router = useRouter();
 
@@ -47,14 +48,17 @@ const props = defineProps({
                 </p>
 
             </div>
+            <p class="descricao">
+                {{ descricao }}
+            </p>
         </div>
 
     <div class="baixo">
-        <p class="descricao">
-        {{ descricao }}
-    </p>
-
+        
         <BaixarPdf :pdf="pdf"/>
+
+        <BotaoSalvar/>
+
     </div>
 
         </div>
@@ -62,8 +66,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
-/* --- Estilos base (desktop) --- */
 
 .all {
     display: flex;
@@ -127,13 +129,17 @@ const props = defineProps({
 }
 
 .baixo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 0 2vw 0;
 }
 
 .descricao {
     max-width: 500px;
-    margin: 0 0 35px 0;
+    margin: 35px 0 0 0;
     text-align: justify;
+    font-family: 'Inter', sans-serif;
 }
 
 
@@ -150,7 +156,7 @@ const props = defineProps({
     }
 
     .voltar img {
-        width: 24px;
+        width: 36px;
     }
 
     .all {
