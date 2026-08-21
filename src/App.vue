@@ -5,7 +5,7 @@ import ProfileCard from './components/ProfileCard.vue'
 
 <template>
   <main>
-    <h1>Botão de Salvar</h1>
+   
 
     <div class="main-container">
     <ProfileCard />
