@@ -2,6 +2,7 @@
   <button
     class="heart-button"
     :class="{ 'is-active': isLiked }"
+    :size="aa"
     @click="toggleLike"
   >
     <svg
@@ -27,6 +28,11 @@ const isLiked = ref(false)
 const toggleLike = () => {
   isLiked.value = !isLiked.value
 }
+
+const size = () => {
+    return('aaaa')
+};
+
 </script>
 
 <style scoped>
@@ -54,4 +60,5 @@ const toggleLike = () => {
 .heart-button.is-active svg {
   fill: #e74c3c;
 }
+
 </style>

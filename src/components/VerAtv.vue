@@ -57,7 +57,7 @@ const props = defineProps({
         
         <BaixarPdf :pdf="pdf"/>
 
-        <BotaoSalvar/>
+        <BotaoSalvar style="width: 300px;"/>
 
     </div>
 
