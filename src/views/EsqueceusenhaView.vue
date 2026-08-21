@@ -1,58 +1,35 @@
 <template>
-  <div class="page-container">
-    <div class="brand-panel">
-      <h1>Bem vindo(a)<br>de volta!</h1>
-    </div>
-
     <div class="form-panel">
-      <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
+        <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
 
       <h2>Entrar com</h2>
 
-      <div class="card-box">
-        <button type="button" class="google-btn">
-          <svg class="google-icon" viewBox="0 0 24 24">
-            <image href="@/assets/img/google.png" width="24" height="24" />
-          </svg>
-          Google
-        </button>
-
-        <span class="divider">ou</span>
-
+  
         <form @submit.prevent="handleLogin">
+            <h2>Digite seu e-mail que enviaremos <br>
+                um link para definir uma nova senha.</h2>
           <div class="input-wrapper">
-            <span class="icon">👤</span>
+            <h2>E-mail</h2>
+            <img class="icon" src="@/assets/img/envelope.png" alt="E-Mail" />
             <input 
               v-model="emailOrUser" 
               type="text" 
-              placeholder="E-Mail/Nome do Usuário" 
+              placeholder="Digite seu e-mail" 
               required
             />
           </div>
 
-          <div class="input-wrapper">
-            <span class="icon">🔒</span>
-            <input 
-              v-model="password" 
-              type="password" 
-              placeholder="Senha" 
-              required
-            />
-          </div>
+         
+          <button type="submit" class="submit-btn">Enviar</button>
 
-          <button type="submit" class="submit-btn">Entrar</button>
+          <button type="submit" class="submit-btn">Reenviar</button>
         </form>
 
-        <a href="#" class="forgot-link"></a>
-        <RouterLink  to="/esqueceu-senha">Esqueceu a senha?</RouterLink>
+       
 
-        <p class="signup-text">
-          Ainda não tem uma conta? <br>
-          <router-link to="/cadastro">Cadastre-se</router-link>
-        </p>
       </div>
-    </div>
-  </div>
+
+ 
 </template>
 
 <script setup>
@@ -62,7 +39,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const emailOrUser = ref('')
-const password = ref('')
+
 
 const handleLogin = () => {
 
@@ -79,14 +56,6 @@ const goHome = () => {
 </script>
 
 <style scoped>
-.page-container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden;
-}
 
 
 .brand-panel {
@@ -157,34 +126,6 @@ const goHome = () => {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.google-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #fde8b3;
-  border: 1px solid #f9d584;
-  border-radius: 20px;
-  width: 75%;
-  padding: 8px 16px;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.google-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.divider {
-  margin: 14px 0;
-  color: #238b97;
-  font-weight: 800;
-  font-size: 0.95rem;
-}
 
 form {
   width: 100%;

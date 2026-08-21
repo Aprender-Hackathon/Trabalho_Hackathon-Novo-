@@ -52,6 +52,12 @@ const router = createRouter({
       name: 'cadastro',
       component: () => import('../views/CadastroView.vue'),
     },
+     {
+      path: '/esqueceu-senha',
+      name: 'esqueceu',
+      component: () => import('../views/EsqueceusenhaView.vue'),
+    },
+
 
   ],
 })
