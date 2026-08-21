@@ -2,7 +2,7 @@
 import BannerSection from '@/components/BannerSection.vue';
 import EducacaoSection from '@/components/EducacaoSection.vue';
 import ProcesoSection from '@/components/ProcesoSection.vue';
-import CategoriesSection from '../components/CategoriesSection.vue'
+import CategoriasSection from '@/components/CategoriasSection.vue';
 
 </script>
 
@@ -12,7 +12,7 @@ import CategoriesSection from '../components/CategoriesSection.vue'
     <BannerSection />
     <EducacaoSection/>
     <ProcesoSection />
-    <CategoriesSection />
+    <CategoriasSection />
 
   </div>
 </template>
