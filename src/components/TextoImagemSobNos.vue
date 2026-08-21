@@ -15,7 +15,7 @@
 
       <div class="image-container">
         
-        <img src="" alt="Nossa equipe" />
+        <img src="@/assets/fotogrupo.png" alt="Nossa equipe" />
       </div>
     </div>
   </section>
@@ -46,11 +46,11 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.5rem;
   color: #1a1a1a;
   font-family: sans-serif;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: justify;
 }
 
