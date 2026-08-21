@@ -1,14 +1,15 @@
 <script setup>
-import { RouterView } from 'vue-router';
-import TheFooter from './components/TheFooter.vue';
+import BotaoSalvar from './components/BotaoSalvar.vue'
 </script>
 
 <template>
-  <div>
-    <RouterView/>
-    <TheFooter/>
-  </div>
+  <main>
+    <h1>Botão de Salvar</h1>
+
+    <BotaoSalvar />
+  </main>
 </template>
+
 
 <style scoped>
 </style>
