@@ -65,10 +65,10 @@ href="#">
 
       
             <template v-else>
-              <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm rounded-pill fw-bold px-3">
+              <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm fw-bold px-3">
                 Entrar
               </RouterLink>
-              <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm rounded-pill fw-bold px-3">
+              <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm fw-bold px-3">
                 Cadastrar
               </RouterLink>
             </template>
