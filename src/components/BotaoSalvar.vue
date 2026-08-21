@@ -1,7 +1,11 @@
 <template>
   <button
     class="heart-button"
-    :class="{ 'is-active': isLiked }"
+    :class="[
+      `heart-button--${size}`,
+      `heart-button--${color}`,
+      { 'is-active': isLiked }
+    ]"
     :size="aa"
     @click="toggleLike"
   >
@@ -22,6 +26,22 @@
 
 <script setup>
 import { ref } from 'vue'
+
+// adicionando as propriedades de tamanho e cor
+defineProps({
+  size: {
+    type: String,
+    default: 'M',
+    validator: (value) => ['S', 'M', 'L'].includes(value)
+  },
+
+  color: {
+    type: String,
+    default: 'red',
+    validator: (value) =>
+      ['gray', 'red', 'black', 'blue'].includes(value)
+  }
+})
 
 const isLiked = ref(false)
 
@@ -59,6 +79,61 @@ const size = () => {
 
 .heart-button.is-active svg {
   fill: #e74c3c;
+}
+
+
+/*
+Tamanho aceito para adicionar no Botão
+Tamanhos: S = pequeno, M = médio e L = grande */
+
+.heart-button--S {
+  padding: 4px;
+}
+
+.heart-button--S svg {
+  width: 16px;
+  height: 16px;
+}
+
+.heart-button--M {
+  padding: 8px;
+}
+
+.heart-button--M svg {
+  width: 24px;
+  height: 24px;
+}
+
+.heart-button--L {
+  padding: 12px;
+}
+
+.heart-button--L svg {
+  width: 36px;
+  height: 36px;
+}
+
+/* Cores aplicadas quando o coração está ativo
+Serão aceita cores cinza, vermelho, preto e azul */
+
+.heart-button--gray.is-active {
+  color: gray;
+}
+
+.heart-button--red.is-active {
+  color: #e74c3c;
+}
+
+.heart-button--black.is-active {
+  color: #000000;
+}
+
+.heart-button--blue.is-active {
+  color: #3498db;
+}
+
+.heart-button.is-active svg {
+  fill: currentColor;
 }
 
 </style>
