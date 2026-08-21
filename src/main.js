@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
-import "@fontsource/bpmf-huninn" 
+import "@fontsource/baloo-2"
+ import "@fontsource/baloo-2/700.css"
 
 library.add(fab, fas)
 
