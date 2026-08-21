@@ -1,6 +1,6 @@
 <script setup>
 import BotaoSalvar from './components/BotaoSalvar.vue'
-import ProfileCard from './components/PerfilUsuario.vue/index.js'
+import ProfileCard from './components/PerfilUsuario.vue'
 </script>
 
 <template>
