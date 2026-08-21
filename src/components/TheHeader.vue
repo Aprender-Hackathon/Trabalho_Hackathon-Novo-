@@ -2,10 +2,8 @@
   <header class="custom-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid px-4 align-items-center">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#">
-          <img src="/src/assets/img/logo_aprender.png" alt="Logo Aprender+" class="logo-img" />
-          <span class="brand-text">Aprender+</span>
-        </a>
+        
+        <LogoSite />
 
         <button
           class="navbar-toggler"
@@ -22,33 +20,32 @@
         <div class="collapse navbar-collapse" id="headerNavbar">
           <ul class="navbar-nav mx-auto align-items-center gap-2 my-2 my-lg-0">
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
                 <img src="/src/assets/img/casa.png" alt="Início" class="nav-icon" />
-                <RouterLink to="/">Início</RouterLink >
+                <RouterLink to="/">Início</RouterLink>
               </a>
             </li>
 
             <li class="nav-item">
               <a
                 class="nav-link nav-link-highlight d-flex align-items-center gap-2 active"
-                href="#"
-              >
+href="#">
                 <img src="/src/assets/img/explorar.png" alt="Explorar" class="nav-icon" />
-                <RouterLink to="/explorar-pag">Explorar</RouterLink >
+                <RouterLink to="/explorar-pag">Explorar</RouterLink>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
                 <img src="/src/assets/img/atividade.png" alt="Atividades" class="nav-icon" />
-                <RouterLink to="/atividades-praticas" >Atividades Práticas</RouterLink >
+                <RouterLink to="/atividades-praticas">Atividades Práticas</RouterLink>
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
-                <RouterLink to="/sobre-nos">Sobre Nós</RouterLink >
+                <RouterLink to="/sobre-nos">Sobre Nós</RouterLink>
               </a>
             </li>
           </ul>
@@ -56,13 +53,27 @@
           <div
             class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0"
           >
-            <button class="btn-icon" aria-label="Favoritos" @click="salvo">
-              <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
-            </button>
-            <button class="btn-icon" aria-label="Perfil" @click="perfil">
-              <img src="/src/assets/img/pessoa.png" alt="Perfil" class="action-icon" />
-            </button>
+      
+            <template v-if="isLoggedIn">
+              <button class="btn-icon" aria-label="Favoritos" @click="salvo">
+                <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
+              </button>
+              <button class="btn-icon" aria-label="Perfil" @click="perfil">
+                <img src="/src/assets/img/pessoa.png" alt="Perfil" class="action-icon" />
+              </button>
+            </template>
+
+      
+            <template v-else>
+              <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm rounded-pill fw-bold px-3">
+                Entrar
+              </RouterLink>
+              <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm rounded-pill fw-bold px-3">
+                Cadastrar
+              </RouterLink>
+            </template>
           </div>
+
         </div>
       </div>
     </nav>
@@ -71,16 +82,28 @@
 
 <script setup>
 import router from '@/router';
+import { ref, onMounted } from 'vue';
+import LogoSite from '@/components/LogoSite.vue'; 
 
 const salvo = () => {
-  router.push('/salvo');
-  // Lógica para ir para a página de salvos
+  router.push('/salvo-pag');
 }
 
 const perfil = () => {
-  router.push('/usuario');
-  // Lógica para ir para a página de perfil
+  router.push('/usuario-pag');
 }
+
+const isLoggedIn = ref(false);
+
+const checkAuth = () => {
+  isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true';
+}
+
+onMounted(() => {
+  checkAuth();
+
+  window.addEventListener('storage', checkAuth);
+});
 </script>
 
 <style scoped>
@@ -107,12 +130,13 @@ const perfil = () => {
 
 .nav-link:hover {
   color: #e65261 !important;
+  border-radius: 50px;
 }
-a{
+
+a {
   color: rgb(73, 73, 73);
   text-decoration: none !important;
 }
-
 
 .nav-link-highlight:hover {
   background-color: #fde8ea;
@@ -152,4 +176,24 @@ a{
 }
 
 
+.btn-custom {
+  background-color: #e65261;
+  border-color: #c2858b;
+  color: white !important;
+}
+
+.btn-custom:hover {
+  background-color: #f8959f;
+  border-color: #ff7280;
+}
+
+.btn-outline-custom {
+  border-color: #e65261;
+  color: #ff7280 !important;
+}
+
+.btn-outline-custom:hover {
+  background-color: #f8959f;
+  color: white !important;
+}
 </style>

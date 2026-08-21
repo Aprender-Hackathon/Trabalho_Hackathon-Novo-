@@ -33,14 +33,24 @@ const router = createRouter({
       component: () => import('../views/SobrenosView.vue'),
     },
      {
-      path: '/salvo',
+      path: '/salvo-pag',
       name: 'salvo',
       component: () => import('../views/SalvosView.vue'),
     },
      {
-      path: '/usuario',
+      path: '/usuario-pag',
       name: 'usuario',
       component: () => import('../views/UsuarioView.vue'),
+    },
+     {
+      path: '/login-pag',
+      name: 'login',
+      component: () => import('../views/LoginView.vue'),
+    },
+     {
+      path: '/cadastro-pag',
+      name: 'cadastro',
+      component: () => import('../views/CadastroView.vue'),
     },
 
   ],
