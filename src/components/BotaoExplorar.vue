@@ -1,5 +1,7 @@
 <script setup>
 
+import BotaoSalvar from './BotaoSalvar.vue';  
+
 defineProps({
   materia: String,
   conteudo: String,
@@ -16,13 +18,14 @@ defineProps({
       class="imagem"
     >
     <div class="laranja">
+      <div class="linhaDeCima">
 <h2>{{ titulo || 'hgvcxz' }}</h2>
 
-
-      <div class="textos">
+<div class="botoes">
+  <BotaoSalvar />
+</div>
+</div>
         <span v-if="materia" class="materia">{{ materia }}</span>
-        <span v-if="conteudo" class="conteudo">{{ conteudo }}</span>
-      </div>
     </div>
 
   </div>
@@ -53,21 +56,22 @@ defineProps({
   background: #F5893C;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+justify-content: space-between;
   align-items: flex-start;
   padding: 12px 15px;
   box-sizing: border-box;
+}
+
+.linhaDeCima{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 h2 {
   color: #1a1a1a;
   font-size: 20px;
   margin: 0;
-}
-
-.textos {
-  display: flex;
-  gap: 10px;
 }
 
 .materia {
