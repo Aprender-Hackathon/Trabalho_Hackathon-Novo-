@@ -43,9 +43,12 @@ const materias = [
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Pinturas', 'Desenhos'],
-  'Ciências': ['Planta', 'Animais'],
+  'Artes': ['Artes Contemporâneas', 'Cores', 'Artes Visuais', 'Música' ],
+  'Biologia': ['Botânica', 'Divisão Celular', 'Evolução Natural', 'Seleção Natural', 'Fotossíntese', 'Genética', 'Membrana Plasmática'],
+  'Ciências': ['Estados da Água', 'Alimentação Saudável', 'Sistema Solar', 'Célula', 'Evolução', 'Higiene', 'Genética Básica', 'Matéria e Energia', 'Relações Ecológicas', 'Sistema Digestório', 'Sistema Respiratório', 'Sistema Circulatório'],
+  'Educação Física': ['Capacidades Físicas', 'Esporte de Presição'],
   'Geografia': ['Bandeiras', 'Cidades'],
+  'Espanhol': ['Vocabulário Básico', 'Cidades'],
   'História': ['Dia da bandeira', 'Dia da independência'],
   'Língua Inglesa': ['Números', 'Cores'],
   'Língua Portuguesa': [
