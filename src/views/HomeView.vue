@@ -34,12 +34,13 @@ const atividadesFiltradas = computed(() => {
 <AtividadesCards/>
   <div class="cards">
 
-   <BotaoExplorar
+<BotaoExplorar
   v-for="(item, index) in atividadesFiltradas"
   :key="index"
+  :titulo="item.titulo"
+  :imagem="item.imagem"
   :materia="item.materia"
   :conteudo="item.conteudo"
-  :titulo="item.titulo"
 />
 
   </div>
