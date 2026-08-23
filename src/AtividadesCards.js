@@ -1,10 +1,10 @@
 export const atividades = [
 
   {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
+    titulo: 'Ângulos',
+    imagem: '/atividade1.docx',
     materia: 'Matemática',
-    conteudo: 'Formas geométricas',
+    conteudo: 'Ângulos',
     descricao: 'pipipipopopo'
   },
     {

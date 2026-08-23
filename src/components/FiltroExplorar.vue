@@ -8,10 +8,8 @@
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
-          @click="materiaSelecionada = materia"
-        >
+ @click="selecionarMateria(materia)">
           {{ materia }}
-          <span v-if="materiaSelecionada === materia && materia !== 'Tudo'" class="close-icon">×</span>
         </button>
       </div>
     </div>
@@ -24,10 +22,8 @@
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
-          @click="conteudoSelecionado = conteudo"
-        >
+          @click="selecionarConteudo(conteudo)">
           {{ conteudo }}
-          <span v-if="conteudoSelecionado === conteudo && conteudo !== 'Tudo'" class="close-icon">×</span>
         </button>
       </div>
     </div>
@@ -36,6 +32,8 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+
+const emit = defineEmits(['filtro'])
 
 const materias = [
   'Tudo', 'Artes', 'Ciências', 'Geografia', 
@@ -89,6 +87,22 @@ const conteudosAtuais = computed(() => {
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = 'Tudo'
 })
+
+function selecionarMateria(materia) {
+  materiaSelecionada.value = materia
+  conteudoSelecionado.value = 'Tudo'
+  emit('filtro', { 
+    materia: materiaSelecionada.value, 
+    conteudo: conteudoSelecionado.value 
+  })
+}
+function selecionarConteudo(conteudo) {
+  conteudoSelecionado.value = conteudo
+  emit('filtro', {
+    materia: materiaSelecionada.value,
+    conteudo: conteudoSelecionado.value
+  })
+}
 </script>
 
 <style scoped>
