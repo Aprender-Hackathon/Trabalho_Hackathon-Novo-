@@ -839,6 +839,124 @@
   materia="Educação Física"
 />
   
+
+
+
+
+
+
+
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Estados da Água')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Alimentação Saudável')
+  "
+  materia="Ciências"
+/><BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Sistema Solar')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Célula')
+  "
+  materia="Ciências"
+/><BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Evolução')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Higiene')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Genética Básica')
+  "
+  materia="Ciências"
+/><BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Matéria e Energia')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Relações Ecológicas')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Sistema Digestório')
+  "
+  materia="Ciências"
+/><BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Sistema Respiratório')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Sistema Circulatório')
+  "
+  materia="Ciências"
+/>
+
+
+
+
+
+
+
+
+
+
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Célula')
+  "
+  materia="Ciências"
+/><BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Evolução')
+  "
+  materia="Ciências"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Higiene')
+  "
+  materia="Ciências"
+/>
+
   
   </div>
 
