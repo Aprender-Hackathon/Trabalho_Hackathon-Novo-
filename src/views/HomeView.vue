@@ -621,6 +621,34 @@
 /> 
 
 
+
+
+
+
+
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Sociologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Introdução à Sociologia')
+  "
+  materia="Sociologia"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Sociologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Poder Estado e política')
+  "
+  materia="Sociologia"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Sociologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Socialização e Instituições')
+  "
+  materia="Sociologia"
+/> 
+
+
   
   </div>
 
