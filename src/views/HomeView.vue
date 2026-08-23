@@ -523,6 +523,104 @@
 /> 
 
 
+
+
+
+
+
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Átomo e modelos atômicos')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Cinética química')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Eletroquímica')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Equilíbrio químico')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Estados físicos da matéria')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Funções inorgânicas')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Ligações químicas')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Misturas e separação')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Química orgânica')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Reações químicas')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Soluções e concentrados')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Tabela periódica')
+  "
+  materia="Química"
+/> 
+<BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Química') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Termoquímica')
+  "
+  materia="Química"
+/> 
+
+
   
   </div>
 
