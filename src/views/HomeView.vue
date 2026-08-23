@@ -938,25 +938,140 @@
 
   <BotaoExplorar
   v-if="
-    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
-    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Célula')
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Artes') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Artes Contemporâneas')
   "
-  materia="Ciências"
+  materia="Artes"
 /><BotaoExplorar
   v-if="
-    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
-    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Evolução')
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Artes') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Cores')
   "
-  materia="Ciências"
+  materia="Artes"
 />
   <BotaoExplorar
   v-if="
-    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Ciências') &&
-    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Higiene')
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Artes') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Artes Visuais')
   "
-  materia="Ciências"
+  materia="Artes"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Artes') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Música')
+  "
+  materia="Artes"
 />
 
+
+
+
+
+
+
+
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Eletrodinâmica')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Força de Atrito')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Eletrostática')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Gravidade')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Óptica Geométrica')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Termodinâmica')
+  "
+  materia="Física"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Física') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Cinemática')
+  "
+  materia="Física"
+/>
+
+
+
+
+
+
+
+
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Botânica')
+  "
+  materia="Biologia"
+/>
+  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Divisão Celular')
+  "
+  materia="Biologia"
+/>  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Evolução Natural')
+  "
+  materia="Biologia"
+/>  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Seleção Natural')
+  "
+  materia="Biologia"
+/>  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Fotossíntese')
+  "
+  materia="Biologia"
+/>  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Genética')
+  "
+  materia="Biologia"
+/>  <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Biologia') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Membrana Plasmática')
+  "
+  materia="Biologia"
+/>
   
   </div>
 
