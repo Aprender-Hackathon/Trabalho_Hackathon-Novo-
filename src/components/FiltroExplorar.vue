@@ -39,20 +39,38 @@ import { ref, computed, watch } from 'vue'
 
 const materias = [
   'Tudo', 'Artes', 'Ciências', 'Geografia', 
-  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática'
+  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática', 'Filosofia', 'Educação Física', 'Espanhol', 'Biologia', 'Física', 'Sociologia', 'Química'
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Pinturas', 'Desenhos'],
-  'Ciências': ['Planta', 'Animais'],
-  'Geografia': ['Bandeiras', 'Cidades'],
-  'História': ['Dia da bandeira', 'Dia da independência'],
+  'Artes': ['Artes Contemporâneas', 'Cores', 'Artes Visuais', 'Música' ],
+
+  'Física': ['Eletrodinâmica', 'Força de Atrito', 'Eletrostática', 'Gravidade', 'Óptica Geométrica', 'Termodinâmica', 'Cinemática'],
+
+  'Biologia': ['Botânica', 'Divisão Celular', 'Evolução Natural', 'Seleção Natural', 'Fotossíntese', 'Genética', 'Membrana Plasmática'],
+
+  'Ciências': ['Estados da Água', 'Alimentação Saudável', 'Sistema Solar', 'Célula', 'Evolução', 'Higiene', 'Genética Básica', 'Matéria e Energia', 'Relações Ecológicas', 'Sistema Digestório', 'Sistema Respiratório', 'Sistema Circulatório'],
+
+  'Educação Física': ['Capacidades Físicas', 'Esporte de Precisão'],
+
+  'Geografia': ['Espaço Rural', 'Globalização', 'Geopolítica', 'Paisagem', 'População', 'Relevo', 'Clima e Vegetação', 'Comercio Internacional', 'Industrialização','Urbanização', 'Matriz Energética', 'Meio Ambiente', 'Municipios e Estados'],
+
+  'Espanhol': ['Vocabulário Básico', 'Cidades'],
+
+  'Matemática': ['Adição', 'Análise combinatória', 'Ângulos', 'Área', 'Divisão', 'Equações do 1º grau', 'Estatística', 'Expressões algébricas', 'Fatoração', 'Frações', 'Função afim', 'Função exponencial', 'Função quadrática', 'Geometria analítica', 'Geometria espacial', 'Geometria plana', 'Inequações', 'Matemática financeira', 'Multiplicação', 'Números', 'Perímetro', 'Polinômios', 'Potenciação', 'Problemas matemáticos', 'Produtos notáveis', 'Progressão aritmética', 'Progressão geométrica', 'Radiciação', 'Razões e proporções', 'Regra de três', 'Sistema monetário', 'Sistemas de equações', 'Sólidos geométricos', 'Subtração', 'Teorema de Pitágoras', 'Tabelass e gráficos', 'Triângulos', 'Tempo e calendário'],
+
+  'Filosofia': ['Aristóteles', 'Platão', 'Sócrates', 'Mito e Razão', 'Ética', 'Política', 'Sofistas', 'Pré-socráticos'],
+
+  'História': ['Brasil Imperio', 'Colonização', 'Escravidão', 'Idade Média', 'Revolução Industrial', 'Revolução Francesa', 'Egito Antigo', 'Grécia Antiga', 'Família e comunidade', 'Independência do Brasil', 'Povos Indígenas', 'Proclamação da República', 'Redemocratização', 'Símbolos Nacionais'],
+
   'Língua Inglesa': ['Números', 'Cores'],
-  'Língua Portuguesa': [
-    'Alfabetização', 'Interpretação de Texto', 'Ortografia', 
-    'Produção de Texto', 'Leitura', 'Gramática', 'Gêneros Textuais', 'Vocabulário e Linguagem'
-  ],
-  'Matemática': ['Contas', 'Formas geométricas']
+
+  'Língua Portuguesa': ['Acentuação', 'Alfabetização', 'Coesão e coerência', 'Concordância', 'Contos e fábulas', 'Crônica', 'Frase, oração e período', 'Funções da linguagem', 'Gêneros', 'Leitura e interpretação', 'Orações coordenadas', 'Orações subordinadas', 'Período composto', 'Pontuação', 'Regência', 'Semântica', 'Sílabas', 'Sinônimos e antônimos', 'Substantivo e adjetivo', 'Variação linguística'], 
+
+  'Química': ['Átomo e modelos atômicos', 'Cinética química', 'Eletroquímica', 'Equilíbrio químico', 'Estados físicos da matéria', 'Funções inorgânicas', 'Ligações químicas', 'Misturas e separação', 'Química orgânica', 'Reações químicas', 'Soluções e concentrados', 'Tabela periódica', 'Termoquímica'],
+
+  'Sociologia': ['Introdução à Sociologia', 'Poder Estado e política', 'Socialização e Instituições']
+
 }
 
 const materiaSelecionada = ref('Língua Portuguesa')
@@ -87,6 +105,7 @@ watch(materiaSelecionada, () => {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  width: 100vw;
 }
 
 .label {
