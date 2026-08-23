@@ -1,6 +1,9 @@
 
 export const atividades = [
 
+//#region MATEMÁTICA (Gente coloquem isso no inicio e no final coloquem "//#endregion" isso vai deixar BEM mais organizado)
+
+//#region ADIÇÃO
   {
     titulo: 'Adição',
     imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
@@ -81,6 +84,9 @@ export const atividades = [
     conteudo: 'Adição',
     descricao: 'pipipipopopo'
   },
+//#endregion
+
+//#region ANÁLISE COMBINATÓRIA
 
     {
     titulo: 'Análise combinatória',
@@ -91,4 +97,97 @@ export const atividades = [
     descricao: 'pipipipopopo'
   },
 
+//#endregion 
+
+//#region ÂNGULOS
+
+//#endregion
+
+//#region ÁREA
+
+
+
+//#endregion
+
+//#region CONJUNTOS
+
+
+
+//#endregion
+
+//#region DETERMINANTES
+
+
+
+//#endregion
+
+//#region DIVISÃO
+
+
+
+//#endregion
+
+//#region EQUAÇÕES DO 1° GRAU
+
+
+
+//#endregion
+
+//#region EXPRESSÕES ALGÉBRICAS
+
+
+
+//#endregion
+
+//#region FATORAÇÃO
+
+
+
+//#endregion
+
+//#region FRAÇÃO
+
+
+
+//#endregion
+
+//#region FUNÇÃO AFIM
+
+
+
+//#endregion
+
+//#region JUROS SIMPLES
+
+
+
+//#endregion
+
+//#region MATEMÁTICA FINANCEIRA
+
+
+
+//#endregion
+
+//#region MATRIZES
+
+
+
+//#endregion
+
+//#region NÚMEROS
+
+
+
+//#endregion
+
+//#region PERIMETRO
+
+
+
+//#endregion
+
+//#endregion
+
+//Português
 ]
