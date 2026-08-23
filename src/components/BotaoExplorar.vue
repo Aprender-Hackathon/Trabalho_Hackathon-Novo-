@@ -40,6 +40,8 @@ defineProps({
   overflow: hidden;
   position: relative;
   background: white;
+  justify-content: center;
+  margin: 19px;
 }
 
 .imagem {
