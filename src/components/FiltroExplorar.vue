@@ -111,8 +111,10 @@ function selecionarConteudo(conteudo) {
   flex-direction: column;
   gap: 16px;
   background-color: #fdfbf7;
-  padding: 24px;
+  padding: 24px 70px;
   font-family: Arial, sans-serif;
+  justify-content: center
+
 }
 
 .filter-row {
