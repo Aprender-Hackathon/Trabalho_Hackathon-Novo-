@@ -39,7 +39,7 @@ import { ref, computed, watch } from 'vue'
 
 const materias = [
   'Tudo', 'Artes', 'Ciências', 'Geografia', 
-  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática', 'Filosofia', 'Educação Física', 'Espanhol', 'Biologia'
+  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática', 'Filosofia', 'Educação Física', 'Espanhol', 'Biologia', 'Física', 'Sociologia', 'Química'
 ]
 
 const conteudosPorMateria = {
@@ -57,9 +57,8 @@ const conteudosPorMateria = {
 
   'Espanhol': ['Vocabulário Básico', 'Cidades'],
 
+  'Matemática': ['Adição', 'Análise combinatória', 'Ângulos', 'Área', 'Divisão', 'Equações do 1º grau', 'Estatística', 'Expressões algébricas', 'Fatoração', 'Frações', 'Função afim', 'Função exponencial', 'Função quadrática', 'Geometria analítica', 'Geometria espacial', 'Geometria plana', 'Inequações', 'Matemática financeira', 'Multiplicação', 'Números decimais', 'Números inteiros', 'Números naturais', 'Números racionais', 'Perímetro', 'Polinômios', 'Potenciação', 'Problemas matemáticos', 'Produtos notáveis', 'Progressão aritmética', 'Progressão geométrica', 'Radiciação', 'Razões e proporções', 'Regra de três', 'Sistema monetário', 'Sistemas de equações', 'Sólidos geométricos', 'Subtração', 'Teorema de Pitágoras', 'Tabelass e gráficos', 'Triângulos', 'Tempo e calendário'],
   'Filosofia': ['Aristóteles', 'Platão', 'Sócrates', 'Mito e Razão', 'Ética', 'Política', 'Sofistas', 'Pre-socráticos'],
-
-  'Física': ['Eletrodinâmica', 'Força de Atrito', 'Eletrostática', 'Gravidade', 'Óptica Geométrica', 'Termodinâmica', 'Cinemática'],
 
   'História': ['Brasil Imperio', 'Colonização', 'Escravidão', 'Idade Média', 'Revolução Industrial', 'Revolução Francesa', 'Egito Antigo', 'Grécia Antiga', 'Familia e comunidade', 'Independência do Brasil', 'Povos Indígenas', 'Proclamação da República', 'Redemocratização','Simbolos Nacionais'],
 
@@ -67,9 +66,9 @@ const conteudosPorMateria = {
 
   'Língua Portuguesa': ['Acentuação', 'Alfabetização', 'Coesão e coerência', 'Concordância', 'Concordância nominal', 'Concordância verbal', 'Contos e fábulas', 'Crônica', 'Formação de palavras', 'Frase, oração e período', 'Funções da linguagem', 'Gêneros discursivos', 'Gêneros jornalísticos', 'Gêneros textuais', 'Leitura e interpretação', 'Orações coordenadas', 'Orações subordinadas', 'Período composto', 'Pontuação e sentido', 'Pontuação', 'Produção de frases', 'Produção de texto', 'Redação dissertativa', 'Regência básica', 'Regência', 'Semântica', 'Sílabas', 'Sinônimos e antônimos', 'Substantivo e adjetivo', 'Termos da oração', 'Variação linguística'], 
 
-  'Matemática': ['Adição', 'Análise combinatória', 'Ângulos', 'Área', 'Divisão', 'Equações do 1º grau', 'Estatística', 'Expressões algébricas', 'Fatoração', 'Frações', 'Função afim', 'Função exponencial', 'Função quadrática', 'Geometria analítica', 'Geometria espacial', 'Geometria plana', 'Inequações', 'Matemática financeira', 'Multiplicação', 'Números decimais', 'Números inteiros', 'Números naturais', 'Números racionais', 'Perímetro', 'Polinômios', 'Potenciação', 'Problemas matemáticos', 'Produtos notáveis', 'Progressão aritmética', 'Progressão geométrica', 'Radiciação', 'Razões e proporções', 'Regra de três', 'Sistema monetário', 'Sistemas de equações', 'Sólidos geométricos', 'Subtração', 'Teorema de Pitágoras', 'Tabelass e gráficos', 'Triângulos', 'Tempo e calendário'],
+  'Química': ['Átomo e modelos atômicos', 'Cinética química', 'Eletroquímica', 'Equilíbrio químico', 'Estados físicos da matéria', 'Funções inorgânicas', 'Ligações químicas', 'Misturas e separação', 'Química orgânica', 'Reações químicas', 'Soluções e concentrados', 'Tabela periódica', 'Termoquímica'],
 
-  'Química': ['Átomo e modelos atômicos', 'Cinética química', 'Eletroquímica', 'Equilíbrio químico', 'Estados físicos da matéria', 'Funções inorgânicas', 'Ligações químicas', 'Misturas e separação', 'Química orgânica', 'Reações químicas', 'Soluções e concentrados', 'Tabela periódica', 'Termoquímica']
+  'Sociologia': ['Introdução à Sociologia', 'Poder Estado e política', 'Socialização e Instituições']
 
 }
 
