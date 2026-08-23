@@ -2,7 +2,6 @@
 
 import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
-import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
 
 import TheHeader from './components/TheHeader.vue';
 </script>
@@ -14,7 +13,6 @@ import TheHeader from './components/TheHeader.vue';
       <RouterView/>
     </div>
     <TheFooter/>
-    <BotaoMaisResultados/>
   </div>
 </template>
 

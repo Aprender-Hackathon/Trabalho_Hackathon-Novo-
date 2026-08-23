@@ -27,5 +27,6 @@ Colocar atividades
   font-size: 17px;
   font-weight: bold;
   cursor: pointer;
+  margin: 0 auto;
 }
 </style>

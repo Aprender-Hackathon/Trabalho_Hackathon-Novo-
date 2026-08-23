@@ -177,7 +177,118 @@ export const atividades = [
 
 //#region NÚMEROS
 
-
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros1.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros2.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros3.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros4.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros5.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros6.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros7.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numeros8.jpeg',
+    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numero9.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero9.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numero10.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero10.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+        {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numero11.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero11.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+      {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Numeros/Numero12.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero12.pdf',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+        {
+    titulo: 'Adição',
+    imagem: '/SemImagem.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero13.docx',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
+        {
+    titulo: 'Adição',
+    imagem: '/SemImagem.png',
+    arquivo: '/atividades/Matematica/Numeros/Numero14.docx',
+    materia: 'Matemática',
+    conteudo: 'Números',
+    descricao: 'pipipipopopo'
+  },
 
 //#endregion
 
