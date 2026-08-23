@@ -1,8 +1,9 @@
 export const atividades = [
 
   {
-    titulo: 'Ângulos',
-    imagem: '/atividade1.docx',
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/atividadeAdicao1.png',
+    arquivo: '/atividadeAdicao1.pdf',
     materia: 'Matemática',
     conteudo: 'Ângulos',
     descricao: 'pipipipopopo'
