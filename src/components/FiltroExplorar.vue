@@ -65,7 +65,7 @@ const conteudosPorMateria = {
 
   'Língua Inglesa': ['Números', 'Cores'],
 
-  'Língua Portuguesa': ['Acentuação', 'Alfabetização', 'Coesão e coerência', 'Concordância', 'Concordância nominal', 'Concordância verbal', 'Contos e fábulas', 'Crônica', 'Formação de palavras', 'Frase, oração e período', 'Funções da linguagem', 'Gêneros discursivos', 'Gêneros jornalísticos', 'Gêneros textuais', 'Leitura e interpretação', 'Orações coordenadas', 'Orações subordinadas', 'Período composto', 'Pontuação e sentido', 'Pontuação', 'Produção de frases', 'Produção de texto', 'Redação dissertativa', 'Regência básica', 'Regência', 'Semântica', 'Sílabas', 'Sinônimos e antônimos', 'Substantivo e adjetivo', 'Termos da oração', 'Variação linguística'], 
+  'Língua Portuguesa': ['Acentuação', 'Alfabetização', 'Coesão e coerência', 'Concordância', 'Contos e fábulas', 'Crônica', 'Frase, oração e período', 'Funções da linguagem', 'Gêneros', 'Leitura e interpretação', 'Orações coordenadas', 'Orações subordinadas', 'Período composto', 'Pontuação', 'Regência', 'Semântica', 'Sílabas', 'Sinônimos e antônimos', 'Substantivo e adjetivo', 'Variação linguística'], 
 
   'Química': ['Átomo e modelos atômicos', 'Cinética química', 'Eletroquímica', 'Equilíbrio químico', 'Estados físicos da matéria', 'Funções inorgânicas', 'Ligações químicas', 'Misturas e separação', 'Química orgânica', 'Reações químicas', 'Soluções e concentrados', 'Tabela periódica', 'Termoquímica'],
 
