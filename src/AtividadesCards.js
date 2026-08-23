@@ -101,23 +101,81 @@ export const atividades = [
 
 //#region ÂNGULOS
 
+ {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Angulos/atividadeAngulo1.png',
+    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Ângulos',
+    descricao: 'pipipipopopo'
+  },
+   {
+    titulo: 'Análise combinatória',
+    imagem: '/SemImagem.png',
+    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.docx',
+    materia: 'Matemática',
+    conteudo: 'Ângulos',
+    descricao: 'pipipipopopo'
+  },
+     {
+    titulo: 'Análise combinatória',
+    imagem: '/SemImagem.png',
+    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo2.docx',
+    materia: 'Matemática',
+    conteudo: 'Ângulos',
+    descricao: 'pipipipopopo'
+  },
+  
+
 //#endregion
 
 //#region ÁREA
 
-
+   {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Area/atividadeArea1.png',
+    arquivo: '/atividades/Matematica/Area/atividadeArea1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Área',
+    descricao: 'pipipipopopo'
+  },
 
 //#endregion
 
-//#region CONJUNTOS
+//#region SUBTRAÇÃO
 
-
-
-//#endregion
-
-//#region DETERMINANTES
-
-
+   {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Subtracao/Subtração4.png',
+    arquivo: '/atividades/Matematica/Subtração/SemNada.pdf',
+    materia: 'Matemática',
+    conteudo: 'Subtração',
+    descricao: 'pipipipopopo'
+  },
+     {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Subtracao/Subtração1.jpeg',
+    arquivo: '/atividades/Matematica/SemNada.pdf',
+    materia: 'Matemática',
+    conteudo: 'Subtração',
+    descricao: 'pipipipopopo'
+  },
+     {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Subtracao/Subtração2.jpeg',
+    arquivo: '/atividades/Matematica/SemNada.pdf',
+    materia: 'Matemática',
+    conteudo: 'Subtração',
+    descricao: 'pipipipopopo'
+  },
+     {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Subtracao/Subtração3.jpeg',
+    arquivo: '/atividades/Matematica/SemNada.pdf',
+    materia: 'Matemática',
+    conteudo: 'Subtração',
+    descricao: 'pipipipopopo'
+  },
 
 //#endregion
 
