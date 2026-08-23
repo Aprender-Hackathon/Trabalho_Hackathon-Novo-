@@ -3,7 +3,7 @@ export const atividades = [
 
   {
     titulo: 'Adição',
-    imagem: 'De manhã passar dar um jeito de passar as atividades pra pasta public',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
     arquivo: '/atividadeAdicao1.pdf',
     materia: 'Matemática',
     conteudo: 'Ângulos',
