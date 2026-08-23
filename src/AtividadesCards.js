@@ -6,7 +6,55 @@ export const atividades = [
     imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
     arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
     materia: 'Matemática',
-    conteudo: 'Ângulos',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/Soma1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
+    descricao: 'pipipipopopo'
+  },
+    {
+    titulo: 'Adição',
+    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Adição',
     descricao: 'pipipipopopo'
   },
 
@@ -15,57 +63,8 @@ export const atividades = [
     imagem: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.png',
     arquivo: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.pdf',
     materia: 'Matemática',
-    conteudo: 'Ângulos',
+    conteudo: 'Análise combinatória',
     descricao: 'pipipipopopo'
   },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-    {
-    titulo: 'Formas Geométricas',
-    imagem: '/imagem.png',
-    materia: 'Matemática',
-    conteudo: 'Formas geométricas',
-    descricao: 'pipipipopopo'
-  },
-  
+
 ]
