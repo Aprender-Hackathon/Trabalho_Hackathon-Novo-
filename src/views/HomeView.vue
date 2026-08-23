@@ -388,7 +388,33 @@
     (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Silabas')
   "
   materia="Língua Portuguesa"
+/>
+
+
+
+
+
+
+
+
+
+
+
+ <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Língua Inglesa') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Números')
+  "
+  materia="Língua Inglesa"
 /> 
+ <BotaoExplorar
+  v-if="
+    (filtroEscolhido.materia === 'Tudo' || filtroEscolhido.materia === 'Língua Inglesa') &&
+    (filtroEscolhido.conteudo === 'Tudo' || filtroEscolhido.conteudo === 'Cores')
+  "
+  materia="Língua Inglesa"
+/> 
+
   
   </div>
 
