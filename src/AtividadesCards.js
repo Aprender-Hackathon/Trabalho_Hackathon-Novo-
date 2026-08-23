@@ -4,7 +4,16 @@ export const atividades = [
   {
     titulo: 'Adição',
     imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
-    arquivo: '/atividadeAdicao1.pdf',
+    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+    materia: 'Matemática',
+    conteudo: 'Ângulos',
+    descricao: 'pipipipopopo'
+  },
+
+    {
+    titulo: 'Análise combinatória',
+    imagem: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.png',
+    arquivo: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.pdf',
     materia: 'Matemática',
     conteudo: 'Ângulos',
     descricao: 'pipipipopopo'
