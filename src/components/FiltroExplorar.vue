@@ -51,7 +51,7 @@ const conteudosPorMateria = {
 
   'Ciências': ['Estados da Água', 'Alimentação Saudável', 'Sistema Solar', 'Célula', 'Evolução', 'Higiene', 'Genética Básica', 'Matéria e Energia', 'Relações Ecológicas', 'Sistema Digestório', 'Sistema Respiratório', 'Sistema Circulatório'],
 
-  'Educação Física': ['Capacidades Físicas', 'Esporte de Presição'],
+  'Educação Física': ['Capacidades Físicas', 'Esporte de Precisão'],
 
   'Geografia': ['Espaço Rural', 'Globalização', 'Geopolítica', 'Paisagem', 'População', 'Relevo', 'Clima e Vegetação', 'Comercio Internacional', 'Industrialização','Urbanização', 'Matriz Energética', 'Meio Ambiente', 'Municipios e Estados'],
 
