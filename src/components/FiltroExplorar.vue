@@ -1,4 +1,5 @@
 <template>
+  
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Matéria(s):</span>
@@ -103,6 +104,8 @@ function selecionarConteudo(conteudo) {
     conteudo: conteudoSelecionado.value
   })
 }
+
+
 </script>
 
 <style scoped>
