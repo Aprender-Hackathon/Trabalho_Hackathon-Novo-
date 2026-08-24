@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
 import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
 
-import BotaoSalvar from './components/BotaoSalvar.vue';
+
 </script>
 
 <template>
