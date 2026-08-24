@@ -2,7 +2,7 @@
   <header class="custom-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid px-4 align-items-center">
-        
+
         <LogoSite />
 
         <button
@@ -20,40 +20,35 @@
         <div class="collapse navbar-collapse" id="headerNavbar">
           <ul class="navbar-nav mx-auto align-items-center gap-2 my-2 my-lg-0">
             <li class="nav-item">
-              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
+              <RouterLink to="/" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/casa.png" alt="Início" class="nav-icon" />
-                <RouterLink to="/">Início</RouterLink>
-              </a>
+                Início
+              </RouterLink>
             </li>
 
             <li class="nav-item">
-              <a
-                class="nav-link nav-link-highlight d-flex align-items-center gap-2 active"
-href="#">
+              <RouterLink to="/explorar-pag" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/explorar.png" alt="Explorar" class="nav-icon" />
-                <RouterLink to="/explorar-pag">Explorar</RouterLink>
-              </a>
+                Explorar
+              </RouterLink>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
+              <RouterLink to="/atividades-praticas" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/atividade.png" alt="Atividades" class="nav-icon" />
-                <RouterLink to="/atividades-praticas">Atividades Práticas</RouterLink>
-              </a>
+                Atividades Práticas
+              </RouterLink>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link nav-link-highlight d-flex align-items-center gap-2 active" href="#">
+              <RouterLink to="/sobre-nos" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
-                <RouterLink to="/sobre-nos">Sobre Nós</RouterLink>
-              </a>
+                Sobre Nós
+              </RouterLink>
             </li>
           </ul>
 
-          <div
-            class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0"
-          >
-      
+          <div class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0">
             <template v-if="isLoggedIn">
               <button class="btn-icon" aria-label="Favoritos" @click="salvo">
                 <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
@@ -63,7 +58,6 @@ href="#">
               </button>
             </template>
 
-      
             <template v-else>
               <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm fw-bold px-3">
                 Entrar
@@ -81,29 +75,33 @@ href="#">
 </template>
 
 <script setup>
-import router from '@/router';
-import { ref, onMounted } from 'vue';
-import LogoSite from '@/components/LogoSite.vue'; 
+import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
+import LogoSite from '@/components/LogoSite.vue'
+
+const router = useRouter()
 
 const salvo = () => {
-  router.push('/salvo-pag');
+  router.push('/salvos')
 }
 
 const perfil = () => {
-  router.push('/usuario-pag');
+  router.push('/usuario-pag')
 }
 
-const isLoggedIn = ref(false);
+const isLoggedIn = ref(true)
 
 const checkAuth = () => {
-  isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true';
+  const storedAuth = localStorage.getItem('isLoggedIn')
+  if (storedAuth !== null) {
+    isLoggedIn.value = storedAuth === 'true'
+  }
 }
 
 onMounted(() => {
-  checkAuth();
-
-  window.addEventListener('storage', checkAuth);
-});
+  checkAuth()
+  window.addEventListener('storage', checkAuth)
+})
 </script>
 
 <style scoped>
@@ -111,12 +109,6 @@ onMounted(() => {
   background-color: #fdfbf7;
   border-bottom: 1px solid #f0eae1;
   padding: 0.4rem 0;
-}
-
-.brand-text {
-  color: #333333;
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .nav-link {
@@ -131,11 +123,6 @@ onMounted(() => {
 .nav-link:hover {
   color: #e65261 !important;
   border-radius: 50px;
-}
-
-a {
-  color: rgb(73, 73, 73);
-  text-decoration: none !important;
 }
 
 .nav-link-highlight:hover {
@@ -157,24 +144,12 @@ a {
   transform: scale(1.1);
 }
 
-.logo-img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-
-.nav-icon {
-  width: 30px !important;
-  height: 30px !important;
-  object-fit: contain;
-}
-
+.nav-icon,
 .action-icon {
   width: 30px !important;
   height: 30px !important;
   object-fit: contain;
 }
-
 
 .btn-custom {
   background-color: #e65261;
