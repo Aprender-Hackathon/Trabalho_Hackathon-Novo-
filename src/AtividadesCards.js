@@ -742,11 +742,13 @@ export const atividades = [
 
 //#region ISOMERIA
 
+//#region Geografia
+
          {
     titulo: 'Adição',
     imagem: 'SemImagem.png',
     arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo6.docx',
-    materia: 'Química',
+    materia: 'Geografia',
     conteudo: 'Átomo e modelos atômicos',
     descricao: 'pipipipopopo'
   },
