@@ -21,9 +21,23 @@ const router = createRouter({
       component: () => import('../views/ExplorarView.vue'),
     },
     {
+      path: '/explorar',
+      redirect: '/explorar-pag', // Corrige o aviso de rota não encontrada para /explorar e categorias
+    },
+    {
       path: '/about',
       name: 'About',
       component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/sobre-nos',
+      name: 'sobreNos',
+      component: () => import('../views/AboutView.vue'),
+    },
+    {
+      path: '/atividades-praticas',
+      name: 'atividadesPraticas',
+      component: () => import('../views/AtividadepraView.vue'),
     },
     {
       path: '/usuario-pag',
@@ -50,6 +64,10 @@ const router = createRouter({
       name: 'salvos',
       component: () => import('../views/SalvosView.vue'),
     },
+    {
+      path: '/salvo-pag',
+      redirect: '/salvos'
+    }
   ],
 })
 

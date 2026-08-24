@@ -1,13 +1,42 @@
-<template>
-<<<<<<< HEAD
-  <div class="profile-container">
-    <h2>Minha Conta</h2>
-    
+<script setup>
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-    <button class="logout-btn" @click="handleLogout">
-      Sair da Conta
-    </button>
-=======
+const router = useRouter()
+
+const user = reactive({
+  name: '',
+  email: '',
+})
+
+const activeField = ref(null)
+const tempValue = ref('')
+
+const openModal = (field) => {
+  activeField.value = field
+  tempValue.value = user[field]
+}
+
+const closeModal = () => {
+  activeField.value = null
+  tempValue.value = ''
+}
+
+const saveModal = () => {
+  if (activeField.value) {
+    user[activeField.value] = tempValue.value
+  }
+  closeModal()
+}
+
+const handleLogout = () => {
+  localStorage.removeItem('isLoggedIn')
+  window.dispatchEvent(new Event('storage'))
+  router.push('/')
+}
+</script>
+
+<template>
   <div class="full-screen-container">
     <div class="profile-card">
       <div class="avatar-container">
@@ -61,86 +90,10 @@
         </div>
       </div>
     </div>
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
   </div>
 </template>
 
-<script setup>
-<<<<<<< HEAD
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const handleLogout = () => {
-
-  localStorage.removeItem('isLoggedIn')
-
-  window.dispatchEvent(new Event('storage'))
-
-  router.push('/')
-=======
-import { reactive, ref } from 'vue'
-
-const user = reactive({
-  name: '',
-  email: '',
-})
-
-const activeField = ref(null)
-const tempValue = ref('')
-
-const openModal = (field) => {
-  activeField.value = field
-  tempValue.value = user[field]
-}
-
-const closeModal = () => {
-  activeField.value = null
-  tempValue.value = ''
-}
-
-const saveModal = () => {
-  if (activeField.value) {
-    user[activeField.value] = tempValue.value
-  }
-  closeModal()
-}
-
-const handleLogout = () => {
-  alert('Sessão encerrada!')
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
-}
-</script>
-
 <style scoped>
-<<<<<<< HEAD
-.profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 60vh;
-  gap: 20px;
-}
-
-.logout-btn {
-  background-color: #e65252;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 24px;
-  font-weight: bold;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.logout-btn:hover {
-  background-color: #c93b3b;
-  transform: scale(1.03);
-}
-</style>
-=======
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -148,7 +101,6 @@ const handleLogout = () => {
 .full-screen-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #faf7f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,7 +282,6 @@ const handleLogout = () => {
   justify-content: flex-end;
 }
 
-/* Breakpoints para telas menores */
 @media (max-width: 768px) {
   .profile-card {
     flex-direction: column;
@@ -372,4 +323,3 @@ const handleLogout = () => {
   }
 }
 </style>
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
