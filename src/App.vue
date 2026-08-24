@@ -1,15 +1,13 @@
 <script setup>
-
 import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
 import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
 
-import TheHeader from './components/TheHeader.vue';
+import BotaoSalvar from './components/BotaoSalvar.vue';
 </script>
 
 <template>
   <div>
-    <TheHeader/>
     <div class="conteudo">
       <RouterView/>
     </div>
