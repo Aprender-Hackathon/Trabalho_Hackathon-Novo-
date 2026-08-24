@@ -30,7 +30,8 @@ const atividadesFiltradas = computed(() => {
 </script>
 
 <template>
-  <BotaoPesquisa/>
+  <div>
+    <BotaoPesquisa/>
   <FiltroExplorar @filtro="filtroEscolhido = $event" />
   <div class="cards">
     <BotaoExplorar
@@ -50,6 +51,7 @@ const atividadesFiltradas = computed(() => {
     <CategoriasSection />
     <ExplorarView/>
     <FaixaSobreNos/>
+  </div>
   </div>
 </template>
 
