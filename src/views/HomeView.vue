@@ -54,7 +54,8 @@ function alternarSalvar(id) {
     <EducacaoSection />
     <ProcesoSection />
     <CategoriasSection />
-    <FaixaSobreNos />
+    <ExplorarView/>
+    <FaixaSobreNos/>
   </div>
 </template>
 
