@@ -48,27 +48,28 @@ const props = defineProps({
       <div class="baixo">
         <BaixarPdf :pdf="pdf" />
 
-        <BotaoSalvar style="width: 300px" />
-        <!-- segue o modelo de como seria o botão com tamanho de propriedade e cores-->
+        <BotaoSalvar size="L" class="computador" />
 
-        <BotaoSalvar size="S" color="gray" />
-        <BotaoSalvar size="M" color="red" />
-        <BotaoSalvar size="L" color="blue" />
-        <BotaoSalvar size="L" color="black" />
+        <BotaoSalvar size="M" class="celular" /> 
+
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.celular {
+  display: none;
+}
 .all {
   display: flex;
   align-items: stretch;
-  gap: 5vw;
+  gap: 3vw;
 
+  position: relative;
   width: 75%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 2vw auto;
   padding: 2.5vw;
 
   border: #d1495b solid 5px;
@@ -78,11 +79,9 @@ const props = defineProps({
 .voltar {
   border: none;
   background: none;
-  position: absolute;
-  top: 20px;
-  left: 20px;
   cursor: pointer;
-  z-index: 20;
+  align-self: flex-start;
+  text-align: left; 
 }
 
 .image {
@@ -127,6 +126,7 @@ const props = defineProps({
   justify-content: space-between;
   align-items: center;
   margin: 0 0 2vw 0;
+  max-width: 500px;
 }
 
 .descricao {
@@ -141,6 +141,19 @@ const props = defineProps({
 }
 
 @media (max-width: 600px) {
+
+.baixo button {
+  padding: 0;
+}
+
+.computador{
+  display: none;
+}
+
+.celular{
+  display: block;
+}
+
   .voltar {
     top: 10px;
     left: 10px;
@@ -155,7 +168,7 @@ const props = defineProps({
     flex-direction: column;
     gap: 20px;
     padding: 25px 20px;
-    margin: 50px auto 0;
+    margin: 15px auto 35px auto;
   }
 
   .image {
@@ -167,6 +180,7 @@ const props = defineProps({
   .lado {
     width: 100%;
     align-items: center;
+    justify-content: center;
   }
   .lado h3 {
     font-size: clamp(24px, 8vw, 32px);
@@ -191,7 +205,7 @@ const props = defineProps({
   .baixo {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 0;
@@ -202,8 +216,8 @@ const props = defineProps({
     max-width: 100%;
     font-size: 16px;
     text-align: justify;
-    margin-bottom: 20px;
     padding: 0 5px;
+    margin: 20px auto 20px;
   }
 }
 </style>

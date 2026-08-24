@@ -31,6 +31,10 @@ a {
     transition: transform 0.1s ease;
 }
 
+a:hover {
+  transform: scale(1.05);
+}
+
 a:active {
     transform: scale(1.08);
 }
@@ -39,7 +43,7 @@ a:active {
     a {
         width: 100%;
         box-sizing: border-box;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }
 </style>

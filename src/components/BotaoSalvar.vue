@@ -3,10 +3,9 @@
     class="heart-button"
     :class="[
       `heart-button--${size}`,
-      `heart-button--${color}`,
+      /*`heart-button--${color}`,*/
       { 'is-active': isLiked }
     ]"
-    :size="aa"
     @click="toggleLike"
   >
     <svg
@@ -33,14 +32,14 @@ defineProps({
     type: String,
     default: 'M',
     validator: (value) => ['S', 'M', 'L'].includes(value)
-  },
+  } /*,
 
   color: {
     type: String,
     default: 'red',
     validator: (value) =>
       ['gray', 'red', 'black', 'blue'].includes(value)
-  }
+  } */
 })
 
 const isLiked = ref(false)
@@ -48,10 +47,6 @@ const isLiked = ref(false)
 const toggleLike = () => {
   isLiked.value = !isLiked.value
 }
-
-const size = () => {
-    return('aaaa')
-};
 
 </script>
 
@@ -67,10 +62,10 @@ const size = () => {
 }
 
 .heart-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .heart-button:active{
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .heart-button.is-active {
@@ -87,34 +82,34 @@ Tamanho aceito para adicionar no Botão
 Tamanhos: S = pequeno, M = médio e L = grande */
 
 .heart-button--S {
-  padding: 4px;
-}
-
-.heart-button--S svg {
-  width: 16px;
-  height: 16px;
-}
-
-.heart-button--M {
   padding: 8px;
 }
 
-.heart-button--M svg {
+.heart-button--S svg {
   width: 24px;
   height: 24px;
 }
 
-.heart-button--L {
+.heart-button--M {
   padding: 12px;
 }
 
-.heart-button--L svg {
+.heart-button--M svg {
   width: 36px;
   height: 36px;
 }
 
+.heart-button--L {
+  padding: 16px;
+}
+
+.heart-button--L svg {
+  width: 48px;
+  height: 48px;
+}
+
 /* Cores aplicadas quando o coração está ativo
-Serão aceita cores cinza, vermelho, preto e azul */
+Serão aceita cores cinza, vermelho, preto e azul 
 
 .heart-button--gray.is-active {
   color: gray;
@@ -134,6 +129,6 @@ Serão aceita cores cinza, vermelho, preto e azul */
 
 .heart-button.is-active svg {
   fill: currentColor;
-}
+} */
 
 </style>
