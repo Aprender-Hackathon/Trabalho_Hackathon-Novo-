@@ -13,9 +13,6 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "bootstrap": "^5.3.8",
-=======
     "@fontsource/baloo-2": "^5.3.0",
     "@fontsource/bpmf-huninn": "^5.3.0",
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
@@ -23,8 +20,8 @@
     "@fortawesome/free-regular-svg-icons": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/vue-fontawesome": "^3.3.3",
+    "bootstrap": "^5.3.8",
     "docx-preview": "^0.4.0",
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
     "vue": "rc",
     "vue-router": "^5.2.0"
   },
@@ -37,11 +34,7 @@
     "eslint-plugin-vue": "~10.9.2",
     "globals": "^17.7.0",
     "npm-run-all2": "^9.0.2",
-<<<<<<< HEAD
-    "oxlint": "~1.73.0",
-=======
     "oxlint": "^1.79.0",
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
     "prettier": "3.9.5",
     "vite": "^8.1.5",
     "vite-plugin-vue-devtools": "^8.1.5",
