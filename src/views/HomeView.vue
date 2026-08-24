@@ -4,7 +4,6 @@ import EducacaoSection from '@/components/EducacaoSection.vue'
 import ProcesoSection from '@/components/ProcesoSection.vue'
 import CategoriasSection from '@/components/CategoriasSection.vue'
 import FaixaSobreNos from '@/components/FaixaSobreNos.vue'
-import perfilUsuario from '@/components/PerfilUsuario.vue'
 import { ref, computed } from 'vue'
 
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
@@ -41,7 +40,7 @@ const atividadesFiltradas = computed(() => {
     />
   </div>
   <div>
-    <perfilUsuario />
+    
     <BannerSection />
     <EducacaoSection />
     <ProcesoSection />
