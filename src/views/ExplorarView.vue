@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+<template setup>
+    <h1>oiii explorar</h1>
+    </template>
+=======
 <script setup>
 
 import { ref, computed, watch } from 'vue'
@@ -61,3 +66,4 @@ const atividadesFiltradas = computed(() => {
 }
 
 </style>
+>>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
