@@ -1,18 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-import ExplorarView from '@/views/ExplorarView.vue';
 
-const mais = ref(false)
+defineEmits(['carregar'])
+
 </script>    
 <template>
   <div>
-    <button class="MaisResultados" @click="mais = !mais">
+    <button class="MaisResultados" @click="$emit('carregar')" >
       <span>Mais Resultados </span>
       <img src="/seta.png" />
     </button>
-    <div v-if="mais" class="aparecerMaisAtividades">
-<ExplorarView/>
-    </div>
   </div>
 </template>
 

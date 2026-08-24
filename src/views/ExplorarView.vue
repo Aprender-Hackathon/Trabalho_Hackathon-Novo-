@@ -1,6 +1,8 @@
 <script setup>
 
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
+
+const limite = ref(20)
 
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
@@ -11,6 +13,10 @@ const filtroEscolhido = ref({
   materia: 'Tudo',
   conteudo: 'Tudo'
 })
+
+watch(filtroEscolhido, () => {
+  limite.value = 20
+}, { deep: true })
 
 const atividadesFiltradas = computed(() => {
   return atividades.filter(item => {
@@ -27,11 +33,11 @@ const atividadesFiltradas = computed(() => {
   <FiltroExplorar
     @filtro="filtroEscolhido = $event"
   />
-<AtividadesCards/>
+
   <div class="cards">
 
 <BotaoExplorar
-  v-for="(item, index) in atividadesFiltradas"
+  v-for="(item, index) in atividadesFiltradas.slice(0, limite)"
   :key="index"
   :titulo="item.titulo"
   :imagem="item.imagem"
@@ -39,7 +45,10 @@ const atividadesFiltradas = computed(() => {
   :conteudo="item.conteudo"
 />
 </div>
-<BotaoMaisResultados/>
+<BotaoMaisResultados 
+      v-if="atividadesFiltradas.length > limite" 
+      @carregar="limite += 20" 
+    />
 </template>
 
 

@@ -754,3 +754,4 @@ export const atividades = [
 //#endregion
 
 ]
+export default atividades;
