@@ -28,29 +28,35 @@ const atividadesFiltradas = computed(() => {
 
 <template>
 
-  <FiltroExplorar
-    @filtro="filtroEscolhido = $event"
-  />
-<AtividadesCards/>
-  <div class="cards">
-
-<BotaoExplorar
-  v-for="(item, index) in atividadesFiltradas"
-  :key="index"
-  :titulo="item.titulo"
-  :imagem="item.imagem"
-  :materia="item.materia"
-  :conteudo="item.conteudo"
-/>
-
-  </div>
   <div>
 
-    <BannerSection />
-    <EducacaoSection/>
-    <ProcesoSection />
-    <CategoriasSection />
-    <FaixaSobreNos/>
+    <FiltroExplorar
+        @filtro="filtroEscolhido = $event"
+    />
+    <AtividadesCards/>
+    <div class="cards">
+
+        <BotaoExplorar
+        v-for="(item, index) in atividadesFiltradas"
+        :key="index"
+        :titulo="item.titulo"
+        :imagem="item.imagem"
+        :materia="item.materia"
+        :conteudo="item.conteudo"
+        />
+
+    </div>
+  
+    <div>
+
+        <BannerSection />
+        <EducacaoSection/>
+        <ProcesoSection />
+        <CategoriasSection />
+        <FaixaSobreNos/>
+
+    </div>
+
   </div>
 
 </template>
