@@ -1,16 +1,12 @@
 <template>
   <div class="full-screen-container">
-    <!-- Card Principal -->
     <div class="profile-card">
-      <!-- Imagem de Perfil Importada de src/assets/user.png -->
       <div class="avatar-container">
         <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
       </div>
 
-      <!-- Informações do Usuário -->
       <div class="info-container">
         <div class="fields-group">
-          <!-- Campo Nome -->
           <div class="info-field">
             <span>{{ user.name || 'Informe seu nome' }}</span>
             <button class="icon-btn" type="button" title="Editar nome" @click="openModal('name')">
@@ -18,23 +14,25 @@
             </button>
           </div>
 
-          <!-- Campo E-mail -->
           <div class="info-field">
             <span>{{ user.email || 'Informe seu e-mail' }}</span>
-            <button class="icon-btn" type="button" title="Editar e-mail" @click="openModal('email')">
+            <button
+              class="icon-btn"
+              type="button"
+              title="Editar e-mail"
+              @click="openModal('email')"
+            >
               <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
             </button>
           </div>
         </div>
 
-        <!-- Botão Sair Fixo -->
         <div class="actions">
           <button class="pink-btn" type="button" @click="handleLogout">Sair</button>
         </div>
       </div>
     </div>
 
-    <!-- Modal Pop-up para Edição -->
     <div v-if="activeField" class="modal-overlay" @click.self="closeModal">
       <div class="modal-card">
         <div class="modal-header">
@@ -46,12 +44,7 @@
           <label class="input-label">
             Novo {{ activeField === 'name' ? 'nome' : 'e-mail' }} <span class="required">*</span>
           </label>
-          <input
-            v-model="tempValue"
-            class="modal-input"
-            @keyup.enter="saveModal"
-            autofocus
-          />
+          <input v-model="tempValue" class="modal-input" @keyup.enter="saveModal" autofocus />
         </div>
 
         <div class="modal-footer">
@@ -65,10 +58,9 @@
 <script setup>
 import { reactive, ref } from 'vue'
 
-/* Dados do usuário limpos sem nomes fakes */
 const user = reactive({
   name: '',
-  email: ''
+  email: '',
 })
 
 const activeField = ref(null)
@@ -97,19 +89,21 @@ const handleLogout = () => {
 </script>
 
 <style scoped>
-/* Container Tela Cheia */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .full-screen-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-color: #faf7f2;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  box-sizing: border-box;
+  padding: 20px;
 }
 
-/* Card Principal */
 .profile-card {
   display: flex;
   align-items: center;
@@ -118,12 +112,11 @@ const handleLogout = () => {
   max-width: 700px;
   padding: 30px;
   font-family: sans-serif;
-  box-sizing: border-box;
 }
 
 .avatar-container {
-  width: 290px;
-  height: 270px;
+  width: 260px;
+  height: 260px;
   flex-shrink: 0;
 }
 
@@ -139,12 +132,14 @@ const handleLogout = () => {
   flex-direction: column;
   gap: 28px;
   flex-grow: 1;
+  width: 100%;
 }
 
 .fields-group {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
 }
 
 .info-field {
@@ -158,6 +153,7 @@ const handleLogout = () => {
   font-size: 1.15rem;
   color: #000;
   user-select: none;
+  word-break: break-word;
 }
 
 .icon-btn {
@@ -167,6 +163,7 @@ const handleLogout = () => {
   padding: 0 0 0 12px;
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .pencil-icon {
@@ -179,7 +176,6 @@ const handleLogout = () => {
   display: flex;
   justify-content: flex-end;
 }
-
 
 .pink-btn {
   background-color: #e38b93;
@@ -199,7 +195,6 @@ const handleLogout = () => {
   filter: brightness(0.95);
 }
 
-
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -211,11 +206,12 @@ const handleLogout = () => {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 16px;
 }
 
 .modal-card {
   background-color: #ffffff;
-  width: 90%;
+  width: 100%;
   max-width: 440px;
   border-radius: 12px;
   padding: 24px;
@@ -224,7 +220,6 @@ const handleLogout = () => {
   flex-direction: column;
   gap: 16px;
   font-family: sans-serif;
-  box-sizing: border-box;
 }
 
 .modal-header {
@@ -272,7 +267,6 @@ const handleLogout = () => {
   border-radius: 8px;
   font-size: 1rem;
   outline: none;
-  box-sizing: border-box;
 }
 
 .modal-input:focus {
@@ -282,5 +276,47 @@ const handleLogout = () => {
 .modal-footer {
   display: flex;
   justify-content: flex-end;
+}
+
+/* Breakpoints para telas menores */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 10px;
+  }
+
+  .avatar-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .pink-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .full-screen-container {
+    padding: 12px;
+  }
+
+  .avatar-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .info-field {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+
+  .modal-card {
+    padding: 20px;
+  }
 }
 </style>
