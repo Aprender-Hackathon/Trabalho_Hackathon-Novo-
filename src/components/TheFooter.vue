@@ -58,6 +58,7 @@ footer {
 p{
     font-family: 'Inter', sans-serif;
     font-weight: bold;
+    cursor: default;
 }
 
 .up{
@@ -76,6 +77,7 @@ h2{
     justify-content: center;
     align-items: center;
     gap: 2vw;
+    cursor: default;
 }
 
 @media (max-width: 600px) {
