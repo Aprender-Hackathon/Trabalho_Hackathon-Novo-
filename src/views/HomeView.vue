@@ -1,4 +1,6 @@
 <script setup>
+import BotaoPesquisa from '@/components/BotaoPesquisa.vue';
+
 import BannerSection from '@/components/BannerSection.vue';
 import EducacaoSection from '@/components/EducacaoSection.vue';
 import ProcesoSection from '@/components/ProcesoSection.vue';
@@ -29,10 +31,10 @@ const atividadesFiltradas = computed(() => {
 <template>
 
   <div>
+    <BotaoPesquisa/>
     <FiltroExplorar
         @filtro="filtroEscolhido = $event"
     />
-    <AtividadesCards/>
     <div class="cards">
 
         <BotaoExplorar

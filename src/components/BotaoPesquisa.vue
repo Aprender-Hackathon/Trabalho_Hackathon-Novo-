@@ -1,16 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { atividades } from '@/AtividadesCards.js'
+import BotaoExplorar from './BotaoExplorar.vue'
 
-const atividades = ref([
-    {id: 1, nome_atv: "Dominó", materia: "ciências", conteudo: "rochas", salvamento: true},
-    {id: 2, nome_atv: "Cartas", materia: "geografia", conteudo: "lua", salvamento: false},
-    {id: 3, nome_atv: "Caça-palavras", materia: "história", conteudo: "iluminismo", salvamento: true},
-    {id: 4, nome_atv: "Quebra-cabeça",  materia: "matemática", conteudo: "frações", salvamento: false},
-    {id: 5, nome_atv: "Jogo da Memória", materia: "português", conteudo: "sinônimos", salvamento: true},
-    {id: 6, nome_atv: "Palavras Cruzadas", materia: "inglês", conteudo: "animais", salvamento: false}
-]
-
-)
+const activities = ref(atividades)
 const filtro = ref('')
 const pesquisado = ref(false)
 const texto_confirmado = ref('')
@@ -19,40 +12,31 @@ function normaliza(texto){
      return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 }
 
-
-
 const sugestao = computed(() => {
     const texto = normaliza(filtro.value)
-
-    if (!texto) return[]
+    if (!texto) return []
 
     const encontrados = new Set()
 
-    atividades.value.forEach(item => {
-        const campos = [
-            item.nome_atv, item.materia, item.conteudo
-        ]
+    activities.value.forEach(item => {
+        const campos = [item.titulo, item.materia, item.conteudo]
 
-            campos.forEach(campo => {
-
-                if (normaliza(campo).includes(texto)) {
-                    encontrados.add(campo)
-                }
-            })
+        campos.forEach(campo => {
+            if (normaliza(campo).includes(texto)) {
+                encontrados.add(campo)
+            }
         })
+    })
 
     return Array.from(encontrados)
 })
 
-
-
 const result = computed(() => {
     const texto = normaliza(texto_confirmado.value)
+    if (!texto) return []
 
-    if (!texto) return[]
-
-    return atividades.value.filter(item =>
-        normaliza(item.nome_atv).includes(texto) ||
+    return activities.value.filter(item =>
+        normaliza(item.titulo).includes(texto) ||
         normaliza(item.materia).includes(texto) ||
         normaliza(item.conteudo).includes(texto)
     )
@@ -72,7 +56,6 @@ function escolha(termo) {
     filtro.value = termo
     buscar()
 }
-
 </script>
 
 <template>
@@ -88,9 +71,7 @@ function escolha(termo) {
                     :key="termo"
                     @click="escolha(termo)"
                 >
-                    <strong>
-                        {{termo}}
-                    </strong>
+                    <strong>{{ termo }}</strong>
                 </li>
             </ul>
         </div>
@@ -99,22 +80,25 @@ function escolha(termo) {
             <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
         </button>
 
-        <div class="resultados" v-if="pesquisado">
-            <div class="atividade-card" v-for="atividade in result" :key="atividade.id">
-                <strong>{{ atividade.nome_atv }}</strong>
-                <p>{{ atividade.materia }} - {{ atividade.conteudo }}</p>
-            </div>
         </div>
 
+        <div class="resultados" v-if="pesquisado">
+            <BotaoExplorar class="cards"
+                v-for="(atividade, index) in result"
+                :key="atividade.titulo + '-' + index"
+                :titulo="atividade.titulo"
+                :materia="atividade.materia"
+                :conteudo="atividade.conteudo"
+                :imagem="atividade.imagem"
+            />
+        </div>
 
-
-
-
-    </div>
+    
 </div>
 </template>
 
 <style scoped>
+
 .busca{
     position: relative;
     width: 35vw;
