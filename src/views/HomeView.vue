@@ -29,7 +29,6 @@ const atividadesFiltradas = computed(() => {
 <template>
 
   <div>
-
     <FiltroExplorar
         @filtro="filtroEscolhido = $event"
     />
