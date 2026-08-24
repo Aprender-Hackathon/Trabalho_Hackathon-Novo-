@@ -21,7 +21,7 @@
 
         <form @submit.prevent="handleLogin">
           <div class="input-wrapper">
-            <span class="icon">👤</span>
+         <img src="@/assets/img/usuario.png" alt="Usuário" class="input-icon" />
             <input 
               v-model="emailOrUser" 
               type="text" 
@@ -31,7 +31,7 @@
           </div>
 
           <div class="input-wrapper">
-            <span class="icon">🔒</span>
+          <img src="@/assets/img/cadeado.png" alt="Senha" class="input-icon" />
             <input 
               v-model="password" 
               type="password" 
@@ -111,7 +111,7 @@ const goHome = () => {
 
 
 .form-panel {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,6 +243,12 @@ form {
   font-weight: 700;
   text-decoration: none;
   margin-top: 12px;
+  
+}
+a{
+  color: #238b97;
+  font-weight: 600;
+  text-decoration: none !important;
 }
 
 .signup-text {

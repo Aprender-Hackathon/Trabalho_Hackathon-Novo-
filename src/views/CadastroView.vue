@@ -10,7 +10,7 @@
           <div class="field-group">
             <label>Nome:</label>
             <div class="input-wrapper">
-              <span class="icon red-icon">👤</span>
+              <img src="@/assets/img/user_cadastro.png" alt="Usuário" class="input-icon" />
               <input 
                 v-model="name" 
                 type="text" 
@@ -23,7 +23,7 @@
           <div class="field-group">
             <label>E-Mail:</label>
             <div class="input-wrapper">
-              <span class="icon red-icon">✉️</span>
+              <img src="@/assets/img/envelope_cadastro.png" alt="Usuário" class="input-icon" />
               <input 
                 v-model="email" 
                 type="email" 
@@ -36,7 +36,7 @@
           <div class="field-group">
             <label>Senha:</label>
             <div class="input-wrapper">
-              <span class="icon red-icon">🔒</span>
+              <img src="@/assets/img/cadeado_cadastro.png" alt="Usuário" class="input-icon" />
               <input 
                 v-model="password" 
                 type="password" 
@@ -101,9 +101,9 @@ const goHome = () => {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   display: flex;
@@ -195,7 +195,7 @@ form {
   border: none;
   border-radius: 10px;
   padding: 10px 45px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -215,13 +215,13 @@ form {
   margin: 0;
   color: #2c2c2c;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .login-link {
   color: #2b8b97;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.90rem;
   text-decoration: underline;
 }
 </style>
