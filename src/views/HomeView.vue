@@ -1,29 +1,68 @@
 <script setup>
-import VerAtv from '@/components/VerAtv.vue';
+import BannerSection from '@/components/BannerSection.vue';
+import EducacaoSection from '@/components/EducacaoSection.vue';
+import ProcesoSection from '@/components/ProcesoSection.vue';
+import CategoriasSection from '@/components/CategoriasSection.vue';
+import FaixaSobreNos from '@/components/FaixaSobreNos.vue';
 
-const atividadeTeste = {
-    id: 1,
-    titulo: "Dominó",
-    materia: "Ciências",
-    conteudo: "Rochas",
-    descricao: "Atividade de dominó desenvolvida para auxiliar os alunos no aprendizado sobre os diferentes tipos de rochas. Por meio do jogo, os estudantes podem identificar e relacionar as principais características de cada tipo de rocha, tornando o conteúdo mais interativo, divertido e fácil de compreender.",
-    imagem: '/images/atividade_de_alfabetizacao.png',
-    pdf: '/pdf/atividade_de_alfabetizacao.pdf'
-};
+import { ref, computed } from 'vue'
+
+import FiltroExplorar from '@/components/FiltroExplorar.vue'
+import BotaoExplorar from '@/components/BotaoExplorar.vue'
+import { atividades } from '@/AtividadesCards.js'
+
+const filtroEscolhido = ref({
+  materia: 'Tudo',
+  conteudo: 'Tudo'
+})
+
+const atividadesFiltradas = computed(() => {
+  return atividades.filter(item => {
+    const matchMateria = filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+    const matchConteudo = filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+    return matchMateria && matchConteudo
+  })
+})
+
 </script>
 
 <template>
-  <main>
-        <VerAtv
-            :titulo="atividadeTeste.titulo"
-            :materia="atividadeTeste.materia"
-            :conteudo="atividadeTeste.conteudo"
-            :descricao="atividadeTeste.descricao"
-            :imagem="atividadeTeste.imagem"
-            :pdf="atividadeTeste.pdf"
-        />
-    </main>
+
+  <FiltroExplorar
+    @filtro="filtroEscolhido = $event"
+  />
+<AtividadesCards/>
+  <div class="cards">
+
+<BotaoExplorar
+  v-for="(item, index) in atividadesFiltradas"
+  :key="index"
+  :titulo="item.titulo"
+  :imagem="item.imagem"
+  :materia="item.materia"
+  :conteudo="item.conteudo"
+/>
+
+  </div>
+  <div>
+
+    <BannerSection />
+    <EducacaoSection/>
+    <ProcesoSection />
+    <CategoriasSection />
+    <FaixaSobreNos/>
+  </div>
+
 </template>
 
+
 <style scoped>
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 70px;
+}
+
 </style>
+
