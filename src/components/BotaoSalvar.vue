@@ -58,7 +58,7 @@ const toggleLike = () => {
   outline: none;
   padding: 8px;
   transition: transform 0.2s ease;
-  color: #ccc;
+  color: #d1495b;
 }
 
 .heart-button:hover {
@@ -69,11 +69,11 @@ const toggleLike = () => {
 }
 
 .heart-button.is-active {
-  color: #e74c3c;
+  color: #d1495b;
 }
 
 .heart-button.is-active svg {
-  fill: #e74c3c;
+  fill: #d1495b;
 }
 
 

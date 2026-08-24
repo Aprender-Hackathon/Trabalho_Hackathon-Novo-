@@ -11,8 +11,6 @@ import TheFooter from './components/TheFooter.vue';
       <RouterView/>
     </div>
     <TheFooter/>
-    <BotaoMaisResultados/>
-    <BotaoSalvar />
   </div>
 </template>
 
