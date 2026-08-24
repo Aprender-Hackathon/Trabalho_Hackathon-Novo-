@@ -25,14 +25,12 @@ import TheHeader from './components/TheHeader.vue'
 =======
 import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
-
-
 </script>
 
 <template>
   <div>
     <div class="conteudo">
-      <RouterView/>
+      <RouterView />
     </div>
     <TheFooter/>
   </div>
@@ -45,4 +43,3 @@ import TheFooter from './components/TheFooter.vue';
 }
 >>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
 </style>
-

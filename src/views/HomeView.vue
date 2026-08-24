@@ -11,7 +11,7 @@ import { ref, computed } from 'vue'
 
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
-import { atividades } from '@/AtividadesCards.js'
+import { estadoAtividades } from '@/AtividadesCards.js'
 
 const filtroEscolhido = ref({
   materia: 'Tudo',
@@ -19,7 +19,7 @@ const filtroEscolhido = ref({
 })
 
 const atividadesFiltradas = computed(() => {
-  return atividades.filter((item) => {
+  return estadoAtividades.lista.filter((item) => {
     const matchMateria =
       filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
     const matchConteudo =
@@ -27,23 +27,34 @@ const atividadesFiltradas = computed(() => {
     return matchMateria && matchConteudo
   })
 })
+
+function alternarSalvar(id) {
+  const item = estadoAtividades.lista.find(a => a.id === id)
+  if (item) {
+    item.salvo = !item.salvo 
+  }
+}
 </script>
 
 <template>
   <BotaoPesquisa/>
   <FiltroExplorar @filtro="filtroEscolhido = $event" />
+
   <div class="cards">
     <BotaoExplorar
-      v-for="(item, index) in atividadesFiltradas"
-      :key="index"
+      v-for="item in atividadesFiltradas"
+      :key="item.id"
+      :id="item.id"
       :titulo="item.titulo"
       :imagem="item.imagem"
       :materia="item.materia"
       :conteudo="item.conteudo"
+      :isSalvo="item.salvo"
+      @salvar="alternarSalvar(item.id)"
     />
   </div>
+
   <div>
-    
     <BannerSection />
     <EducacaoSection />
     <ProcesoSection />
