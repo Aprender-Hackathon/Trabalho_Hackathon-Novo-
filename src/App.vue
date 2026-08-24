@@ -1,19 +1,15 @@
 <script setup>
-import { RouterView } from 'vue-router';
-import TheFooter from './components/TheFooter.vue';
-import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
-
-
+import { RouterView } from 'vue-router'
+import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
   <div>
     <div class="conteudo">
-      <RouterView/>
+      <RouterView />
     </div>
-    <TheFooter/>
-    <BotaoMaisResultados/>
-    <BotaoSalvar />
+
+    <TheFooter />
   </div>
 </template>
 
@@ -23,4 +19,3 @@ import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
   margin: 0 auto;
 }
 </style>
-

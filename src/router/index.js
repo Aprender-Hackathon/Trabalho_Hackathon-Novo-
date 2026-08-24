@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'About',
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/salvos',
+      name: 'salvos',
+      component: () => import('../views/SalvosView.vue'),
+    },
   ],
   scrollBehavior(to) {
     if (to.hash) return { el: to.hash, behavior: 'smooth' }

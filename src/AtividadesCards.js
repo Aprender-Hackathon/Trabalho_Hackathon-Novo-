@@ -1,193 +1,128 @@
+import { reactive } from 'vue'
 
-export const atividades = [
+export const estadoAtividades = reactive({
+  lista: [
+    //#region MATEMÁTICA
 
-//#region MATEMÁTICA (Gente coloquem isso no inicio e no final coloquem "//#endregion" isso vai deixar BEM mais organizado)
-
-//#region ADIÇÃO
-  {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
-    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
+    //#region ADIÇÃO
     {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma1.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
+      id: 1,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
+      arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
     {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma2.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma3.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma4.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma5.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma6.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma7.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma8.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma9.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-//#endregion
-
-//#region ANÁLISE COMBINATÓRIA
-
+      id: 2,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma1.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.png',
-    arquivo: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Análise combinatória',
-    descricao: 'pipipipopopo'
-  },
+      id: 3,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma2.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 4,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma3.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 5,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma4.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 6,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma5.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 7,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma6.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 8,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma7.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 9,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma8.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    {
+      id: 10,
+      titulo: 'Adição',
+      imagem: '/atividades/Matematica/Adicao/Soma9.jpeg',
+      arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
+      materia: 'Matemática',
+      conteudo: 'Adição',
+      descricao: 'pipipipopopo',
+      salvo: false
+    },
+    //#endregion
 
-//#endregion 
+    //#region ANÁLISE COMBINATÓRIA
+    {
+      id: 11,
+      titulo: 'Análise combinatória',
+      imagem: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.png',
+      arquivo: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.pdf',
+      materia: 'Matemática',
+      conteudo: 'Análise combinatória',
+      descricao: 'pipipipopopo',
+      salvo: false
+    }
+    //#endregion
 
-//#region ÂNGULOS
+    //#endregion
+  ]
+})
 
-//#endregion
-
-//#region ÁREA
-
-
-
-//#endregion
-
-//#region CONJUNTOS
-
-
-
-//#endregion
-
-//#region DETERMINANTES
-
-
-
-//#endregion
-
-//#region DIVISÃO
-
-
-
-//#endregion
-
-//#region EQUAÇÕES DO 1° GRAU
-
-
-
-//#endregion
-
-//#region EXPRESSÕES ALGÉBRICAS
-
-
-
-//#endregion
-
-//#region FATORAÇÃO
-
-
-
-//#endregion
-
-//#region FRAÇÃO
-
-
-
-//#endregion
-
-//#region FUNÇÃO AFIM
-
-
-
-//#endregion
-
-//#region JUROS SIMPLES
-
-
-
-//#endregion
-
-//#region MATEMÁTICA FINANCEIRA
-
-
-
-//#endregion
-
-//#region MATRIZES
-
-
-
-//#endregion
-
-//#region NÚMEROS
-
-
-
-//#endregion
-
-//#region PERIMETRO
-
-
-
-//#endregion
-
-//#endregion
-
-//Português
-]
+// Exporta também com o nome antigo apontando para a lista reativa
+export const atividades = estadoAtividades.lista
