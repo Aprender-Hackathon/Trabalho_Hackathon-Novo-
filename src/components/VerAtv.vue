@@ -1,44 +1,50 @@
 <script setup>
-import BaixarPdf from './BaixarPdf.vue'
 import { useRouter } from 'vue-router'
+import BaixarPdf from './BaixarPdf.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
+import { estadoAtividades } from '@/AtividadesCards.js'
 
 const router = useRouter()
 
-function voltar() {
-  router.back()
-}
-
 const props = defineProps({
+  id: [Number, String],
   materia: String,
   titulo: String,
   conteudo: String,
   imagem: String,
   descricao: String,
   pdf: String,
+  isSalvo: Boolean
 })
+
+function voltar() {
+  router.back()
+}
+
+function alternarSalvar() {
+  if (props.id !== undefined && estadoAtividades?.lista) {
+    const item = estadoAtividades.lista.find(a => a.id === props.id)
+    if (item) {
+      item.salvo = !item.salvo
+    }
+  }
+}
 </script>
 
 <template>
   <div class="all">
     <button class="voltar" @click="voltar">
-      <img src="/public/images/back.svg" alt="Voltar" />
+      <img src="/images/back.svg" alt="Voltar" />
     </button>
 
     <img :src="imagem" :alt="titulo" class="image" />
     <div class="lado">
       <div class="cima">
-        <h3>
-          {{ titulo }}
-        </h3>
+        <h3>{{ titulo }}</h3>
 
         <div class="mat_con">
-          <p>
-            {{ materia }}
-          </p>
-          <p>
-            {{ conteudo }}
-          </p>
+          <p>{{ materia }}</p>
+          <p>{{ conteudo }}</p>
         </div>
         <p class="descricao">
           {{ descricao }}
@@ -48,10 +54,19 @@ const props = defineProps({
       <div class="baixo">
         <BaixarPdf :pdf="pdf" />
 
-        <BotaoSalvar size="L" class="computador" />
+        <BotaoSalvar
+          size="L"
+          class="computador"
+          :isSalvo="isSalvo"
+          @salvar="alternarSalvar"
+        />
 
-        <BotaoSalvar size="M" class="celular" /> 
-
+        <BotaoSalvar
+          size="M"
+          class="celular"
+          :isSalvo="isSalvo"
+          @salvar="alternarSalvar"
+        />
       </div>
     </div>
   </div>
@@ -65,13 +80,11 @@ const props = defineProps({
   display: flex;
   align-items: stretch;
   gap: 3vw;
-
   position: relative;
   width: 75%;
   max-width: 1100px;
   margin: 2vw auto;
   padding: 2.5vw;
-
   border: #d1495b solid 5px;
   border-radius: 3px;
 }
@@ -81,7 +94,7 @@ const props = defineProps({
   background: none;
   cursor: pointer;
   align-self: flex-start;
-  text-align: left; 
+  text-align: left;
 }
 
 .image {
@@ -136,27 +149,13 @@ const props = defineProps({
   font-family: 'Inter', sans-serif;
 }
 
-.baixo button {
-  padding: 0.6rem 1.5rem;
-}
-
 @media (max-width: 600px) {
+  .computador {
+    display: none;
+  }
 
-.baixo button {
-  padding: 0;
-}
-
-.computador{
-  display: none;
-}
-
-.celular{
-  display: block;
-}
-
-  .voltar {
-    top: 10px;
-    left: 10px;
+  .celular {
+    display: block;
   }
 
   .voltar img {
@@ -182,13 +181,11 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
   }
+
   .lado h3 {
     font-size: clamp(24px, 8vw, 32px);
     text-align: center;
     margin-bottom: 15px;
-    padding: 0;
-    max-width: 100%;
-    pointer-events: auto;
   }
 
   .mat_con {
@@ -208,7 +205,6 @@ const props = defineProps({
     flex-direction: row;
     align-items: center;
     margin-top: 15px;
-    margin-bottom: 0;
   }
 
   .descricao {

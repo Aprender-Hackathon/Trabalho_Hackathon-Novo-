@@ -1,14 +1,12 @@
 <script setup>
 import { RouterView } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
-
-
 </script>
 
 <template>
   <div>
     <div class="conteudo">
-      <RouterView/>
+      <RouterView />
     </div>
     <TheFooter/>
   </div>
@@ -20,4 +18,3 @@ import TheFooter from './components/TheFooter.vue';
   margin: 0 auto;
 }
 </style>
-
