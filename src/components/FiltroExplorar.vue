@@ -1,10 +1,11 @@
 <template>
+  
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Matéria(s):</span>
       <div class="tags-group">
         <button
-          v-for="materia in materias"
+         v-for="materia in materias"  
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
@@ -18,12 +19,18 @@
       <span class="label">Conteúdo(s):</span>
       <div class="tags-group">
         <button
-          v-for="conteudo in conteudosAtuais"
+          v-for="conteudo in (mostrarMais ? conteudosAtuais : conteudosAtuais.slice(0, 6))"
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
           @click="selecionarConteudo(conteudo)">
           {{ conteudo }}
+        </button>
+        <button
+          v-if="conteudosAtuais.length > 6"
+          class="tag-btn"
+          @click="mostrarMais = !mostrarMais">
+          {{ mostrarMais ? '-' : '+' }}
         </button>
       </div>
     </div>
@@ -73,6 +80,7 @@ const conteudosPorMateria = {
 
 const materiaSelecionada = ref('Língua Portuguesa')
 const conteudoSelecionado = ref('Tudo')
+const mostrarMais = ref(false)
 
 const conteudosAtuais = computed(() => {
   if (materiaSelecionada.value === 'Tudo') {
@@ -86,6 +94,7 @@ const conteudosAtuais = computed(() => {
 
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = 'Tudo'
+  mostrarMais.value = false
 })
 
 function selecionarMateria(materia) {
@@ -103,6 +112,8 @@ function selecionarConteudo(conteudo) {
     conteudo: conteudoSelecionado.value
   })
 }
+
+
 </script>
 
 <style scoped>

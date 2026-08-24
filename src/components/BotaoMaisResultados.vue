@@ -1,16 +1,14 @@
 <script setup>
-import { ref } from 'vue'
 
-const mais = ref(false)
+defineEmits(['carregar'])
+
 </script>    
 <template>
   <div>
-    <button class="MaisResultados" @click="mais = !mais">
+    <button class="MaisResultados" @click="$emit('carregar')" >
       <span>Mais Resultados </span>
+      <img src="/seta.png" />
     </button>
-    <div v-if="mais" class="aparecerMaisAtividades">
-Colocar atividades
-    </div>
   </div>
 </template>
 
@@ -26,6 +24,7 @@ Colocar atividades
   justify-content: center;
   font-size: 17px;
   font-weight: bold;
-  cursor: pointer;
+  margin: 0 auto;
+  gap: 30px;
 }
 </style>

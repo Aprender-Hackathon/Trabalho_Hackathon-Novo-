@@ -15,61 +15,48 @@ import { atividades } from '@/AtividadesCards.js'
 
 const filtroEscolhido = ref({
   materia: 'Tudo',
-  conteudo: 'Tudo'
+  conteudo: 'Tudo',
 })
 
 const atividadesFiltradas = computed(() => {
-  return atividades.filter(item => {
-    const matchMateria = filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
-    const matchConteudo = filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+  return atividades.filter((item) => {
+    const matchMateria =
+      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+    const matchConteudo =
+      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
     return matchMateria && matchConteudo
   })
 })
-
 </script>
 
 <template>
-
-  <div>
-    <BotaoPesquisa/>
-    <FiltroExplorar
-        @filtro="filtroEscolhido = $event"
+  <BotaoPesquisa/>
+  <FiltroExplorar @filtro="filtroEscolhido = $event" />
+  <div class="cards">
+    <BotaoExplorar
+      v-for="(item, index) in atividadesFiltradas"
+      :key="index"
+      :titulo="item.titulo"
+      :imagem="item.imagem"
+      :materia="item.materia"
+      :conteudo="item.conteudo"
     />
-    <div class="cards">
-
-        <BotaoExplorar
-        v-for="(item, index) in atividadesFiltradas"
-        :key="index"
-        :titulo="item.titulo"
-        :imagem="item.imagem"
-        :materia="item.materia"
-        :conteudo="item.conteudo"
-        />
-
-    </div>
-  
-    <div>
-
-        <BannerSection />
-        <EducacaoSection/>
-        <ProcesoSection />
-        <CategoriasSection />
-        <FaixaSobreNos/>
-
-    </div>
-
   </div>
-
+  <div>
+    
+    <BannerSection />
+    <EducacaoSection />
+    <ProcesoSection />
+    <CategoriasSection />
+    <ExplorarView/>
+    <FaixaSobreNos/>
+  </div>
 </template>
 
-
 <style scoped>
-
 .cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 70px;
 }
-
 </style>
-
