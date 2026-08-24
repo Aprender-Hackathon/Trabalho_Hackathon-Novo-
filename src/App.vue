@@ -1,29 +1,30 @@
 <script setup>
-import BotaoSalvar from './components/BotaoSalvar.vue'
-import ProfileCard from './components/PerfilUsuario.vue'
+
+import { RouterView } from 'vue-router';
+import TheFooter from './components/TheFooter.vue';
+import BotaoMaisResultados from './components/BotaoMaisResultados.vue';
+
+import TheHeader from './components/TheHeader.vue';
 </script>
 
 <template>
-  <main>
-
-
-    <div class="main-container">
-    <ProfileCard />
+  <div>
+    <TheHeader/>
+    <div class="conteudo">
+      <RouterView/>
+    </div>
+    <TheFooter/>
+    <BotaoMaisResultados/>
   </div>
 
     <BotaoSalvar />
   </main>
 </template>
 
-
-<style>
-
-body {
-  margin: 0;
-  background-color: #f3efe6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+<style scoped>
+.conteudo {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 </style>
+
