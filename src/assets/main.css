@@ -20,6 +20,10 @@ main {
 
 a {
   text-decoration: none;
-    color: inherit;
+  color: inherit;
 }
+
+footer{
+  padding: 0;
+  margin: 0;
 }
