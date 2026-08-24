@@ -16,6 +16,9 @@ import TheHeader from './components/TheHeader.vue';
     <TheFooter/>
     <BotaoMaisResultados/>
   </div>
+
+    <BotaoSalvar />
+  </main>
 </template>
 
 <style scoped>
