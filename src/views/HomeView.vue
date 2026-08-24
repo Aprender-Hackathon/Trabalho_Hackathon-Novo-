@@ -1,10 +1,14 @@
 <script setup>
+import BotaoPesquisa from '@/components/BotaoPesquisa.vue';
+
+import BannerSection from '@/components/BannerSection.vue';
+import EducacaoSection from '@/components/EducacaoSection.vue';
+import ProcesoSection from '@/components/ProcesoSection.vue';
+import CategoriasSection from '@/components/CategoriasSection.vue';
+import FaixaSobreNos from '@/components/FaixaSobreNos.vue';
+
 import { ref, computed } from 'vue'
-import BannerSection from '@/components/BannerSection.vue'
-import EducacaoSection from '@/components/EducacaoSection.vue'
-import ProcesoSection from '@/components/ProcesoSection.vue'
-import CategoriasSection from '@/components/CategoriasSection.vue'
-import FaixaSobreNos from '@/components/FaixaSobreNos.vue'
+
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
 import { estadoAtividades } from '@/AtividadesCards.js'
@@ -33,6 +37,7 @@ function alternarSalvar(id) {
 </script>
 
 <template>
+  <BotaoPesquisa/>
   <FiltroExplorar @filtro="filtroEscolhido = $event" />
 
   <div class="cards">
