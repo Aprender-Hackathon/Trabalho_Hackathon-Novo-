@@ -1,3 +1,4 @@
+dev-beatriz
 
 <template setup>
 
@@ -22,44 +23,78 @@
     />
 </template>
 
+ main
 <script setup>
-
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
+import FiltroExplorar from '@/components/FiltroExplorar.vue'
+import BotaoExplorar from '@/components/BotaoExplorar.vue'
+import { estadoAtividades } from '@/AtividadesCards'
+import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 const limite = ref(20)
 
-import FiltroExplorar from '@/components/FiltroExplorar.vue'
-import BotaoExplorar from '@/components/BotaoExplorar.vue'
-import { atividades } from '@/AtividadesCards.js'
-import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
-
 const filtroEscolhido = ref({
   materia: 'Tudo',
-  conteudo: 'Tudo'
+  conteudo: 'Tudo',
 })
 
-watch(filtroEscolhido, () => {
-  limite.value = 20
-}, { deep: true })
+// Função que alterna o estado salvo do item sem redirecionar a tela
+function alternarSalvar(id) {
+  const item = estadoAtividades.lista.find(a => a.id === id)
+  if (item) {
+    item.salvo = !item.salvo
+  }
+}
 
 const atividadesFiltradas = computed(() => {
-  return atividades.filter(item => {
-    const matchMateria = filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
-    const matchConteudo = filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+  return estadoAtividades.lista.filter((item) => {
+    const matchMateria =
+      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+    const matchConteudo =
+      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
     return matchMateria && matchConteudo
   })
 })
-
 </script>
 
+dev-beatriz
+
+<template>
+  <div class="explorar-container">
+    <FiltroExplorar @filtro="filtroEscolhido = $event" />
+
+    <div class="cards">
+      <BotaoExplorar
+        v-for="item in atividadesFiltradas.slice(0, limite)"
+        :key="item.id"
+        :id="item.id"
+        :titulo="item.titulo"
+        :imagem="item.imagem"
+        :materia="item.materia"
+        :conteudo="item.conteudo"
+        :isSalvo="item.salvo"
+        @salvar="alternarSalvar(item.id)"
+      />
+    </div>
+
+    <BotaoMaisResultados v-if="atividadesFiltradas.length > limite" @carregar="limite += 20" />
+  </div>
+</template>
+ main
 
 <style scoped>
+.explorar-container {
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 70px;
 }
-
 </style>
+dev-beatriz
 
+
+ main

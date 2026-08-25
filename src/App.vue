@@ -5,6 +5,7 @@ import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
+ dev-beatriz
   <TheHeader />
 
   <RouterView />
@@ -14,3 +15,20 @@ import TheFooter from './components/TheFooter.vue'
 
 <style scoped>
 </style>
+
+  <div>
+    <TheHeader />
+    <div class="conteudo">
+      <RouterView />
+    </div>
+    <TheFooter />
+  </div>
+</template>
+
+<style scoped>
+.conteudo {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+</style>
+main
