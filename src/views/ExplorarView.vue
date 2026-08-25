@@ -1,5 +1,6 @@
 <script setup>
 
+import BotaoPesquisa from '@/components/BotaoPesquisa.vue';
 import { ref, computed, watch } from 'vue'
 
 const limite = ref(20)
@@ -14,22 +15,44 @@ const filtroEscolhido = ref({
   conteudo: 'Tudo'
 })
 
+const textoPesquisado = ref('')
+
+function normaliza(texto){
+  return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+}
+
 watch(filtroEscolhido, () => {
   limite.value = 20
 }, { deep: true })
 
 const atividadesFiltradas = computed(() => {
-  return atividades.filter(item => {
-    const matchMateria = filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
-    const matchConteudo = filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
-    return matchMateria && matchConteudo
+
+  const texto = normaliza(textoPesquisado.value)
+
+  return atividades.filter((item) => {
+
+    const matchMateria =
+      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+
+    const matchConteudo =
+      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+
+    const matchTexto =
+      !texto ||
+      normaliza(item.titulo).includes(texto) ||
+      normaliza(item.materia).includes(texto) ||
+      normaliza(item.conteudo).includes(texto)
+
+    return matchMateria && matchConteudo && matchTexto
   })
 })
 
 </script>
 
 <template>
-
+<div>
+  <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
+  
   <FiltroExplorar
     @filtro="filtroEscolhido = $event"
   />
@@ -49,6 +72,7 @@ const atividadesFiltradas = computed(() => {
       v-if="atividadesFiltradas.length > limite" 
       @carregar="limite += 20" 
     />
+</div>
 </template>
 
 
