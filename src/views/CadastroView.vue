@@ -95,15 +95,15 @@ const goHome = () => {
 
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 220px;
+  right: 690px;
   background-color: #e65252;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 52px;
-  height: 52px;
-  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  font-size: 21px;
   font-weight: bold;
   cursor: pointer;
   display: flex;

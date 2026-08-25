@@ -21,6 +21,11 @@ const router = createRouter({
       component: () => import('../views/ExplorarView.vue'),
     },
     {
+ dev-beatriz
+      path: '/sobre-nos',
+      name: 'sobre',
+      component: () => import('../views/SobrenosView.vue'),
+
       path: '/explorar',
       redirect: '/explorar-pag', // Corrige o aviso de rota não encontrada para /explorar e categorias
     },
@@ -28,6 +33,7 @@ const router = createRouter({
       path: '/about',
       name: 'About',
       component: () => import('../views/AboutView.vue'),
+main
     },
     {
       path: '/sobre-nos',

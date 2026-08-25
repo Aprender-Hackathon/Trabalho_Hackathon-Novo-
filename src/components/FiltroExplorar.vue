@@ -1,11 +1,11 @@
 <template>
-  
+
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Matéria(s):</span>
       <div class="tags-group">
         <button
-         v-for="materia in materias"  
+         v-for="materia in materias"
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
@@ -40,45 +40,46 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
-const emit = defineEmits(['filtro'])
+const emit = defineEmits (['filtro'])
 
 const materias = [
-  'Tudo', 'Artes', 'Ciências', 'Geografia', 
-  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática', 'Filosofia', 'Educação Física', 'Espanhol', 'Biologia', 'Física', 'Sociologia', 'Química'
+  'Tudo', 'Artes', 'Biologia', 'Ciências', 'Educação Física', 'Ensino Religioso', 'Espanhol', 'Filosofia', 'Física', 'Geografia', 'História', 'Inglês', 'Matemática', 'Português', 'Química', 'Sociologia'
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Artes Contemporâneas', 'Cores', 'Artes Visuais', 'Música' ],
+  'Artes': ['Artes Visuais','Historia da arte', 'Música' ],
 
-  'Física': ['Eletrodinâmica', 'Força de Atrito', 'Eletrostática', 'Gravidade', 'Óptica Geométrica', 'Termodinâmica', 'Cinemática'],
+  'Biologia': ['Biotecnologia', 'Botânica', 'Celulas e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
 
-  'Biologia': ['Botânica', 'Divisão Celular', 'Evolução Natural', 'Seleção Natural', 'Fotossíntese', 'Genética', 'Membrana Plasmática'],
+  'Ciências': ['Corpo Humano', 'Ecologia e Ambiente', 'Matéria e Energia', 'Seres Vivos', 'Terra e Espaço'],
 
-  'Ciências': ['Estados da Água', 'Alimentação Saudável', 'Sistema Solar', 'Célula', 'Evolução', 'Higiene', 'Genética Básica', 'Matéria e Energia', 'Relações Ecológicas', 'Sistema Digestório', 'Sistema Respiratório', 'Sistema Circulatório'],
+  'Educação Física': ['Corpo e Movimento', 'Jogos e Esporte', 'Saúde e Qualidade de Vida'],
 
-  'Educação Física': ['Capacidades Físicas', 'Esporte de Precisão'],
+  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Etíca'],
 
-  'Geografia': ['Espaço Rural', 'Globalização', 'Geopolítica', 'Paisagem', 'População', 'Relevo', 'Clima e Vegetação', 'Comercio Internacional', 'Industrialização','Urbanização', 'Matriz Energética', 'Meio Ambiente', 'Municipios e Estados'],
+  'Espanhol': ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
-  'Espanhol': ['Vocabulário Básico', 'Cidades'],
+  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia clássica', 'Filosofia Medieval', 'Filosofia Política', 'Intrudição e Origem'],
 
-  'Matemática': ['Adição', 'Análise combinatória', 'Ângulos', 'Área', 'Divisão', 'Equações do 1º grau', 'Estatística', 'Expressões algébricas', 'Fatoração', 'Frações', 'Função afim', 'Função exponencial', 'Função quadrática', 'Geometria analítica', 'Geometria espacial', 'Geometria plana', 'Inequações', 'Matemática financeira', 'Multiplicação', 'Números', 'Perímetro', 'Polinômios', 'Potenciação', 'Problemas matemáticos', 'Produtos notáveis', 'Progressão aritmética', 'Progressão geométrica', 'Radiciação', 'Razões e proporções', 'Regra de três', 'Sistema monetário', 'Sistemas de equações', 'Sólidos geométricos', 'Subtração', 'Teorema de Pitágoras', 'Tabelass e gráficos', 'Triângulos', 'Tempo e calendário'],
+  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Movimento', 'Forças e dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
 
-  'Filosofia': ['Aristóteles', 'Platão', 'Sócrates', 'Mito e Razão', 'Ética', 'Política', 'Sofistas', 'Pré-socráticos'],
+  'Geografia': ['Brasil e Mundo', 'Cartografia e Orientação', 'Economia e Globalização', 'Espaço e Paisagem', 'Natureza e Ambiente', 'População e Espaço'],
 
-  'História': ['Brasil Imperio', 'Colonização', 'Escravidão', 'Idade Média', 'Revolução Industrial', 'Revolução Francesa', 'Egito Antigo', 'Grécia Antiga', 'Família e comunidade', 'Independência do Brasil', 'Povos Indígenas', 'Proclamação da República', 'Redemocratização', 'Símbolos Nacionais'],
+  'História': ['Antiguidade', 'Brasil Imperio e República', 'Colonização', 'Fontes e Mémorias', 'Guerras e Conflitos', 'Idade Média e Renascimento', 'Revoluções e Tranformações'],
 
-  'Língua Inglesa': ['Números', 'Cores'],
+  'Inglês': ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
 
-  'Língua Portuguesa': ['Acentuação', 'Alfabetização', 'Coesão e coerência', 'Concordância', 'Contos e fábulas', 'Crônica', 'Frase, oração e período', 'Funções da linguagem', 'Gêneros', 'Leitura e interpretação', 'Orações coordenadas', 'Orações subordinadas', 'Período composto', 'Pontuação', 'Regência', 'Semântica', 'Sílabas', 'Sinônimos e antônimos', 'Substantivo e adjetivo', 'Variação linguística'], 
+  'Matemática': ['Algébra', 'Combinatória e Probabilidade', 'Conjuntos', 'Equações e Sistemas', 'Funções', 'Geometria espacial', 'Geometria plana', 'Matrizes e Determinantes', 'Números e Operações', 'Razões, Proporções e Porcentagens', 'Trigonometria'],
 
-  'Química': ['Átomo e modelos atômicos', 'Cinética química', 'Eletroquímica', 'Equilíbrio químico', 'Estados físicos da matéria', 'Funções inorgânicas', 'Ligações químicas', 'Misturas e separação', 'Química orgânica', 'Reações químicas', 'Soluções e concentrados', 'Tabela periódica', 'Termoquímica'],
+  'Português': ['Alfabetização e Leitura', 'Classes de Palavras', 'Coesão e Produção', 'Concordância e Regência', 'Gêneros Textuais', 'Orações e Períodos', 'Ortografia e Acentuação', 'Semântica e Variação', 'Síntaxse'],
 
-  'Sociologia': ['Introdução à Sociologia', 'Poder Estado e política', 'Socialização e Instituições']
+  'Química': ['Átomo e modelos atômicos', 'Eletroquímica', 'Ligações e Funções', 'Matérias e Misturas', 'Química orgânica', 'Reações químicas', 'Soluções','Termoquímica e Equilíbrio'],
+
+  'Sociologia': ['Cultura e Estado','Introdução à Sociologia', 'Pensadores Clássicos', 'Poder e Política', 'Trabalho e Capitalismo']
 
 }
 
-const materiaSelecionada = ref('Língua Portuguesa')
+const materiaSelecionada = ref('Português')
 const conteudoSelecionado = ref('Tudo')
 const mostrarMais = ref(false)
 
@@ -87,7 +88,7 @@ const conteudosAtuais = computed(() => {
     const todos = Object.values(conteudosPorMateria).flat()
     return ['Tudo', ...new Set(todos)]
   }
-  
+
   const conteudos = conteudosPorMateria[materiaSelecionada.value] || []
   return ['Tudo', ...conteudos]
 })
@@ -100,9 +101,9 @@ watch(materiaSelecionada, () => {
 function selecionarMateria(materia) {
   materiaSelecionada.value = materia
   conteudoSelecionado.value = 'Tudo'
-  emit('filtro', { 
-    materia: materiaSelecionada.value, 
-    conteudo: conteudoSelecionado.value 
+  emit('filtro', {
+    materia: materiaSelecionada.value,
+    conteudo: conteudoSelecionado.value
   })
 }
 function selecionarConteudo(conteudo) {

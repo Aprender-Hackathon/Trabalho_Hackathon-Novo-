@@ -1,3 +1,29 @@
+dev-beatriz
+
+<template setup>
+
+<FiltroExplorar
+    @filtro="filtroEscolhido = $event"
+  />
+
+  <div class="cards">
+
+<BotaoExplorar
+  v-for="(item, index) in atividadesFiltradas.slice(0, limite)"
+  :key="index"
+  :titulo="item.titulo"
+  :imagem="item.imagem"
+  :materia="item.materia"
+  :conteudo="item.conteudo"
+/>
+</div>
+<BotaoMaisResultados 
+      v-if="atividadesFiltradas.length > limite" 
+      @carregar="limite += 20" 
+    />
+</template>
+
+ main
 <script setup>
 import { ref, computed } from 'vue'
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
@@ -31,6 +57,8 @@ const atividadesFiltradas = computed(() => {
 })
 </script>
 
+dev-beatriz
+
 <template>
   <div class="explorar-container">
     <FiltroExplorar @filtro="filtroEscolhido = $event" />
@@ -52,6 +80,7 @@ const atividadesFiltradas = computed(() => {
     <BotaoMaisResultados v-if="atividadesFiltradas.length > limite" @carregar="limite += 20" />
   </div>
 </template>
+ main
 
 <style scoped>
 .explorar-container {
@@ -65,3 +94,7 @@ const atividadesFiltradas = computed(() => {
   padding: 20px 70px;
 }
 </style>
+dev-beatriz
+
+
+ main
