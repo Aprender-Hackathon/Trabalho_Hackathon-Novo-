@@ -1,3 +1,4 @@
+import ExplorarView from '@/views/ExplorarView.vue'
 import HomeView from '../views/HomeView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -10,9 +11,9 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'About',
-      component: () => import('../views/AboutView.vue'),
+      path: '/explorar',
+      name: 'explorar',
+      component: ExplorarView,
     },
   ],
   scrollBehavior(to) {
