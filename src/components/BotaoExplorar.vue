@@ -15,19 +15,15 @@ defineEmits(['salvar'])
 
 <template>
   <div class="card">
-    <img
-      :src="imagem"
-      class="imagem"
-      :alt="titulo"
-    />
+    <img :src="imagem" class="imagem" :alt="titulo" />
     <div class="laranja">
       <div class="linhaDeCima">
         <h2>{{ titulo || 'Sem título' }}</h2>
-
         <div class="botoes">
+          <!-- Aqui passamos o objeto completo da atividade para cima quando o coração é clicado -->
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', id)"
+            @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
           />
         </div>
       </div>
@@ -45,16 +41,13 @@ defineEmits(['salvar'])
   overflow: hidden;
   position: relative;
   background: white;
-  justify-content: center;
   margin: 19px;
 }
-
 .imagem {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .laranja {
   position: absolute;
   bottom: 0;
@@ -68,19 +61,16 @@ defineEmits(['salvar'])
   padding: 12px 15px;
   box-sizing: border-box;
 }
-
 .linhaDeCima {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-
 h2 {
   color: #1a1a1a;
   font-size: 20px;
   margin: 0;
 }
-
 .materia {
   font-size: 17px;
   color: #333;
