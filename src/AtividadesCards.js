@@ -2,23 +2,15 @@ import { ref } from 'vue'
 
 export const estadoAtividades = ref({
 lista:[
- {
-    id:1,
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Angulos/atividadeAngulo1.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo',
-    salvos : false,
-  },
+
    {
     titulo: 'Análise combinatória',
     imagem: '/SemImagem.png',
     arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.docx',
     materia: 'Matemática',
     conteudo: 'Ângulos',
-    descricao: 'pipipipopopo'
+    descricao: 'pipipipopopo',
+    salvos : false,
   },
      {
     titulo: 'Análise combinatória',
@@ -26,214 +18,10 @@ lista:[
     arquivo: '/atividades/Matematica/Angulos/atividadeAngulo2.docx',
     materia: 'Matemática',
     conteudo: 'Ângulos',
-    descricao: 'pipipipopopo'
-  },
-  
-
-//#endregion
-
-//#region ÁREA
-
-   {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Area/atividadeArea1.png',
-    arquivo: '/atividades/Matematica/Area/atividadeArea1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Área',
-    descricao: 'pipipipopopo'
+    descricao: 'pipipipopopo',
+    salvos : false,
   },
 
-//#endregion
-
-//#region SUBTRAÇÃO
-
-   {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração4.png',
-    arquivo: '/atividades/Matematica/Subtração/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração1.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração2.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração3.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#region DIVISÃO
-
-
-
-//#endregion
-
-//#region EQUAÇÕES DO 1° GRAU
-
-
-
-//#endregion
-
-//#region EXPRESSÕES ALGÉBRICAS
-
-
-
-//#endregion
-
-//#region FATORAÇÃO
-
-
-
-//#endregion
-
-//#region FRAÇÃO
-
-
-
-//#endregion
-
-//#region FUNÇÃO AFIM
-
-
-
-//#endregion
-
-//#region JUROS SIMPLES
-
-
-
-//#endregion
-
-//#region MATEMÁTICA FINANCEIRA
-
-
-
-//#endregion
-
-//#region MATRIZES
-
-
-
-//#endregion
-
-//#region NÚMEROS
-
-    {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros1.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros2.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros3.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros4.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros5.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros6.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros7.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros8.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero9.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero9.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero10.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero10.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-        {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero11.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero11.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero12.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero12.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
         {
     titulo: 'Adição',
     imagem: '/SemImagem.png',
@@ -251,19 +39,7 @@ lista:[
     descricao: 'pipipipopopo'
   },
 
-//#endregion
-
-//#region PERIMETRO
-
-
-
-//#endregion
-
-//#endregion
-
-//#region PORTUGUÊS
-
-//#region ALFABETIZAÇÃO
+//PORTUGUÊS
 
   {
     titulo: 'Adição',
@@ -474,13 +250,7 @@ lista:[
     descricao: 'pipipipopopo'
   },
 
-//#endregion
-
-//#endregion
-
-//#region Química
-
-//#region Química Organica
+  //QUÍMICA
 
  {
     titulo: 'Adição',
@@ -578,28 +348,7 @@ lista:[
     conteudo: 'Química orgânica',
     descricao: 'pipipipopopo'
   },
-   {
-    titulo: 'Adição',
-    imagem: '/atividades/Quimica/Quimica_organica/atividadeQuimica13.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica13.pdf',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
 
-
-//#endregion
-
-//#region ÁTOMO E MODELOS ATÔMICOS
-
-   {
-    titulo: 'Adição',
-    imagem: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo1.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo1.pdf',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
      {
     titulo: 'Adição',
     imagem: 'SemImagem.png',
@@ -640,23 +389,6 @@ lista:[
     conteudo: 'Átomo e modelos atômicos',
     descricao: 'pipipipopopo'
   },
-
-//#endregion
-
-//#region ISOMERIA
-
-//#region Geografia
-
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo6.docx',
-    materia: 'Geografia',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  }
-
-//#endregion
 
 ]
 })
