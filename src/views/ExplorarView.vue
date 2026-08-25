@@ -1,8 +1,27 @@
-<<<<<<< HEAD
+
 <template setup>
-    <h1>oiii explorar</h1>
-    </template>
-=======
+
+<FiltroExplorar
+    @filtro="filtroEscolhido = $event"
+  />
+
+  <div class="cards">
+
+<BotaoExplorar
+  v-for="(item, index) in atividadesFiltradas.slice(0, limite)"
+  :key="index"
+  :titulo="item.titulo"
+  :imagem="item.imagem"
+  :materia="item.materia"
+  :conteudo="item.conteudo"
+/>
+</div>
+<BotaoMaisResultados 
+      v-if="atividadesFiltradas.length > limite" 
+      @carregar="limite += 20" 
+    />
+</template>
+
 <script setup>
 
 import { ref, computed, watch } from 'vue'
@@ -33,29 +52,6 @@ const atividadesFiltradas = computed(() => {
 
 </script>
 
-<template>
-
-  <FiltroExplorar
-    @filtro="filtroEscolhido = $event"
-  />
-
-  <div class="cards">
-
-<BotaoExplorar
-  v-for="(item, index) in atividadesFiltradas.slice(0, limite)"
-  :key="index"
-  :titulo="item.titulo"
-  :imagem="item.imagem"
-  :materia="item.materia"
-  :conteudo="item.conteudo"
-/>
-</div>
-<BotaoMaisResultados 
-      v-if="atividadesFiltradas.length > limite" 
-      @carregar="limite += 20" 
-    />
-</template>
-
 
 <style scoped>
 
@@ -66,4 +62,4 @@ const atividadesFiltradas = computed(() => {
 }
 
 </style>
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
+

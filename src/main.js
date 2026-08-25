@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// import './assets/main.css'
 
-=======
->>>>>>> 8864de6d4b745863f80613d628e8d8ec600b7cde
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
