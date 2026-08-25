@@ -5,10 +5,10 @@ export const estadoAtividades = reactive({
     {
       id: 1,
       titulo: 'Adição',
-      imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
-      arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
+      imagem: '/SemImagem.png',
+      arquivo: '/atividades/Matematica/Algebra/atividade_adaptada_01.docx',
       materia: 'Matemática',
-      conteudo: 'Adição',
+      conteudo: 'Álgebra',
       descricao: 'pipipipopopo',
       salvo: false,
     },
@@ -27,11 +27,22 @@ export const estadoAtividades = reactive({
       titulo: 'Alfabetização',
       imagem: '/SemImagem.png',
       arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_A.docx',
-      materia: 'Português',
+      materia: 'Língua Portuguesa',
+      conteudo: 'Alfabetização',
+      descricao: 'pipipipopopo',
+      salvo: false,
+    },
+    {
+      id: 35,
+      titulo: 'Alfabetização',
+      imagem: '/SemImagem.png',
+      arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_B.docx',
+      materia: 'Língua Portuguesa',
       conteudo: 'Alfabetização',
       descricao: 'pipipipopopo',
       salvo: false,
     }
+
   ]
 })
 
