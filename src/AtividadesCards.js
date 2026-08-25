@@ -4,6 +4,7 @@ export const estadoAtividades = ref({
 lista:[
 
    {
+    id: 1,
     titulo: 'Análise combinatória',
     imagem: '/SemImagem.png',
     arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.docx',
@@ -13,6 +14,7 @@ lista:[
     salvos : false,
   },
      {
+    id: 2,
     titulo: 'Análise combinatória',
     imagem: '/SemImagem.png',
     arquivo: '/atividades/Matematica/Angulos/atividadeAngulo2.docx',
@@ -23,12 +25,14 @@ lista:[
   },
 
         {
+    id:3,
     titulo: 'Adição',
     imagem: '/SemImagem.png',
     arquivo: '/atividades/Matematica/Numeros/Numero13.docx',
     materia: 'Matemática',
     conteudo: 'Números',
-    descricao: 'pipipipopopo'
+    descricao: 'pipipipopopo',
+    salvos: false
   },
         {
     titulo: 'Adição',
