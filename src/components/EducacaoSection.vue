@@ -1,6 +1,5 @@
 <script setup>
 </script>
-
 <template>
   <section id="sobre" class="secao-missao">
     <div class="container-principal">
@@ -15,12 +14,13 @@
       <div class="grid-publicos">
         <article class="cartao-publico card-educadores">
           <div class="circulo-icone icone-educadores">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ee4256" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4.5"/><path d="M4 20c0-4.2 3.6-7.5 8-7.5s8 3.3 8 7.5"/>
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#ee4256" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4.5"/>
+              <path d="M4 20c0-4.2 3.6-7.5 8-7.5s8 3.3 8 7.5"/>
             </svg>
           </div>
           <h3 class="titulo-cartao">Para Educadores</h3>
-          <p class="texto-cartao">
-            Atividades prontas, adaptadas e organizadas para facilitar o planejamento e tornar o ensino mais acessível.
+          <p class="texto-cartao">Atividades prontas, adaptadas e organizadas para facilitar o planejamento e tornar o ensino mais acessível.
           </p>
         </article>
         <article class="cartao-publico card-familias">
@@ -35,6 +35,8 @@
             Materiais simples e práticos para acompanhar o aprendizado das crianças em casa com mais confiança.
           </p>
         </article>
+
+        <!-- Voluntários -->
         <article class="cartao-publico card-voluntarios">
           <div class="circulo-icone icone-voluntarios">
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#5cb76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -59,93 +61,147 @@
             Conteúdos acessíveis e acolhedores que incentivam o aprendizado, a criatividade e o desenvolvimento de cada pessoa.
           </p>
         </article>
-
       </div>
-
     </div>
   </section>
-   <div class="linha-divisoria"></div>
+  <div class="linha-divisoria"></div>
 </template>
-
+<style>
+html, body, #app {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+</style>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700&display=swap');
 .secao-missao {
-  padding: 60px 20px;
-  font-family: 'Fredoka', sans-serif;
+  width: 100%;
+  background: #FAF7F2;
+  padding: 60px 20px 60px;
   color: #0e3e47;
 }
 .container-principal {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 .cabecalho-missao {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 50px;
   text-align: center;
-  max-width: 800px;
-  margin: 0 auto 40px;
 }
 .titulo-secao {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin: 0 0 18px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #0e3e47;
 }
 .descricao-secao {
-  font-size: 1.1rem;
-  line-height: 1.5;
+  margin: 0 auto;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #0e3e47;
 }
 .grid-publicos {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 .cartao-publico {
-  background: #FAF7F2;
-  border-radius: 20px;
-  padding: 40px 20px 30px;
+  background: #FFFFFF;
+  border-radius: 25px;
+  padding: 45px 24px 35px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
-.card-educadores  { border: 3px solid #ee4256; }
-.card-familias    { border: 3px solid #f0ab1a; }
+.cartao-publico:hover {
+  transform: translateY(-3px);
+}
+.card-educadores { border: 3px solid #ee4256; }
+.card-familias   { border: 3px solid #f0ab1a; }
 .card-voluntarios { border: 3px solid #5cb76e; }
-.card-todos       { border: 3px solid #319be8; }
+.card-todos      { border: 3px solid #319be8; }
 .circulo-icone {
-  width: 100px;
-  height: 100px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  flex-shrink: 0;
 }
-.icone-educadores  { background: #efc5cb; }
-.icone-familias    { background: #fff9c7; }
-.icone-voluntarios { background: #d1f5da; }
-.icone-todos       { background: #d0edfd; }
+.icone-educadores  { background: #fce8eb; }
+.icone-familias    { background: #fef5e4; }
+.icone-voluntarios { background: #eaf6ed; }
+.icone-todos       { background: #e6f4fc; }
 .titulo-cartao {
-  font-size: 1.4rem;
-  margin-bottom: 10px;
+  margin: 0 0 14px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0e3e47;
 }
 .texto-cartao {
-  font-size: 0.95rem;
-  line-height: 1.4;
   margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #0e3e47;
 }
 .linha-divisoria {
-  position: absolute;
   width: 100%;
-  height: 3px;
-  background-color: rgb(238, 226, 205);;
-  left: 0;
-}
-@media (max-width: 900px) {
-  .grid-publicos {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  height: 1px;
+  background: #e8dfd3;
 }
 @media (max-width: 600px) {
+  .secao-missao {
+    padding: 45px 16px 30px;
+  }
+  .cabecalho-missao {
+    margin-bottom: 35px;
+  }
+  .titulo-secao {
+    font-size: 2rem;
+  }
+  .descricao-secao {
+    font-size: 0.98rem;
+  }
   .grid-publicos {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cartao-publico {
+    padding: 35px 20px 30px;
+  }
+  .circulo-icone {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 22px;
+  }
+  .circulo-icone svg {
+    width: 38px;
+    height: 38px;
+  }
+  .titulo-cartao {
+    font-size: 1.35rem;
+  }
+  .texto-cartao {
+    font-size: 0.95rem;
   }
 }
 </style>
-
