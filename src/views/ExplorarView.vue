@@ -60,8 +60,9 @@ const atividadesFiltradas = computed(() => {
   <div class="cards">
 
 <BotaoExplorar
-  v-for="(item, index) in atividadesFiltradas.slice(0, limite)"
-  :key="index"
+  v-for="item in atividadesFiltradas.slice(0, limite)"
+  :key="item.id"
+  :id="item.id"
   :titulo="item.titulo"
   :imagem="item.imagem"
   :materia="item.materia"

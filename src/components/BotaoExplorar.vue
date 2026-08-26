@@ -11,24 +11,18 @@ defineProps({
 
 </script>
 <template>
-  <div class="card">
-
-    <img 
-      :src="imagem" 
-      class="imagem"
-    >
+<router-link :to="`/atividade/${id}`" class="card">
+    <img :src="imagem" class="imagem">
     <div class="laranja">
       <div class="linhaDeCima">
-<h2>{{ titulo || 'hgvcxz' }}</h2>
-
-<div class="botoes">
-  <BotaoSalvar />
-</div>
-</div>
-        <span v-if="materia" class="materia">{{ materia }}</span>
+        <h2>{{ titulo || 'hgvcxz' }}</h2>
+        <div class="botoes">
+          <BotaoSalvar @click.stop />
+        </div>
+      </div>
+      <span v-if="materia" class="materia">{{ materia }}</span>
     </div>
-
-  </div>
+  </router-link>
 </template>
 
 <style scoped>

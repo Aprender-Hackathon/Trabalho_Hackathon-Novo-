@@ -1,5 +1,5 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView, RouterLink } from 'vue-router';
 import TheFooter from './components/TheFooter.vue';
 
 
@@ -9,6 +9,8 @@ import TheFooter from './components/TheFooter.vue';
   <div>
     <div class="conteudo">
       <RouterView/>
+      <RouterLink to="/vizualizacao">vizualiza</RouterLink>
+      <RouterLink to="/explorar">Explore</RouterLink>
     </div>
     <TheFooter/>
   </div>
