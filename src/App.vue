@@ -1,14 +1,16 @@
 <script setup>
-import { RouterView } from 'vue-router';
-import TheFooter from './components/TheFooter.vue';
+import { RouterView } from 'vue-router'
+import TheHeader from './components/TheHeader.vue'
+import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
   <div>
+    <TheHeader />
     <div class="conteudo">
       <RouterView />
     </div>
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
