@@ -81,16 +81,17 @@ const goHome = () => {
 <style scoped>
 .page-container {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: calc(100vh - 80px);
   background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-
 .brand-panel {
-  flex: 1;
+  flex: 1.0;
   background-color: #238b97;
   color: #ffffff;
   display: flex;
@@ -109,9 +110,8 @@ const goHome = () => {
   margin: 0;
 }
 
-
 .form-panel {
-  flex: 2;
+  flex: 2.0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -128,9 +128,9 @@ const goHome = () => {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 14px;
+  width: 42px;
+  height: 42px;
+  font-size: 21px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -201,10 +201,10 @@ form {
   padding: 8px 14px;
 }
 
-.input-wrapper .icon {
-  font-size: 1rem;
+.input-icon {
+  width: 18px;
+  height: 18px;
   margin-right: 8px;
-  opacity: 0.7;
 }
 
 .input-wrapper input {
@@ -237,18 +237,10 @@ form {
   background-color: #1b6f79;
 }
 
-.forgot-link {
-  color: #238b97;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: 12px;
-  
-}
-a{
+a {
   color: #238b97;
   font-weight: 600;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .signup-text {

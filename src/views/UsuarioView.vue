@@ -93,6 +93,47 @@ const handleLogout = () => {
   </div>
 </template>
 
+dev-beatriz
+<script setup>
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const user = reactive({
+  name: '',
+  email: '',
+})
+
+const activeField = ref(null)
+const tempValue = ref('')
+
+const openModal = (field) => {
+  activeField.value = field
+  tempValue.value = user[field]
+}
+
+const closeModal = () => {
+  activeField.value = null
+  tempValue.value = ''
+}
+
+const saveModal = () => {
+  if (activeField.value) {
+    user[activeField.value] = tempValue.value
+  }
+  closeModal()
+}
+
+const handleLogout = () => {
+  localStorage.removeItem('isLoggedIn')
+  window.dispatchEvent(new Event('storage'))
+  router.push('/')
+}
+</script>
+
+
+main
 <style scoped>
 *, *::before, *::after {
   box-sizing: border-box;
@@ -322,4 +363,8 @@ const handleLogout = () => {
     padding: 20px;
   }
 }
+ dev-beatriz
 </style>
+
+</style>
+main

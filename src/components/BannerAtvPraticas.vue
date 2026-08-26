@@ -29,28 +29,12 @@
   <div class="linha-divisoria"></div>
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap');
-
-html, body, #app {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden;
-}
-</style>
-
 <style scoped>
 .banner-gigante {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   background-color: #FAF8F5;
-  padding: 80px 6%;
+  padding: 60px 5%;
   box-sizing: border-box;
   overflow: hidden;
   font-family: 'Fredoka', cursive, sans-serif;
@@ -66,7 +50,7 @@ html, body, #app {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   z-index: 2;
 }
 
@@ -106,12 +90,12 @@ html, body, #app {
   position: relative;
   flex: 1;
   z-index: 2;
-  padding-left: 90px;
+  padding-left: 40px;
 }
 
 .titulo-principal {
   margin: 0;
-  font-size: 5.8rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5.8rem);
   line-height: 1.08;
   font-weight: 700;
   letter-spacing: -1px;
@@ -125,8 +109,9 @@ html, body, #app {
 
 .lado-pinguim {
   position: relative;
-  width: 640px;
-  height: 580px;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,12 +121,10 @@ html, body, #app {
 
 .circulo-verde {
   position: absolute;
-  width: 540px;
-  height: 540px;
+  width: 90%;
+  height: 90%;
   background-color: #8cc63f;
   border-radius: 50%;
-  right: 10px;
-  top: 20px;
   z-index: 1;
 }
 
@@ -154,11 +137,42 @@ html, body, #app {
 }
 
 .linha-divisoria {
-  position: absolute;
   width: 100%;
   height: 3px;
   background-color: #eae0d0;
-  left: 0;
 }
 
+@media (max-width: 600px) {
+  .banner-gigante {
+    padding: 50px 20px;
+  }
+
+  .conteudo-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lado-texto {
+    padding-left: 0;
+  }
+
+  .lado-pinguim {
+    max-width: 280px;
+  }
+
+  .mancha-topo-esquerda {
+    width: 100px;
+    height: 80px;
+  }
+
+  .mancha-baixo-esquerda {
+    width: 90px;
+    height: 80px;
+  }
+
+  .mancha-baixo-direita {
+    width: 100px;
+    height: 90px;
+  }
+}
 </style>

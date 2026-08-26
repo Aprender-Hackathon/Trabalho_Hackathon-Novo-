@@ -50,13 +50,9 @@ const pinguimUrl = new URL('./assets/pinguim.png', import.meta.url).href
 
 .banner-referencia {
   position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  width: 100%;
   background-color: #FAF7F2;
-  padding: 80px 6%;
+  padding: 60px 5%;
   box-sizing: border-box;
   overflow: hidden;
   font-family: 'Fredoka', sans-serif;
@@ -72,6 +68,7 @@ const pinguimUrl = new URL('./assets/pinguim.png', import.meta.url).href
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
   z-index: 2;
 }
 
@@ -113,11 +110,12 @@ const pinguimUrl = new URL('./assets/pinguim.png', import.meta.url).href
   flex: 1;
   max-width: 620px;
   z-index: 2;
+  padding-left: 40px;
 }
 
 .titulo-referencia {
   margin: 0;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -157,21 +155,23 @@ const pinguimUrl = new URL('./assets/pinguim.png', import.meta.url).href
 
 .lado-direito {
   position: relative;
-  width: 540px;
-  height: 480px;
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .fundo-amarelo-organico {
   position: absolute;
-  width: 500px;
-  height: 460px;
+  width: 90%;
+  height: 90%;
   background-color: #F4CC44;
   border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
-  right: -10px;
+  right: 0;
   top: 0;
   z-index: 1;
 }
@@ -184,4 +184,42 @@ const pinguimUrl = new URL('./assets/pinguim.png', import.meta.url).href
   z-index: 2;
 }
 
+@media (max-width: 600px) {
+  .banner-referencia {
+    padding: 50px 20px;
+  }
+
+  .conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lado-esquerdo {
+    padding-left: 0;
+  }
+
+  .lado-direito {
+    max-width: 280px;
+  }
+
+  .decoracao-riscos-azuis,
+  .decoracao-estrela {
+    display: none;
+  }
+
+  .mancha-topo-azul {
+    width: 100px;
+    height: 80px;
+  }
+
+  .mancha-baixo-vermelha {
+    width: 90px;
+    height: 80px;
+  }
+
+  .mancha-baixo-verde {
+    width: 100px;
+    height: 90px;
+  }
+}
 </style>

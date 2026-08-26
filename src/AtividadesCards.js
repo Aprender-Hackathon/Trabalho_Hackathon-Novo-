@@ -238,7 +238,7 @@ lista:[
     materia: 'Português',
     conteudo: 'Alfabetização',
     descricao: 'pipipipopopo'
-  }, 
+  },
   {
     titulo: 'Adição',
     imagem: '/SemImagem.png',
@@ -246,7 +246,7 @@ lista:[
     materia: 'Português',
     conteudo: 'Alfabetização',
     descricao: 'pipipipopopo'
-  },  
+  },
   {
     titulo: 'Adição',
     imagem: '/SemImagem.png',
