@@ -20,10 +20,16 @@
     </div>
   </section>
 </template>
-
 <style scoped>
 .secao-sobre {
-  padding: 50px 20px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #FCF4E8;
+  padding: 60px 40px;
+  color: #0e3e47;
+  box-sizing: border-box;
   font-family: 'Fredoka', sans-serif;
   display: flex;
   justify-content: center;
@@ -82,7 +88,7 @@
   border-radius: 30px;
   text-decoration: none;
 }
-@media (max-width: 850px) {
+@media (max-width: 650px) {
   .cartao-sobre {
     flex-direction: column;
     text-align: center;

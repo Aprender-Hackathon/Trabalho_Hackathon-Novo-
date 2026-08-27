@@ -3,10 +3,8 @@
 <template>
   <section id="categorias" class="secao-categorias">
     <div class="container-categorias">
-
       <h2 class="titulo-secao">Ideal para cada momento</h2>
       <p class="subtitulo-secao">Encontre atividades de acordo com o que você precisa.</p>
-
       <div class="grid-categorias">
         <router-link to="/explorar?categoria=dia-das-maes" class="cartao-categoria cor-maes">
           <div class="caixa-imagem">
@@ -44,17 +42,21 @@
           </div>
           <span class="texto-categoria">Natal</span>
         </router-link>
-
       </div>
-
     </div>
   </section>
    <div class="linha-divisoria"></div>
 </template>
-
 <style scoped>
 .secao-categorias {
-  padding: 50px 20px 60px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #FCF4E8;
+  padding: 60px 40px;
+  color: #0e3e47;
+  box-sizing: border-box;
   font-family: 'Fredoka', sans-serif;
 }
 .container-categorias {
@@ -122,11 +124,6 @@
   height: 3px;
   background-color: rgb(238, 226, 205);;
   left: 0;
-}
-@media (max-width: 960px) {
-  .grid-categorias {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 @media (max-width: 600px) {
   .grid-categorias {
