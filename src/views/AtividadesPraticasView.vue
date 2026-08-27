@@ -8,8 +8,7 @@ import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 const limite = ref(20)
 
 const filtroEscolhido = ref({
-  materia: 'Tudo',
-  conteudo: 'Tudo',
+  data: 'Tudo',
 })
 
 function alternarSalvar(id) {
@@ -20,18 +19,17 @@ function alternarSalvar(id) {
 }
 
 const atividadesFiltradas = computed(() => {
-  return estadoPratica.lista.filter((item) => {
-    const matchMateria =
-      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
-    const matchConteudo =
-      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
-    return matchMateria && matchConteudo
+  const lista = estadoPratica?.lista || []
+  return lista.filter((item) => {
+    return (
+      filtroEscolhido.value.data === 'Tudo' ||
+      item.data === filtroEscolhido.value.data
+    )
   })
 })
 </script>
 
 <template>
-
   <div class="explorar-container">
     <FiltroPratica @filtro="filtroEscolhido = $event" />
 
