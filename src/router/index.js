@@ -23,10 +23,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'About',
-      component: () => import('../views/AboutView.vue'),
-      path: '/explorar',
-      name: 'explorar',
-      component: ExplorarView,
+      component: () => import('../views/AboutView.vue')
     },
     { path: '/atividade/:id', 
       name: 'VizuView', 

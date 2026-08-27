@@ -1,10 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { atividades } from '@/AtividadesCards.js'
+import { estadoAtividades } from '@/AtividadesCards'
 
 const emit = defineEmits(['pesquisa'])
 
-const activities = ref(atividades)
+const activities = ref(estadoAtividades)
 const filtro = ref('')
 const pesquisado = ref(false)
 

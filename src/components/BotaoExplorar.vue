@@ -27,6 +27,7 @@ defineEmits(['salvar'])
         </div>
       <span v-if="materia" class="materia">{{ materia }}</span>
     </div>
+    </div>
   </router-link>
 </template>
 
