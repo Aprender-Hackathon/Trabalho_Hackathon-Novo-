@@ -179,27 +179,89 @@ html, body, #app {
   background-color: rgb(238, 226, 205);;
   left: 0;
 }
+@media (max-width: 600px) {
+  .banner-gigante {
+    min-height: auto;
+    padding: 55px 25px 45px;
+  }
 
-@media (max-width: 1300px) {
-  .titulo-principal { font-size: 4.8rem; }
-  .lado-pinguim { width: 520px; height: 480px; }
-  .circulo-amarelo { width: 460px; height: 460px; }
-}
+  .conteudo-banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    max-width: 100%;
+  }
 
-@media (max-width: 950px) {
-  .banner-gigante { padding: 60px 4%; }
-  .conteudo-banner { flex-direction: column; text-align: center; }
-  .titulo-principal { font-size: 3.5rem; }
-  .icone-coracao { left: 0; top: -30px; }
-  .icone-estrela { right: 0; bottom: -20px; top: auto; }
-  .lado-pinguim { width: 380px; height: 340px; }
-  .circulo-amarelo { width: 320px; height: 320px; right: auto; }
+  .lado-texto {
+    width: 100%;
+    flex: none;
+    text-align: center;
+  }
 
-}
+  .titulo-principal {
+    font-size: clamp(2.8rem, 10vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
 
-@media (max-width: 480px) {
-  .titulo-principal { font-size: 2.5rem; }
-  .lado-pinguim { width: 290px; height: 260px; }
-  .circulo-amarelo { width: 250px; height: 250px; }
+  /* Coração */
+  .icone-coracao {
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-12deg);
+  }
+
+  .svg-coracao {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Estrela */
+  .icone-estrela {
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(15deg);
+  }
+
+  .svg-estrela {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Área do pinguim */
+  .lado-pinguim {
+    width: min(90vw, 360px);
+    height: min(80vw, 320px);
+    flex-shrink: 0;
+  }
+
+  .circulo-amarelo {
+    width: min(75vw, 300px);
+    height: min(75vw, 300px);
+    right: auto;
+    left: 50%;
+    top: 50%;
+   
+  }
+  .imagem-pinguim {
+    width: 100%;
+    height: 100%;
+  }
+  .mancha-topo-esquerda {
+    width: 110px;
+    height: 90px;
+  }
+  .mancha-baixo-esquerda {
+    width: 95px;
+    height: 95px;
+  }
+  .mancha-baixo-direita {
+    width: 120px;
+    height: 100px;
+  }
+  .linha-divisoria {
+    height: 2px;
+  }
 }
 </style>
