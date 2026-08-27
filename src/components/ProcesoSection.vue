@@ -1,13 +1,8 @@
-<script setup>
-</script>
 <template>
   <section class="secao-processo">
     <div class="container-processo">
-
       <h2 class="titulo-processo">É Simples, Acolhedor e Transformador</h2>
-
       <div class="fluxo-processo">
-
         <div class="cartao-passo">
           <div class="caixa-icone">
             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#5cb76e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -18,14 +13,12 @@
           <h3 class="cor-verde">Explore</h3>
           <p>Descubra atividades inclusivas por matéria, conteúdos e objetivos!</p>
         </div>
-
         <div class="caixa-seta" aria-hidden="true">
           <svg width="65" height="32" viewBox="0 0 36 24" fill="none" stroke="#b8b8b8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12h30"/>
             <path d="M22 4l10 8-10 8"/>
           </svg>
         </div>
-
         <div class="cartao-passo">
           <div class="caixa-icone">
             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ee4256" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -35,14 +28,12 @@
           <h3 class="cor-coral">Inspire-se</h3>
           <p>Salve as melhores atividades para aplicar ou apenas se inspirar!</p>
         </div>
-
         <div class="caixa-seta" aria-hidden="true">
           <svg width="65" height="32" viewBox="0 0 36 24" fill="none" stroke="#b8b8b8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12h30"/>
             <path d="M22 4l10 8-10 8"/>
           </svg>
         </div>
-
         <div class="cartao-passo">
           <div class="caixa-icone">
             <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#f0ab1a" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -54,14 +45,12 @@
           <h3 class="cor-amarelo">Coloque em pratica</h3>
           <p>Baixe suas atividades em PDF ou PNG e imprima-as para a aplicação.</p>
         </div>
-
         <div class="caixa-seta" aria-hidden="true">
           <svg width="65" height="32" viewBox="0 0 36 24" fill="none" stroke="#b8b8b8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M2 12h30"/>
             <path d="M22 4l10 8-10 8"/>
           </svg>
         </div>
-
         <div class="cartao-passo">
           <div class="caixa-icone">
             <svg width="88" height="80" viewBox="0 0 24 24" fill="none" stroke="#319be8" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
@@ -74,18 +63,22 @@
           <h3 class="cor-azul">Transforme</h3>
           <p>Então ensine com paciência e transforme o mundo!</p>
         </div>
-
       </div>
-
     </div>
   </section>
  <div class="linha-divisoria"></div>
 </template>
-
 <style scoped>
 .secao-processo {
-  padding: 60px 20px 70px;
   font-family: 'Fredoka', sans-serif;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #FCF4E8;
+  padding: 60px 40px;
+  color: #0e3e47;
+  box-sizing: border-box;
 }
 .container-processo {
   max-width: 1280px;
@@ -147,10 +140,10 @@
   position: absolute;
   width: 100%;
   height: 3px;
-  background-color: rgb(238, 226, 205);;
+  background-color: rgb(238, 226, 205);
   left: 0;
 }
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .fluxo-processo {
     flex-direction: column;
     align-items: center;

@@ -8,11 +8,6 @@
     <div class="mancha mancha-baixo-direita"></div>
     <div class="conteudo-banner">
       <div class="lado-texto">
-        <div class="icone-coracao">
-          <svg viewBox="0 0 24 24" class="svg-coracao">
-            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-          </svg>
-        </div>
         <h1 class="titulo-principal">
           <span class="cor-azul-escuro bloco">Inspiração</span>
           <span class="linha-segunda">
@@ -24,12 +19,6 @@
             <span class="cor-amarela">transformar</span>
           </span>
         </h1>
-        <div class="icone-estrela">
-          <svg viewBox="0 0 24 24" class="svg-estrela">
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-          </svg>
-        </div>
-
       </div>
       <div class="lado-pinguim">
         <div class="circulo-amarelo"></div>
@@ -59,7 +48,7 @@ html, body, #app {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  background-color: #FAF7F2;
+  background-color: #f4ebdc;
   padding: 100px 6%;
   box-sizing: border-box;
   overflow: hidden;
@@ -123,28 +112,6 @@ html, body, #app {
 .cor-azul-escuro { color: #0e3e47; }
 .cor-rosa { color: #da4b59; }
 .cor-amarela { color: #f0ab1a; }
-.icone-coracao {
-  position: absolute;
-  left: -65px;
-  top: 40%;
-  transform: translateY(-50%) rotate(-12deg);
-}
-.svg-coracao {
-  width: 60px;
-  height: 60px;
-  fill: #ee4256;
-}
-.icone-estrela {
-  position: absolute;
-  right: 30px;
-  top: 45%;
-  transform: rotate(15deg);
-}
-.svg-estrela {
-  width: 50px;
-  height: 50px;
-  fill: #f0ab1a;
-}
 .lado-pinguim {
   position: relative;
   width: 680px;
@@ -184,7 +151,6 @@ html, body, #app {
     min-height: auto;
     padding: 55px 25px 45px;
   }
-
   .conteudo-banner {
     flex-direction: column;
     justify-content: center;
@@ -192,57 +158,27 @@ html, body, #app {
     gap: 25px;
     max-width: 100%;
   }
-
   .lado-texto {
     width: 100%;
     flex: none;
     text-align: center;
   }
-
   .titulo-principal {
     font-size: clamp(2.8rem, 10vw, 3.8rem);
     line-height: 1.05;
     letter-spacing: -1px;
   }
-
-  /* Coração */
-  .icone-coracao {
-    left: 5px;
-    top: 50%;
-    transform: translateY(-50%) rotate(-12deg);
-  }
-
-  .svg-coracao {
-    width: 38px;
-    height: 38px;
-  }
-
-  /* Estrela */
-  .icone-estrela {
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%) rotate(15deg);
-  }
-
-  .svg-estrela {
-    width: 35px;
-    height: 35px;
-  }
-
-  /* Área do pinguim */
   .lado-pinguim {
     width: min(90vw, 360px);
     height: min(80vw, 320px);
     flex-shrink: 0;
   }
-
   .circulo-amarelo {
     width: min(75vw, 300px);
     height: min(75vw, 300px);
     right: auto;
     left: 50%;
     top: 50%;
-   
   }
   .imagem-pinguim {
     width: 100%;
@@ -257,8 +193,7 @@ html, body, #app {
     height: 95px;
   }
   .mancha-baixo-direita {
-    width: 120px;
-    height: 100px;
+    display: none;
   }
   .linha-divisoria {
     height: 2px;

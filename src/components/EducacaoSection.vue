@@ -1,5 +1,3 @@
-<script setup>
-</script>
 <template>
   <section id="sobre" class="secao-missao">
     <div class="container-principal">
@@ -35,8 +33,6 @@
             Materiais simples e práticos para acompanhar o aprendizado das crianças em casa com mais confiança.
           </p>
         </article>
-
-        <!-- Voluntários -->
         <article class="cartao-publico card-voluntarios">
           <div class="circulo-icone icone-voluntarios">
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#5cb76e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -66,27 +62,23 @@
   </section>
   <div class="linha-divisoria"></div>
 </template>
-<style>
-html, body, #app {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden;
-}
-</style>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700&display=swap');
 .secao-missao {
-  width: 100%;
-  background: #FAF7F2;
-  padding: 60px 20px 60px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #FCF4E8;
+  padding: 60px 40px;
   color: #0e3e47;
+  box-sizing: border-box;
 }
 .container-principal {
   width: 100%;
-  max-width: 1300px;
+  max-width: none;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .cabecalho-missao {
   width: 100%;
@@ -113,10 +105,12 @@ html, body, #app {
 .grid-publicos {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px;
+  box-sizing: border-box;
 }
 .cartao-publico {
+  width: 100%;
   background: #FFFFFF;
   border-radius: 25px;
   padding: 45px 24px 35px;
@@ -126,13 +120,10 @@ html, body, #app {
   align-items: center;
   box-sizing: border-box;
 }
-.cartao-publico:hover {
-  transform: translateY(-3px);
-}
-.card-educadores { border: 3px solid #ee4256; }
-.card-familias   { border: 3px solid #f0ab1a; }
-.card-voluntarios { border: 3px solid #5cb76e; }
-.card-todos      { border: 3px solid #319be8; }
+.card-educadores {border: 3px solid #ee4256;}
+.card-familias {border: 3px solid #f0ab1a;}
+.card-voluntarios {border: 3px solid #5cb76e;}
+.card-todos {border: 3px solid #319be8;}
 .circulo-icone {
   width: 115px;
   height: 115px;
@@ -143,10 +134,10 @@ html, body, #app {
   margin-bottom: 30px;
   flex-shrink: 0;
 }
-.icone-educadores  { background: #fce8eb; }
-.icone-familias    { background: #fef5e4; }
-.icone-voluntarios { background: #eaf6ed; }
-.icone-todos       { background: #e6f4fc; }
+.icone-educadores {background: #fce8eb;}
+.icone-familias {background: #fef5e4;}
+.icone-voluntarios {background: #eaf6ed;}
+.icone-todos {background: #e6f4fc;}
 .titulo-cartao {
   margin: 0 0 14px;
   font-family: 'Fredoka', sans-serif;
@@ -164,9 +155,11 @@ html, body, #app {
   color: #0e3e47;
 }
 .linha-divisoria {
+  position: absolute;
   width: 100%;
-  height: 1px;
-  background: #e8dfd3;
+  height: 3px;
+  background-color: rgb(238, 226, 205);
+  left: 0;
 }
 @media (max-width: 600px) {
   .secao-missao {
