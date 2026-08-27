@@ -1,6 +1,6 @@
-import { ref } from 'vue'
+import { reactive } from 'vue'
 
-export const estadoAtividades = ref({
+export const estadoAtividades = reactive({
 lista:[
 
    {
@@ -35,12 +35,14 @@ lista:[
     salvos: false
   },
         {
+          id: 4,
     titulo: 'Adição',
     imagem: '/SemImagem.png',
     arquivo: '/atividades/Matematica/Numeros/Numero14.docx',
     materia: 'Matemática',
     conteudo: 'Números',
-    descricao: 'pipipipopopo'
+    descricao: 'pipipipopopo',
+    salvos : false
   },
 
 //PORTUGUÊS

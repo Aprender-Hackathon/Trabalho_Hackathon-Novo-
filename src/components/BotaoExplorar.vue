@@ -18,9 +18,8 @@ defineEmits(['salvar'])
     <img :src="imagem" class="imagem" :alt="titulo" />
     <div class="laranja">
       <div class="linhaDeCima">
-        <h2>{{ titulo || 'Sem título' }}</h2>
+        <h2>{{ titulo }}</h2>
         <div class="botoes">
-          <!-- Aqui passamos o objeto completo da atividade para cima quando o coração é clicado -->
           <BotaoSalvar
             :isSalvo="isSalvo"
             @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
