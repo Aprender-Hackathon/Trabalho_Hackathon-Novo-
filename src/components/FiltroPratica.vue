@@ -1,3 +1,33 @@
+<script setup>
+import { ref } from 'vue'
+
+const emit = defineEmits(['filtro'])
+
+const feriados = [
+  'Tudo',
+  'Ano Novo',
+  'Carnaval',
+  'Dia da Escola',
+  'Dia da Árvore',
+  'Dia das Crianças',
+  'Dia das Mães',
+  'Dia do Amigo',
+  'Dia dos Animais',
+  'Festa Junina',
+  'Natal',
+  'Páscoa'
+]
+
+const dataSelecionada = ref('Tudo')
+const mostrarMais = ref(false)
+
+function selecionarData(data) {
+  dataSelecionada.value = data
+  emit('filtro', {
+    data: dataSelecionada.value 
+  })
+}
+</script>
 <template>
   <div class="filter-container">
     <div class="filter-row">
@@ -21,30 +51,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const emit = defineEmits(['filtro'])
-
-const feriados = [
-  'Dia das crianças',
-  'Dia das mães',
-  'Festa Junina',
-  'Natal',
-  'Páscoa'
-]
-
-const dataSelecionada = ref(feriados[0])
-const mostrarMais = ref(false)
-
-function selecionarData(data) {
-  dataSelecionada.value = data
-  emit('filtro', {
-    feriados: dataSelecionada.value
-  })
-}
-</script>
 
 <style scoped>
 .filter-container {

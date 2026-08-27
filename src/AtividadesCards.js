@@ -1,6 +1,6 @@
-import { ref } from 'vue'
+import { reactive } from 'vue'
 
-export const estadoAtividades = ref({
+export const estadoAtividades = reactive({
 lista:[
 
    {
