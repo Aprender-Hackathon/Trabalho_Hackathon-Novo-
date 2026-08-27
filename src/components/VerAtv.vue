@@ -9,7 +9,7 @@ function voltar() {
   router.back()
 }
 
-const props = defineProps({
+defineProps({
   materia: String,
   titulo: String,
   conteudo: String,
