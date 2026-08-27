@@ -5,6 +5,8 @@ import BotaoExplorar from '@/components/BotaoExplorar.vue'
 import { estadoAtividades } from '@/AtividadesCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
+//testando o commit
+
 const limite = ref(20)
 
 const filtroEscolhido = ref({
