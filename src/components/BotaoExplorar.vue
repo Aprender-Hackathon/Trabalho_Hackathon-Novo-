@@ -40,8 +40,25 @@ defineEmits(['salvar'])
   overflow: hidden;
   position: relative;
   background: white;
-  margin: 19px;
+  margin: 8px;
 }
+
+@media (max-width: 480px) {
+  .card {
+    width: 46%; 
+    margin: 4px;
+    height: 300px;
+  }
+  
+  .imagem {
+    height: 140px;
+  }
+
+  .titulo {
+    font-size: 0.95rem;
+  }
+}
+
 .imagem {
   width: 100%;
   height: 200px;
@@ -75,4 +92,5 @@ h2 {
   color: #333;
   text-decoration: underline;
 }
+
 </style>

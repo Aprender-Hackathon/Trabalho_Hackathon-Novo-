@@ -33,7 +33,7 @@ defineEmits(['salvar'])
   overflow: hidden;
   position: relative;
   background: white;
-  margin: 19px;
+  margin: 8px;
 }
 .imagem {
   width: 100%;

@@ -133,7 +133,8 @@ function selecionarConteudo(conteudo) {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  width: 100vw;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .label {
@@ -182,4 +183,5 @@ function selecionarConteudo(conteudo) {
   line-height: 1;
   margin-left: 2px;
 }
+
 </style>
