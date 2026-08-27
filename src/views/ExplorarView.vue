@@ -35,7 +35,7 @@ const atividadesFiltradas = computed(() => {
 
   const texto = normaliza(textoPesquisado.value)
 
-  return atividades.filter((item) => {
+  return estadoAtividades.lista.filter((item) => {
 
     const matchMateria =
       filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia

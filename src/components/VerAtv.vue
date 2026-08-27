@@ -28,6 +28,7 @@ function alternarSalvar() {
       item.salvo = !item.salvo
     }
   }
+    router.push({ name: 'salvos' })
 }
 </script>
 

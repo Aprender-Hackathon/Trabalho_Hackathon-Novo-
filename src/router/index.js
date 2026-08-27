@@ -16,6 +16,11 @@ const router = createRouter({
       component: () => import('../views/ExplorarView.vue'),
     },
     {
+      path: '/explorar',
+      name: 'explorarAlt',
+      component: ExplorarView
+    },
+    {
       path: '/sobre-nos',
       name: 'sobre',
       component: () => import('../views/SobrenosView.vue'),
@@ -27,7 +32,7 @@ const router = createRouter({
     },
     { path: '/atividade/:id', 
       name: 'VizuView', 
-      component: () => import('@/views/VizuView.vue') 
+      component: () => import('@/views/VizuView.vue'),
     },
     {
       path: '/atividades-praticas',

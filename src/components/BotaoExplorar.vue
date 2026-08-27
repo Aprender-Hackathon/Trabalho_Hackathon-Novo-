@@ -14,11 +14,16 @@ defineEmits(['salvar'])
 </script>
 
 <template>
-  <router-link :to="`/atividade/${id}`" class="card">
-    <img :src="imagem" class="imagem" :alt="titulo" />
+  
+    <div class="card">
+      <router-link :to="`/atividade/${id}`" class="link">
+        <img :src="imagem" class="imagem" :alt="titulo"/>
+      </router-link>
     <div class="laranja">
       <div class="linhaDeCima">
-        <h2>{{ titulo }}</h2>
+        <router-link :to="`/atividade/${id}`" class="link">
+          <h2>{{ titulo }}</h2>
+        </router-link>
         <div class="botoes">
           <BotaoSalvar
             :isSalvo="isSalvo"
@@ -28,10 +33,14 @@ defineEmits(['salvar'])
       <span v-if="materia" class="materia">{{ materia }}</span>
     </div>
     </div>
-  </router-link>
+    </div>
+  
 </template>
 
 <style scoped>
+.link {
+  text-decoration: none;
+}
 .card {
   width: 240px;
   height: 300px;

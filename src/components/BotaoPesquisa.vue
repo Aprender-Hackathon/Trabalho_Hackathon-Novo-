@@ -4,7 +4,7 @@ import { estadoAtividades } from '@/AtividadesCards'
 
 const emit = defineEmits(['pesquisa'])
 
-const activities = ref(estadoAtividades)
+const activities = ref(estadoAtividades.lista)
 const filtro = ref('')
 const pesquisado = ref(false)
 
