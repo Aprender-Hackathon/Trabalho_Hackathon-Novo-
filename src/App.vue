@@ -1,18 +1,16 @@
 <script setup>
-import { RouterView, RouterLink } from 'vue-router';
-import TheFooter from './components/TheFooter.vue';
-
-
+import { RouterView } from 'vue-router'
+import TheHeader from './components/TheHeader.vue'
+import TheFooter from './components/TheFooter.vue'
 </script>
 
 <template>
-  <div>
-    <RouterLink to="/vizualizacao">vizualiza</RouterLink>
-      <RouterLink to="/explorar">Explore</RouterLink>
+  <div class="conteudo-principal">
+    <TheHeader />
     <div class="conteudo">
-      <RouterView/>
+      <RouterView />
     </div>
-    <TheFooter/>
+    <TheFooter />
   </div>
 </template>
 
@@ -22,4 +20,3 @@ import TheFooter from './components/TheFooter.vue';
   margin: 0 auto;
 }
 </style>
-

@@ -1,3 +1,41 @@
+<script setup>
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const user = reactive({
+  name: '',
+  email: '',
+})
+
+const activeField = ref(null)
+const tempValue = ref('')
+
+const openModal = (field) => {
+  activeField.value = field
+  tempValue.value = user[field]
+}
+
+const closeModal = () => {
+  activeField.value = null
+  tempValue.value = ''
+}
+
+const saveModal = () => {
+  if (activeField.value) {
+    user[activeField.value] = tempValue.value
+  }
+  closeModal()
+}
+
+const handleLogout = () => {
+  localStorage.removeItem('isLoggedIn')
+  window.dispatchEvent(new Event('storage'))
+  router.push('/')
+}
+</script>
+
 <template>
   <div class="full-screen-container">
     <div class="profile-card">
@@ -55,39 +93,6 @@
   </div>
 </template>
 
-<script setup>
-import { reactive, ref } from 'vue'
-
-const user = reactive({
-  name: '',
-  email: '',
-})
-
-const activeField = ref(null)
-const tempValue = ref('')
-
-const openModal = (field) => {
-  activeField.value = field
-  tempValue.value = user[field]
-}
-
-const closeModal = () => {
-  activeField.value = null
-  tempValue.value = ''
-}
-
-const saveModal = () => {
-  if (activeField.value) {
-    user[activeField.value] = tempValue.value
-  }
-  closeModal()
-}
-
-const handleLogout = () => {
-  alert('Sessão encerrada!')
-}
-</script>
-
 <style scoped>
 *, *::before, *::after {
   box-sizing: border-box;
@@ -96,7 +101,6 @@ const handleLogout = () => {
 .full-screen-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #faf7f2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -278,7 +282,6 @@ const handleLogout = () => {
   justify-content: flex-end;
 }
 
-/* Breakpoints para telas menores */
 @media (max-width: 768px) {
   .profile-card {
     flex-direction: column;
@@ -320,3 +323,4 @@ const handleLogout = () => {
   }
 }
 </style>
+

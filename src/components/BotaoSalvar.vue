@@ -1,20 +1,20 @@
+<script setup>
+defineProps({
+  isSalvo: Boolean
+})
+defineEmits(['salvar'])
+</script>
+
 <template>
-  <button
-    class="heart-button"
-    :class="[
-      `heart-button--${size}`,
-      /*`heart-button--${color}`,*/
-      { 'is-active': isLiked }
-    ]"
-    @click="toggleLike"
-  >
+  <button class="botao-salvar" type="button" @click.stop="$emit('salvar')">
     <svg
+      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       width="24"
       height="24"
-      stroke="currentColor"
+      :fill="isSalvo ? '#e74c3c' : 'none'"
+      stroke="#1a1a1a"
       stroke-width="2"
-      fill="none"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
@@ -23,112 +23,18 @@
   </button>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-
-// adicionando as propriedades de tamanho e cor
-defineProps({
-  size: {
-    type: String,
-    default: 'M',
-    validator: (value) => ['S', 'M', 'L'].includes(value)
-  } /*,
-
-  color: {
-    type: String,
-    default: 'red',
-    validator: (value) =>
-      ['gray', 'red', 'black', 'blue'].includes(value)
-  } */
-})
-
-const isLiked = ref(false)
-
-const toggleLike = () => {
-  isLiked.value = !isLiked.value
-}
-
-</script>
-
 <style scoped>
-.heart-button {
+.botao-salvar {
   background: transparent;
   border: none;
   cursor: pointer;
-  outline: none;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
   transition: transform 0.2s ease;
-  color: #d1495b;
 }
-
-.heart-button:hover {
-  transform: scale(1.05);
+.botao-salvar:hover {
+  transform: scale(1.1);
 }
-.heart-button:active{
-    transform: scale(1.1);
-}
-
-.heart-button.is-active {
-  color: #d1495b;
-}
-
-.heart-button.is-active svg {
-  fill: #d1495b;
-}
-
-
-/*
-Tamanho aceito para adicionar no Botão
-Tamanhos: S = pequeno, M = médio e L = grande */
-
-.heart-button--S {
-  padding: 8px;
-}
-
-.heart-button--S svg {
-  width: 24px;
-  height: 24px;
-}
-
-.heart-button--M {
-  padding: 12px;
-}
-
-.heart-button--M svg {
-  width: 36px;
-  height: 36px;
-}
-
-.heart-button--L {
-  padding: 16px;
-}
-
-.heart-button--L svg {
-  width: 48px;
-  height: 48px;
-}
-
-/* Cores aplicadas quando o coração está ativo
-Serão aceita cores cinza, vermelho, preto e azul 
-
-.heart-button--gray.is-active {
-  color: gray;
-}
-
-.heart-button--red.is-active {
-  color: #e74c3c;
-}
-
-.heart-button--black.is-active {
-  color: #000000;
-}
-
-.heart-button--blue.is-active {
-  color: #3498db;
-}
-
-.heart-button.is-active svg {
-  fill: currentColor;
-} */
-
 </style>

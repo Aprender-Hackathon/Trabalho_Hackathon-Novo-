@@ -68,7 +68,7 @@ padding: 0;
 margin: 5px auto 0 auto;
 border: none;
 background: none;
-line-height: 0; 
+line-height: 0;
 align-items: center;
 }
 

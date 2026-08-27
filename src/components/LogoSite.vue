@@ -1,6 +1,7 @@
 <template>
   <div class="logo-container">
-    <img src="@/assets/logo.png" alt="Logo" class="logo-image" />
+
+    <img src="@/assets/img/logo.png" alt="Logo" class="logo-image" />
     <span class="logo-text">Aprender+</span>
   </div>
 </template>

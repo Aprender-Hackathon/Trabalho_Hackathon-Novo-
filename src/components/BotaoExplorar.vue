@@ -1,25 +1,30 @@
 <script setup>
-
-import BotaoSalvar from './BotaoSalvar.vue';  
+import BotaoSalvar from './BotaoSalvar.vue'
 
 defineProps({
+  id: [Number, String],
   materia: String,
   conteudo: String,
   titulo: String,
-  imagem: String
+  imagem: String,
+  isSalvo: Boolean
 })
 
+defineEmits(['salvar'])
 </script>
+
 <template>
-<router-link :to="`/atividade/${id}`" class="card">
-    <img :src="imagem" class="imagem">
+  <router-link :to="`/atividade/${id}`" class="card">
+    <img :src="imagem" class="imagem" :alt="titulo" />
     <div class="laranja">
       <div class="linhaDeCima">
-        <h2>{{ titulo || 'hgvcxz' }}</h2>
+        <h2>{{ titulo }}</h2>
         <div class="botoes">
-          <BotaoSalvar @click.stop />
+          <BotaoSalvar
+            :isSalvo="isSalvo"
+            @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
+          />
         </div>
-      </div>
       <span v-if="materia" class="materia">{{ materia }}</span>
     </div>
   </router-link>
@@ -34,16 +39,13 @@ defineProps({
   overflow: hidden;
   position: relative;
   background: white;
-  justify-content: center;
   margin: 19px;
 }
-
 .imagem {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .laranja {
   position: absolute;
   bottom: 0;
@@ -52,24 +54,21 @@ defineProps({
   background: #F5893C;
   display: flex;
   flex-direction: column;
-justify-content: space-between;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 12px 15px;
   box-sizing: border-box;
 }
-
-.linhaDeCima{
+.linhaDeCima {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-
 h2 {
   color: #1a1a1a;
   font-size: 20px;
   margin: 0;
 }
-
 .materia {
   font-size: 17px;
   color: #333;

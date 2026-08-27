@@ -1,759 +1,1004 @@
-
-export const atividades = [
-
-//#region MATEMÁTICA (Gente coloquem isso no inicio e no final coloquem "//#endregion" isso vai deixar BEM mais organizado)
-
-//#region ADIÇÃO
-  {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/atividadeAdicao1.png',
-    arquivo: '/atividades/Matematica/Adicao/atividadeAdicao1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
+import { reactive } from 'vue'
+export const estadoAtividades = reactive({
+  lista:[
     {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma1.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
+      id: 1,
+      titulo: 'Artes Visuais — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
     {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma2.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma3.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma4.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma5.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma6.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma7.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma8.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Adicao/Soma9.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Adição',
-    descricao: 'pipipipopopo'
-  },
-//#endregion
-
-//#region ANÁLISE COMBINATÓRIA
-
+      id: 2,
+      titulo: 'Artes Visuais — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.png',
-    arquivo: '/atividades/Matematica/Analise_combinatoria/atividadeAnalise1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Análise combinatória',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion 
-
-//#region ÂNGULOS
-
- {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Angulos/atividadeAngulo1.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Análise combinatória',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.docx',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo2.docx',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo'
-  },
-  
-
-//#endregion
-
-//#region ÁREA
-
-   {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Area/atividadeArea1.png',
-    arquivo: '/atividades/Matematica/Area/atividadeArea1.pdf',
-    materia: 'Matemática',
-    conteudo: 'Área',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#region SUBTRAÇÃO
-
-   {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração4.png',
-    arquivo: '/atividades/Matematica/Subtração/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração1.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração2.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Análise combinatória',
-    imagem: '/atividades/Matematica/Subtracao/Subtração3.jpeg',
-    arquivo: '/atividades/Matematica/SemNada.pdf',
-    materia: 'Matemática',
-    conteudo: 'Subtração',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#region DIVISÃO
-
-
-
-//#endregion
-
-//#region EQUAÇÕES DO 1° GRAU
-
-
-
-//#endregion
-
-//#region EXPRESSÕES ALGÉBRICAS
-
-
-
-//#endregion
-
-//#region FATORAÇÃO
-
-
-
-//#endregion
-
-//#region FRAÇÃO
-
-
-
-//#endregion
-
-//#region FUNÇÃO AFIM
-
-
-
-//#endregion
-
-//#region JUROS SIMPLES
-
-
-
-//#endregion
-
-//#region MATEMÁTICA FINANCEIRA
-
-
-
-//#endregion
-
-//#region MATRIZES
-
-
-
-//#endregion
-
-//#region NÚMEROS
-
+      id: 3,
+      titulo: 'Artes Visuais — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
     {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros1.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros2.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros3.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros4.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros5.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros6.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros7.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numeros8.jpeg',
-    arquivo: '/atividades/Matematica/Adicao/semPDFporEnquanto.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero9.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero9.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero10.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero10.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-        {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero11.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero11.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-      {
-    titulo: 'Adição',
-    imagem: '/atividades/Matematica/Numeros/Numero12.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero12.pdf',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-        {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero13.docx',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-        {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero14.docx',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#region PERIMETRO
-
-
-
-//#endregion
-
-//#endregion
-
-//#region PORTUGUÊS
-
-//#region ALFABETIZAÇÃO
-
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_A.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_B.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_C.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_D.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_E.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_F.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_G.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_H.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_I.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_J.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_K.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_L.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_M.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_N.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_O.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_P.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Q.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_R.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_S.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_T.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_U.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_V.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_W.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_X.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  }, 
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Y.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },  
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Z.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#endregion
-
-//#region Química
-
-//#region Química Organica
-
- {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica1.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica2.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica3.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica4.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica5.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica6.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica7.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica8.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica9.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica10.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica11.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica12.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/atividades/Quimica/Quimica_organica/atividadeQuimica13.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica13.pdf',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-
-
-//#endregion
-
-//#region ÁTOMO E MODELOS ATÔMICOS
-
-   {
-    titulo: 'Adição',
-    imagem: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo1.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo1.pdf',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-     {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo2.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo3.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-       {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo4.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo5.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo6.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-//#region ISOMERIA
-
-//#region Geografia
-
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo6.docx',
-    materia: 'Geografia',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-
-//#endregion
-
-]
-export default atividades;
+      id: 4,
+      titulo: 'Cores primarias e secundarias — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 5,
+      titulo: 'Cores primarias e secundarias — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 6,
+      titulo: 'Cores primarias e secundarias — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 7,
+      titulo: 'Cores primarias e secundarias — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 8,
+      titulo: 'Cores primarias e secundarias — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 9,
+      titulo: 'Cores primarias e secundarias — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 10,
+      titulo: 'Cores primarias e secundarias — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 11,
+      titulo: 'Cores primarias e secundarias — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 12,
+      titulo: 'Cores primarias e secundarias — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 13,
+      titulo: 'Cores primarias e secundarias — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 14,
+      titulo: 'Cores primarias e secundarias — Atividade 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em cores primarias e secundarias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 15,
+      titulo: 'Desenho e pintura — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 16,
+      titulo: 'Desenho e pintura — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 17,
+      titulo: 'Desenho e pintura — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 18,
+      titulo: 'Desenho e pintura — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 19,
+      titulo: 'Desenho e pintura — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 20,
+      titulo: 'Desenho e pintura — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 21,
+      titulo: 'Desenho e pintura — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 22,
+      titulo: 'Desenho e pintura — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 23,
+      titulo: 'Desenho e pintura — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 24,
+      titulo: 'Desenho e pintura — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 25,
+      titulo: 'Desenho e pintura — Atividade 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 26,
+      titulo: 'Desenho e pintura — Atividade 12',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade12.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 27,
+      titulo: 'Desenho e pintura — Atividade 13',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em desenho e pintura. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade13.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 28,
+      titulo: 'Elementos das artes visuais — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 29,
+      titulo: 'Elementos das artes visuais — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 30,
+      titulo: 'Elementos das artes visuais — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 31,
+      titulo: 'Elementos das artes visuais — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 32,
+      titulo: 'Elementos das artes visuais — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 33,
+      titulo: 'Elementos das artes visuais — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 34,
+      titulo: 'Elementos das artes visuais — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 35,
+      titulo: 'Elementos das artes visuais — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 36,
+      titulo: 'Elementos das artes visuais — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 37,
+      titulo: 'Elementos das artes visuais — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 38,
+      titulo: 'Elementos das artes visuais — Atividade 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 39,
+      titulo: 'Elementos das artes visuais — Atividade 12',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade12.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 40,
+      titulo: 'Elementos das artes visuais — Atividade 13',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em elementos das artes visuais. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade13.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 41,
+      titulo: 'Formas e texturas — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 42,
+      titulo: 'Formas e texturas — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 43,
+      titulo: 'Formas e texturas — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 44,
+      titulo: 'Formas e texturas — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 45,
+      titulo: 'Formas e texturas — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 46,
+      titulo: 'Formas e texturas — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 47,
+      titulo: 'Formas e texturas — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 48,
+      titulo: 'Formas e texturas — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 49,
+      titulo: 'Formas e texturas — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 50,
+      titulo: 'Formas e texturas — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 51,
+      titulo: 'Formas e texturas — Atividade 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao: 'Atividade de Artes sobre Artes Visuais, com foco em formas e texturas. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 52,
+      titulo: 'Arte contemporanea — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 53,
+      titulo: 'Arte contemporanea — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 54,
+      titulo: 'Arte contemporanea — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 55,
+      titulo: 'Arte contemporanea — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 56,
+      titulo: 'Arte contemporanea — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 57,
+      titulo: 'Arte contemporanea — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 58,
+      titulo: 'Arte contemporanea — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 59,
+      titulo: 'Arte contemporanea — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 60,
+      titulo: 'Arte contemporanea — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 61,
+      titulo: 'Arte contemporanea — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 62,
+      titulo: 'Arte contemporanea — Atividade 11',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte contemporanea. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 63,
+      titulo: 'Arte Medieval e Renascimento — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 64,
+      titulo: 'Arte Medieval e Renascimento — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 65,
+      titulo: 'Arte Medieval e Renascimento — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 66,
+      titulo: 'Arte Medieval e Renascimento — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 67,
+      titulo: 'Arte Medieval e Renascimento — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 68,
+      titulo: 'Arte Medieval e Renascimento — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 69,
+      titulo: 'Arte Medieval e Renascimento — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 70,
+      titulo: 'Arte Medieval e Renascimento — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 71,
+      titulo: 'Arte Medieval e Renascimento — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 72,
+      titulo: 'Arte Medieval e Renascimento — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte Medieval e Renascimento. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 73,
+      titulo: 'Arte moderna no Brasil — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 74,
+      titulo: 'Arte moderna no Brasil — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 75,
+      titulo: 'Arte moderna no Brasil — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 76,
+      titulo: 'Arte moderna no Brasil — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 77,
+      titulo: 'Arte moderna no Brasil — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 78,
+      titulo: 'Arte moderna no Brasil — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 79,
+      titulo: 'Arte moderna no Brasil — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 80,
+      titulo: 'Arte moderna no Brasil — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 81,
+      titulo: 'Arte moderna no Brasil — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 82,
+      titulo: 'Arte moderna no Brasil — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte moderna no Brasil. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 83,
+      titulo: 'Arte na Antiguidade — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 84,
+      titulo: 'Arte na Antiguidade — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 85,
+      titulo: 'Arte na Antiguidade — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 86,
+      titulo: 'Arte na Antiguidade — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 87,
+      titulo: 'Arte na Antiguidade — Atividade 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 88,
+      titulo: 'Arte na Antiguidade — Atividade 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 89,
+      titulo: 'Arte na Antiguidade — Atividade 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 90,
+      titulo: 'Arte na Antiguidade — Atividade 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 91,
+      titulo: 'Arte na Antiguidade — Atividade 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 92,
+      titulo: 'Arte na Antiguidade — Atividade 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em arte na Antiguidade. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 93,
+      titulo: 'História da Arte — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 94,
+      titulo: 'História da Arte — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 95,
+      titulo: 'História da Arte — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 96,
+      titulo: 'História da Arte — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 97,
+      titulo: 'Vanguardas europeias — Atividade 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em vanguardas europeias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 98,
+      titulo: 'Vanguardas europeias — Atividade 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em vanguardas europeias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 99,
+      titulo: 'Vanguardas europeias — Atividade 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em vanguardas europeias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 100,
+      titulo: 'Vanguardas europeias — Atividade 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao: 'Atividade de Artes sobre História da Arte, com foco em vanguardas europeias. Traz exercícios práticos e contextualizados, pensados para reforçar a aprendizagem dos alunos de forma clara e objetiva.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    }
+]})
