@@ -1,41 +1,34 @@
 <script setup>
 import BotaoSalvar from './BotaoSalvar.vue'
 
-defineProps({
-  id: [Number, String],
-  materia: String,
-  conteudo: String,
-  titulo: String,
-  imagem: String,
-  isSalvo: Boolean
-})
-
+defineProps(['id', 'titulo', 'imagem', 'data', 'isSalvo'])
 defineEmits(['salvar'])
 </script>
 
 <template>
   <div class="card">
-    <img :src="imagem" class="imagem" :alt="titulo" />
-    <div class="laranja">
-      <div class="linhaDeCima">
-        <h2>{{ titulo }}</h2>
-        <div class="botoes">
+        <img :src="imagem" class="imagem" :alt="titulo" />
+    <div class="roxo">
+    <div class="linhaDeCima">
+    <h2>{{ titulo }}</h2>
+      <div class="botoes">
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
+            @salvar="$emit('salvar', { id, titulo, imagem, data })"
           />
-        </div>
       </div>
-      <span v-if="materia" class="materia">{{ materia }}</span>
-    </div>
+</div>
+      <span v-if="data" class="data">{{ data }}</span>
+</div>
   </div>
 </template>
+
 
 <style scoped>
 .card {
   width: 240px;
   height: 300px;
-  border: 3.5px solid #F5893C;
+  border: 3.5px solid #5C49C8;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
@@ -47,12 +40,12 @@ defineEmits(['salvar'])
   height: 200px;
   object-fit: cover;
 }
-.laranja {
+.roxo {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: #F5893C;
+  background: #5C49C8;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -70,7 +63,7 @@ h2 {
   font-size: 20px;
   margin: 0;
 }
-.materia {
+.data {
   font-size: 17px;
   color: #333;
   text-decoration: underline;

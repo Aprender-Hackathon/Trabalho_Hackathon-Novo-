@@ -1,48 +1,46 @@
 <script setup>
 import { ref, computed } from 'vue'
-import FiltroExplorar from '@/components/FiltroExplorar.vue'
-import BotaoExplorar from '@/components/BotaoExplorar.vue'
-import { estadoAtividades } from '@/AtividadesCards'
+import FiltroPratica from '@/components/FiltroPratica.vue'
+import BotaoPratica from '@/components/BotaoPratica.vue'
+import { estadoPratica } from '@/PraticaCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 const limite = ref(20)
 
 const filtroEscolhido = ref({
-  materia: 'Tudo',
-  conteudo: 'Tudo',
+  data: 'Tudo',
 })
 
 function alternarSalvar(id) {
-  const item = estadoAtividades.lista.find(a => a.id === id)
+  const item = estadoPratica.lista.find(a => a.id === id)
   if (item) {
     item.salvo = !item.salvo
   }
 }
 
 const atividadesFiltradas = computed(() => {
-  return estadoAtividades.lista.filter((item) => {
-    const matchMateria =
-      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
-    const matchConteudo =
-      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
-    return matchMateria && matchConteudo
+  const lista = estadoPratica?.lista || []
+  return lista.filter((item) => {
+    return (
+      filtroEscolhido.value.data === 'Tudo' ||
+      item.data === filtroEscolhido.value.data
+    )
   })
 })
 </script>
 
 <template>
   <div class="explorar-container">
-    <FiltroExplorar @filtro="filtroEscolhido = $event" />
+    <FiltroPratica @filtro="filtroEscolhido = $event" />
 
     <div class="cards">
-      <BotaoExplorar
+      <BotaoPratica
         v-for="item in atividadesFiltradas.slice(0, limite)"
         :key="item.id"
         :id="item.id"
         :titulo="item.titulo"
         :imagem="item.imagem"
-        :materia="item.materia"
-        :conteudo="item.conteudo"
+        :data="item.data"
         :isSalvo="item.salvo"
         @salvar="alternarSalvar(item.id)"
       />
