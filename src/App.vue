@@ -7,10 +7,10 @@ import TheFooter from './components/TheFooter.vue';
 
 <template>
   <div>
+    <RouterLink to="/vizualizacao">vizualiza</RouterLink>
+      <RouterLink to="/explorar">Explore</RouterLink>
     <div class="conteudo">
       <RouterView/>
-      <RouterLink to="/vizualizacao">vizualiza</RouterLink>
-      <RouterLink to="/explorar">Explore</RouterLink>
     </div>
     <TheFooter/>
   </div>
