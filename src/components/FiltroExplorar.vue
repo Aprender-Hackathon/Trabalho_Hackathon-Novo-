@@ -1,17 +1,16 @@
 <template>
+
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Matéria(s):</span>
       <div class="tags-group">
         <button
-          v-for="materia in materias"
+         v-for="materia in materias"
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
-          @click="materiaSelecionada = materia"
-        >
+ @click="selecionarMateria(materia)">
           {{ materia }}
-          <span v-if="materiaSelecionada === materia && materia !== 'Tudo'" class="close-icon">×</span>
         </button>
       </div>
     </div>
@@ -20,14 +19,18 @@
       <span class="label">Conteúdo(s):</span>
       <div class="tags-group">
         <button
-          v-for="conteudo in conteudosAtuais"
+          v-for="conteudo in (mostrarMais ? conteudosAtuais : conteudosAtuais.slice(0, 6))"
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
-          @click="conteudoSelecionado = conteudo"
-        >
+          @click="selecionarConteudo(conteudo)">
           {{ conteudo }}
-          <span v-if="conteudoSelecionado === conteudo && conteudo !== 'Tudo'" class="close-icon">×</span>
+        </button>
+        <button
+          v-if="conteudosAtuais.length > 6"
+          class="tag-btn"
+          @click="mostrarMais = !mostrarMais">
+          {{ mostrarMais ? '-' : '+' }}
         </button>
       </div>
     </div>
@@ -37,40 +40,81 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
+const emit = defineEmits (['filtro'])
+
 const materias = [
-  'Tudo', 'Artes', 'Ciências', 'Geografia', 
-  'História', 'Língua Inglesa', 'Língua Portuguesa', 'Matemática'
+  'Tudo', 'Artes', 'Biologia', 'Ciências', 'Educação Física', 'Ensino Religioso', 'Espanhol', 'Filosofia', 'Física', 'Geografia', 'História', 'Inglês', 'Matemática', 'Português', 'Química', 'Sociologia'
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Pinturas', 'Desenhos'],
-  'Ciências': ['Planta', 'Animais'],
-  'Geografia': ['Bandeiras', 'Cidades'],
-  'História': ['Dia da bandeira', 'Dia da independência'],
-  'Língua Inglesa': ['Números', 'Cores'],
-  'Língua Portuguesa': [
-    'Alfabetização', 'Interpretação de Texto', 'Ortografia', 
-    'Produção de Texto', 'Leitura', 'Gramática', 'Gêneros Textuais', 'Vocabulário e Linguagem'
-  ],
-  'Matemática': ['Contas', 'Formas geométricas']
+  'Artes': ['Artes Visuais','Historia da arte', 'Música' ],
+
+  'Biologia': ['Biotecnologia', 'Botânica', 'Celulas e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
+
+  'Ciências': ['Corpo Humano', 'Ecologia e Ambiente', 'Matéria e Energia', 'Seres Vivos', 'Terra e Espaço'],
+
+  'Educação Física': ['Corpo e Movimento', 'Jogos e Esporte', 'Saúde e Qualidade de Vida'],
+
+  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Etíca'],
+
+  'Espanhol': ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
+
+  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia clássica', 'Filosofia Medieval', 'Filosofia Política', 'Intrudição e Origem'],
+
+  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Movimento', 'Forças e dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
+
+  'Geografia': ['Brasil e Mundo', 'Cartografia e Orientação', 'Economia e Globalização', 'Espaço e Paisagem', 'Natureza e Ambiente', 'População e Espaço'],
+
+  'História': ['Antiguidade', 'Brasil Imperio e República', 'Colonização', 'Fontes e Mémorias', 'Guerras e Conflitos', 'Idade Média e Renascimento', 'Revoluções e Tranformações'],
+
+  'Inglês': ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
+
+  'Matemática': ['Algébra', 'Combinatória e Probabilidade', 'Conjuntos', 'Equações e Sistemas', 'Funções', 'Geometria espacial', 'Geometria plana', 'Matrizes e Determinantes', 'Números e Operações', 'Razões, Proporções e Porcentagens', 'Trigonometria'],
+
+  'Português': ['Alfabetização e Leitura', 'Classes de Palavras', 'Coesão e Produção', 'Concordância e Regência', 'Gêneros Textuais', 'Orações e Períodos', 'Ortografia e Acentuação', 'Semântica e Variação', 'Síntaxse'],
+
+  'Química': ['Átomo e modelos atômicos', 'Eletroquímica', 'Ligações e Funções', 'Matérias e Misturas', 'Química orgânica', 'Reações químicas', 'Soluções','Termoquímica e Equilíbrio'],
+
+  'Sociologia': ['Cultura e Estado','Introdução à Sociologia', 'Pensadores Clássicos', 'Poder e Política', 'Trabalho e Capitalismo']
+
 }
 
-const materiaSelecionada = ref('Língua Portuguesa')
+const materiaSelecionada = ref('Português')
 const conteudoSelecionado = ref('Tudo')
+const mostrarMais = ref(false)
 
 const conteudosAtuais = computed(() => {
   if (materiaSelecionada.value === 'Tudo') {
     const todos = Object.values(conteudosPorMateria).flat()
     return ['Tudo', ...new Set(todos)]
   }
-  
+
   const conteudos = conteudosPorMateria[materiaSelecionada.value] || []
   return ['Tudo', ...conteudos]
 })
 
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = 'Tudo'
+  mostrarMais.value = false
 })
+
+function selecionarMateria(materia) {
+  materiaSelecionada.value = materia
+  conteudoSelecionado.value = 'Tudo'
+  emit('filtro', {
+    materia: materiaSelecionada.value,
+    conteudo: conteudoSelecionado.value
+  })
+}
+function selecionarConteudo(conteudo) {
+  conteudoSelecionado.value = conteudo
+  emit('filtro', {
+    materia: materiaSelecionada.value,
+    conteudo: conteudoSelecionado.value
+  })
+}
+
+
 </script>
 
 <style scoped>
@@ -79,14 +123,17 @@ watch(materiaSelecionada, () => {
   flex-direction: column;
   gap: 16px;
   background-color: #fdfbf7;
-  padding: 24px;
+  padding: 24px 70px;
   font-family: Arial, sans-serif;
+  justify-content: center
+
 }
 
 .filter-row {
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  width: 100vw;
 }
 
 .label {

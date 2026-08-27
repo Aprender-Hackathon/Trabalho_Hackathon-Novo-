@@ -7,15 +7,7 @@ function subir(){
     })
 }
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-
-library.add(fab, fas)
-
 </script>
-
 
 <template>
 <footer>
@@ -23,17 +15,17 @@ library.add(fab, fas)
         <h2>
             <img src="/src/assets/logo.svg" alt="Logo"><p>Aprender+</p>
         </h2>
-        <p>© 2026 - Aprender+ atividades anclusivas. Todos os direitos reservados</p>
+        <p>© 2026 - Aprender+ atividades inclusivas. Todos os direitos reservados</p>
 
         <div class="as">
-            <a class="redes-icone" href="#">
-                <font-awesome-icon :icon="['fab', 'instagram']" style="color: rgb(0, 121, 140, 0.500); font-size: 25px;" />
+            <a class="redes-icone" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/insta.svg" alt="Logo do Instagram">
             </a>
-            <a class="redes-icone" href="#">
-                <font-awesome-icon :icon="['fab', 'tiktok']" style="color: rgb(0, 121, 140, 0.500); font-size: 25px;" />
+            <a class="redes-icone" href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="/images/face.svg" alt="Logo do Facebook">
             </a>
-            <a class="redes-icone" href="#">
-                <font-awesome-icon :icon="['fab', 'facebook-f']" style="color: rgb(0, 121, 140, 0.500); font-size: 25px;" />
+            <a class="redes-icone" href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+                <img src="/public/images/tiktok.svg" alt="Logo do Tiktok">
             </a>
     </div>
     </div>
@@ -45,25 +37,19 @@ library.add(fab, fas)
 
 <style scoped>
 footer {
-    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    background-color: rgba(0, 121, 140, 0.5); 
+    position: relative;
+    width: 100%;
 }
 .conteudo {
-    background-color: rgb(0, 121, 140, 0.500);
-    padding: 5vw 5vw;
+    padding: 10px 5vw;
     color: #FFF7EE;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20vw;
-}
-a.redes-icone{
-    background-color: #FFF7EE;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 7.5px 4.5px;
-    justify-content: center;
-    align-items: center;
 }
 .as{
     display: flex;
@@ -73,6 +59,7 @@ a.redes-icone{
 p{
     font-family: 'Inter', sans-serif;
     font-weight: bold;
+    cursor: default;
 }
 
 .up{
@@ -91,5 +78,52 @@ h2{
     justify-content: center;
     align-items: center;
     gap: 2vw;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+
+    .conteudo {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 0;
+        padding: 15px 20px;
+    }
+
+    h2 {
+        gap: 12px;
+    }
+
+    h2 img {
+        width: 45px;
+        height: 45px;
+    }
+
+    h2 p {
+        font-size: 26px;
+    }
+
+    .conteudo > p {
+        font-size: 14px;
+        max-width: 350px;
+        line-height: 1.4;
+        margin-top: 3px;
+        margin-bottom: 25px;
+    }
+
+    .as {
+        gap: 20px;
+    }
+
+    .redes-icone {
+        width: 65px;
+        height: 65px;
+    }
+
+    .redes-icone img {
+        width: 40px;
+        height: 40px;
+    }
 }
 </style>
