@@ -14,7 +14,7 @@ defineEmits(['salvar'])
 </script>
 
 <template>
-  <div class="card">
+  <router-link :to="`/atividade/${id}`" class="card">
     <img :src="imagem" class="imagem" :alt="titulo" />
     <div class="laranja">
       <div class="linhaDeCima">
@@ -25,10 +25,9 @@ defineEmits(['salvar'])
             @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
           />
         </div>
-      </div>
       <span v-if="materia" class="materia">{{ materia }}</span>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <style scoped>
