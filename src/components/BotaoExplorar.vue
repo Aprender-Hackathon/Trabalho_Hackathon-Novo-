@@ -1,5 +1,6 @@
 <script setup>
 import BotaoSalvar from './BotaoSalvar.vue'
+import PreviewDocx from './PreviewDocx.vue'
 
 defineProps({
   id: [Number, String],
@@ -7,6 +8,8 @@ defineProps({
   conteudo: String,
   titulo: String,
   imagem: String,
+  arquivo: String,
+  previewTipo: String,
   isSalvo: Boolean
 })
 
@@ -15,22 +18,36 @@ defineEmits(['salvar'])
 
 <template>
   <div class="card">
-    <img :src="imagem" class="imagem" :alt="titulo" />
+    <PreviewDocx
+      v-if="previewTipo === 'docx' && arquivo"
+      :arquivo="arquivo"
+      class="imagem"
+    />
     <div class="laranja">
       <div class="linhaDeCima">
-        <h2>{{ titulo }}</h2>
+
+        <h2>{{ titulo || 'Sem título' }}</h2>
         <div class="botoes">
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
+            @salvar="$emit('salvar', {
+              id,
+              titulo,
+              imagem,
+              arquivo,
+              previewTipo,
+              materia,
+              conteudo
+            })"
           />
         </div>
       </div>
-      <span v-if="materia" class="materia">{{ materia }}</span>
+      <span v-if="materia" class="materia">
+        {{ materia }}
+      </span>
     </div>
   </div>
 </template>
-
 <style scoped>
 .card {
   width: 240px;
