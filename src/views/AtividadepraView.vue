@@ -5,6 +5,7 @@ import FiltroPratica from '@/components/FiltroPratica.vue'
 import BotaoPratica from '@/components/BotaoPratica.vue'
 import { estadoPratica } from '@/PraticaCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
+import BannerAtvPraticas from '@/components/BannerAtvPraticas.vue'
 
 const route = useRoute()
 const limite = ref(20)
@@ -64,6 +65,8 @@ const atividadesFiltradas = computed(() => {
 
 <template>
   <div class="explorar-container">
+        <BannerAtvPraticas />
+    <FiltroPratica @filtro="filtroEscolhido = $event" />
 
     <FiltroPratica 
       :filtroInicial="filtroEscolhido" 
