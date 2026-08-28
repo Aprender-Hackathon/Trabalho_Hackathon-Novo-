@@ -68,7 +68,7 @@ export const estadoPratica = reactive({
       descricao: 'Pintura e confecção de máscaras carnavalescas.',
       salvo: false,
     },
-      //colocar atividade
+    //colocar atividade
     {
       id: 8,
       titulo: 'Músicas',
@@ -78,7 +78,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade de exploração cultural e ritmos de Carnaval.',
       salvo: false,
     },
-      //colocar atividade
+    //colocar atividade
     {
       id: 9,
       titulo: 'Cores do Carnaval',
@@ -88,7 +88,7 @@ export const estadoPratica = reactive({
       descricao: 'Exercício prático de pintura e colagem para o Carnaval.',
       salvo: false,
     },
-      // DIA DA ESCOLA
+    // DIA DA ESCOLA
     {
       id: 10,
       titulo: 'Minha Escola Querida',
@@ -246,7 +246,7 @@ export const estadoPratica = reactive({
       descricao: 'Leitura, interpretação e pintura especial para o Dia das Mães.',
       salvo: false,
     },
-      //colocar atividade
+    //colocar atividade
     {
       id: 27,
       titulo: 'Retrato da Mamãe',
@@ -331,7 +331,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade de alfabetização e escrita da palavra amigo.',
       salvo: false,
     },
-     {
+    {
       id: 36,
       titulo: 'Complete a Palavra Amigo',
       imagem: '/Imagens feriados/Dia dos Animais/animais5.jpg',
@@ -340,7 +340,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade de alfabetização e escrita da palavra amigo.',
       salvo: false,
     },
-     // DIA DOS PAIS
+    // DIA DOS PAIS
     {
       id: 37,
       titulo: 'Dia dos Pais',
@@ -359,8 +359,8 @@ export const estadoPratica = reactive({
       descricao: 'Atividade sobre o Dia dos Pais.',
       salvo: false,
     },
-     // DIA DOS POVOS INDÍGENAS
-         {
+    // DIA DOS POVOS INDÍGENAS
+    {
       id: 39,
       titulo: 'Povos Indígenas',
       imagem: '/Imagens feriados/Dia dos Povos Indígenas/povosIndigenas1.jpg',
@@ -378,7 +378,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 41,
       titulo: 'Povos Indígenas',
       imagem: '/Imagens feriados/Dia dos Povos Indígenas/povosIndigenas3.jpg',
@@ -388,7 +388,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     // DIA INTERNACIONAL DA MULHER
-         {
+    {
       id: 42,
       titulo: 'Dia Internacional da Mulher',
       imagem: '/Imagens feriados/Dia Internacional da Mulher/diaMulher1.jpg',
@@ -406,7 +406,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 44,
       titulo: 'Dia Internacional da Mulher',
       imagem: '/Imagens feriados/Dia Internacional da Mulher/diaMulher3.png',
@@ -424,7 +424,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para pintar.',
       salvo: false,
     },
-     // DIA MUNDIAL DO TRABALHO
+    // DIA MUNDIAL DO TRABALHO
     {
       id: 46,
       titulo: 'Dia Mundial do Trabalho',
@@ -443,7 +443,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 48,
       titulo: 'Dia Mundial do Trabalho',
       imagem: '/Imagens feriados/Dia Mundial do Trabalho/diaTrabalho3.jpg',
@@ -461,7 +461,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para pintar.',
       salvo: false,
     },
-        {
+    {
       id: 50,
       titulo: 'Dia Mundial do Trabalho',
       imagem: '/Imagens feriados/Dia Mundial do Trabalho/diaTrabalho5.jpeg',
@@ -470,7 +470,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para pintar.',
       salvo: false,
     },
-     // DIA MUNDIAL DOS PROFESSORES
+    // DIA MUNDIAL DOS PROFESSORES
     {
       id: 51,
       titulo: 'Dia Mundial dos Professores',
@@ -489,8 +489,8 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-        // FESTA JUNINA
-         {
+    // FESTA JUNINA
+    {
       id: 53,
       titulo: 'Festa Junina',
       imagem: '/Imagens feriados/Festa Junina/FestaJunina1.png',
@@ -508,7 +508,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 55,
       titulo: 'Festa Junina',
       imagem: '/Imagens feriados/Festa Junina/FestaJunina3.png',
@@ -527,8 +527,8 @@ export const estadoPratica = reactive({
       salvo: false,
     },
 
-      // INDEPENDÊNCIA DO BRASIL
-         {
+    // INDEPENDÊNCIA DO BRASIL
+    {
       id: 57,
       titulo: 'Independência do Brasil',
       imagem: '/Imagens feriados/Independência do Brasil/IndependenciaDoBR1.png',
@@ -546,7 +546,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 59,
       titulo: 'Independência do Brasil',
       imagem: '/Imagens feriados/Independência do Brasil/IndependenciaDoBR3.png',
@@ -574,7 +574,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 62,
       titulo: 'Natal',
       imagem: '/Imagens feriados/Natal/Natal3.png',
@@ -592,8 +592,8 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para pintar.',
       salvo: false,
     },
-     // PASCOA
-         {
+    // PASCOA
+    {
       id: 64,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa1.png',
@@ -611,7 +611,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para escrever.',
       salvo: false,
     },
-     {
+    {
       id: 66,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa3.png',
@@ -631,4 +631,5 @@ export const estadoPratica = reactive({
     },
   ],
 })
+
 export default estadoPratica

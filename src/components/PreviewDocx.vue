@@ -4,8 +4,8 @@ import { renderAsync } from 'docx-preview'
 const props = defineProps({
   arquivo: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 })
 const preview = ref(null)
 const erro = ref(false)
@@ -17,20 +17,15 @@ async function carregarDocumento() {
       throw new Error('Não foi possível carregar o arquivo DOCX')
     }
     const blob = await resposta.blob()
-    await renderAsync(
-      blob,
-      preview.value,
-      null,
-      {
-        className: 'docx',
-        inWrapper: true,
-        breakPages: true,
-        ignoreWidth: false,
-        ignoreHeight: false,
-        renderHeaders: true,
-        renderFooters: true
-      }
-    )
+    await renderAsync(blob, preview.value, null, {
+      className: 'docx',
+      inWrapper: true,
+      breakPages: true,
+      ignoreWidth: false,
+      ignoreHeight: false,
+      renderHeaders: true,
+      renderFooters: true,
+    })
     await nextTick()
     setTimeout(() => {
       ajustarPrevia()
@@ -65,8 +60,7 @@ function ajustarPrevia() {
   }
   const larguraCard = preview.value.clientWidth
   const margem = 6
-  const escala =
-    (larguraCard - margem) / larguraPagina
+  const escala = (larguraCard - margem) / larguraPagina
   wrapper.style.position = 'absolute'
   wrapper.style.top = '0'
   wrapper.style.left = '0'
@@ -80,15 +74,15 @@ function ajustarPrevia() {
   pagina.style.top = '0'
   pagina.style.left = '50%'
   pagina.style.margin = '0'
-  pagina.style.transform =`translateX(-50%) scale(${escala})`
-  pagina.style.transformOrigin ='top center'
+  pagina.style.transform = `translateX(-50%) scale(${escala})`
+  pagina.style.transformOrigin = 'top center'
   pagina.style.background = 'white'
-  pagina.style.boxShadow ='0 1px 6px rgba(0, 0, 0, 0.18)'
+  pagina.style.boxShadow = '0 1px 6px rgba(0, 0, 0, 0.18)'
   pagina.style.boxSizing = 'border-box'
   console.log('Prévia configurada:', {
     larguraPagina,
     larguraCard,
-    escala
+    escala,
   })
 }
 onMounted(() => {
@@ -98,17 +92,8 @@ onMounted(() => {
 
 <template>
   <div class="preview-docx">
-    <div
-      v-if="erro"
-      class="erro-preview"
-    >
-      Não foi possível carregar a prévia.
-    </div>
-    <div
-      v-else
-      ref="preview"
-      class="documento-preview"
-    ></div>
+    <div v-if="erro" class="erro-preview">Não foi possível carregar a prévia.</div>
+    <div v-else ref="preview" class="documento-preview"></div>
   </div>
 </template>
 <style>
