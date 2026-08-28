@@ -84,10 +84,12 @@ function selecionarData(data) {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: #fdfbf7;
+  background-color: #ffffff;
+  margin: 50px auto 20px auto;
   padding: 24px 70px;
   font-family: Arial, sans-serif;
   justify-content: center;
+  border-radius: 15px;
 }
 
 .filter-row {

@@ -16,6 +16,7 @@ import TheFooter from './components/TheFooter.vue'
 
 <style scoped>
 .conteudo-principal {
+   background: #FCF4E8;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
