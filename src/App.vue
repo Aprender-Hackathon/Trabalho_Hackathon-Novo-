@@ -19,11 +19,13 @@ import TheFooter from './components/TheFooter.vue'
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
+
 .conteudo {
   flex: 1;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 </style>
