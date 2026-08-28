@@ -89,24 +89,9 @@ const conteudosPorMateria = {
 
   Espanhol: ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
-  Filosofia: [
-    'Conhecimento e Razão',
-    'Ética e Moral',
-    'Filosofia clássica',
-    'Filosofia Medieval',
-    'Filosofia Política',
-    'Intrudição e Origem',
-  ],
+  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia Clássica', 'Filosofia Medieval', 'Filosofia Política', 'Introdução e Origem'],
 
-  Física: [
-    'Calor e Termodinâmica',
-    'Eletricidade e Magnetismo',
-    'Energia e Movimento',
-    'Forças e dinâmica',
-    'Gases',
-    'Movimento',
-    'Ondas e Óptica',
-  ],
+  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Momento', 'Forças e Dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
 
   Geografia: [
     'Brasil e Mundo',
@@ -119,27 +104,27 @@ const conteudosPorMateria = {
 
   História: [
     'Antiguidade',
-    'Brasil Imperio e República',
+    'Brasil Império e República',
     'Colonização',
-    'Fontes e Mémorias',
+    'Fontes e Memória',
     'Guerras e Conflitos',
     'Idade Média e Renascimento',
-    'Revoluções e Tranformações',
+    'Revoluções e Transformações',
   ],
 
   Inglês: ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
 
   Matemática: [
-    'Algébra',
+    'Álgebra',
     'Combinatória e Probabilidade',
     'Conjuntos',
     'Equações e Sistemas',
     'Funções',
-    'Geometria espacial',
-    'Geometria plana',
+    'Geometria Espacial',
+    'Geometria Plana',
     'Matrizes e Determinantes',
     'Números e Operações',
-    'Razões, Proporções e Porcentagens',
+    'Razão, Proporção e Porcentagem',
     'Trigonometria',
   ],
 
@@ -152,23 +137,23 @@ const conteudosPorMateria = {
     'Orações e Períodos',
     'Ortografia e Acentuação',
     'Semântica e Variação',
-    'Síntaxse',
+    'Sintaxse',
   ],
 
   Química: [
-    'Átomo e modelos atômicos',
+    'Átomo e Modelos Atômicos',
     'Eletroquímica',
     'Ligações e Funções',
-    'Matérias e Misturas',
-    'Química orgânica',
-    'Reações químicas',
+    'Matéria e Misturas',
+    'Química Orgânica',
+    'Reações Químicas',
     'Soluções',
     'Termoquímica e Equilíbrio',
   ],
 
   Sociologia: [
-    'Cultura e Estado',
-    'Introdução à Sociologia',
+    'Cultura e Sociedade',
+    'Introdução e Surgimento',
     'Pensadores Clássicos',
     'Poder e Política',
     'Trabalho e Capitalismo',
