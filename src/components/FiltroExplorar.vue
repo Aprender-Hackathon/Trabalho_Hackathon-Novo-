@@ -89,30 +89,9 @@ const conteudosPorMateria = {
 
   Espanhol: ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
-<<<<<<< HEAD
   'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia Clássica', 'Filosofia Medieval', 'Filosofia Política', 'Introdução e Origem'],
 
   'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Momento', 'Forças e Dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
-=======
-  Filosofia: [
-    'Conhecimento e Razão',
-    'Ética e Moral',
-    'Filosofia clássica',
-    'Filosofia Medieval',
-    'Filosofia Política',
-    'Intrudição e Origem',
-  ],
-
-  Física: [
-    'Calor e Termodinâmica',
-    'Eletricidade e Magnetismo',
-    'Energia e Movimento',
-    'Forças e dinâmica',
-    'Gases',
-    'Movimento',
-    'Ondas e Óptica',
-  ],
->>>>>>> 78d28ce9d88ba7189c03f72df3faa71249560355
 
   Geografia: [
     'Brasil e Mundo',
