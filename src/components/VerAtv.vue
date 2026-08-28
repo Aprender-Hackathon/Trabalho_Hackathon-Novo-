@@ -71,7 +71,7 @@ function alternarSalvar() {
         />
 
         <BotaoSalvar
-          size="L"
+          size="M"
           class="celular"
           :isSalvo="isSalvo"
           @salvar="alternarSalvar"
