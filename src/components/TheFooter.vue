@@ -7,7 +7,9 @@ function subir(){
     })
 }
 
+
 </script>
+
 
 <template>
 <footer>
@@ -37,14 +39,11 @@ function subir(){
 
 <style scoped>
 footer {
-    margin-top: 20px;
-    padding: 0;
-    background-color: rgba(0, 121, 140, 0.5); 
-    position: relative;
-    width: 100%;
+    margin: 0;
 }
 .conteudo {
-    padding: 10px 5vw;
+    background-color: rgb(0, 121, 140, 0.500);
+    padding: 2vw 5vw;
     color: #FFF7EE;
     display: flex;
     justify-content: center;
@@ -69,7 +68,7 @@ padding: 0;
 margin: 5px auto 0 auto;
 border: none;
 background: none;
-line-height: 0; 
+line-height: 0;
 align-items: center;
 }
 

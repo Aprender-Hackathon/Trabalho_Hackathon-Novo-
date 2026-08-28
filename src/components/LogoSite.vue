@@ -1,14 +1,7 @@
 <template>
   <div class="logo-container">
- dev-beatriz
-
-  
-
-    <img src="@/assets/logo.png" alt="Logo" class="logo-image" />
-
 
     <img src="@/assets/img/logo.png" alt="Logo" class="logo-image" />
- main
     <span class="logo-text">Aprender+</span>
   </div>
 </template>
@@ -31,11 +24,4 @@
   color: #4a4a4a;
   font-family: Arial, sans-serif;
 }
-dev-beatriz
-
 </style>
-
-
-
-</style>
- main
