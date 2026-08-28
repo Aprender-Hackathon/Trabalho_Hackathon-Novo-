@@ -43,7 +43,7 @@ function mostrarMenos() {
             :conteudo="atividade.conteudo"
             :descricao="atividade.descricao"
             :imagem="atividade.imagem"
-            :pdf="atividade.arquivo"
+            :docx="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
         <BotaoMaisResultados 

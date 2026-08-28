@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import BaixarPdf from './BaixarPdf.vue'
+import BaixarDocx from './BaixarDocx.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
 import { estadoAtividades } from '@/AtividadesCards.js'
 
@@ -13,7 +13,7 @@ const props = defineProps({
   conteudo: String,
   imagem: String,
   descricao: String,
-  pdf: String,
+  docx: String,
   isSalvo: Boolean
 })
 
@@ -53,7 +53,7 @@ function alternarSalvar() {
       </div>
 
       <div class="baixo">
-        <BaixarPdf :pdf="pdf" />
+        <BaixarDocx :docx="docx"/>
 
         <BotaoSalvar
           size="L"
