@@ -35,7 +35,7 @@ watch(
     if (novaData) {
       dataSelecionada.value = novaData
 
-     
+
       const index = feriados.indexOf(novaData)
       if (index >= 6) {
         mostrarMais.value = true
@@ -85,7 +85,7 @@ function selecionarData(data) {
   flex-direction: column;
   gap: 16px;
   background-color: #fdfbf7;
-  padding: 24px 20px;
+  padding: 24px 70px;
   font-family: Arial, sans-serif;
   justify-content: center;
 }
@@ -95,6 +95,7 @@ function selecionarData(data) {
   align-items: flex-start;
   gap: 16px;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .label {

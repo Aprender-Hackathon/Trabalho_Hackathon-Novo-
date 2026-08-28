@@ -121,7 +121,11 @@ onMounted(() => {
 }
 
 .nav-link:hover {
-  color: #e65261 !important;
+  border-radius: 50px;
+}
+
+.nav-link.router-link-active {
+  border: #e65261 solid 3px;
   border-radius: 50px;
 }
 
