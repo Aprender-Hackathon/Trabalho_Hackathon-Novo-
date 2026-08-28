@@ -17,5 +17,7 @@ import NossaEquipe from '../components/NossaEquipe.vue'
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #D7EFD5;
+  min-height: 100vh;
 }
 </style>
