@@ -27,12 +27,12 @@
 
 
 <script setup>
-import alana from '@/assets/fotos/alana.png'
-import anna from '@/assets/fotos/anna.png'
-import beatriz from '@/assets/fotos/beatriz.png'
-import eduarda from '@/assets/fotos/eduarda.png'
-import larissa from '@/assets/fotos/larissa.png'
-import paola from '@/assets/fotos/paola.png'
+import alana from '@/assets/alana.png'
+import anna from '@/assets/anna.png'
+import beatriz from '@/assets/beatriz.png'
+import eduarda from '@/assets/eduarda.png'
+import larissa from '@/assets/larissa.png'
+import paola from '@/assets/paola.png'
 
 const equipe = [
   { nome: "Alana", foto: alana, coluna: 3, linha: 1 },
