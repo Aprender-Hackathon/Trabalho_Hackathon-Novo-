@@ -11,10 +11,10 @@
             <label>Nome:</label>
             <div class="input-wrapper">
               <img src="@/assets/img/user_cadastro.png" alt="Usuário" class="input-icon" />
-              <input 
-                v-model="name" 
-                type="text" 
-                placeholder="Digite seu nome" 
+              <input
+                v-model="name"
+                type="text"
+                placeholder="Digite seu nome"
                 required
               />
             </div>
@@ -23,11 +23,11 @@
           <div class="field-group">
             <label>E-Mail:</label>
             <div class="input-wrapper">
-              <img src="@/assets/img/envelope_cadastro.png" alt="Usuário" class="input-icon" />
-              <input 
-                v-model="email" 
-                type="email" 
-                placeholder="Digite seu e-mail" 
+              <img src="@/assets/img/envelope_cadastro.png" alt="E-mail" class="input-icon" />
+              <input
+                v-model="email"
+                type="email"
+                placeholder="Digite seu e-mail"
                 required
               />
             </div>
@@ -36,17 +36,16 @@
           <div class="field-group">
             <label>Senha:</label>
             <div class="input-wrapper">
-              <img src="@/assets/img/cadeado_cadastro.png" alt="Usuário" class="input-icon" />
-              <input 
-                v-model="password" 
-                type="password" 
-                placeholder="Crie sua senha" 
+              <img src="@/assets/img/cadeado_cadastro.png" alt="Senha" class="input-icon" />
+              <input
+                v-model="password"
+                type="password"
+                placeholder="Crie sua senha"
                 required
               />
             </div>
           </div>
 
-       
           <div class="btn-container">
             <button type="submit" class="submit-btn">Criar Conta</button>
           </div>
@@ -54,7 +53,8 @@
 
         <div class="card-footer">
           <p>Já tem uma conta?</p>
-          <router-link to="/login" class="login-link">Entre com</router-link>
+          <RouterLink to="/login-pag" class="login-link">Entre aqui</RouterLink>
+
         </div>
       </div>
     </div>
@@ -72,7 +72,15 @@ const email = ref('')
 const password = ref('')
 
 const handleRegister = () => {
+  const userData = {
+    name: name.value,
+    email: email.value
+  }
+
+  localStorage.setItem('userData', JSON.stringify(userData))
   localStorage.setItem('isLoggedIn', 'true')
+
+  window.dispatchEvent(new Event('auth-change'))
   router.push('/')
 }
 
@@ -87,7 +95,7 @@ const goHome = () => {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #fefefe;
   position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -95,8 +103,8 @@ const goHome = () => {
 
 .close-btn {
   position: absolute;
-  top: 220px;
-  right: 690px;
+  top: 25px;
+  right: 25px;
   background-color: #e65252;
   color: white;
   border: none;
@@ -163,10 +171,10 @@ form {
   padding: 10px 16px;
 }
 
-.red-icon {
-  font-size: 1rem;
+.input-icon {
+  width: 18px;
+  height: 18px;
   margin-right: 10px;
-  filter: sepia(1) hue-rotate(310deg) saturate(4); 
 }
 
 .input-wrapper input {
@@ -181,7 +189,6 @@ form {
 .input-wrapper input::placeholder {
   color: #9e8e6c;
 }
-
 
 .btn-container {
   display: flex;
@@ -205,7 +212,6 @@ form {
   background-color: #216d77;
 }
 
-
 .card-footer {
   margin-top: 20px;
   text-align: center;
@@ -223,5 +229,34 @@ form {
   font-weight: 700;
   font-size: 0.90rem;
   text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .register-wrapper {
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .card-box {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
 }
 </style>

@@ -75,32 +75,33 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import LogoSite from '@/components/LogoSite.vue'
 
 const router = useRouter()
+const route = useRoute()
 
-const salvo = () => {
-  router.push('/salvos')
-}
+const salvo = () => router.push('/salvos')
+const perfil = () => router.push('/usuario-pag')
 
-const perfil = () => {
-  router.push('/usuario-pag')
-}
-
-const isLoggedIn = ref(true)
+const isLoggedIn = ref(false)
 
 const checkAuth = () => {
-  const storedAuth = localStorage.getItem('isLoggedIn')
-  if (storedAuth !== null) {
-    isLoggedIn.value = storedAuth === 'true'
-  }
+  isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true'
 }
+
+watch(() => route.path, checkAuth)
 
 onMounted(() => {
   checkAuth()
   window.addEventListener('storage', checkAuth)
+  window.addEventListener('auth-change', checkAuth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('storage', checkAuth)
+  window.removeEventListener('auth-change', checkAuth)
 })
 </script>
 
