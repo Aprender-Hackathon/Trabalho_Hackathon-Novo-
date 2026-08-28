@@ -17,6 +17,7 @@ const router = createRouter({
     },
     {
       path: '/explorar-pag',
+      alias: '/explorar',
       name: 'explorar',
       component: () => import('../views/ExplorarView.vue'),
     },
@@ -62,8 +63,8 @@ const router = createRouter({
     },
     {
       path: '/salvo-pag',
-      redirect: '/salvos'
-    }
+      redirect: '/salvos',
+    },
   ],
 })
 

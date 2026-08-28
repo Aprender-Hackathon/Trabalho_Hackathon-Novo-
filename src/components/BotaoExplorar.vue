@@ -10,7 +10,7 @@ defineProps({
   imagem: String,
   arquivo: String,
   previewTipo: String,
-  isSalvo: Boolean
+  isSalvo: Boolean,
 })
 
 defineEmits(['salvar'])
@@ -18,27 +18,24 @@ defineEmits(['salvar'])
 
 <template>
   <div class="card">
-    <PreviewDocx
-      v-if="previewTipo === 'docx' && arquivo"
-      :arquivo="arquivo"
-      class="imagem"
-    />
+    <PreviewDocx v-if="previewTipo === 'docx' && arquivo" :arquivo="arquivo" class="imagem" />
     <div class="laranja">
       <div class="linhaDeCima">
-
         <h2>{{ titulo || 'Sem título' }}</h2>
         <div class="botoes">
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', {
-              id,
-              titulo,
-              imagem,
-              arquivo,
-              previewTipo,
-              materia,
-              conteudo
-            })"
+            @salvar="
+              $emit('salvar', {
+                id,
+                titulo,
+                imagem,
+                arquivo,
+                previewTipo,
+                materia,
+                conteudo,
+              })
+            "
           />
         </div>
       </div>
@@ -52,13 +49,14 @@ defineEmits(['salvar'])
 .card {
   width: 240px;
   height: 300px;
-  border: 3.5px solid #F5893C;
+  border: 3.5px solid #f5893c;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
   background: white;
-  margin: 19px;
+  margin: 8px;
 }
+
 .imagem {
   width: 100%;
   height: 200px;
@@ -69,7 +67,7 @@ defineEmits(['salvar'])
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: #F5893C;
+  background: #f5893c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -91,5 +89,21 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 46%;
+    margin: 4px;
+    height: 250px;
+  }
+
+  .imagem {
+    height: 140px;
+  }
+
+  .titulo {
+    font-size: 0.95rem;
+  }
 }
 </style>
