@@ -68,26 +68,7 @@ export const estadoPratica = reactive({
       descricao: 'Pintura e confecção de máscaras carnavalescas.',
       salvo: false,
     },
-    //colocar atividade
-    {
-      id: 609,
-      titulo: 'Músicas',
-      imagem: '/Imagens feriados/Carnaval/',
-      arquivo: '',
-      data: 'Carnaval',
-      descricao: 'Atividade de exploração cultural e ritmos de Carnaval.',
-      salvo: false,
-    },
-    //colocar atividade
-    {
-      id: 610,
-      titulo: 'Cores do Carnaval',
-      imagem: '/Imagens feriados/Carnaval/',
-      arquivo: '',
-      data: 'Carnaval',
-      descricao: 'Exercício prático de pintura e colagem para o Carnaval.',
-      salvo: false,
-    },
+
     // DIA DA ESCOLA
     {
       id: 611,
@@ -244,16 +225,6 @@ export const estadoPratica = reactive({
       arquivo: '/Imagens feriados/Dia das Maes/DiasDasMaes4.pdf',
       data: 'Dia das Mães',
       descricao: 'Leitura, interpretação e pintura especial para o Dia das Mães.',
-      salvo: false,
-    },
-    //colocar atividade
-    {
-      id: 628,
-      titulo: 'Retrato da Mamãe',
-      imagem: '/Imagens feriados/Dia das Maes/',
-      arquivo: '',
-      data: 'Dia das Mães',
-      descricao: 'Atividade criativa de desenho do rosto da mãe.',
       salvo: false,
     },
 
@@ -566,7 +537,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 61,
+      id: 662,
       titulo: 'Natal',
       imagem: '/Imagens feriados/Natal/Natal2.png',
       arquivo: '/Imagens feriados/Natal/Natal2.pdf',
@@ -575,7 +546,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 62,
+      id: 663,
       titulo: 'Natal',
       imagem: '/Imagens feriados/Natal/Natal3.png',
       arquivo: '/Imagens feriados/Natal/Natal3.pdf',
@@ -584,7 +555,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 63,
+      id: 664,
       titulo: 'Natal',
       imagem: '/Imagens feriados/Natal/Natal4.png',
       arquivo: '/Imagens feriados/Natal/Natal4.pdf',
@@ -594,7 +565,7 @@ export const estadoPratica = reactive({
     },
     // PASCOA
     {
-      id: 64,
+      id: 665,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa1.png',
       arquivo: '/Imagens feriados/Páscoa/pascoa1.pdf',
@@ -603,7 +574,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 65,
+      id: 666,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa2.png',
       arquivo: '/Imagens feriados/Páscoa/pascoa2.pdf',
@@ -612,7 +583,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 66,
+      id: 667,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa3.png',
       arquivo: '/Imagens feriados/Páscoa/pascoa3.pdf',
@@ -621,7 +592,7 @@ export const estadoPratica = reactive({
       salvo: false,
     },
     {
-      id: 67,
+      id: 668,
       titulo: 'Páscoa',
       imagem: '/Imagens feriados/Páscoa/pascoa4.png',
       arquivo: '/Imagens feriados/Páscoa/pascoa4.pdf',
@@ -629,6 +600,7 @@ export const estadoPratica = reactive({
       descricao: 'Atividade para pintar.',
       salvo: false,
     },
+
   ],
 })
 
