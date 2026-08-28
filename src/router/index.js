@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import InicioView from '../views/InicioView.vue'
+import ExplorarView from '@/views/ExplorarView.vue'
 import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,15 +11,15 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/inicio',
-      name: 'inicio',
-      component: InicioView,
-    },
-    {
       path: '/explorar-pag',
       alias: '/explorar',
       name: 'explorar',
       component: () => import('../views/ExplorarView.vue'),
+    },
+    {
+      path: '/explorar',
+      name: 'explorarAlt',
+      component: ExplorarView
     },
     {
       path: '/sobre-nos',
@@ -29,7 +29,16 @@ const router = createRouter({
     {
       path: '/about',
       name: 'About',
-      component: () => import('../views/AboutView.vue'),
+      component: () => import('../views/AboutView.vue')
+    },
+    { path: '/atividade/:id', 
+      name: 'VizuView', 
+      component: () => import('@/views/VizuView.vue'),
+    },
+    { 
+      path: '/pratica/:id', 
+      name: 'VizuPratView', 
+      component: () => import('@/views/VizuPratView.vue'),
     },
     {
       path: '/atividades-praticas',

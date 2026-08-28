@@ -1,20 +1,18 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import BaixarDocx from './BaixarDocx.vue'
+import BaixarPdf from './BaixarPdf.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
-import PreviewDocx from './PreviewDocx.vue'
-import { estadoAtividades } from '@/AtividadesCards.js'
+import estadoPratica from '@/PraticaCards.js'
 
 const router = useRouter()
 
 const props = defineProps({
   id: [Number, String],
-  materia: String,
   titulo: String,
-  conteudo: String,
+  data: String,
   imagem: String,
   descricao: String,
-  docx: String,
+  arquivo: String,
   isSalvo: Boolean
 })
 
@@ -23,48 +21,37 @@ function voltar() {
 }
 
 function alternarSalvar() {
-  if (props.id !== undefined && estadoAtividades?.lista) {
-    const item = estadoAtividades.lista.find(a => a.id === props.id)
-
+  if (props.id !== undefined && estadoPratica?.lista) {
+    const item = estadoPratica.lista.find(a => a.id === props.id)
     if (item) {
       item.salvo = !item.salvo
     }
   }
-
-  router.push({ name: 'salvos' })
+    router.push({ name: 'salvos' })
 }
 </script>
 
 <template>
   <div class="all">
-
     <button class="voltar" @click="voltar">
-  <img src="/images/back.svg" alt="Voltar" />
-</button>
+      <img src="/images/back.svg" alt="Voltar" />
+    </button>
 
-    <PreviewDocx
-      v-if="docx"
-      :arquivo="docx"
-      class="image"
-    />
-
+    <img :src="imagem" :alt="titulo" class="image" />
     <div class="lado">
       <div class="cima">
         <h3>{{ titulo }}</h3>
 
-        <div class="mat_con">
-          <p>{{ materia }}</p>
-          <p>{{ conteudo }}</p>
+        <div class="data">
+          <p>{{ data }}</p>
         </div>
-
         <p class="descricao">
           {{ descricao }}
         </p>
       </div>
 
       <div class="baixo">
-
-        <BaixarDocx :docx="docx" />
+        <BaixarPdf :pdf="arquivo" />
 
         <BotaoSalvar
           size="L"
@@ -79,23 +66,20 @@ function alternarSalvar() {
           :isSalvo="isSalvo"
           @salvar="alternarSalvar"
         />
-
       </div>
     </div>
-
   </div>
 </template>
 
 <style scoped>
-
 .celular {
   display: none;
 }
-
 .all {
   display: flex;
   align-items: stretch;
   gap: 3vw;
+  position: relative;
   width: 75%;
   max-width: 1100px;
   margin: 2vw auto;
@@ -105,21 +89,17 @@ function alternarSalvar() {
 }
 
 .voltar {
-  position: absolute;
-  top: 140px;
-  left: 60px;
   border: none;
   background: none;
-  font-size: 40px;
   cursor: pointer;
-  z-index: 10;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .image {
   width: 100%;
   max-width: 300px;
-  height: 420px;
-  overflow: hidden;
+  height: auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -137,20 +117,21 @@ function alternarSalvar() {
   margin: 0;
 }
 
-.mat_con {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.data {
+  display: inline-block;
+  width: fit-content;
   cursor: default;
 }
 
-.mat_con p {
+.data p {
+  display: inline-block;
   background-color: #73bd58;
   color: white;
   padding: 5px 15px;
   border-radius: 100px;
   font-family: 'Baloo 2';
   margin: 0;
+  white-space: nowrap;
 }
 
 .baixo {
@@ -169,7 +150,6 @@ function alternarSalvar() {
 }
 
 @media (max-width: 600px) {
-
   .computador {
     display: none;
   }
@@ -178,18 +158,21 @@ function alternarSalvar() {
     display: block;
   }
 
+  .voltar img {
+    width: 36px;
+  }
+
   .all {
     width: calc(100% - 50px);
     flex-direction: column;
     gap: 20px;
-    padding: 45px 20px 25px;
+    padding: 25px 20px;
     margin: 15px auto 35px auto;
   }
 
   .image {
     width: 100%;
     max-width: 250px;
-    height: 350px;
     align-self: center;
   }
 
@@ -205,13 +188,7 @@ function alternarSalvar() {
     margin-bottom: 15px;
   }
 
-  .mat_con {
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .mat_con p {
+  .data p {
     font-size: 14px;
     padding: 5px 12px;
   }
@@ -230,9 +207,7 @@ function alternarSalvar() {
     font-size: 16px;
     text-align: justify;
     padding: 0 5px;
-    margin: 20px auto;
+    margin: 20px auto 20px;
   }
 }
-
 </style>
-

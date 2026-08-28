@@ -1,48 +1,92 @@
 <script setup>
-import { ref, computed } from 'vue'
+import BotaoPesquisa from '@/components/BotaoPesquisa.vue'
+import { ref, computed, watch } from 'vue'
+
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
+import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
+
 import { estadoAtividades } from '@/AtividadesCards'
 import { estadoPratica } from '@/PraticaCards'
-import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
+
 const limite = ref(20)
+
 const filtroEscolhido = ref({
   materia: 'Tudo',
   conteudo: 'Tudo',
 })
 
+const textoPesquisado = ref('')
+
 function alternarSalvar(id) {
   let item = estadoAtividades.lista.find((a) => a.id === id)
+
   if (item) {
     item.salvo = !item.salvo
     return
   }
 
   item = estadoPratica.lista.find((a) => a.id === id)
+
   if (item) {
     item.salvo = !item.salvo
   }
 }
 
+function normaliza(texto) {
+  return (texto || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+watch(
+  filtroEscolhido,
+  () => {
+    limite.value = 20
+  },
+  { deep: true }
+)
+
 const atividadesFiltradas = computed(() => {
-  const todasAsAtividades = [...estadoAtividades.lista, ...estadoPratica.lista]
+  const texto = normaliza(textoPesquisado.value)
+
+  const todasAsAtividades = [
+    ...estadoAtividades.lista,
+    ...estadoPratica.lista
+  ]
 
   return todasAsAtividades.filter((item) => {
+
     const matchMateria =
-      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+      filtroEscolhido.value.materia === 'Tudo' ||
+      item.materia === filtroEscolhido.value.materia
 
     const matchConteudo =
-      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+      filtroEscolhido.value.conteudo === 'Tudo' ||
+      item.conteudo === filtroEscolhido.value.conteudo
 
-    return matchMateria && matchConteudo
+    const matchTexto =
+      !texto ||
+      normaliza(item.titulo).includes(texto) ||
+      normaliza(item.materia).includes(texto) ||
+      normaliza(item.conteudo).includes(texto) ||
+      normaliza(item.data).includes(texto)
+
+    return matchMateria && matchConteudo && matchTexto
   })
 })
 </script>
 <template>
-  <div class="explorar-container">
-    <FiltroExplorar @filtro="filtroEscolhido = $event" />
+<div>
+  <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
+  
+  <FiltroExplorar
+    @filtro="filtroEscolhido = $event"
+  />
 
-    <div class="cards">
+  <div class="cards">
+
       <BotaoExplorar
         v-for="item in atividadesFiltradas.slice(0, limite)"
         :key="item.id"
@@ -56,11 +100,18 @@ const atividadesFiltradas = computed(() => {
         :isSalvo="item.salvo"
         @salvar="alternarSalvar(item.id)"
       />
-    </div>
-    <BotaoMaisResultados v-if="atividadesFiltradas.length > limite" @carregar="limite += 20" />
-  </div>
+</div>
+<BotaoMaisResultados 
+      v-if="atividadesFiltradas.length > limite" 
+      @carregar="limite += 20" 
+      class="mais"
+    />
+</div>
 </template>
 <style scoped>
+.mais{
+  margin-bottom: 2vw;
+}
 .explorar-container {
   min-height: 100vh;
   padding-bottom: 4rem;
