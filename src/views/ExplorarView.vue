@@ -62,6 +62,7 @@ const atividadesFiltradas = computed(() => {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 70px;
+  padding: 20px 20px;
+  justify-content: center;
 }
 </style>

@@ -49,7 +49,7 @@ const materias = [
 const conteudosPorMateria = {
   'Artes': ['Artes Visuais','História da Arte', 'Música' ],
 
-  'Biologia': ['Biotecnologia', 'Botânica', 'Celulas e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
+  'Biologia': ['Biotecnologia', 'Botânica', 'Células e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
 
   'Ciências': ['Corpo Humano', 'Ecologia e Ambiente', 'Matéria e Energia', 'Seres Vivos', 'Terra e Espaço'],
 
@@ -133,7 +133,8 @@ function selecionarConteudo(conteudo) {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  width: 100vw;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .label {
@@ -182,4 +183,5 @@ function selecionarConteudo(conteudo) {
   line-height: 1;
   margin-left: 2px;
 }
+
 </style>

@@ -58,7 +58,7 @@ function selecionarData(data) {
   flex-direction: column;
   gap: 16px;
   background-color: #fdfbf7;
-  padding: 24px 70px;
+  padding: 24px 20px;
   font-family: Arial, sans-serif;
   justify-content: center
 
@@ -68,7 +68,7 @@ function selecionarData(data) {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  width: 100vw;
+  width: 100%;
 }
 
 .label {
