@@ -43,21 +43,6 @@ defineEmits(['salvar'])
   margin: 8px;
 }
 
-@media (max-width: 480px) {
-  .card {
-    width: 46%; 
-    margin: 4px;
-    height: 300px;
-  }
-  
-  .imagem {
-    height: 140px;
-  }
-
-  .titulo {
-    font-size: 0.95rem;
-  }
-}
 
 .imagem {
   width: 100%;
@@ -93,4 +78,19 @@ h2 {
   text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+  .card {
+    width: 46%; 
+    margin: 4px;
+    height: 250px;
+  }
+  
+  .imagem {
+    height: 140px;
+  }
+
+  .titulo {
+    font-size: 0.95rem;
+  }
+}
 </style>

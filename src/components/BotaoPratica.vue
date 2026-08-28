@@ -26,8 +26,8 @@ defineEmits(['salvar'])
 
 <style scoped>
 .card {
-  width: 240px;
-  height: 300px;
+  width: 255px;
+  height: 360px;
   border: 3.5px solid #5C49C8;
   border-radius: 18px;
   overflow: hidden;
@@ -35,9 +35,25 @@ defineEmits(['salvar'])
   background: white;
   margin: 8px;
 }
+@media (max-width: 480px) {
+.card {
+width: 47% !important;
+    margin: 4% 1.5%;
+    height: 250px;
+  }
+  
+  .imagem {
+    height: 140px;
+  }
+
+  h2 {
+    font-size: 0.95rem;
+  }
+}
+
 .imagem {
   width: 100%;
-  height: 200px;
+  height: 215px;
   object-fit: cover;
 }
 .roxo {
@@ -68,4 +84,5 @@ h2 {
   color: #333;
   text-decoration: underline;
 }
+
 </style>
