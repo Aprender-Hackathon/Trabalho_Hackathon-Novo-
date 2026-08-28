@@ -8,6 +8,7 @@ import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 import { estadoAtividades } from '@/AtividadesCards'
 import { estadoPratica } from '@/PraticaCards'
+import BannerExplorar from '@/components/BannerExplorar.vue'
 
 const limite = ref(20)
 
@@ -79,6 +80,8 @@ const atividadesFiltradas = computed(() => {
 </script>
 <template>
 <div>
+<BannerExplorar/>
+
   <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
   
   <FiltroExplorar
