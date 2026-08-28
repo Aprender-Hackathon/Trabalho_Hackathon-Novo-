@@ -53,9 +53,9 @@ const conteudosPorMateria = {
 
   'Ciências': ['Corpo Humano', 'Ecologia e Ambiente', 'Matéria e Energia', 'Seres Vivos', 'Terra e Espaço'],
 
-  'Educação Física': ['Corpo e Movimento', 'Jogos e Esporte', 'Saúde e Qualidade de Vida'],
+  'Educação Física': ['Corpo e Movimento', 'Jogos e Esportes', 'Saúde e Qualidade de Vida'],
 
-  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Etíca'],
+  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Ética'],
 
   'Espanhol': ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
