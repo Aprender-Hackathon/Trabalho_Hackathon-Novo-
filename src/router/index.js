@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ExplorarView from '@/views/ExplorarView.vue'
-import HomeView from '../views/HomeView.vue'
 
 
 const router = createRouter({
@@ -33,13 +32,13 @@ const router = createRouter({
       name: 'About',
       component: () => import('../views/AboutView.vue')
     },
-    { path: '/atividade/:id', 
-      name: 'VizuView', 
+    { path: '/atividade/:id',
+      name: 'VizuView',
       component: () => import('@/views/VizuView.vue'),
     },
-    { 
-      path: '/pratica/:id', 
-      name: 'VizuPratView', 
+    {
+      path: '/pratica/:id',
+      name: 'VizuPratView',
       component: () => import('@/views/VizuPratView.vue'),
     },
     {
