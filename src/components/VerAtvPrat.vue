@@ -21,13 +21,12 @@ function voltar() {
 }
 
 function alternarSalvar() {
-  if (props.id !== undefined && estadoPratica?.lista) {
-    const item = estadoPratica.lista.find(a => a.id === props.id)
-    if (item) {
-      item.salvo = !item.salvo
-    }
+  if (props.id === undefined || !estadoPratica?.lista) return
+
+  const item = estadoPratica.lista.find(a => String(a.id) === String(props.id))
+  if (item) {
+    item.salvo = !item.salvo
   }
-    router.push({ name: 'salvos' })
 }
 </script>
 

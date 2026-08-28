@@ -53,16 +53,6 @@ const equipe = [
   box-sizing: border-box;
 }
 
-:global(html),
-:global(body),
-:global(#app) {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  background-color: #dcefd8;
-}
-
 .secao-equipe {
   display: grid;
 
