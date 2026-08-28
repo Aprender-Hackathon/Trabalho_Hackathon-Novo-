@@ -93,6 +93,7 @@ function alternarSalvar() {
   display: flex;
   align-items: stretch;
   gap: 3vw;
+  position: relative;
   width: 75%;
   max-width: 1100px;
   margin: 2vw auto;
@@ -102,14 +103,11 @@ function alternarSalvar() {
 }
 
 .voltar {
-  position: absolute;
-  top: 140px;
-  left: 60px;
   border: none;
   background: none;
-  font-size: 40px;
   cursor: pointer;
-  z-index: 10;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .image {
