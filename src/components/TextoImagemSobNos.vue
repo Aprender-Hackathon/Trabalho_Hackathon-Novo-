@@ -14,7 +14,6 @@
       </div>
 
       <div class="image-container">
-        
         <img src="@/assets/fotogrupo.png" alt="Nossa equipe" />
       </div>
     </div>
@@ -27,11 +26,14 @@
 
 <style scoped>
 .about-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   background-color: #f7f2ed;
   padding: 3rem 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .content-container {
