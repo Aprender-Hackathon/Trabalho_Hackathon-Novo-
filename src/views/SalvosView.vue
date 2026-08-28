@@ -1,86 +1,81 @@
-<script setup>
-import { computed } from 'vue'
-import BotaoExplorar from '@/components/BotaoExplorar.vue'
-import { estadoAtividades } from '@/AtividadesCards'
-
-// Filtra dinamicamente todas as atividades que possuem salvo: true
-const materiaisSalvos = computed(() => {
-  return estadoAtividades.lista.filter(item => item.salvo)
-})
-
-function removerDosSalvos(id) {
-  const item = estadoAtividades.lista.find(a => a.id === id)
-  if (item) {
-    item.salvo = false
-  }
-}
-</script>
-
 <template>
-  <div class="salvos-container">
-    <header class="salvos-header">
-      <h1>Salvos</h1>
-      <p class="subtitle">Todos os materiais</p>
-    </header>
+  <div class="salvos-view">
+    <h1>Itens Salvos</h1>
 
-    <main v-if="materiaisSalvos.length > 0" class="cards">
-      <BotaoExplorar
-        v-for="item in materiaisSalvos"
-        :key="item.id"
-        :id="item.id"
-        :titulo="item.titulo"
-        :imagem="item.imagem"
-        :materia="item.materia"
-        :conteudo="item.conteudo"
-        :isSalvo="item.salvo"
-        @salvar="removerDosSalvos(item.id)"
-      />
-    </main>
+    <div v-if="itensSalvos.length === 0" class="vazio">
+      Você ainda não salvou nenhum item.
+    </div>
 
-    <div v-else class="empty-state">
-      <p>Você ainda não tem materiais salvos.</p>
+    <div v-else class="lista-salvos">
+      <template v-for="item in itensSalvos" :key="item.id">
+        <BotaoExplorar
+          v-if="item.tipo === 'atividade'"
+          :id="item.id"
+          :materia="item.materia"
+          :conteudo="item.conteudo"
+          :titulo="item.titulo"
+          :imagem="item.imagem"
+          :isSalvo="item.salvo"
+          @salvar="alternarSalvar(item.id, item.tipo)"
+        />
+        <BotaoPratica
+          v-else
+          :id="item.id"
+          :titulo="item.titulo"
+          :imagem="item.imagem"
+          :data="item.data"
+          :isSalvo="item.salvo"
+          @salvar="alternarSalvar(item.id, item.tipo)"
+        />
+      </template>
     </div>
   </div>
 </template>
 
+<script setup>
+import { computed } from 'vue'
+import { estadoAtividades } from '@/AtividadesCards'
+import { estadoPratica } from '@/PraticaCards'
+import BotaoExplorar from '@/components/BotaoExplorar.vue'
+import BotaoPratica from '@/components/BotaoPratica.vue'
+
+// Filtra os itens salvos garantindo que o Vue perceba a mudança de estado
+// e marca cada item com um "tipo" para saber qual card renderizar
+const itensSalvos = computed(() => {
+  const ativ = estadoAtividades.lista
+    .filter(i => i.salvo === true)
+    .map(i => ({ ...i, tipo: 'atividade' }))
+
+  const prat = estadoPratica.lista
+    .filter(i => i.salvo === true)
+    .map(i => ({ ...i, tipo: 'pratica' }))
+
+  return [...ativ, ...prat]
+})
+
+function alternarSalvar(id, tipo) {
+  // Usa o "tipo" para saber em qual lista procurar, evitando colisão
+  // de ids repetidos entre estadoAtividades e estadoPratica
+  const lista = tipo === 'atividade' ? estadoAtividades.lista : estadoPratica.lista
+  const item = lista.find(a => String(a.id) === String(id))
+  if (item) {
+    item.salvo = false // Força para false ao dessalvar
+  }
+}
+</script>
+
 <style scoped>
-.salvos-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 0 1.5rem;
-  min-height: 100vh;
+.salvos-view {
+  padding: 2rem;
 }
 
-.salvos-header {
-  margin-bottom: 2rem;
-  padding: 0 70px;
+.vazio {
+  opacity: 0.7;
+  margin-top: 1rem;
 }
 
-.salvos-header h1 {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: #333;
-  margin-top: 0.5rem;
-}
-
-.cards {
+.lista-salvos {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 50px;
-  margin-bottom: 4rem;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 4rem 1rem;
-  font-size: 1.2rem;
-  color: #666;
-  min-height: 40vh;
 }
 </style>

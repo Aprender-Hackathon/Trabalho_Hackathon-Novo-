@@ -15,7 +15,7 @@ const feriados = [
   'Dia dos Animais',
   'Festa Junina',
   'Natal',
-  'Páscoa'
+  'Páscoa',
 ]
 
 const dataSelecionada = ref('Tudo')
@@ -24,7 +24,7 @@ const mostrarMais = ref(false)
 function selecionarData(data) {
   dataSelecionada.value = data
   emit('filtro', {
-    data: dataSelecionada.value 
+    data: dataSelecionada.value,
   })
 }
 </script>
@@ -34,17 +34,19 @@ function selecionarData(data) {
       <span class="label">Datas comemorativas:</span>
       <div class="tags-group">
         <button
-          v-for="data in (mostrarMais ? feriados : feriados.slice(0, 6))"
+          v-for="data in mostrarMais ? feriados : feriados.slice(0, 6)"
           :key="data"
           class="tag-btn"
           :class="{ active: dataSelecionada === data }"
-          @click="selecionarData(data)">
+          @click="selecionarData(data)"
+        >
           {{ data }}
         </button>
         <button
           v-if="feriados.length > 6"
           class="tag-btn btn-toggle"
-          @click="mostrarMais = !mostrarMais">
+          @click="mostrarMais = !mostrarMais"
+        >
           {{ mostrarMais ? '-' : '+' }}
         </button>
       </div>
@@ -60,8 +62,7 @@ function selecionarData(data) {
   background-color: #fdfbf7;
   padding: 24px 20px;
   font-family: Arial, sans-serif;
-  justify-content: center
-
+  justify-content: center;
 }
 
 .filter-row {

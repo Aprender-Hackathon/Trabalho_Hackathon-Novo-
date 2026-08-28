@@ -1,34 +1,57 @@
 <script setup>
 import BotaoSalvar from './BotaoSalvar.vue'
 
-defineProps(['id', 'titulo', 'imagem', 'data', 'isSalvo'])
+defineProps({
+  id: [Number, String],
+  titulo: String,
+  imagem: String,
+  data: String,
+  isSalvo: Boolean,
+})
+
 defineEmits(['salvar'])
 </script>
 
 <template>
   <div class="card">
-        <img :src="imagem" class="imagem" :alt="titulo" />
+
+    <router-link :to="`/pratica/${id}`" class="link">
+      <img :src="imagem" class="imagem" :alt="titulo" />
+    </router-link>
+
     <div class="roxo">
-    <div class="linhaDeCima">
-    <h2>{{ titulo }}</h2>
-      <div class="botoes">
+
+      <div class="linhaDeCima">
+        <router-link :to="`/pratica/${id}`" class="link">
+          <h2>{{ titulo }}</h2>
+        </router-link>
+
+        <div class="botoes" @click.stop>
           <BotaoSalvar
             :isSalvo="isSalvo"
             @salvar="$emit('salvar', { id, titulo, imagem, data })"
           />
+        </div>
       </div>
-</div>
-      <span v-if="data" class="data">{{ data }}</span>
-</div>
+
+      <span v-if="data" class="data">
+        {{ data }}
+      </span>
+
+    </div>
+
   </div>
 </template>
 
-
 <style scoped>
+.link {
+  text-decoration: none;
+}
+
 .card {
   width: 255px;
   height: 360px;
-  border: 3.5px solid #5C49C8;
+  border: 3.5px solid #5c49c8;
   border-radius: 18px;
   overflow: hidden;
   position: relative;
@@ -36,12 +59,12 @@ defineEmits(['salvar'])
   margin: 8px;
 }
 @media (max-width: 480px) {
-.card {
-width: 47% !important;
+  .card {
+    width: 47% !important;
     margin: 4% 1.5%;
     height: 250px;
   }
-  
+
   .imagem {
     height: 140px;
   }
@@ -61,7 +84,7 @@ width: 47% !important;
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: #5C49C8;
+  background: #5c49c8;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,6 +106,6 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+  cursor: default;
 }
-
 </style>
