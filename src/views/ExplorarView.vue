@@ -1,59 +1,82 @@
 <script setup>
-
-import BotaoPesquisa from '@/components/BotaoPesquisa.vue';
+import BotaoPesquisa from '@/components/BotaoPesquisa.vue'
 import { ref, computed, watch } from 'vue'
-
-const limite = ref(20)
 
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
-import { estadoAtividades } from '@/AtividadesCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
+
+import { estadoAtividades } from '@/AtividadesCards'
+import { estadoPratica } from '@/PraticaCards'
+
+const limite = ref(20)
 
 const filtroEscolhido = ref({
   materia: 'Tudo',
   conteudo: 'Tudo',
 })
 
+const textoPesquisado = ref('')
+
 function alternarSalvar(id) {
-  const item = estadoAtividades.lista.find(a => a.id === id)
+  let item = estadoAtividades.lista.find((a) => a.id === id)
+
+  if (item) {
+    item.salvo = !item.salvo
+    return
+  }
+
+  item = estadoPratica.lista.find((a) => a.id === id)
+
   if (item) {
     item.salvo = !item.salvo
   }
 }
 
-const textoPesquisado = ref('')
-function normaliza(texto){
-  return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+function normaliza(texto) {
+  return (texto || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
 }
 
-watch(filtroEscolhido, () => {
-  limite.value = 20
-}, { deep: true })
+watch(
+  filtroEscolhido,
+  () => {
+    limite.value = 20
+  },
+  { deep: true }
+)
 
 const atividadesFiltradas = computed(() => {
-
   const texto = normaliza(textoPesquisado.value)
 
-  return estadoAtividades.lista.filter((item) => {
+  const todasAsAtividades = [
+    ...estadoAtividades.lista,
+    ...estadoPratica.lista
+  ]
+
+  return todasAsAtividades.filter((item) => {
 
     const matchMateria =
-      filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
+      filtroEscolhido.value.materia === 'Tudo' ||
+      item.materia === filtroEscolhido.value.materia
 
     const matchConteudo =
-      filtroEscolhido.value.conteudo === 'Tudo' || item.conteudo === filtroEscolhido.value.conteudo
+      filtroEscolhido.value.conteudo === 'Tudo' ||
+      item.conteudo === filtroEscolhido.value.conteudo
 
     const matchTexto =
       !texto ||
       normaliza(item.titulo).includes(texto) ||
       normaliza(item.materia).includes(texto) ||
-      normaliza(item.conteudo).includes(texto)
+      normaliza(item.conteudo).includes(texto) ||
+      normaliza(item.data).includes(texto)
 
     return matchMateria && matchConteudo && matchTexto
   })
 })
 </script>
-
 <template>
 <div>
   <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
@@ -70,6 +93,8 @@ const atividadesFiltradas = computed(() => {
         :id="item.id"
         :titulo="item.titulo"
         :imagem="item.imagem"
+        :arquivo="item.arquivo"
+        :previewTipo="item.previewTipo"
         :materia="item.materia"
         :conteudo="item.conteudo"
         :isSalvo="item.salvo"
@@ -83,7 +108,6 @@ const atividadesFiltradas = computed(() => {
     />
 </div>
 </template>
-
 <style scoped>
 .mais{
   margin-bottom: 2vw;
@@ -92,10 +116,10 @@ const atividadesFiltradas = computed(() => {
   min-height: 100vh;
   padding-bottom: 4rem;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 70px;
+  padding: 20px 20px;
+  justify-content: center;
 }
 </style>
