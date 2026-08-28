@@ -14,21 +14,40 @@ defineEmits(['salvar'])
 
 <template>
   <div class="card">
-    <img :src="imagem" class="imagem" :alt="titulo" />
+
+    <router-link :to="`/pratica/${id}`" class="link">
+      <img :src="imagem" class="imagem" :alt="titulo" />
+    </router-link>
+
     <div class="roxo">
+
       <div class="linhaDeCima">
-        <h2>{{ titulo }}</h2>
-        <div class="botoes">
-          <!-- Certifique-se de que está emitindo apenas o id -->
-          <BotaoSalvar :isSalvo="isSalvo" @salvar="$emit('salvar', id)" />
+        <router-link :to="`/pratica/${id}`" class="link">
+          <h2>{{ titulo }}</h2>
+        </router-link>
+
+        <div class="botoes" @click.stop>
+          <BotaoSalvar
+            :isSalvo="isSalvo"
+            @salvar="$emit('salvar', { id, titulo, imagem, data })"
+          />
         </div>
       </div>
-      <span v-if="data" class="data">{{ data }}</span>
+
+      <span v-if="data" class="data">
+        {{ data }}
+      </span>
+
     </div>
+
   </div>
 </template>
 
 <style scoped>
+.link {
+  text-decoration: none;
+}
+
 .card {
   width: 255px;
   height: 360px;
@@ -87,5 +106,6 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+  cursor: default;
 }
 </style>

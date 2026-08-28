@@ -1,12 +1,21 @@
 <script setup>
+import { ref } from 'vue'
 defineProps({
-  isSalvo: Boolean
+  isSalvo: Boolean,
+  size: {
+    type: String,
+    default: 'M',
+    validator: (value) => ['S', 'M', 'L'].includes(value)
+  }
 })
 defineEmits(['salvar'])
 </script>
 
 <template>
-  <button class="botao-salvar" type="button" @click.stop="$emit('salvar')">
+  <button class="botao-salvar" type="button" :class="[
+      `botao-salvar--${size}`,
+    ]
+">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -28,13 +37,71 @@ defineEmits(['salvar'])
   background: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
+  padding: 8px;
+  transition: transform 0.2s ease;
+  color: #ccc;
+}
+
+
+.botao-salvar:hover {
+  transform: scale(1.05);
+}
+.botao-salvar:active{
+    transform: scale(1.1);
+}
+
+
+.botao-salvar.is-active {
+  color: #e74c3c;
+}
+
+
+.botao-salvar.is-active svg {
+  fill: #e74c3c;
+}
+
+.botao-salvar--S {
+  padding: 8px;
+}
+
+
+.botao-salvar--S svg {
+  width: 24px;
+  height: 24px;
+}
+
+
+.botao-salvar--M {
+  padding: 12px;
+}
+
+
+.botao-salvar--M svg {
+  width: 36px;
+  height: 36px;
+}
+
+
+.botao-salvar--L {
+  padding: 16px;
+}
+
+
+.botao-salvar--L svg {
+  width: 48px;
+  height: 48px;
+}
+
+
+.botao-salvar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
   transition: transform 0.2s ease;
-}
-.botao-salvar:hover {
-  transform: scale(1.1);
 }
 </style>

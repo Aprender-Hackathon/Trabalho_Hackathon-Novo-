@@ -16,13 +16,17 @@ defineProps({
 defineEmits(['salvar'])
 </script>
 
-<template>
-  <div class="card">
-    <PreviewDocx v-if="previewTipo === 'docx' && arquivo" :arquivo="arquivo" class="imagem" />
+<template>  
+    <div class="card">
+      <router-link :to="`/atividade/${id}`" class="link">
+        <PreviewDocx v-if="previewTipo === 'docx' && arquivo" :arquivo="arquivo" class="imagem" />
+      </router-link>
     <div class="laranja">
       <div class="linhaDeCima">
-        <h2>{{ titulo || 'Sem título' }}</h2>
-        <div class="botoes">
+        <router-link :to="`/atividade/${id}`" class="link">
+          <h2>{{ titulo || 'Sem título' }}</h2>
+        </router-link>
+        <div class="botoes" @click.stop>
           <BotaoSalvar
             :isSalvo="isSalvo"
             @salvar="
@@ -43,9 +47,14 @@ defineEmits(['salvar'])
         {{ materia }}
       </span>
     </div>
-  </div>
+
+    </div>
+  
 </template>
 <style scoped>
+.link {
+  text-decoration: none;
+}
 .card {
   width: 240px;
   height: 300px;
@@ -89,6 +98,7 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+  cursor: default;
 }
 
 @media (max-width: 480px) {
