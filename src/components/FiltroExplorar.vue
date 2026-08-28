@@ -175,7 +175,7 @@ const conteudosPorMateria = {
   ],
 }
 
-const materiaSelecionada = ref('Português')
+const materiaSelecionada = ref('Tudo')
 const conteudoSelecionado = ref('Tudo')
 const mostrarMais = ref(false)
 
