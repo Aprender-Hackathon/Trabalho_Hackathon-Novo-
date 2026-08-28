@@ -1,5 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+
+const props = defineProps({
+  filtroInicial: {
+    type: Object,
+    default: () => ({ data: 'Tudo' })
+  }
+})
 
 const emit = defineEmits(['filtro'])
 
@@ -21,6 +28,23 @@ const feriados = [
 const dataSelecionada = ref('Tudo')
 const mostrarMais = ref(false)
 
+
+watch(
+  () => props.filtroInicial?.data,
+  (novaData) => {
+    if (novaData) {
+      dataSelecionada.value = novaData
+
+     
+      const index = feriados.indexOf(novaData)
+      if (index >= 6) {
+        mostrarMais.value = true
+      }
+    }
+  },
+  { immediate: true }
+)
+
 function selecionarData(data) {
   dataSelecionada.value = data
   emit('filtro', {
@@ -28,6 +52,7 @@ function selecionarData(data) {
   })
 }
 </script>
+
 <template>
   <div class="filter-container">
     <div class="filter-row">

@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "docx-preview": "^0.4.0",
+    "html2canvas": "^1.4.1",
     "vue": "rc",
     "vue-router": "^5.2.0"
   },

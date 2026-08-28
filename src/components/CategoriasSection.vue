@@ -1,52 +1,47 @@
 <script setup></script>
+
 <template>
   <section id="categorias" class="secao-categorias">
     <div class="container-categorias">
       <h2 class="titulo-secao">Ideal para cada momento</h2>
       <p class="subtitulo-secao">Encontre atividades de acordo com o que você precisa.</p>
       <div class="grid-categorias">
-        <router-link to="/explorar?categoria=dia-das-maes" class="cartao-categoria cor-maes">
+        <router-link to="/atividades-praticas?data=Dia das Mães" class="cartao-categoria cor-maes">
           <div class="caixa-imagem">
             <img src="@/assets/dia_das_maes.jpeg" alt="Dia das Mães" class="imagem-categoria" />
           </div>
           <span class="texto-categoria">Dia das Mães</span>
         </router-link>
-        <router-link to="/explorar?categoria=pascoa" class="cartao-categoria cor-pascoa">
+
+        <router-link to="/atividades-praticas?data=Páscoa" class="cartao-categoria cor-pascoa">
           <div class="caixa-imagem">
             <img src="@/assets/pascoa.jpg" alt="Páscoa" class="imagem-categoria" />
           </div>
           <span class="texto-categoria">Páscoa</span>
         </router-link>
-        <router-link
-          to="/explorar?categoria=dia-das-criancas"
-          class="cartao-categoria cor-criancas"
-        >
+
+        <router-link to="/atividades-praticas?data=Dia das Crianças" class="cartao-categoria cor-criancas">
           <div class="caixa-imagem">
-            <img
-              src="@/assets/dia_das_criancas.jpg"
-              alt="Dia das Crianças"
-              class="imagem-categoria"
-            />
+            <img src="@/assets/dia_das_criancas.jpg" alt="Dia das Crianças" class="imagem-categoria" />
           </div>
           <span class="texto-categoria">Dia das Crianças</span>
         </router-link>
-        <router-link to="/explorar?categoria=festa-junina" class="cartao-categoria cor-junina">
+
+        <router-link to="/atividades-praticas?data=Festa Junina" class="cartao-categoria cor-junina">
           <div class="caixa-imagem">
             <img src="@/assets/festa_junina.webp" alt="Festa Junina" class="imagem-categoria" />
           </div>
           <span class="texto-categoria">Festa Junina</span>
         </router-link>
-        <router-link to="/explorar?categoria=dia-da-natureza" class="cartao-categoria cor-natureza">
+
+        <router-link to="/atividades-praticas?data=Dia da Árvore" class="cartao-categoria cor-natureza">
           <div class="caixa-imagem">
-            <img
-              src="@/assets/dia_da_natureza.jpg"
-              alt="Dia da Natureza"
-              class="imagem-categoria"
-            />
+            <img src="@/assets/dia_da_natureza.jpg" alt="Dia da Natureza" class="imagem-categoria" />
           </div>
           <span class="texto-categoria">Dia da Natureza</span>
         </router-link>
-        <router-link to="/explorar?categoria=natal" class="cartao-categoria cor-natal">
+
+        <router-link to="/atividades-praticas?data=Natal" class="cartao-categoria cor-natal">
           <div class="caixa-imagem">
             <img src="@/assets/natal.jpeg" alt="Natal" class="imagem-categoria" />
           </div>
@@ -56,6 +51,7 @@
     </div>
   </section>
 </template>
+
 <style scoped>
 .secao-categorias {
   width: 100vw;
