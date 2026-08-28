@@ -1,12 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { atividades } from '@/AtividadesCards.js'
-import BotaoExplorar from './BotaoExplorar.vue'
+import { estadoAtividades } from '@/AtividadesCards'
 
-const activities = ref(atividades)
+const emit = defineEmits(['pesquisa'])
+
+const activities = ref(estadoAtividades.lista)
 const filtro = ref('')
 const pesquisado = ref(false)
-const texto_confirmado = ref('')
 
 function normaliza(texto){
      return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -31,24 +31,12 @@ const sugestao = computed(() => {
     return Array.from(encontrados)
 })
 
-const result = computed(() => {
-    const texto = normaliza(texto_confirmado.value)
-    if (!texto) return []
-
-    return activities.value.filter(item =>
-        normaliza(item.titulo).includes(texto) ||
-        normaliza(item.materia).includes(texto) ||
-        normaliza(item.conteudo).includes(texto)
-    )
-})
-
 function buscar(){
-    texto_confirmado.value = filtro.value
     pesquisado.value = true
+    emit('pesquisa', filtro.value)
 }
 
 function digitar(){
-    texto_confirmado.value = ''
     pesquisado.value = false
 }
 
@@ -81,19 +69,6 @@ function escolha(termo) {
         </button>
 
         </div>
-
-        <div class="resultados" v-if="pesquisado">
-            <BotaoExplorar class="cards"
-                v-for="(atividade, index) in result"
-                :key="atividade.titulo + '-' + index"
-                :titulo="atividade.titulo"
-                :materia="atividade.materia"
-                :conteudo="atividade.conteudo"
-                :imagem="atividade.imagem"
-            />
-        </div>
-
-    
 </div>
 </template>
 
@@ -159,5 +134,6 @@ div.pesquisa{
     position: relative;
     display: grid;
     justify-content: center;
+    margin: 2vw auto;
 }
 </style>

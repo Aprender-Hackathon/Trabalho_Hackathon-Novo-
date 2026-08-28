@@ -1,19 +1,18 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import BaixarDocx from './BaixarDocx.vue'
+import BaixarPdf from './BaixarPdf.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
-import { estadoAtividades } from '@/AtividadesCards.js'
+import estadoPratica from '@/PraticaCards.js'
 
 const router = useRouter()
 
 const props = defineProps({
   id: [Number, String],
-  materia: String,
   titulo: String,
-  conteudo: String,
+  data: String,
   imagem: String,
   descricao: String,
-  docx: String,
+  arquivo: String,
   isSalvo: Boolean
 })
 
@@ -22,8 +21,8 @@ function voltar() {
 }
 
 function alternarSalvar() {
-  if (props.id !== undefined && estadoAtividades?.lista) {
-    const item = estadoAtividades.lista.find(a => a.id === props.id)
+  if (props.id !== undefined && estadoPratica?.lista) {
+    const item = estadoPratica.lista.find(a => a.id === props.id)
     if (item) {
       item.salvo = !item.salvo
     }
@@ -43,9 +42,8 @@ function alternarSalvar() {
       <div class="cima">
         <h3>{{ titulo }}</h3>
 
-        <div class="mat_con">
-          <p>{{ materia }}</p>
-          <p>{{ conteudo }}</p>
+        <div class="data">
+          <p>{{ data }}</p>
         </div>
         <p class="descricao">
           {{ descricao }}
@@ -53,7 +51,7 @@ function alternarSalvar() {
       </div>
 
       <div class="baixo">
-        <BaixarDocx :docx="docx"/>
+        <BaixarPdf :pdf="arquivo" />
 
         <BotaoSalvar
           size="L"
@@ -119,20 +117,21 @@ function alternarSalvar() {
   margin: 0;
 }
 
-.mat_con {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.data {
+  display: inline-block;
+  width: fit-content;
   cursor: default;
 }
 
-.mat_con p {
+.data p {
+  display: inline-block;
   background-color: #73bd58;
   color: white;
   padding: 5px 15px;
   border-radius: 100px;
   font-family: 'Baloo 2';
   margin: 0;
+  white-space: nowrap;
 }
 
 .baixo {
@@ -189,13 +188,7 @@ function alternarSalvar() {
     margin-bottom: 15px;
   }
 
-  .mat_con {
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .mat_con p {
+  .data p {
     font-size: 14px;
     padding: 5px 12px;
   }
