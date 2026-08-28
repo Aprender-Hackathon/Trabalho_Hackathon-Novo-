@@ -7,11 +7,15 @@ defineEmits(['salvar'])
 
 <template>
   <div class="card">
-        <img :src="imagem" class="imagem" :alt="titulo" />
+      <router-link :to="`/pratica/${id}`" class="link">
+        <img :src="imagem" class="imagem" :alt="titulo"/>
+      </router-link>
     <div class="roxo">
     <div class="linhaDeCima">
-    <h2>{{ titulo }}</h2>
-      <div class="botoes">
+        <router-link :to="`/pratica/${id}`" class="link">
+          <h2>{{ titulo }}</h2>
+        </router-link>
+      <div class="botoes" @click.stop>
           <BotaoSalvar
             :isSalvo="isSalvo"
             @salvar="$emit('salvar', { id, titulo, imagem, data })"
@@ -25,6 +29,10 @@ defineEmits(['salvar'])
 
 
 <style scoped>
+.link {
+  text-decoration: none;
+}
+
 .card {
   width: 240px;
   height: 300px;
@@ -67,5 +75,6 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+  cursor: default;
 }
 </style>

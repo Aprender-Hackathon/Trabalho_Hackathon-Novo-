@@ -34,6 +34,11 @@ const router = createRouter({
       name: 'VizuView', 
       component: () => import('@/views/VizuView.vue'),
     },
+    { 
+      path: '/pratica/:id', 
+      name: 'VizuPratView', 
+      component: () => import('@/views/VizuPratView.vue'),
+    },
     {
       path: '/atividades-praticas',
       name: 'atividadesPraticas',

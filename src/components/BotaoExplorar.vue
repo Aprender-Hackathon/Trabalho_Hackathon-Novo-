@@ -24,7 +24,7 @@ defineEmits(['salvar'])
         <router-link :to="`/atividade/${id}`" class="link">
           <h2>{{ titulo }}</h2>
         </router-link>
-        <div class="botoes">
+        <div class="botoes" @click.stop>
           <BotaoSalvar
             :isSalvo="isSalvo"
             @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
@@ -83,5 +83,6 @@ h2 {
   font-size: 17px;
   color: #333;
   text-decoration: underline;
+  cursor: default;
 }
 </style>
