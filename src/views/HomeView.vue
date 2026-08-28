@@ -12,6 +12,6 @@ import FaixaSobreNos from '@/components/FaixaSobreNos.vue'
     <EducacaoSection />
     <ProcesoSection />
     <CategoriasSection />
-    <FaixaSobreNos />
+    <FaixaSobreNos/>
   </div>
 </template>

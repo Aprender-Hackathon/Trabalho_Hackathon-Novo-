@@ -1,15 +1,15 @@
 <template>
-
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Matéria(s):</span>
       <div class="tags-group">
         <button
-         v-for="materia in materias"
+          v-for="materia in materias"
           :key="materia"
           class="tag-btn"
           :class="{ active: materiaSelecionada === materia }"
- @click="selecionarMateria(materia)">
+          @click="selecionarMateria(materia)"
+        >
           {{ materia }}
         </button>
       </div>
@@ -19,17 +19,19 @@
       <span class="label">Conteúdo(s):</span>
       <div class="tags-group">
         <button
-          v-for="conteudo in (mostrarMais ? conteudosAtuais : conteudosAtuais.slice(0, 6))"
+          v-for="conteudo in mostrarMais ? conteudosAtuais : conteudosAtuais.slice(0, 6)"
           :key="conteudo"
           class="tag-btn"
           :class="{ active: conteudoSelecionado === conteudo }"
-          @click="selecionarConteudo(conteudo)">
+          @click="selecionarConteudo(conteudo)"
+        >
           {{ conteudo }}
         </button>
         <button
           v-if="conteudosAtuais.length > 6"
           class="tag-btn"
-          @click="mostrarMais = !mostrarMais">
+          @click="mostrarMais = !mostrarMais"
+        >
           {{ mostrarMais ? '-' : '+' }}
         </button>
       </div>
@@ -40,46 +42,125 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 
-const emit = defineEmits (['filtro'])
+const emit = defineEmits(['filtro'])
 
 const materias = [
-  'Tudo', 'Artes', 'Biologia', 'Ciências', 'Educação Física', 'Ensino Religioso', 'Espanhol', 'Filosofia', 'Física', 'Geografia', 'História', 'Inglês', 'Matemática', 'Português', 'Química', 'Sociologia'
+  'Tudo',
+  'Artes',
+  'Biologia',
+  'Ciências',
+  'Educação Física',
+  'Ensino Religioso',
+  'Espanhol',
+  'Filosofia',
+  'Física',
+  'Geografia',
+  'História',
+  'Inglês',
+  'Matemática',
+  'Português',
+  'Química',
+  'Sociologia',
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Artes Visuais','Historia da arte', 'Música' ],
+  Artes: ['Artes Visuais', 'História da Arte', 'Música'],
 
-  'Biologia': ['Biotecnologia', 'Botânica', 'Celulas e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
+  Biologia: [
+    'Biotecnologia',
+    'Botânica',
+    'Células e seus processos',
+    'Ecologia',
+    'Genética e Evolução',
+    'Zoologia',
+  ],
 
-  'Ciências': ['Corpo Humano', 'Ecologia e Ambiente', 'Matéria e Energia', 'Seres Vivos', 'Terra e Espaço'],
+  Ciências: [
+    'Corpo Humano',
+    'Ecologia e Ambiente',
+    'Matéria e Energia',
+    'Seres Vivos',
+    'Terra e Espaço',
+  ],
 
-  'Educação Física': ['Corpo e Movimento', 'Jogos e Esporte', 'Saúde e Qualidade de Vida'],
+  'Educação Física': ['Corpo e Movimento', 'Jogos e Esportes', 'Saúde e Qualidade de Vida'],
 
-  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Etíca'],
+  'Ensino Religioso': ['Identidade e Diversidade', 'Religião e Cultura', 'Valores e Ética'],
 
-  'Espanhol': ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
+  Espanhol: ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
-  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia clássica', 'Filosofia Medieval', 'Filosofia Política', 'Intrudição e Origem'],
+  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia Clássica', 'Filosofia Medieval', 'Filosofia Política', 'Introdução e Origem'],
 
-  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Movimento', 'Forças e dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
+  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Momento', 'Forças e Dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
 
-  'Geografia': ['Brasil e Mundo', 'Cartografia e Orientação', 'Economia e Globalização', 'Espaço e Paisagem', 'Natureza e Ambiente', 'População e Espaço'],
+  Geografia: [
+    'Brasil e Mundo',
+    'Cartografia e Orientação',
+    'Economia e Globalização',
+    'Espaço e Paisagem',
+    'Natureza e Ambiente',
+    'População e Espaço',
+  ],
 
-  'História': ['Antiguidade', 'Brasil Imperio e República', 'Colonização', 'Fontes e Mémorias', 'Guerras e Conflitos', 'Idade Média e Renascimento', 'Revoluções e Tranformações'],
+  História: [
+    'Antiguidade',
+    'Brasil Império e República',
+    'Colonização',
+    'Fontes e Memória',
+    'Guerras e Conflitos',
+    'Idade Média e Renascimento',
+    'Revoluções e Transformações',
+  ],
 
-  'Inglês': ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
+  Inglês: ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
 
-  'Matemática': ['Algébra', 'Combinatória e Probabilidade', 'Conjuntos', 'Equações e Sistemas', 'Funções', 'Geometria espacial', 'Geometria plana', 'Matrizes e Determinantes', 'Números e Operações', 'Razões, Proporções e Porcentagens', 'Trigonometria'],
+  Matemática: [
+    'Álgebra',
+    'Combinatória e Probabilidade',
+    'Conjuntos',
+    'Equações e Sistemas',
+    'Funções',
+    'Geometria Espacial',
+    'Geometria Plana',
+    'Matrizes e Determinantes',
+    'Números e Operações',
+    'Razão, Proporção e Porcentagem',
+    'Trigonometria',
+  ],
 
-  'Português': ['Alfabetização e Leitura', 'Classes de Palavras', 'Coesão e Produção', 'Concordância e Regência', 'Gêneros Textuais', 'Orações e Períodos', 'Ortografia e Acentuação', 'Semântica e Variação', 'Síntaxse'],
+  Português: [
+    'Alfabetização e Leitura',
+    'Classes de Palavras',
+    'Coesão e Produção',
+    'Concordância e Regência',
+    'Gêneros Textuais',
+    'Orações e Períodos',
+    'Ortografia e Acentuação',
+    'Semântica e Variação',
+    'Sintaxse',
+  ],
 
-  'Química': ['Átomo e modelos atômicos', 'Eletroquímica', 'Ligações e Funções', 'Matérias e Misturas', 'Química orgânica', 'Reações químicas', 'Soluções','Termoquímica e Equilíbrio'],
+  Química: [
+    'Átomo e Modelos Atômicos',
+    'Eletroquímica',
+    'Ligações e Funções',
+    'Matéria e Misturas',
+    'Química Orgânica',
+    'Reações Químicas',
+    'Soluções',
+    'Termoquímica e Equilíbrio',
+  ],
 
-  'Sociologia': ['Cultura e Estado','Introdução à Sociologia', 'Pensadores Clássicos', 'Poder e Política', 'Trabalho e Capitalismo']
-
+  Sociologia: [
+    'Cultura e Sociedade',
+    'Introdução e Surgimento',
+    'Pensadores Clássicos',
+    'Poder e Política',
+    'Trabalho e Capitalismo',
+  ],
 }
 
-const materiaSelecionada = ref('Português')
+const materiaSelecionada = ref('Tudo')
 const conteudoSelecionado = ref('Tudo')
 const mostrarMais = ref(false)
 
@@ -103,18 +184,16 @@ function selecionarMateria(materia) {
   conteudoSelecionado.value = 'Tudo'
   emit('filtro', {
     materia: materiaSelecionada.value,
-    conteudo: conteudoSelecionado.value
+    conteudo: conteudoSelecionado.value,
   })
 }
 function selecionarConteudo(conteudo) {
   conteudoSelecionado.value = conteudo
   emit('filtro', {
     materia: materiaSelecionada.value,
-    conteudo: conteudoSelecionado.value
+    conteudo: conteudoSelecionado.value,
   })
 }
-
-
 </script>
 
 <style scoped>
@@ -125,15 +204,15 @@ function selecionarConteudo(conteudo) {
   background-color: #fdfbf7;
   padding: 24px 70px;
   font-family: Arial, sans-serif;
-  justify-content: center
-
+  justify-content: center;
 }
 
 .filter-row {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  width: 100vw;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .label {

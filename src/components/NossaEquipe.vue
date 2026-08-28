@@ -26,30 +26,22 @@
 </template>
 
 
-<script>
-import alana from '../assets/fotos/alana.png'
-import anna from '../assets/fotos/anna.png'
-import beatriz from '../assets/fotos/beatriz.png'
-import eduarda from '../assets/fotos/eduarda.png'
-import larissa from '../assets/fotos/larissa.png'
-import paola from '../assets/fotos/paola.png'
+<script setup>
+import alana from '@/assets/alana.png'
+import anna from '@/assets/anna.png'
+import beatriz from '@/assets/beatriz.png'
+import eduarda from '@/assets/eduarda.png'
+import larissa from '@/assets/larissa.png'
+import paola from '@/assets/paola.png'
 
-export default {
-  name: 'App',
-
-  data() {
-    return {
-      equipe: [
-        { nome: "Alana", foto: alana, coluna: 3, linha: 1 },
-        { nome: "Anna", foto: anna, coluna: 4, linha: 1 },
-        { nome: "Beatriz", foto: beatriz, coluna: 1, linha: 2 },
-        { nome: "Eduarda", foto: eduarda, coluna: 2, linha: 2 },
-        { nome: "Larissa", foto: larissa, coluna: 3, linha: 2 },
-        { nome: "Paola", foto: paola, coluna: 4, linha: 2 }
-      ]
-    };
-  }
-};
+const equipe = [
+  { nome: "Alana", foto: alana, coluna: 3, linha: 1 },
+  { nome: "Anna", foto: anna, coluna: 4, linha: 1 },
+  { nome: "Beatriz", foto: beatriz, coluna: 1, linha: 2 },
+  { nome: "Eduarda", foto: eduarda, coluna: 2, linha: 2 },
+  { nome: "Larissa", foto: larissa, coluna: 3, linha: 2 },
+  { nome: "Paola", foto: paola, coluna: 4, linha: 2 }
+]
 </script>
 
 
@@ -59,16 +51,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:global(html),
-:global(body),
-:global(#app) {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  background-color: #dcefd8;
 }
 
 .secao-equipe {
