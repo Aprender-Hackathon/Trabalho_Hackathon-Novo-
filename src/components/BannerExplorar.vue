@@ -24,7 +24,6 @@
     </div>
   </section>
   <div class="linha-divisoria"></div>
-
 </template>
 
 <style>
@@ -44,7 +43,7 @@ html, body, #app {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  background-color: #FAF8F5;
+  background-color: #f4ebdc;
   padding: 60px 5%;
   box-sizing: border-box;
   overflow: hidden;
