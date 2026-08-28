@@ -47,7 +47,7 @@ const materias = [
 ]
 
 const conteudosPorMateria = {
-  'Artes': ['Artes Visuais','Historia da arte', 'Música' ],
+  'Artes': ['Artes Visuais','História da Arte', 'Música' ],
 
   'Biologia': ['Biotecnologia', 'Botânica', 'Celulas e seus processos', 'Ecologia','Genética e Evolução', 'Zoologia'],
 
