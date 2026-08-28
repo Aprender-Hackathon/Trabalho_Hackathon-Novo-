@@ -23,6 +23,14 @@ function voltar() {
 }
 
 function alternarSalvar() {
+
+  if (props.id === undefined || !estadoAtividades?.lista) return
+
+  const item = estadoAtividades.lista.find(a => String(a.id) === String(props.id))
+  if (item) {
+    item.salvo = !item.salvo
+  }
+
   if (props.id !== undefined && estadoAtividades?.lista) {
     const item = estadoAtividades.lista.find(a => a.id === props.id)
 
@@ -32,6 +40,7 @@ function alternarSalvar() {
   }
 
   router.push({ name: 'salvos' })
+
 }
 </script>
 
