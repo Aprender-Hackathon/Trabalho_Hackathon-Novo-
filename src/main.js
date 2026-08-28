@@ -1,14 +1,15 @@
-
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import './global-fonts.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+
 
 import '@fontsource/baloo-2'
 import '@fontsource/baloo-2/700.css'

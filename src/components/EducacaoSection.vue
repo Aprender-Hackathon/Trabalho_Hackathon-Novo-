@@ -60,7 +60,6 @@
       </div>
     </div>
   </section>
-  <div class="linha-divisoria"></div>
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@700&display=swap');
@@ -153,13 +152,6 @@
   font-weight: 700;
   line-height: 1.5;
   color: #0e3e47;
-}
-.linha-divisoria {
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: rgb(238, 226, 205);
-  left: 0;
 }
 @media (max-width: 600px) {
   .secao-missao {

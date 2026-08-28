@@ -1,5 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
+
+const props = defineProps({
+  filtroInicial: {
+    type: Object,
+    default: () => ({ data: 'Tudo' })
+  }
+})
 
 const emit = defineEmits(['filtro'])
 
@@ -15,36 +22,56 @@ const feriados = [
   'Dia dos Animais',
   'Festa Junina',
   'Natal',
-  'Páscoa'
+  'Páscoa',
 ]
 
 const dataSelecionada = ref('Tudo')
 const mostrarMais = ref(false)
 
+
+watch(
+  () => props.filtroInicial?.data,
+  (novaData) => {
+    if (novaData) {
+      dataSelecionada.value = novaData
+
+     
+      const index = feriados.indexOf(novaData)
+      if (index >= 6) {
+        mostrarMais.value = true
+      }
+    }
+  },
+  { immediate: true }
+)
+
 function selecionarData(data) {
   dataSelecionada.value = data
   emit('filtro', {
-    data: dataSelecionada.value 
+    data: dataSelecionada.value,
   })
 }
 </script>
+
 <template>
   <div class="filter-container">
     <div class="filter-row">
       <span class="label">Datas comemorativas:</span>
       <div class="tags-group">
         <button
-          v-for="data in (mostrarMais ? feriados : feriados.slice(0, 6))"
+          v-for="data in mostrarMais ? feriados : feriados.slice(0, 6)"
           :key="data"
           class="tag-btn"
           :class="{ active: dataSelecionada === data }"
-          @click="selecionarData(data)">
+          @click="selecionarData(data)"
+        >
           {{ data }}
         </button>
         <button
           v-if="feriados.length > 6"
           class="tag-btn btn-toggle"
-          @click="mostrarMais = !mostrarMais">
+          @click="mostrarMais = !mostrarMais"
+        >
           {{ mostrarMais ? '-' : '+' }}
         </button>
       </div>
@@ -58,17 +85,16 @@ function selecionarData(data) {
   flex-direction: column;
   gap: 16px;
   background-color: #fdfbf7;
-  padding: 24px 70px;
+  padding: 24px 20px;
   font-family: Arial, sans-serif;
-  justify-content: center
-
+  justify-content: center;
 }
 
 .filter-row {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  width: 100vw;
+  width: 100%;
 }
 
 .label {
