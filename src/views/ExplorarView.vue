@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import FiltroExplorar from '@/components/FiltroExplorar.vue'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
 import { estadoAtividades } from '@/AtividadesCards'
+import { estadoPratica } from '@/PraticaCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 const limite = ref(20)
@@ -12,15 +13,25 @@ const filtroEscolhido = ref({
   conteudo: 'Tudo',
 })
 
+
 function alternarSalvar(id) {
-  const item = estadoAtividades.lista.find(a => a.id === id)
+  let item = estadoAtividades.lista.find(a => a.id === id)
+  if (item) {
+    item.salvo = !item.salvo
+    return
+  }
+
+  item = estadoPratica.lista.find(a => a.id === id)
   if (item) {
     item.salvo = !item.salvo
   }
 }
 
+
 const atividadesFiltradas = computed(() => {
-  return estadoAtividades.lista.filter((item) => {
+  const todasAsAtividades = [...estadoAtividades.lista, ...estadoPratica.lista]
+
+  return todasAsAtividades.filter((item) => {
     const matchMateria =
       filtroEscolhido.value.materia === 'Tudo' || item.materia === filtroEscolhido.value.materia
     const matchConteudo =

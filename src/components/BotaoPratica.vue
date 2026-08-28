@@ -1,28 +1,35 @@
 <script setup>
 import BotaoSalvar from './BotaoSalvar.vue'
 
-defineProps(['id', 'titulo', 'imagem', 'data', 'isSalvo'])
+defineProps({
+  id: [Number, String],
+  titulo: String,
+  imagem: String,
+  data: String,
+  isSalvo: Boolean
+})
+
 defineEmits(['salvar'])
 </script>
 
 <template>
   <div class="card">
-        <img :src="imagem" class="imagem" :alt="titulo" />
+    <img :src="imagem" class="imagem" :alt="titulo" />
     <div class="roxo">
-    <div class="linhaDeCima">
-    <h2>{{ titulo }}</h2>
-      <div class="botoes">
+      <div class="linhaDeCima">
+        <h2>{{ titulo }}</h2>
+        <div class="botoes">
+          <!-- Certifique-se de que está emitindo apenas o id -->
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', { id, titulo, imagem, data })"
+            @salvar="$emit('salvar', id)"
           />
+        </div>
       </div>
-</div>
       <span v-if="data" class="data">{{ data }}</span>
-</div>
+    </div>
   </div>
 </template>
-
 
 <style scoped>
 .card {

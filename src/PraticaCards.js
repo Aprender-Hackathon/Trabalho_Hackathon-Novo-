@@ -2,8 +2,6 @@ import { reactive } from 'vue'
 
 export const estadoPratica = reactive({
   lista: [
-
-// ANO NOVO
     {
       id: 1,
       titulo: 'Atividade',

@@ -22,7 +22,7 @@ defineEmits(['salvar'])
         <div class="botoes">
           <BotaoSalvar
             :isSalvo="isSalvo"
-            @salvar="$emit('salvar', { id, titulo, imagem, materia, conteudo })"
+            @salvar="$emit('salvar', id)"
           />
         </div>
       </div>
