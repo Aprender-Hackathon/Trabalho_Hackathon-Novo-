@@ -79,11 +79,15 @@ const atividadesFiltradas = computed(() => {
 <BotaoMaisResultados 
       v-if="atividadesFiltradas.length > limite" 
       @carregar="limite += 20" 
+      class="mais"
     />
 </div>
 </template>
 
 <style scoped>
+.mais{
+  margin-bottom: 2vw;
+}
 .explorar-container {
   min-height: 100vh;
   padding-bottom: 4rem;
