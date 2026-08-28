@@ -1,402 +1,1545 @@
 import { reactive } from 'vue'
-
 export const estadoAtividades = reactive({
-lista:[
-
-   {
-    id: 1,
-    titulo: 'Análise combinatória',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo1.docx',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo',
-    salvos : false,
-  },
-     {
-    id: 2,
-    titulo: 'Análise combinatória',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Angulos/atividadeAngulo2.docx',
-    materia: 'Matemática',
-    conteudo: 'Ângulos',
-    descricao: 'pipipipopopo',
-    salvos : false,
-  },
-
-        {
-    id:3,
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero13.docx',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo',
-    salvos: false
-  },
-        {
-          id: 4,
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Matematica/Numeros/Numero14.docx',
-    materia: 'Matemática',
-    conteudo: 'Números',
-    descricao: 'pipipipopopo',
-    salvos : false
-  },
-
-//PORTUGUÊS
-
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_A.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_B.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_C.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_D.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_E.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_F.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_G.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_H.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_I.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_J.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_K.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_L.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_M.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_N.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_O.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_P.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Q.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_R.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_S.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_T.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_U.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_V.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_W.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_X.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Y.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-  {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Portugues/Alfabetizacao/Atividade_Z.docx',
-    materia: 'Português',
-    conteudo: 'Alfabetização',
-    descricao: 'pipipipopopo'
-  },
-
-  //QUÍMICA
-
- {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica1.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica2.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica3.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica4.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica5.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica6.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica7.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica8.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica9.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica10.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica11.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-   {
-    titulo: 'Adição',
-    imagem: '/SemImagem.png',
-    arquivo: '/atividades/Quimica/Quimica_organica/atividadeQuimica12.docx',
-    materia: 'Química',
-    conteudo: 'Química orgânica',
-    descricao: 'pipipipopopo'
-  },
-
-     {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo2.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo3.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-       {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo4.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo5.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-         {
-    titulo: 'Adição',
-    imagem: 'SemImagem.png',
-    arquivo: '/atividades/Quimica/Atomo_e_modelos_atomicos/Atomo6.docx',
-    materia: 'Química',
-    conteudo: 'Átomo e modelos atômicos',
-    descricao: 'pipipipopopo'
-  },
-
-]
+  lista: [
+    {
+      id: 1,
+      titulo: 'Introdução às Artes Visuais - 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade prática desenvolvida para introduzir os conceitos fundamentais da linguagem visual. Trabalha a observação e a interpretação de imagens de forma acessível e contextualizada para fixação do conteúdo.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 2,
+      titulo: 'Introdução às Artes Visuais - 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade prática desenvolvida para introduzir os conceitos fundamentais da linguagem visual. Trabalha a observação e a interpretação de imagens de forma acessível e contextualizada para fixação do conteúdo.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 3,
+      titulo: 'Introdução às Artes Visuais - 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade prática desenvolvida para introduzir os conceitos fundamentais da linguagem visual. Trabalha a observação e a interpretação de imagens de forma acessível e contextualizada para fixação do conteúdo.',
+      arquivo: '/atividades/Artes/Artes_visuais/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 4,
+      titulo: 'Cores: Primárias e Secundárias - 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 5,
+      titulo: 'Cores: Primárias e Secundárias - 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 6,
+      titulo: 'Cores: Primárias e Secundárias - 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 7,
+      titulo: 'Cores: Primárias e Secundárias - 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 8,
+      titulo: 'Cores: Primárias e Secundárias - 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 9,
+      titulo: 'Cores: Primárias e Secundárias - 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 10,
+      titulo: 'Cores: Primárias e Secundárias - 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 11,
+      titulo: 'Cores: Primárias e Secundárias - 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 12,
+      titulo: 'Cores: Primárias e Secundárias - 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 13,
+      titulo: 'Cores: Primárias e Secundárias - 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 14,
+      titulo: 'Cores: Primárias e Secundárias - 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Exercícios dinâmicos focados no reconhecimento e na mistura das cores fundamentais. Os alunos exploram como as cores primárias se combinam para formar as secundárias através de atividades práticas de pintura e preenchimento.',
+      arquivo: '/atividades/Artes/Artes_visuais/Cores_primarias_e_secundarias__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 15,
+      titulo: 'Desenho e Pintura - 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 16,
+      titulo: 'Desenho e Pintura - 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 17,
+      titulo: 'Desenho e Pintura - 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 18,
+      titulo: 'Desenho e Pintura - 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 19,
+      titulo: 'Desenho e Pintura - 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 20,
+      titulo: 'Desenho e Pintura - 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 21,
+      titulo: 'Desenho e Pintura - 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 22,
+      titulo: 'Desenho e Pintura - 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 23,
+      titulo: 'Desenho e Pintura - 9 ',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 24,
+      titulo: 'Desenho e Pintura - 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 25,
+      titulo: 'Desenho e Pintura - 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 26,
+      titulo: 'Desenho e Pintura - 12',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade12.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 27,
+      titulo: 'Desenho e Pintura - 13',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Propõe o desenvolvimento da coordenação e da expressão artística por meio de diferentes técnicas de traço e preenchimento. Estimula a criatividade do aluno ao aplicar noções de espaço, forma e composição no papel',
+      arquivo: '/atividades/Artes/Artes_visuais/Desenho_e_pintura__atividade13.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 28,
+      titulo: 'Linguagem visual - 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 30,
+      titulo: 'Linguagem visual - 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 31,
+      titulo: 'Linguagem visual - 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 32,
+      titulo: 'Linguagem visual - 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 33,
+      titulo: 'Linguagem visual - 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 34,
+      titulo: 'Linguagem visual - 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 35,
+      titulo: 'Linguagem visual - 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 36,
+      titulo: 'Linguagem visual - 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 37,
+      titulo: 'Linguagem visual - 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 38,
+      titulo: 'Linguagem visual - 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 39,
+      titulo: 'Linguagem visual - 12',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade12.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 40,
+      titulo: 'Linguagem visual - 13',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Estudo focado nos componentes básicos da arte, como ponto, linha, plano e estrutura visual. Ajuda o estudante a identificar e utilizar esses elementos para construir suas próprias produções e analisar obras.',
+      arquivo: '/atividades/Artes/Artes_visuais/Elementos_das_artes_visuais__atividade13.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 41,
+      titulo: 'Formas e texturas - 1',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 42,
+      titulo: 'Formas e texturas - 2',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 43,
+      titulo: 'Formas e texturas - 3',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 44,
+      titulo: 'Formas e texturas - 4',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 45,
+      titulo: 'Formas e texturas - 5',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 46,
+      titulo: 'Formas e texturas - 6',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 47,
+      titulo: 'Formas e texturas - 7',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 48,
+      titulo: 'Formas e texturas - 8',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 49,
+      titulo: 'Formas e texturas - 9',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 50,
+      titulo: 'Formas e texturas - 10',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 51,
+      titulo: 'Formas e texturas - 11',
+      materia: 'Artes',
+      conteudo: 'Artes Visuais',
+      descricao:
+        'Atividade voltada para a percepção tátil e visual de diferentes superfícies e figuras geométricas ou orgânicas. Ensina o aluno a criar efeitos visuais de relevo e riqueza de detalhes em seus trabalhos.',
+      arquivo: '/atividades/Artes/Artes_visuais/Formas_e_texturas__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 52,
+      titulo: 'Arte contemporanea - 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 53,
+      titulo: 'Arte contemporanea - 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 54,
+      titulo: 'Arte contemporanea - 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 55,
+      titulo: 'Arte contemporanea - 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 56,
+      titulo: 'Arte contemporanea - 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 57,
+      titulo: 'Arte contemporanea - 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 58,
+      titulo: 'Arte contemporanea - 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 59,
+      titulo: 'Arte contemporanea - 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 60,
+      titulo: 'Arte contemporanea - 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 61,
+      titulo: 'Arte contemporanea 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 62,
+      titulo: 'Arte contemporanea 11',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça diferentes formas de expressão da arte contemporânea, incluindo arte urbana, grafite e outras manifestações que aproximam a arte do cotidiano.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_contemporanea__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 63,
+      titulo: 'Arte Medieval e Renascimento - 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 64,
+      titulo: 'Arte Medieval e Renascimento - 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 65,
+      titulo: 'Arte Medieval e Renascimento - 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 66,
+      titulo: 'Arte Medieval e Renascimento - 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 67,
+      titulo: 'Arte Medieval e Renascimento - 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 68,
+      titulo: 'Arte Medieval e Renascimento - 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 69,
+      titulo: 'Arte Medieval e Renascimento - 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 70,
+      titulo: 'Arte Medieval e Renascimento - 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 71,
+      titulo: 'Arte Medieval e Renascimento - 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 72,
+      titulo: 'Arte Medieval e Renascimento - 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Conheça as transformações da arte entre a Idade Média e o Renascimento, explorando obras, artistas, técnicas e novas formas de representar o mundo.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_Medieval_e_Renascimento__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 73,
+      titulo: 'Arte Moderna no Brasil - 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 74,
+      titulo: 'Arte Moderna no Brasil - 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 75,
+      titulo: 'Arte Moderna no Brasil - 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 76,
+      titulo: 'Arte Moderna no Brasil - 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 77,
+      titulo: 'Arte Moderna no Brasil - 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 78,
+      titulo: 'Arte Moderna no Brasil - 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 79,
+      titulo: 'Arte Moderna no Brasil - 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 80,
+      titulo: 'Arte Moderna no Brasil - 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 81,
+      titulo: 'Arte Moderna no Brasil - 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 82,
+      titulo: 'Arte Moderna no Brasil - 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore o desenvolvimento da arte moderna brasileira e conheça artistas, obras e ideias que transformaram a maneira de representar a cultura do país.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_moderna_no_Brasil__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 83,
+      titulo: 'Arte na Antiguidade - 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 84,
+      titulo: 'Arte na Antiguidade - 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 85,
+      titulo: 'Arte na Antiguidade - 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 86,
+      titulo: 'Arte na Antiguidade - 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 87,
+      titulo: 'Arte na Antiguidade - 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 88,
+      titulo: 'Arte na Antiguidade - 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 89,
+      titulo: 'Arte na Antiguidade - 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 90,
+      titulo: 'Arte na Antiguidade - 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 91,
+      titulo: 'Arte na Antiguidade - 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 92,
+      titulo: 'Arte na Antiguidade - 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Explore as manifestações artísticas das antigas civilizações e conheça suas principais características, símbolos e formas de expressão.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Arte_na_Antiguidade__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 93,
+      titulo: 'Claude Monet e o Impressionismo',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Analise uma obra de Claude Monet e observe como luz, natureza e composição são utilizadas para construir uma cena impressionista.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 94,
+      titulo: 'Revisão de História da Arte',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Atividade adaptada que reúne conceitos de diferentes períodos e movimentos da História da Arte para revisão e fixação dos conteúdos.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 95,
+      titulo: 'História da Arte em Imagens',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Atividade adaptada para reconhecer e relacionar elementos artísticos por meio da observação de imagens e diferentes manifestações da arte.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 96,
+      titulo: 'Criação e Análise Artística',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Atividade adaptada que estimula a criação artística e a identificação de elementos presentes em diferentes obras e manifestações da arte.',
+      arquivo: '/atividades/Artes/Historia_da_arte/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 97,
+      titulo: 'Vanguardas europeias - 1',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 98,
+      titulo: 'Vanguardas europeias - 2',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 99,
+      titulo: 'Vanguardas europeias - 3',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 100,
+      titulo: 'Vanguardas europeias - 4',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 101,
+      titulo: 'Vanguardas europeias - 5',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 102,
+      titulo: 'Vanguardas europeias - 6',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 103,
+      titulo: 'Vanguardas europeias - 7',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 104,
+      titulo: 'Vanguardas europeias - 8',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 105,
+      titulo: 'Vanguardas europeias - 9',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 106,
+      titulo: 'Vanguardas europeias - 10',
+      materia: 'Artes',
+      conteudo: 'História da Arte',
+      descricao:
+        'Descubra movimentos que romperam com os padrões tradicionais da arte, explorando novas formas, cores, ideias e maneiras de expressar a realidade.',
+      arquivo: '/atividades/Artes/Historia_da_arte/Vanguardas_europeias__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 107,
+      titulo: 'Criação Artística Musical',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Proposta de criação e análise relacionada ao universo musical, trabalhando a representação de ideias por meio de produções artísticas, observação de elementos visuais e relação entre imagens e conceitos estudados.',
+      arquivo: '/atividades/Artes/Musica/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 108,
+      titulo: 'Música e Expressão Artística',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade que articula música e expressão artística, trabalhando a observação de imagens, identificação de elementos, associação com conceitos musicais e produção criativa a partir do tema estudado.',
+      arquivo: '/atividades/Artes/Musica/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 109,
+      titulo: 'Música: Análise e Criação',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Proposta voltada à análise de manifestações artísticas relacionadas à música, trabalhando a interpretação de imagens, identificação de elementos e criação de uma produção própria inspirada no conteúdo.',
+      arquivo: '/atividades/Artes/Musica/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 110,
+      titulo: 'Conhecendo a Música e os Instrumentos',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade de identificação e reconhecimento de instrumentos musicais, trabalhando a ampliação do repertório por meio da nomeação e observação de diferentes instrumentos.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 111,
+      titulo: 'Conhecendo os Instrumentos Musicais',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade de identificação e reconhecimento de instrumentos musicais, trabalhando a ampliação do repertório por meio da nomeação e observação de diferentes instrumentos.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade2.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 112,
+      titulo: 'Instrumentos de Cordas',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade dedicada à família dos instrumentos de cordas, trabalhando seu reconhecimento e diferenciação em relação a outras famílias instrumentais, como os instrumentos de sopro..',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade3.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 113,
+      titulo: 'Instrumentos de Sopro',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade sobre os instrumentos de sopro, trabalhando sua identificação e diferenciação a partir de exemplos como a flauta e da comparação com instrumentos pertencentes a outras famílias.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade4.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 114,
+      titulo: 'Instrumentos de Percussão',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade voltada à família da percussão, trabalhando o reconhecimento de instrumentos como o tambor e sua diferenciação em relação às famílias de cordas e sopros.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade5.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 115,
+      titulo: 'Ritmo e Pulsação',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade prática de exploração do ritmo, trabalhando sequências de quatro tempos por meio de palmas e sua representação utilizando símbolos criados pelo próprio aluno.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade6.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 116,
+      titulo: 'Intensidade do Som',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade dedicada às características da intensidade sonora, trabalhando a diferenciação entre sons fortes e fracos e sua representação por meio de situações musicais simples.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade7.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 117,
+      titulo: 'Altura dos Sons',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade sobre a altura sonora, trabalhando a diferenciação entre sons agudos e graves e a identificação dessa característica em diferentes situações musicais.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade8.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 118,
+      titulo: 'Famílias dos Instrumentos',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'tividade de classificação dos instrumentos musicais por famílias, trabalhando as relações entre instrumentos de cordas, sopros e percussão a partir de exemplos conhecidos.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade9.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 119,
+      titulo: 'Criação de Ritmos',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'Atividade prática de criação rítmica, trabalhando a elaboração de pequenas sequências sonoras utilizando palmas, batidas ou estalos e sua representação por meio de símbolos.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade10.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 120,
+      titulo: 'Preferências Musicais e Instrumentos',
+      materia: 'Artes',
+      conteudo: 'Música',
+      descricao:
+        'tividade de expressão e reflexão sobre instrumentos musicais, trabalhando a identificação de preferências pessoais e a justificativa das escolhas relacionadas ao repertório musical.',
+      arquivo: '/atividades/Artes/Musica/Musica_e_instrumentos__atividade11.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 121,
+      titulo: 'Ciência e Tecnologia',
+      materia: 'Biologia',
+      conteudo: 'Biotecnologia',
+      descricao:
+        'Atividade adaptada para trabalhar conceitos básicos de Biotecnologia, relacionando processos biológicos, tecnologia e situações presentes na natureza e no cotidiano. Inclui identificação de elementos, associação de conceitos, exemplos e representação por esquemas ou desenhos.',
+      arquivo: '/atividades/Biologia/Biotecnologia/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 122,
+      titulo: 'Biotecnologia no Cotidiano',
+      materia: 'Biologia',
+      conteudo: 'Biotecnologia',
+      descricao:
+        'Proposta voltada à relação entre Biologia e tecnologia, trabalhando a identificação de aplicações da Biotecnologia, a associação entre conceitos e definições e a representação de processos por meio de esquemas e exemplos do cotidiano.',
+      arquivo: '/atividades/Biologia/Biotecnologia/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 123,
+      titulo: 'Processos e Aplicações da Biotecnologia',
+      materia: 'Biologia',
+      conteudo: 'Biotecnologia',
+      descricao:
+        'Atividade que aborda a Biotecnologia a partir da identificação de estruturas e processos, relacionando conceitos científicos às suas aplicações e utilizando esquemas, exemplos e explicações para representar o conteúdo.',
+      arquivo: '/atividades/Biologia/Biotecnologia/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 124,
+      titulo: 'Vírus e Dengue',
+      materia: 'Biologia',
+      conteudo: 'Biotecnologia',
+      descricao:
+        'Atividade centrada nos vírus e na dengue, trabalhando o reconhecimento do agente relacionado à doença e sua representação no contexto da Biologia.',
+      arquivo: '/atividades/Biologia/Biotecnologia/Biotecnologia__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 125,
+      titulo: 'Introdução à Botânica',
+      materia: 'Biologia',
+      conteudo: 'Botânica',
+      descricao:
+        'Atividade adaptada que trabalha aspectos básicos da Botânica, relacionando estruturas e processos das plantas à observação de imagens, exemplos do cotidiano e representação por desenhos ou esquemas.',
+      arquivo: '/atividades/Biologia/Botanica/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 126,
+      titulo: 'Botânica, Fotossíntese e Respiração',
+      materia: 'Biologia',
+      conteudo: 'Botânica',
+      descricao:
+        'Proposta voltada ao estudo das plantas e de seus processos vitais, trabalhando Botânica, fotossíntese e respiração por meio da identificação de estruturas, associação de conceitos, explicação de processos e elaboração de esquemas.',
+      arquivo: '/atividades/Biologia/Botanica/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 127,
+      titulo: 'Processos Vitais das Plantas',
+      materia: 'Biologia',
+      conteudo: 'Botânica',
+      descricao:
+        'Atividade que reúne Botânica, fotossíntese e respiração, trabalhando a identificação de estruturas vegetais, a relação entre conceitos e processos biológicos e a representação dos conteúdos por meio de esquemas e exemplos.',
+      arquivo: '/atividades/Biologia/Botanica/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 128,
+      titulo: 'Conhecendo a Célula',
+      materia: 'Biologia',
+      conteudo: 'Célula e seus Processos',
+      descricao:
+        'Atividade adaptada para trabalhar a organização celular, explorando conceitos de Citologia, membrana plasmática e organelas. As propostas envolvem identificação de estruturas, associação de conceitos, exemplos e representação por desenhos.',
+      arquivo: '/atividades/Biologia/Celula_e_seus_processos/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 129,
+      titulo: 'Estrutura e Funcionamento Celular',
+      materia: 'Biologia',
+      conteudo: 'Célula e seus Processos',
+      descricao:
+        'Atividade que trabalha a organização e o funcionamento das células, abordando membrana plasmática, organelas e divisão celular por meio da identificação de estruturas, explicação de processos, associação de conceitos e elaboração de esquemas.',
+      arquivo: '/atividades/Biologia/Celula_e_seus_processos/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 130,
+      titulo: 'Célula e Divisão Celular',
+      materia: 'Biologia',
+      conteudo: 'Célula e seus Processos',
+      descricao:
+        'Proposta voltada à compreensão da organização celular e dos processos relacionados à divisão celular, trabalhando estruturas, funções, relações entre conceitos e representação dos processos por meio de esquemas e exemplos.',
+      arquivo: '/atividades/Biologia/Celula_e_seus_processos/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 131,
+      titulo: 'Doenças Causadas por Bactérias',
+      materia: 'Biologia',
+      conteudo: 'Célula e seus Processos',
+      descricao:
+        'Atividade de identificação visual relacionada às bactérias e às doenças que elas podem causar. A proposta utiliza a pintura e o reconhecimento das representações bacterianas como forma de trabalhar o conteúdo de maneira adaptada.',
+      arquivo: '/atividades/Biologia/Celula_e_seus_processos/Citologia__atividade1.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 132,
+      titulo: 'Introdução à Ecologia',
+      materia: 'Biologia',
+      conteudo: 'Ecologia',
+      descricao:
+        'Atividade adaptada para trabalhar relações entre os seres vivos e o ambiente, utilizando exemplos da natureza e do cotidiano, identificação de elementos, associação de conceitos e representação das relações ecológicas por desenhos ou esquemas.',
+      arquivo: '/atividades/Biologia/Ecologia/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 133,
+      titulo: 'Ecologia e Biomas',
+      materia: 'Biologia',
+      conteudo: 'Ecologia',
+      descricao:
+        'Proposta que trabalha conceitos de Ecologia e a diversidade dos biomas, relacionando características ambientais, seres vivos e relações presentes nos diferentes ambientes por meio de identificação, exemplos e esquemas.',
+      arquivo: '/atividades/Biologia/Ecologia/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 134,
+      titulo: 'Relações Ecológicas e Biomas',
+      materia: 'Biologia',
+      conteudo: 'Ecologia',
+      descricao:
+        'Atividade voltada à análise das relações entre organismos e ambiente, trabalhando conceitos de Ecologia e biomas, identificação de elementos, explicação de processos e representação das relações por meio de esquemas.',
+      arquivo: '/atividades/Biologia/Ecologia/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 135,
+      titulo: 'Introdução à Genética e Evolução',
+      materia: 'Biologia',
+      conteudo: 'Genética e Evolução',
+      descricao:
+        'Atividade adaptada que trabalha conceitos fundamentais de Genética e Evolução, utilizando esquemas, exemplos, identificação de elementos e relações entre conceitos para representar características e processos biológicos.',
+      arquivo: '/atividades/Biologia/Genetica_e_evolucao/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 136,
+      titulo: 'Genética, Mendel e Evolução',
+      materia: 'Biologia',
+      conteudo: 'Genética e Evolução',
+      descricao:
+        'Proposta que relaciona os estudos de Genética e Mendel aos processos evolutivos, trabalhando conceitos, exemplos, identificação de elementos e representação de relações biológicas por meio de esquemas.',
+      arquivo: '/atividades/Biologia/Genetica_e_evolucao/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 137,
+      titulo: 'Hereditariedade e Seleção Natural',
+      materia: 'Biologia',
+      conteudo: 'Genética e Evolução',
+      descricao:
+        'Atividade que aborda Genética e Evolução a partir da relação entre hereditariedade, características biológicas, evolução e seleção natural, trabalhando explicações de processos, identificação, associação de conceitos e elaboração de esquemas.',
+      arquivo: '/atividades/Biologia/Genetica_e_evolucao/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 138,
+      titulo: 'Introdução à Zoologia',
+      materia: 'Biologia',
+      conteudo: 'Zoologia',
+      descricao:
+        'Atividade adaptada para trabalhar o estudo dos animais, explorando identificação, características, relações entre conceitos e exemplos encontrados na natureza e no cotidiano, além da representação por imagens e esquemas.',
+      arquivo: '/atividades/Biologia/Zoologia/atividade_adaptada_01.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 139,
+      titulo: 'Diversidade Animal',
+      materia: 'Biologia',
+      conteudo: 'Zoologia',
+      descricao:
+        'Proposta voltada ao estudo da diversidade dos animais, trabalhando características e relações entre diferentes organismos por meio da identificação de elementos, associação de conceitos, exemplos e representações.',
+      arquivo: '/atividades/Biologia/Zoologia/atividade_adaptada_02.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 140,
+      titulo: 'Características dos Animais',
+      materia: 'Biologia',
+      conteudo: 'Zoologia',
+      descricao:
+        'Atividade que trabalha características e processos relacionados aos animais, utilizando identificação de estruturas, explicação de fenômenos, associação de conceitos e representação das informações por meio de esquemas.',
+      arquivo: '/atividades/Biologia/Zoologia/atividade_adaptada_03.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+    {
+      id: 141,
+      titulo: 'Protozoários',
+      materia: 'Biologia',
+      conteudo: 'Zoologia',
+      descricao:
+        'Atividade dedicada ao estudo dos protozoários, trabalhando o reconhecimento e a representação desses organismos dentro do conteúdo de Zoologia.',
+      arquivo: '/atividades/Biologia/Zoologia/atividade_adaptada_04.docx',
+      previewTipo: 'docx',
+      salvo: false,
+    },
+  ],
 })
-export default estadoAtividades;
-

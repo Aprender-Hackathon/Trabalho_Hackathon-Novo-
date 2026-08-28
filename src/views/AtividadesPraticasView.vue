@@ -6,7 +6,7 @@ defineProps({
   titulo: String,
   imagem: String,
   data: String,
-  isSalvo: Boolean
+  isSalvo: Boolean,
 })
 
 defineEmits(['salvar'])
@@ -19,11 +19,7 @@ defineEmits(['salvar'])
       <div class="linhaDeCima">
         <h2>{{ titulo }}</h2>
         <div class="botoes">
-
-          <BotaoSalvar
-            :isSalvo="isSalvo"
-            @salvar="$emit('salvar', id)"
-          />
+          <BotaoSalvar :isSalvo="isSalvo" @salvar="$emit('salvar', id)" />
         </div>
       </div>
       <span v-if="data" class="data">{{ data }}</span>

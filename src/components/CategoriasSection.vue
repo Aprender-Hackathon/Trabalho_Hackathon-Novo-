@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
   <section id="categorias" class="secao-categorias">
     <div class="container-categorias">
@@ -18,9 +17,16 @@
           </div>
           <span class="texto-categoria">Páscoa</span>
         </router-link>
-        <router-link to="/explorar?categoria=dia-das-criancas" class="cartao-categoria cor-criancas">
+        <router-link
+          to="/explorar?categoria=dia-das-criancas"
+          class="cartao-categoria cor-criancas"
+        >
           <div class="caixa-imagem">
-            <img src="@/assets/dia_das_criancas.jpg" alt="Dia das Crianças" class="imagem-categoria" />
+            <img
+              src="@/assets/dia_das_criancas.jpg"
+              alt="Dia das Crianças"
+              class="imagem-categoria"
+            />
           </div>
           <span class="texto-categoria">Dia das Crianças</span>
         </router-link>
@@ -32,7 +38,11 @@
         </router-link>
         <router-link to="/explorar?categoria=dia-da-natureza" class="cartao-categoria cor-natureza">
           <div class="caixa-imagem">
-            <img src="@/assets/dia_da_natureza.jpg" alt="Dia da Natureza" class="imagem-categoria" />
+            <img
+              src="@/assets/dia_da_natureza.jpg"
+              alt="Dia da Natureza"
+              class="imagem-categoria"
+            />
           </div>
           <span class="texto-categoria">Dia da Natureza</span>
         </router-link>
@@ -45,7 +55,6 @@
       </div>
     </div>
   </section>
-   <div class="linha-divisoria"></div>
 </template>
 <style scoped>
 .secao-categorias {
@@ -53,7 +62,7 @@
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: #FCF4E8;
+  background: #fcf4e8;
   padding: 60px 40px;
   color: #0e3e47;
   box-sizing: border-box;
@@ -66,11 +75,11 @@
 .titulo-secao {
   font-size: 2.3rem;
   font-weight: 700;
-  color: #183B3A;
+  color: #183b3a;
   margin: 0 0 8px 0;
 }
 .subtitulo-secao {
-  color: #2D4847;
+  color: #2d4847;
   font-size: 1.1rem;
   margin: 0 0 35px 0;
   font-weight: 500;
@@ -85,25 +94,37 @@
   align-items: center;
   padding: 12px;
   border-radius: 16px;
-  border: 3.5px solid #183B3A;
+  border: 3.5px solid #183b3a;
   text-decoration: none;
   gap: 16px;
   height: 110px;
   box-sizing: border-box;
   transition: transform 0.2s ease;
 }
-.cor-maes     { background-color: #F2C94C; }
-.cor-pascoa   { background-color: #7BB3E8; }
-.cor-criancas { background-color: #D48DF3; }
-.cor-junina   { background-color: #FF944D; }
-.cor-natureza { background-color: #6FCF97; }
-.cor-natal    { background-color: #FF6B6B; }
+.cor-maes {
+  background-color: #f2c94c;
+}
+.cor-pascoa {
+  background-color: #7bb3e8;
+}
+.cor-criancas {
+  background-color: #d48df3;
+}
+.cor-junina {
+  background-color: #ff944d;
+}
+.cor-natureza {
+  background-color: #6fcf97;
+}
+.cor-natal {
+  background-color: #ff6b6b;
+}
 .caixa-imagem {
   width: 90px;
   height: 80px;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #DDD;
+  background-color: #ddd;
   flex-shrink: 0;
 }
 .imagem-categoria {
@@ -112,18 +133,11 @@
   object-fit: cover;
 }
 .texto-categoria {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.15;
   max-width: 160px;
-}
-.linha-divisoria {
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: rgb(238, 226, 205);;
-  left: 0;
 }
 @media (max-width: 600px) {
   .grid-categorias {
