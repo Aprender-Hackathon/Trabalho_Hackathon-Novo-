@@ -1,5 +1,5 @@
 <script setup>
-// Página Sobre Nós
+
 </script>
 
 <template>
