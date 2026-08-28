@@ -60,7 +60,7 @@ function alternarSalvar() {
         />
 
         <BotaoSalvar
-          size="M"
+          size="L"
           class="celular"
           :isSalvo="isSalvo"
           @salvar="alternarSalvar"
@@ -84,7 +84,7 @@ function alternarSalvar() {
   margin: 2vw auto;
   padding: 2.5vw;
   border: #d1495b solid 5px;
-  border-radius: 3px;
+  border-radius: 30px;
 }
 
 .voltar {
