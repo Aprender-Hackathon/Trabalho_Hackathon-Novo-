@@ -18,31 +18,31 @@
         </button>
 
         <div class="collapse navbar-collapse" id="headerNavbar">
-          <ul class="navbar-nav mx-auto align-items-center gap-2 my-2 my-lg-0">
+          <ul class="navbar-nav mx-auto align-items-center custom-gap my-2 my-lg-0">
             <li class="nav-item">
               <RouterLink to="/" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
-                <img src="/src/assets/img/casa.png" alt="Início" class="nav-icon" />
+                <img src="/src/assets/img/iconsSVG/iIcon.svg" alt="Início" class="nav-icon" />
                 Início
               </RouterLink>
             </li>
 
             <li class="nav-item">
               <RouterLink to="/explorar-pag" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
-                <img src="/src/assets/img/explorar.png" alt="Explorar" class="nav-icon" />
+                <img src="/src/assets/img/iconsSVG/eIcon.svg" alt="Explorar" class="nav-icon" />
                 Explorar
               </RouterLink>
             </li>
 
             <li class="nav-item">
               <RouterLink to="/atividades-praticas" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
-                <img src="/src/assets/img/atividade.png" alt="Atividades" class="nav-icon" />
+                <img src="/src/assets/img/iconsSVG/apIcon.svg" alt="Atividades" class="nav-icon" />
                 Atividades Práticas
               </RouterLink>
             </li>
 
             <li class="nav-item">
               <RouterLink to="/sobre-nos" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
-                <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
+                <img src="/src/assets/img/iconsSVG/snIcon.svg" alt="Sobre Nós" class="nav-icon" />
                 Sobre Nós
               </RouterLink>
             </li>
@@ -106,6 +106,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.custom-gap {
+  gap: 3vw;
+}
+
 .custom-header {
   background-color: #fdfbf7;
   border-bottom: 1px solid #f0eae1;
@@ -151,8 +155,8 @@ onUnmounted(() => {
 
 .nav-icon,
 .action-icon {
-  width: 30px !important;
-  height: 30px !important;
+  width: 25px !important;
+  height: 25px !important;
   object-fit: contain;
 }
 
