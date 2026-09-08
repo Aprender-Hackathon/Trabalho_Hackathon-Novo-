@@ -1,9 +1,8 @@
 <template>
-  <div class="page-overlay">
+  <div class="page-container">
     <div class="form-panel">
       <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
 
-      
       <div class="card-box">
         <p class="description">
           Digite seu e-mail que enviaremos um link para definir uma nova senha.
@@ -11,13 +10,13 @@
 
         <form @submit.prevent="handleResetPassword">
           <label class="input-label">E-Mail:</label>
-          
+
           <div class="input-wrapper">
             <img class="icon" src="@/assets/img/envelope.png" alt="E-Mail" />
-            <input 
-              v-model="email" 
-              type="email" 
-              placeholder="Digite seu e-mail" 
+            <input
+              v-model="email"
+              type="email"
+              placeholder="Digite seu e-mail"
               required
             />
           </div>
@@ -38,12 +37,10 @@ const router = useRouter()
 const email = ref('')
 
 const handleResetPassword = () => {
-
   console.log('Enviando e-mail para:', email.value)
 }
 
 const handleResend = () => {
- 
   console.log('Reenviando e-mail para:', email.value)
 }
 
@@ -53,14 +50,16 @@ const goHome = () => {
 </script>
 
 <style scoped>
-.page-overlay {
+.page-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
+  padding: 20px 0;
+  box-sizing: border-box;
 }
 
 .form-panel {
@@ -68,19 +67,22 @@ const goHome = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 460px;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
-
 
 .close-btn {
   position: absolute;
   top: -15px;
-  right: -15px;
+  right: 0px;
   background-color: #e54d53;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
@@ -93,10 +95,9 @@ const goHome = () => {
 
 .card-box {
   background-color: #fdd888;
-  padding: 100px 45px;
+  padding: 50px 35px 40px 35px;
   border-radius: 28px;
   width: 100%;
-  max-width: 460px;
   box-sizing: border-box;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -104,7 +105,7 @@ const goHome = () => {
 .description {
   color: #3b2c1a;
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.35;
   margin: 0 0 24px 0;
 }
@@ -182,5 +183,40 @@ form {
 
 .resend-btn:hover {
   opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    min-height: calc(100vh - 60px);
+    padding: 10px 0;
+  }
+
+  .close-btn {
+    top: -10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .card-box {
+    padding: 35px 20px 25px 20px;
+    border-radius: 20px;
+  }
+
+  .description {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+  }
+
+  .input-wrapper {
+    margin-bottom: 18px;
+  }
+
+  .submit-btn,
+  .resend-btn {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
 }
 </style>

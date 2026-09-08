@@ -135,7 +135,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 13,
-      titulo: 'Cores: Primárias e Secundárias - 10',
+      titulo: 'Cores:Primárias e Secundárias - 10',
       materia: 'Artes',
       conteudo: 'Artes Visuais',
       descricao:
@@ -146,7 +146,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 14,
-      titulo: 'Cores: Primárias e Secundárias - 11',
+      titulo: 'Cores:Primárias e Secundárias - 11',
       materia: 'Artes',
       conteudo: 'Artes Visuais',
       descricao:
@@ -553,7 +553,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 52,
-      titulo: 'Arte contemporanea - 1',
+      titulo: 'Arte contemporanea 1',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -564,7 +564,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 53,
-      titulo: 'Arte contemporanea - 2',
+      titulo: 'Arte contemporanea 2',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -575,7 +575,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 54,
-      titulo: 'Arte contemporanea - 3',
+      titulo: 'Arte contemporanea 3',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -586,7 +586,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 55,
-      titulo: 'Arte contemporanea - 4',
+      titulo: 'Arte contemporanea 4',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -597,7 +597,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 56,
-      titulo: 'Arte contemporanea - 5',
+      titulo: 'Arte contemporanea 5',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -608,7 +608,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 57,
-      titulo: 'Arte contemporanea - 6',
+      titulo: 'Arte contemporanea 6',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -619,7 +619,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 58,
-      titulo: 'Arte contemporanea - 7',
+      titulo: 'Arte contemporanea 7',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -630,7 +630,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 59,
-      titulo: 'Arte contemporanea - 8',
+      titulo: 'Arte contemporanea 8',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:
@@ -641,7 +641,7 @@ export const estadoAtividades = reactive({
     },
     {
       id: 60,
-      titulo: 'Arte contemporanea - 9',
+      titulo: 'Arte contemporanea 9',
       materia: 'Artes',
       conteudo: 'História da Arte',
       descricao:

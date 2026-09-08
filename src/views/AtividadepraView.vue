@@ -44,10 +44,8 @@ function alternarSalvar(id) {
   }
 }
 
-
 const atividadesFiltradas = computed(() => {
   return estadoPratica.lista.filter((item) => {
-   
     const matchData =
       filtroEscolhido.value.data === 'Tudo' ||
       (item.data && item.data.trim().toLowerCase() === filtroEscolhido.value.data.trim().toLowerCase())
@@ -65,12 +63,10 @@ const atividadesFiltradas = computed(() => {
 
 <template>
   <div class="explorar-container">
-        <BannerAtvPraticas />
-    <FiltroPratica @filtro="filtroEscolhido = $event" />
-
-    <FiltroPratica 
-      :filtroInicial="filtroEscolhido" 
-      @filtro="atualizarFiltro" 
+    <BannerAtvPraticas />
+    <FiltroPratica
+      :filtroInicial="filtroEscolhido"
+      @filtro="atualizarFiltro"
     />
 
     <div class="cards">
