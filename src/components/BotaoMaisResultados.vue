@@ -25,8 +25,11 @@ defineEmits(['carregar'])
   min-width: 180px;
   min-height: 44px;
   padding: 8px 16px;
+<<<<<<< HEAD
   width: 240px; 
   height: 42px;
+=======
+>>>>>>> 2305163 (responsividade do botao)
   background: #fffaf5;
   border: 4px solid #d5485a;
   border-radius: 10px;
@@ -61,6 +64,7 @@ defineEmits(['carregar'])
     gap: 10px;
     border-width: 3px;
   }
+<<<<<<< HEAD
   margin: 0 auto;
   gap: 15px;
   cursor: pointer;
@@ -68,5 +72,7 @@ defineEmits(['carregar'])
 
 .MaisResultados img {
   width: 12px;
+=======
+>>>>>>> 2305163 (responsividade do botao)
 }
 </style>
