@@ -28,13 +28,11 @@ const feriados = [
 const dataSelecionada = ref('Tudo')
 const mostrarMais = ref(false)
 
-
 watch(
   () => props.filtroInicial?.data,
   (novaData) => {
     if (novaData) {
       dataSelecionada.value = novaData
-
 
       const index = feriados.indexOf(novaData)
       if (index >= 6) {
@@ -59,7 +57,7 @@ function selecionarData(data) {
       <span class="label">Datas comemorativas:</span>
       <div class="tags-group">
         <button
-          v-for="data in mostrarMais ? feriados : feriados.slice(0, 6)"
+          v-for="data in (mostrarMais ? feriados : feriados.slice(0, 5))"
           :key="data"
           class="tag-btn"
           :class="{ active: dataSelecionada === data }"
@@ -68,7 +66,7 @@ function selecionarData(data) {
           {{ data }}
         </button>
         <button
-          v-if="feriados.length > 6"
+          v-if="feriados.length > 5"
           class="tag-btn btn-toggle"
           @click="mostrarMais = !mostrarMais"
         >
@@ -82,57 +80,60 @@ function selecionarData(data) {
 <style scoped>
 .filter-container {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background-color: #ffffff;
-  margin: 50px auto 20px auto;
-  padding: 24px 70px;
-  font-family: Arial, sans-serif;
   justify-content: center;
-  border-radius: 15px;
+  align-items: center;
+  background-color: #F8EFE0;
+  border: 1px solid #EADBBF;
+  margin: 20px auto;
+  padding: 16px 24px;
+  font-family: Arial, sans-serif;
+  border-radius: 18px;
+  width: 900px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .filter-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .label {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #1a1a1a;
-  min-width: 120px;
-  padding-top: 6px;
+  white-space: nowrap;
 }
 
 .tags-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  max-width: 900px;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
 }
 
 .tag-btn {
-  background-color: #ffffff;
-  border: 1.5px solid #8ecae6;
-  color: #1a1a1a;
-  padding: 6px 16px;
+  background-color: #FAF6EE;
+  border: 1px solid #E5DAC9;
+  color: #2b2b2b;
+  padding: 6px 14px;
   border-radius: 20px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
   transition: all 0.2s ease;
   outline: none;
 }
 
 .tag-btn:hover {
-  background-color: #f0f8ff;
+  background-color: #ffffff;
+  border-color: #D6C7B2;
 }
 
 .tag-btn.active {

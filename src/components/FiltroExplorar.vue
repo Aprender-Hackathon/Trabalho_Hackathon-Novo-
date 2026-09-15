@@ -202,12 +202,13 @@ function selecionarConteudo(conteudo) {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: #FFFDF9;
+  background-color: #F8EFE0;
+  border: 1.5px solid #EADBBF;
   padding: 30px 40px;
   font-family: Arial, sans-serif;
   max-width: 1100px;
   margin: 20px auto;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: none;
   box-sizing: border-box;
 }
@@ -236,9 +237,9 @@ function selecionarConteudo(conteudo) {
 }
 
 .tag-btn {
-  background-color: #ffffff;
-  border: 1.5px solid #8ecae6;
-  color: #1a1a1a;
+  background-color: #FAF6EE;
+  border: 1px solid #E5DAC9;
+  color: #2b2b2b;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.95rem;
@@ -252,7 +253,8 @@ function selecionarConteudo(conteudo) {
 }
 
 .tag-btn:hover {
-  background-color: #f0f8ff;
+  background-color: #ffffff;
+  border-color: #D6C7B2;
 }
 
 .tag-btn.active {
