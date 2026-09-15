@@ -54,11 +54,26 @@ const atividadesFiltradas = computed(() => {
 .explorar-container {
   min-height: 100vh;
   padding-bottom: 4rem;
+  width: 100%;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 16px 12px;
+}
+
+.cards :deep(> *) {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 24px;
+    padding: 20px 70px;
+  }
 }
 </style>
