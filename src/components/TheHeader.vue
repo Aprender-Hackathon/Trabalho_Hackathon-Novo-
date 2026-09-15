@@ -62,7 +62,7 @@
               <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm fw-bold px-3">
                 Entrar
               </RouterLink>
-              <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm fw-bold px-3">
+              <RouterLink to="/escolhe-cadastro" class="btn btn-custom btn-sm fw-bold px-3">
                 Cadastrar
               </RouterLink>
             </template>
