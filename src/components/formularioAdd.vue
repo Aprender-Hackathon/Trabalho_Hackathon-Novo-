@@ -1,6 +1,8 @@
 <script setup>
+import { ref } from 'vue';
 import { materias, datas, conteudos } from '@/data/opcoesForm';
 
+const tipoAtv = ref('');
 </script>
 
 <template>
@@ -9,11 +11,11 @@ import { materias, datas, conteudos } from '@/data/opcoesForm';
 
 <p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
   
-  <input type="radio" id="regular" name="atividade" value="regular" checked>
-  <label for="apple">Atividade Regular</label><br>
+  <input type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv">
+  <label for="regular">Atividade Regular</label><br>
 
-  <input type="radio" id="pratica" name="atividade" value="pratica">
-  <label for="banana">Atividade Comemorativa</label><br>
+  <input type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv">
+  <label for="pratica">Atividade Comemorativa</label><br>
 
 
     <div class="espaco">
@@ -26,7 +28,7 @@ import { materias, datas, conteudos } from '@/data/opcoesForm';
     </div>
 
 
-    <div class="atvs-prat">
+    <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
             <label for="data">Data comemorativa:</label>
             <select class="escolhe" id="data" name="data">
@@ -37,7 +39,7 @@ import { materias, datas, conteudos } from '@/data/opcoesForm';
     </div>
     
 
-    <div class="atvs-exp">
+    <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia">Matéria:</label>
             <select class="escolhe" id="materia" name="materia">
@@ -59,6 +61,8 @@ import { materias, datas, conteudos } from '@/data/opcoesForm';
         <textarea class="texto" name="desc" id="desc" placeholder="Descreva a atividade"></textarea>
     </div>
 
+    <button type="submit">Salvar</button>
+    <button type="reset">Limpar formulário</button>
     </form>
     </div>
 </template>
