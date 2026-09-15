@@ -21,21 +21,21 @@
 
         <form @submit.prevent="handleLogin">
           <div class="input-wrapper">
-         <img src="@/assets/img/usuario.png" alt="Usuário" class="input-icon" />
-            <input 
-              v-model="emailOrUser" 
-              type="text" 
-              placeholder="E-Mail/Nome do Usuário" 
+            <img src="@/assets/img/usuario.png" alt="Usuário" class="input-icon" />
+            <input
+              v-model="emailOrUser"
+              type="text"
+              placeholder="E-Mail/Nome do Usuário"
               required
             />
           </div>
 
           <div class="input-wrapper">
-          <img src="@/assets/img/cadeado.png" alt="Senha" class="input-icon" />
-            <input 
-              v-model="password" 
-              type="password" 
-              placeholder="Senha" 
+            <img src="@/assets/img/cadeado.png" alt="Senha" class="input-icon" />
+            <input
+              v-model="password"
+              type="password"
+              placeholder="Senha"
               required
             />
           </div>
@@ -44,11 +44,11 @@
         </form>
 
         <a href="#" class="forgot-link"></a>
-        <RouterLink  to="/esqueceu-senha">Esqueceu a senha?</RouterLink>
+        <RouterLink to="/esqueceu-senha">Esqueceu a senha?</RouterLink>
 
         <p class="signup-text">
           Ainda não tem uma conta? <br>
-          <router-link to="/cadastro">Cadastre-se</router-link>
+          <RouterLink to="/cadastro-pag" class="signup-btn">Cadastre-se aqui</RouterLink>
         </p>
       </div>
     </div>
@@ -65,11 +65,8 @@ const emailOrUser = ref('')
 const password = ref('')
 
 const handleLogin = () => {
-
   localStorage.setItem('isLoggedIn', 'true')
-
-  window.dispatchEvent(new Event('storage'))
-
+  window.dispatchEvent(new Event('auth-change'))
   router.push('/')
 }
 
@@ -239,8 +236,11 @@ form {
 
 a {
   color: #238b97;
-  font-weight: 600;
+  font-weight: 750;
   text-decoration: none;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  line-height: 1.4;
 }
 
 .signup-text {
@@ -256,5 +256,44 @@ a {
   color: #238b97;
   text-decoration: underline;
   font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .brand-panel {
+    display: none;
+  }
+
+  .form-panel {
+    flex: 1;
+    padding: 20px 15px;
+  }
+
+  .close-btn {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .form-panel h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+  }
+
+  .card-box {
+    max-width: 100%;
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .google-btn {
+    width: 100%;
+  }
 }
 </style>

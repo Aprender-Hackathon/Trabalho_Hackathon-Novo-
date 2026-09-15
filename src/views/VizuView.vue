@@ -52,18 +52,23 @@ function mostrarMenos() {
         class="mais"/>
 
         <div v-if="mostrarAtvs" class="cards">
-          <BotaoExplorar
-            v-for="item in atvsRelacionadas"
-            :key="item.id"
-            :id="item.id"
-            :titulo="item.titulo"
-            :imagem="item.imagem"
-            :materia="item.materia"
-            :conteudo="item.conteudo"
-            :isSalvo="item.salvo"
-            @salvar="alternarSalvar(item.id)"
-            @click="mostrarAtvs = false"
-          />
+
+    <BotaoExplorar
+      v-for="item in atvsRelacionadas"
+      :key="item.id"
+      :id="item.id"
+      :titulo="item.titulo"
+      :imagem="item.imagem"
+      :arquivo="item.arquivo"
+      :previewTipo="item.previewTipo"
+      :materia="item.materia"
+      :conteudo="item.conteudo"
+      :isSalvo="item.salvo"
+      @salvar="alternarSalvar(item.id)"
+      @click="mostrarAtvs = false"
+    />
+
+
         </div>
     </div>
 </template>

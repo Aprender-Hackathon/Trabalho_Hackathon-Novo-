@@ -14,7 +14,8 @@
           :materia="item.materia"
           :conteudo="item.conteudo"
           :titulo="item.titulo"
-          :imagem="item.imagem"
+          :arquivo="item.arquivo"
+          :previewTipo="item.previewTipo"
           :isSalvo="item.salvo"
           @salvar="alternarSalvar(item.id, item.tipo)"
         />
@@ -39,8 +40,7 @@ import { estadoPratica } from '@/PraticaCards'
 import BotaoExplorar from '@/components/BotaoExplorar.vue'
 import BotaoPratica from '@/components/BotaoPratica.vue'
 
-// Filtra os itens salvos garantindo que o Vue perceba a mudança de estado
-// e marca cada item com um "tipo" para saber qual card renderizar
+
 const itensSalvos = computed(() => {
   const ativ = estadoAtividades.lista
     .filter(i => i.salvo === true)
@@ -54,12 +54,11 @@ const itensSalvos = computed(() => {
 })
 
 function alternarSalvar(id, tipo) {
-  // Usa o "tipo" para saber em qual lista procurar, evitando colisão
-  // de ids repetidos entre estadoAtividades e estadoPratica
+
   const lista = tipo === 'atividade' ? estadoAtividades.lista : estadoPratica.lista
   const item = lista.find(a => String(a.id) === String(id))
   if (item) {
-    item.salvo = false // Força para false ao dessalvar
+    item.salvo = false
   }
 }
 </script>

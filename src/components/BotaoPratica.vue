@@ -49,8 +49,8 @@ defineEmits(['salvar'])
 }
 
 .card {
-  width: 255px;
-  height: 360px;
+  width: 240px;
+  height: 300px;
   border: 3.5px solid #5c49c8;
   border-radius: 18px;
   overflow: hidden;
@@ -60,8 +60,8 @@ defineEmits(['salvar'])
 }
 @media (max-width: 480px) {
   .card {
-    width: 47% !important;
-    margin: 4% 1.5%;
+    width: 46% !important;
+    margin: 4px;
     height: 250px;
   }
 
@@ -76,7 +76,7 @@ defineEmits(['salvar'])
 
 .imagem {
   width: 100%;
-  height: 215px;
+  height: 200px;
   object-fit: cover;
 }
 .roxo {

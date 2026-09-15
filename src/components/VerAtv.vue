@@ -2,6 +2,7 @@
 import { useRouter } from 'vue-router'
 import BaixarDocx from './BaixarDocx.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
+import PreviewDocx from './PreviewDocx.vue'
 import { estadoAtividades } from '@/AtividadesCards.js'
 
 const router = useRouter()
@@ -22,23 +23,28 @@ function voltar() {
 }
 
 function alternarSalvar() {
-  if (props.id !== undefined && estadoAtividades?.lista) {
-    const item = estadoAtividades.lista.find(a => a.id === props.id)
-    if (item) {
-      item.salvo = !item.salvo
-    }
+  if (props.id === undefined || !estadoAtividades?.lista) return
+
+  const item = estadoAtividades.lista.find(a => String(a.id) === String(props.id))
+  if (item) {
+    item.salvo = !item.salvo
   }
-    router.push({ name: 'salvos' })
 }
 </script>
 
 <template>
   <div class="all">
-    <button class="voltar" @click="voltar">
-      <img src="/images/back.svg" alt="Voltar" />
-    </button>
 
-    <img :src="imagem" :alt="titulo" class="image" />
+    <button class="voltar" @click="voltar">
+  <img src="/images/back.svg" alt="Voltar" />
+</button>
+
+    <PreviewDocx
+      v-if="docx"
+      :arquivo="docx"
+      class="image"
+    />
+
     <div class="lado">
       <div class="cima">
         <h3>{{ titulo }}</h3>
@@ -47,13 +53,15 @@ function alternarSalvar() {
           <p>{{ materia }}</p>
           <p>{{ conteudo }}</p>
         </div>
+
         <p class="descricao">
           {{ descricao }}
         </p>
       </div>
 
       <div class="baixo">
-        <BaixarDocx :docx="docx"/>
+
+        <BaixarDocx :docx="docx" />
 
         <BotaoSalvar
           size="L"
@@ -68,15 +76,19 @@ function alternarSalvar() {
           :isSalvo="isSalvo"
           @salvar="alternarSalvar"
         />
+
       </div>
     </div>
+
   </div>
 </template>
 
 <style scoped>
+
 .celular {
   display: none;
 }
+
 .all {
   display: flex;
   align-items: stretch;
@@ -87,7 +99,7 @@ function alternarSalvar() {
   margin: 2vw auto;
   padding: 2.5vw;
   border: #d1495b solid 5px;
-  border-radius: 3px;
+  border-radius: 30px;
 }
 
 .voltar {
@@ -101,7 +113,8 @@ function alternarSalvar() {
 .image {
   width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 420px;
+  overflow: hidden;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -151,6 +164,7 @@ function alternarSalvar() {
 }
 
 @media (max-width: 600px) {
+
   .computador {
     display: none;
   }
@@ -159,21 +173,18 @@ function alternarSalvar() {
     display: block;
   }
 
-  .voltar img {
-    width: 36px;
-  }
-
   .all {
     width: calc(100% - 50px);
     flex-direction: column;
     gap: 20px;
-    padding: 25px 20px;
+    padding: 45px 20px 25px;
     margin: 15px auto 35px auto;
   }
 
   .image {
     width: 100%;
     max-width: 250px;
+    height: 350px;
     align-self: center;
   }
 
@@ -214,7 +225,8 @@ function alternarSalvar() {
     font-size: 16px;
     text-align: justify;
     padding: 0 5px;
-    margin: 20px auto 20px;
+    margin: 20px auto;
   }
 }
+
 </style>

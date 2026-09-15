@@ -8,6 +8,7 @@ import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 import { estadoAtividades } from '@/AtividadesCards'
 import { estadoPratica } from '@/PraticaCards'
+import BannerExplorar from '@/components/BannerExplorar.vue'
 
 const limite = ref(20)
 
@@ -57,7 +58,6 @@ const atividadesFiltradas = computed(() => {
   ]
 
   return todasAsAtividades.filter((item) => {
-
     const matchMateria =
       filtroEscolhido.value.materia === 'Tudo' ||
       item.materia === filtroEscolhido.value.materia
@@ -77,16 +77,16 @@ const atividadesFiltradas = computed(() => {
   })
 })
 </script>
+
 <template>
-<div>
-  <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
-  
-  <FiltroExplorar
-    @filtro="filtroEscolhido = $event"
-  />
+  <div class="explorar-container">
+    <BannerExplorar />
 
-  <div class="cards">
+    <BotaoPesquisa @pesquisa="textoPesquisado = $event" />
 
+    <FiltroExplorar @filtro="filtroEscolhido = $event" />
+
+    <div class="cards">
       <BotaoExplorar
         v-for="item in atividadesFiltradas.slice(0, limite)"
         :key="item.id"
@@ -100,26 +100,36 @@ const atividadesFiltradas = computed(() => {
         :isSalvo="item.salvo"
         @salvar="alternarSalvar(item.id)"
       />
-</div>
-<BotaoMaisResultados 
-      v-if="atividadesFiltradas.length > limite" 
-      @carregar="limite += 20" 
+    </div>
+
+    <BotaoMaisResultados
+      v-if="atividadesFiltradas.length > limite"
+      @carregar="limite += 20"
       class="mais"
     />
-</div>
+  </div>
 </template>
+
 <style scoped>
-.mais{
-  margin-bottom: 2vw;
-}
 .explorar-container {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   min-height: 100vh;
   padding-bottom: 4rem;
+  background-color: #FCF4E8;
+  box-sizing: border-box;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 20px;
   justify-content: center;
+}
+
+.mais {
+  margin-bottom: 2vw;
 }
 </style>
