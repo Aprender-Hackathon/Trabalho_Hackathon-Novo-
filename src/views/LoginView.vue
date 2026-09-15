@@ -48,7 +48,7 @@
 
         <p class="signup-text">
           Ainda não tem uma conta? <br>
-          <RouterLink to="/cadastro-pag" class="signup-btn">Cadastre-se aqui</RouterLink>
+          <RouterLink to="/escolhe-cadastro" class="signup-btn">Cadastre-se aqui</RouterLink>
         </p>
       </div>
     </div>

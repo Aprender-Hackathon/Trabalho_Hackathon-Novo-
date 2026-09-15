@@ -27,7 +27,7 @@ function subir(){
                 <img src="/images/face.svg" alt="Logo do Facebook">
             </a>
             <a class="redes-icone" href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-                <img src="/public/images/tiktok.svg" alt="Logo do Tiktok">
+                <img src="/images/tiktok.svg" alt="Logo do Tiktok">
             </a>
     </div>
     </div>
