@@ -3,7 +3,7 @@
     <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
 
     <div class="register-wrapper">
-      <h1 class="main-title">Cadastre-se</h1>
+      <h1 class="main-title">Cadastre-se Professor(a)</h1>
 
       <div class="card-box">
         <form @submit.prevent="handleRegister">
@@ -31,6 +31,34 @@
                 required
               />
             </div>
+          </div>
+
+          <div class="field-group">
+            <label>Localização:</label>
+            <div class="input-wrapper">
+              <img src="@/assets/img/localizacao.png" alt="Localização" class="input-icon" />
+              <input
+                v-model="localizacao"
+                type="text"
+                placeholder="Digite sua localização"
+                required
+              />
+            </div>
+
+            <div class="field-group">
+              <label>Instituição:</label>
+              <div class="input-wrapper">
+                <img src="@/assets/img/instituicao.png" alt="Instituição" class="input-icon" />
+                <input
+                  v-model="instituicao"
+                  type="text"
+                  placeholder="Digite sua instituição"
+                  required
+                />
+              </div>
+
+            </div>
+            
           </div>
 
           <div class="field-group">
