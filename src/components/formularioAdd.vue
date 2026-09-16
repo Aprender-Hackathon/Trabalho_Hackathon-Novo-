@@ -53,7 +53,7 @@ const arquivosAceitos = computed(() => {
     </div>
 
     <div class="espaco">
-        <label for="titulo">Título:</label>
+        <label for="titulo" class="pergunta">Título:</label>
         <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
     </div>
 
@@ -179,4 +179,41 @@ button:active {
     margin: 0 1vw 0 0;
 }
 
+
+/* Tela de no máximo 600px */
+@media (max-width: 600px) {
+    .formulario{
+        padding: 0 1rem;
+    }
+
+    .pergunta{
+        font-size: 1.1rem;
+    }
+
+    strong{
+        font-size: 0.95rem;
+    }
+
+    .botoes{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .botoes button{
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .a{
+        transform: scale(1.2);
+        margin-right: 10px;
+    }
+
+    .atividade::file-selector-button{
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
 </style>
