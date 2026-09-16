@@ -8,8 +8,6 @@ const conteudoPraMateria = computed(() => {
     return conteudoMateria[materiaSelecionada.value] ?? [];
 })
 
-
-
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = '';
 });
@@ -19,26 +17,17 @@ const tipoAtv = ref('');
 function resetForm(){
  tipoAtv.value = '';
 }
+
+const arquivosAceitos = computed(() => {
+ if (tipoAtv.value === 'pratica') return '.pdf';
+  if (tipoAtv.value === 'regular') return '.docx';
+  return '';
+});
 </script>
 
 <template>
     <div class="formulario">
     <form action="" @reset="resetForm">
-
-        <div class="espaco">
-        <label for="inputArquivo" class="pergunta">Insira o arquivo da atividade:</label>
-        <input 
-        class="atividade"
-        id="inputArquivo" 
-        type="file" 
-        required
-        />
-    </div>
-
-    <div class="espaco">
-        <label for="titulo">Título:</label>
-        <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
-    </div>
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
@@ -50,6 +39,22 @@ function resetForm(){
         <input class="a" type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
         <label for="pratica">Atividade Comemorativa</label><br>
         </div>
+    </div>
+
+    <div class="espaco">
+        <label for="inputArquivo" class="pergunta">Insira o arquivo da atividade: <br> <strong v-if="arquivosAceitos">( sendo aceitos apenas arquivos em: {{ arquivosAceitos }} )</strong></label>
+        <input 
+        class="atividade"
+        id="inputArquivo" 
+        type="file" 
+        required
+        :accept="arquivosAceitos"
+        />
+    </div>
+
+    <div class="espaco">
+        <label for="titulo">Título:</label>
+        <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
     </div>
 
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
@@ -94,6 +99,11 @@ function resetForm(){
 </template>
 
 <style scoped>
+strong{
+    font-size: 1.2vw;
+    color: #D1495B;
+}
+
 .pergunta{
     font-size: 1.5vw;
 }
@@ -114,8 +124,8 @@ function resetForm(){
     margin: 2vw auto;
  }
 .formulario{
-    margin: 2vw auto;
-    padding: 2.5vw;
+    margin: 5vw auto;
+    padding: 0 2.5vw;
     max-width: 1100px;
 }
 
