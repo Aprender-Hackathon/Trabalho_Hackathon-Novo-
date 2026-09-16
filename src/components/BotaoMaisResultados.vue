@@ -26,6 +26,9 @@ defineEmits(['carregar'])
   min-width: 180px;
   min-height: 44px;
   padding: 8px 16px;
+
+  width: 240px;
+  height: 42px;
   background: #fffaf5;
   border: 4px solid #d5485a;
   border-radius: 10px;
@@ -59,6 +62,14 @@ defineEmits(['carregar'])
     font-size: 15px;
     gap: 10px;
     border-width: 3px;
-  }
+    margin: 0 auto;
+  gap: 15px;
+  cursor: pointer;
+  }.MaisResultados img {
+  width: 12px;
 }
+
+
+}
+
 </style>
