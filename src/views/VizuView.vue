@@ -26,8 +26,8 @@ function alternarSalvar(id) {
   }
 }
 
-function mostrarMais() {
-    mostrarAtvs.value = true
+function alternarMostrarAtvs() {
+    mostrarAtvs.value = !mostrarAtvs.value
 }
 
 </script>
@@ -46,9 +46,10 @@ function mostrarMais() {
         />
         <AbaComentarios/>
         <BotaoMaisResultados 
-        v-if="!mostrarAtvs" 
-        @carregar="mostrarMais" 
-        class="mais"/>
+    @carregar="alternarMostrarAtvs" 
+    class="mais"
+    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+/>
 
         <div v-if="mostrarAtvs" class="cards">
 
