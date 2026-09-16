@@ -2,12 +2,18 @@
 import { RouterView } from 'vue-router'
 import TheHeader from './components/TheHeader.vue'
 import TheFooter from './components/TheFooter.vue'
+
+
+import formularioAdd from './components/formularioAdd.vue';
 </script>
 
 <template>
   <div class="conteudo-principal">
     <TheHeader />
     <div class="conteudo">
+
+      <formulario-add/>
+
       <RouterView />
     </div>
     <TheFooter />

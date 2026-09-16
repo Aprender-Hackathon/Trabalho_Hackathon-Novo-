@@ -72,9 +72,20 @@ const router = createRouter({
       component: () => import('../views/SalvosView.vue')
     },
     {
+      path: '/cadastro-professor',
+      name: 'cadastroProfessor',
+      component: () => import('../views/CadastroProfessorView.vue')
+    },
+    {
+      path: '/escolhe-cadastro',
+      name: 'escolheCadastro',
+      component: () => import('../views/PaginaescolhecadastroView.vue')
+    },
+    {
       path: '/salvo-pag',
       redirect: '/salvos',
     },
+    
   ],
 })
 
