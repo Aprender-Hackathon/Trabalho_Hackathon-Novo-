@@ -1,4 +1,5 @@
 <script setup>
+
 defineEmits(['carregar'])
 
 </script>
@@ -25,6 +26,7 @@ defineEmits(['carregar'])
   min-width: 180px;
   min-height: 44px;
   padding: 8px 16px;
+
   width: 240px;
   height: 42px;
   background: #fffaf5;
@@ -63,12 +65,11 @@ defineEmits(['carregar'])
     margin: 0 auto;
   gap: 15px;
   cursor: pointer;
-  }
-
-
-}
-
-.MaisResultados img {
+  }.MaisResultados img {
   width: 12px;
 }
+
+
+}
+
 </style>
