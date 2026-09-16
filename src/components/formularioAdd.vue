@@ -8,6 +8,8 @@ const conteudoPraMateria = computed(() => {
     return conteudoMateria[materiaSelecionada.value] ?? [];
 })
 
+
+
 watch(materiaSelecionada, () => {
   conteudoSelecionado.value = '';
 });
@@ -24,7 +26,7 @@ function resetForm(){
     <form action="" @reset="resetForm">
 
         <div class="espaco">
-        <label for="inputArquivo">Insira o arquivo da atividade:</label>
+        <label for="inputArquivo" class="pergunta">Insira o arquivo da atividade:</label>
         <input 
         class="atividade"
         id="inputArquivo" 
@@ -33,8 +35,13 @@ function resetForm(){
         />
     </div>
 
+    <div class="espaco">
+        <label for="titulo">Título:</label>
+        <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
+    </div>
+
     <div class="choose">
-        <p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
+        <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
     
         <div>
             <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
@@ -47,7 +54,7 @@ function resetForm(){
 
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
-            <label for="data">Data comemorativa:</label>
+            <label for="data" class="pergunta">Data comemorativa:</label>
             <select class="escolhe" id="data" name="data" required>
             <option value="" selected disabled>Selecione a data</option>
             <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
@@ -58,14 +65,14 @@ function resetForm(){
 
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
-            <label for="materia">Matéria:</label>
+            <label for="materia" class="pergunta">Matéria:</label>
             <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" required>
             <option value="" selected disabled>Selecione a matéria</option>
             <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
-            <label for="conteudo">Conteúdo:</label>
+            <label for="conteudo" class="pergunta">Conteúdo:</label>
             <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" required>
             <option value="" selected disabled>Selecione o conteúdo</option>
             <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
@@ -74,7 +81,7 @@ function resetForm(){
     </div>
 
     <div class="espaco">
-        <label for="desc">Descrição:</label>
+        <label for="desc" class="pergunta">Descrição:</label>
         <textarea class="texto" name="desc" id="desc" placeholder="Descreva a atividade" required></textarea>
     </div>
 
@@ -87,8 +94,12 @@ function resetForm(){
 </template>
 
 <style scoped>
+.pergunta{
+    font-size: 1.5vw;
+}
+
 .choose {
-    margin-bottom: 2vw;
+    margin: 2vw auto;
 }
 
 .a{
