@@ -84,7 +84,26 @@ function resetForm(){
 
 <style scoped>
 button {
-    
+    background-color: #D1495B;
+  color: #FFFBF6;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1.08);
 }
 
 .texto{
