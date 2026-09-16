@@ -20,15 +20,15 @@ function resetForm(){
 </script>
 
 <template>
-    <div>
+    <div class="formulario">
     <form action="" @reset="resetForm">
 
 <p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
   
-  <input type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
+  <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
   <label for="regular">Atividade Regular</label><br>
 
-  <input type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
+  <input class="a" type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
   <label for="pratica">Atividade Comemorativa</label><br>
 
 
@@ -76,13 +76,32 @@ function resetForm(){
         <textarea class="texto" name="desc" id="desc" placeholder="Descreva a atividade" required></textarea>
     </div>
 
-    <button type="submit">Salvar</button>
-    <button type="reset">Limpar formulário</button>
+    <div class="botoes">
+        <button type="reset">Limpar formulário</button>
+        <button type="submit">Salvar</button>
+    </div>
     </form>
     </div>
 </template>
 
 <style scoped>
+.a{
+    accent-color: #B73042;
+    margin-right: 8px;
+}
+
+ .botoes{
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin: 2vw auto;
+ }
+.formulario{
+    margin: 2vw auto;
+    padding: 2.5vw;
+    max-width: 1100px;
+}
+
 button {
     background-color: #D1495B;
   color: #FFFBF6;
@@ -120,7 +139,7 @@ button:active {
 }
 
 .espaco{
-    margin: 1vw 0;
+    margin: 2vw auto;
     display: flex;
     flex-direction: column;
     gap: 1vw;
