@@ -1,13 +1,12 @@
 <script setup>
-
 defineEmits(['carregar'])
+</script>    
 
-</script>
 <template>
-  <div class="container-botao">
+  <div>
     <button class="MaisResultados" @click="$emit('carregar')">
       <span>Mais Resultados</span>
-      <img src="/seta.png" alt="Seta" class="icone-seta" />
+      <img src="/seta.png" />
     </button>
   </div>
 </template>
