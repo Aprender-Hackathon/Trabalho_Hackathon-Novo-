@@ -5,6 +5,7 @@ import BotaoExplorar from '@/components/BotaoExplorar.vue';
 import { estadoAtividades } from '@/AtividadesCards';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import AbaComentarios from '@/components/AbaComentarios.vue';
 
 const route = useRoute()
 const mostrarAtvs = ref(false)
@@ -25,12 +26,8 @@ function alternarSalvar(id) {
   }
 }
 
-function mostrarMais() {
-    mostrarAtvs.value = true
-}
-
-function mostrarMenos() {
-  mostrarAtvs.value = false
+function alternarMostrarAtvs() {
+    mostrarAtvs.value = !mostrarAtvs.value
 }
 </script>
 
@@ -46,10 +43,12 @@ function mostrarMenos() {
             :docx="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
+        <AbaComentarios/>
         <BotaoMaisResultados 
-        v-if="!mostrarAtvs" 
-        @carregar="mostrarMais" 
-        class="mais"/>
+    @carregar="alternarMostrarAtvs" 
+    class="mais"
+    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+/>
 
         <div v-if="mostrarAtvs" class="cards">
 
