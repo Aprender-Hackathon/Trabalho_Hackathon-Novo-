@@ -5,6 +5,7 @@ import BotaoPratica from '@/components/BotaoPratica.vue';
 import estadoPratica from '@/PraticaCards';
 import { computed, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import AbaComentarios from '@/components/AbaComentarios.vue';
 
 const route = useRoute()
 const mostrarAtvs = ref(false)
@@ -45,6 +46,7 @@ function mostrarMenos() {
             :arquivo="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
+        <AbaComentarios/>
         <BotaoMaisResultados 
         v-if="!mostrarAtvs" 
         @carregar="mostrarMais" 
