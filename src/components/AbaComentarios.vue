@@ -27,10 +27,6 @@ const adicionarComentario = () => {
 
   novoComentarioTexto.value = ''
 }
-
-const lidarCarregarMais = () => {
-  // Lógica do seu botão Mais Resultados aqui
-}
 </script>
 
 <template>
