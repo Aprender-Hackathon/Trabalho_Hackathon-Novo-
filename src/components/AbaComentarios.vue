@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import BotaoMaisResultados from './BotaoMaisResultados.vue';
 
 const usuarioAtual = ref('Maria')
 const comentariosAbertos = ref(true)
@@ -63,11 +62,6 @@ const adicionarComentario = () => {
         </div>
       </div>
     </div>
-
-    <div class="container-mais-resultados">
-      <BotaoMaisResultados @carregar="lidarCarregarMais" />
-    </div>
-
   </div>
 </template>
 
@@ -188,10 +182,5 @@ input:focus {
 .enviar:hover {
   background: #d5485a;
   color: white;
-}
-
-.container-mais-resultados {
-  margin-top: 25px;
-  width: 100%;
 }
 </style>
