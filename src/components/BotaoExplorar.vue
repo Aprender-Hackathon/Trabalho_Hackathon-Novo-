@@ -14,14 +14,35 @@ defineProps({
 })
 
 defineEmits(['salvar'])
+function obterCorMateria(mat) {
+  const cores = {
+'Artes': '#FF7A00',            // Laranja super vivo
+    'Biologia': '#00B4D8',         // Azul celeste vibrante
+    'Ciências': '#2DC653',         // Verde bem vivo
+    'Educação Física': '#FF5400',  // Laranja abóbora forte
+    'Ensino Religioso': '#9D4EDD', // Roxo vibrante
+    'Espanhol': '#FFB703',         // Amarelo/Laranja solar
+    'Filosofia': '#3A86FF',        // Azul elétrico
+    'Física': '#4361EE',           // Azul royal vivo
+    'Geografia': '#FB8500',        // Laranja dourado vibrante
+    'História': '#E01A4F',         // Vermelho/Rosa choque forte
+    'Inglês': '#D90429',           // Vermelho tomate vivo
+    'Matemática': '#9B5DE5',       // Lilás claro, vivo e alegre
+    'Português': '#0077B6',        // Azul marinho vivo
+    'Química': '#FF007F',          // Pink super vivo
+    'Sociologia': '#FFD166',     // Roxo escuro vivo
+  }
+  return cores[mat] || '#f5893c' // Laranja padrão caso apareça alguma nova
+}
+
 </script>
 
 <template>  
-    <div class="card">
+    <div class="card" :style="{ borderColor: obterCorMateria(materia) }">
       <router-link :to="`/atividade/${id}`" class="link">
         <PreviewDocx v-if="previewTipo === 'docx' && arquivo" :arquivo="arquivo" class="imagem" />
       </router-link>
-    <div class="laranja">
+    <div class="laranja" :style="{ backgroundColor: obterCorMateria(materia) }">
       <div class="linhaDeCima">
         <router-link :to="`/atividade/${id}`" class="link">
           <h2>{{ titulo || 'Sem título' }}</h2>
