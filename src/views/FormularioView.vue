@@ -4,7 +4,7 @@ import formularioAdd from '@/components/formularioAdd.vue';
 
  <template>
     <div>
-        <h1>Formulário de Adição de Atividades</h1>
+        <h1>Formulário de Adição de Atividade</h1>
         <formulario-add/>
     </div>
  </template>
