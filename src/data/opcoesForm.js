@@ -7,7 +7,7 @@ export const conteudos = [...new Set(estadoAtividades.lista.map(item => item.con
 
 export const datas = [...new Set(estadoPratica.lista.map(item => item.data))]
 
-export const cuteudoMateria = {
+export const conteudoMateria = {
   Artes: ['Artes Visuais', 
     'História da Arte', 
     'Música'],

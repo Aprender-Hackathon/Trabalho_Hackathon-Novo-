@@ -1,6 +1,16 @@
 <script setup>
-import { ref } from 'vue';
-import { materias, datas, conteudos } from '@/data/opcoesForm';
+import { ref, computed, watch } from 'vue';
+import { materias, datas, conteudos, conteudoMateria } from '@/data/opcoesForm';
+
+const materiaSelecionada = ref('');
+const conteudoSelecionado = ref('');
+const conteudoPraMateria = computed(() => {
+    return conteudoMateria[materiaSelecionada.value] ?? [];
+})
+
+watch(materiaSelecionada, () => {
+  conteudoSelecionado.value = '';
+});
 
 const tipoAtv = ref('');
 </script>
@@ -19,11 +29,12 @@ const tipoAtv = ref('');
 
 
     <div class="espaco">
-        <label for="input-arquivo">Insira o arquivo da atividade:</label>
+        <label for="inputArquivo">Insira o arquivo da atividade:</label>
         <input 
         class="atividade"
-        id="input-arquivo" 
+        id="inputArquivo" 
         type="file" 
+        required
         />
     </div>
 
@@ -33,7 +44,7 @@ const tipoAtv = ref('');
             <label for="data">Data comemorativa:</label>
             <select class="escolhe" id="data" name="data">
             <option value="" selected disabled>Selecione a data</option>
-            <option v-for="(d, i) in datas" :key="i" :value="i + 1">{{ d }}</option>
+            <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
             </select>
         </div>
     </div>
@@ -42,23 +53,23 @@ const tipoAtv = ref('');
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia">Matéria:</label>
-            <select class="escolhe" id="materia" name="materia">
+            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada">
             <option value="" selected disabled>Selecione a matéria</option>
-            <option v-for="(m, i) in materias" :key="i" :value="i + 1">{{ m }}</option>
+            <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
             <label for="conteudo">Conteúdo:</label>
-            <select class="escolhe" id="conteudo" name="conteudo">
+            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada">
             <option value="" selected disabled>Selecione o conteúdo</option>
-            <option v-for="(c, i) in conteudos" :key="i" :value="i + 1">{{ c }}</option>
+            <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
             </select>
         </div>
     </div>
 
     <div class="espaco">
-        <label for="nome">Descrição:</label>
-        <textarea class="texto" name="desc" id="desc" placeholder="Descreva a atividade"></textarea>
+        <label for="desc">Descrição:</label>
+        <textarea class="texto" name="desc" id="desc" placeholder="Descreva a atividade" required></textarea>
     </div>
 
     <button type="submit">Salvar</button>
