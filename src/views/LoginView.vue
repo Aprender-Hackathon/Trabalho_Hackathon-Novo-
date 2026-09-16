@@ -65,6 +65,18 @@ const emailOrUser = ref('')
 const password = ref('')
 
 const handleLogin = () => {
+  const savedData = localStorage.getItem('userData')
+  let userData = savedData ? JSON.parse(savedData) : null
+
+  if (!userData || !userData.id) {
+    userData = {
+      id: Date.now(),
+      name: emailOrUser.value,
+      email: emailOrUser.value
+    }
+  }
+
+  localStorage.setItem('userData', JSON.stringify(userData))
   localStorage.setItem('isLoggedIn', 'true')
   window.dispatchEvent(new Event('auth-change'))
   router.push('/')

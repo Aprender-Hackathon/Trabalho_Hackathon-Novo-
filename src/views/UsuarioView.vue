@@ -12,7 +12,7 @@ const user = reactive({
 const activeField = ref(null)
 const tempValue = ref('')
 
-// 1. Lê os dados salvos assim que a tela abre
+
 onMounted(() => {
   const savedData = localStorage.getItem('userData')
   if (savedData) {
@@ -32,7 +32,7 @@ const closeModal = () => {
   tempValue.value = ''
 }
 
-// 2. Grava a alteração no localStorage ao clicar em Salvar
+
 const saveModal = () => {
   if (activeField.value) {
     user[activeField.value] = tempValue.value

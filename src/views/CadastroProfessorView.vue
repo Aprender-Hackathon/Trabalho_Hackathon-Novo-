@@ -100,7 +100,11 @@ const email = ref('')
 const password = ref('')
 
 const handleRegister = () => {
+  // Gera um ID único para o professor
+  const userId = Date.now()
+
   const userData = {
+    id: userId,
     name: name.value,
     email: email.value
   }
