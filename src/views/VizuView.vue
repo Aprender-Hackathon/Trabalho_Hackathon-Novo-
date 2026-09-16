@@ -29,7 +29,6 @@ function alternarSalvar(id) {
 function alternarMostrarAtvs() {
     mostrarAtvs.value = !mostrarAtvs.value
 }
-
 </script>
 
 <template>
