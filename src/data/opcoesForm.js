@@ -1,4 +1,4 @@
-﻿import { estadoPratica } from "@/PraticaCards";
+import { estadoPratica } from "@/PraticaCards";
 import { estadoAtividades } from "@/AtividadesCards";
 
 export const materias = [...new Set(estadoAtividades.lista.map(item => item.materia))]
@@ -9,119 +9,119 @@ export const datas = [...new Set(estadoPratica.lista.map(item => item.data))]
 
 export const conteudoMateria = {
   Artes: ['Artes Visuais', 
-    'Hist├│ria da Arte', 
-    'M├║sica'],
+    'História da Arte', 
+    'Música'],
 
   Biologia: [
     'Biotecnologia',
-    'Bot├ónica',
-    'C├®lulas e seus processos',
+    'Botânica',
+    'Células e seus processos',
     'Ecologia',
-    'Gen├®tica e Evolu├º├úo',
+    'Genética e Evolução',
     'Zoologia',
   ],
 
-  Ci├¬ncias: [
+  Ciências: [
     'Corpo Humano',
     'Ecologia e Ambiente',
-    'Mat├®ria e Energia',
+    'Matéria e Energia',
     'Seres Vivos',
-    'Terra e Espa├ºo',
+    'Terra e Espaço',
   ],
 
-  'Educa├º├úo F├¡sica': ['Corpo e Movimento',
+  'Educação Física': ['Corpo e Movimento',
      'Jogos e Esportes',
-      'Sa├║de e Qualidade de Vida'
+      'Saúde e Qualidade de Vida'
     ],
 
   'Ensino Religioso': ['Identidade e Diversidade', 
-    'Religi├úo e Cultura', 
-    'Valores e ├ëtica'
+    'Religião e Cultura', 
+    'Valores e Ética'
 ],
 
-  Espanhol: ['Comunica├º├úo B├ísica', 
-    'Leitura e Compreens├úo', 
-    'Verbos e Uso da L├¡ngua'
+  Espanhol: ['Comunicação Básica', 
+    'Leitura e Compreensão', 
+    'Verbos e Uso da Língua'
 ],
 
-  Filosofia: ['Conhecimento e Raz├úo', 
-    '├ëtica e Moral', 
-    'Filosofia Cl├íssica', 
+  Filosofia: ['Conhecimento e Razão', 
+    'Ética e Moral', 
+    'Filosofia Clássica', 
     'Filosofia Medieval', 
-    'Filosofia Pol├¡tica', 
-    'Introdu├º├úo e Origem'
+    'Filosofia Política', 
+    'Introdução e Origem'
 ],
 
-  F├¡sica: ['Calor e Termodin├ómica', 
+  Física: ['Calor e Termodinâmica', 
     'Eletricidade e Magnetismo', 
     'Energia e Momento', 
-    'For├ºas e Din├ómica', 
+    'Forças e Dinâmica', 
     'Gases', 'Movimento', 
-    'Ondas e ├ôptica'],
+    'Ondas e Óptica'],
 
   Geografia: [
     'Brasil e Mundo',
-    'Cartografia e Orienta├º├úo',
-    'Economia e Globaliza├º├úo',
-    'Espa├ºo e Paisagem',
+    'Cartografia e Orientação',
+    'Economia e Globalização',
+    'Espaço e Paisagem',
     'Natureza e Ambiente',
-    'Popula├º├úo e Espa├ºo',
+    'População e Espaço',
   ],
 
-  Hist├│ria: [
+  História: [
     'Antiguidade',
-    'Brasil Imp├®rio e Rep├║blica',
-    'Coloniza├º├úo',
-    'Fontes e Mem├│ria',
+    'Brasil Império e República',
+    'Colonização',
+    'Fontes e Memória',
     'Guerras e Conflitos',
-    'Idade M├®dia e Renascimento',
-    'Revolu├º├Áes e Transforma├º├Áes',
+    'Idade Média e Renascimento',
+    'Revoluções e Transformações',
   ],
 
-  Ingl├¬s: ['Base da L├¡ngua', 'Verbos e Tempos', 'Vocabul├írio e Leitura'],
+  Inglês: ['Base da Língua', 'Verbos e Tempos', 'Vocabulário e Leitura'],
 
-  Matem├ítica: [
-    '├ülgebra',
-    'Combinat├│ria e Probabilidade',
+  Matemática: [
+    'Álgebra',
+    'Combinatória e Probabilidade',
     'Conjuntos',
-    'Equa├º├Áes e Sistemas',
-    'Fun├º├Áes',
+    'Equações e Sistemas',
+    'Funções',
     'Geometria Espacial',
     'Geometria Plana',
     'Matrizes e Determinantes',
-    'N├║meros e Opera├º├Áes',
-    'Raz├úo, Propor├º├úo e Porcentagem',
+    'Números e Operações',
+    'Razão, Proporção e Porcentagem',
     'Trigonometria',
   ],
 
-  Portugu├¬s: [
-    'Alfabetiza├º├úo e Leitura',
+  Português: [
+    'Alfabetização e Leitura',
     'Classes de Palavras',
-    'Coes├úo e Produ├º├úo',
-    'Concord├óncia e Reg├¬ncia',
-    'G├¬neros Textuais',
-    'Ora├º├Áes e Per├¡odos',
-    'Ortografia e Acentua├º├úo',
-    'Sem├óntica e Varia├º├úo',
+    'Coesão e Produção',
+    'Concordância e Regência',
+    'Gêneros Textuais',
+    'Orações e Períodos',
+    'Ortografia e Acentuação',
+    'Semântica e Variação',
     'Sintaxse',
   ],
 
-  Qu├¡mica: [
-    '├ütomo e Modelos At├┤micos',
-    'Eletroqu├¡mica',
-    'Liga├º├Áes e Fun├º├Áes',
-    'Mat├®ria e Misturas',
-    'Qu├¡mica Org├ónica',
-    'Rea├º├Áes Qu├¡micas',
-    'Solu├º├Áes',
-    'Termoqu├¡mica e Equil├¡brio',
+  Química: [
+    'Átomo e Modelos Atômicos',
+    'Eletroquímica',
+    'Ligações e Funções',
+    'Matéria e Misturas',
+    'Química Orgânica',
+    'Reações Químicas',
+    'Soluções',
+    'Termoquímica e Equilíbrio',
   ],
 
   Sociologia: [
     'Cultura e Sociedade',
-    'Introdu├º├úo e Surgimento',
-    'Pensadores Cl├íssicos',
-    'Poder e Pol├¡tica',
+    'Introdução e Surgimento',
+    'Pensadores Clássicos',
+    'Poder e Política',
     'Trabalho e Capitalismo',
   ],
 }
