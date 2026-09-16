@@ -13,18 +13,22 @@ watch(materiaSelecionada, () => {
 });
 
 const tipoAtv = ref('');
+
+function resetForm(){
+ tipoAtv.value = '';
+}
 </script>
 
 <template>
     <div>
-    <form action="">
+    <form action="" @reset="resetForm">
 
 <p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
   
-  <input type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv">
+  <input type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
   <label for="regular">Atividade Regular</label><br>
 
-  <input type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv">
+  <input type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
   <label for="pratica">Atividade Comemorativa</label><br>
 
 
@@ -42,7 +46,7 @@ const tipoAtv = ref('');
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
             <label for="data">Data comemorativa:</label>
-            <select class="escolhe" id="data" name="data">
+            <select class="escolhe" id="data" name="data" required>
             <option value="" selected disabled>Selecione a data</option>
             <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
             </select>
@@ -53,14 +57,14 @@ const tipoAtv = ref('');
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia">Matéria:</label>
-            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada">
+            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" required>
             <option value="" selected disabled>Selecione a matéria</option>
             <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
             <label for="conteudo">Conteúdo:</label>
-            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada">
+            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" required>
             <option value="" selected disabled>Selecione o conteúdo</option>
             <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
             </select>
@@ -79,6 +83,10 @@ const tipoAtv = ref('');
 </template>
 
 <style scoped>
+button {
+    
+}
+
 .texto{
     max-width: 800px;
     border: 3px solid #D1495B;
