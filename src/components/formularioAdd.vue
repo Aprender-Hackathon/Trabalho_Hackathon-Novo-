@@ -23,16 +23,7 @@ function resetForm(){
     <div class="formulario">
     <form action="" @reset="resetForm">
 
-<p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
-  
-  <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
-  <label for="regular">Atividade Regular</label><br>
-
-  <input class="a" type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
-  <label for="pratica">Atividade Comemorativa</label><br>
-
-
-    <div class="espaco">
+        <div class="espaco">
         <label for="inputArquivo">Insira o arquivo da atividade:</label>
         <input 
         class="atividade"
@@ -42,6 +33,17 @@ function resetForm(){
         />
     </div>
 
+    <div class="choose">
+        <p>A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
+    
+        <div>
+            <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
+        <label for="regular">Atividade Regular</label><br>
+
+        <input class="a" type="radio" id="pratica" name="atividade" value="pratica" v-model="tipoAtv" required>
+        <label for="pratica">Atividade Comemorativa</label><br>
+        </div>
+    </div>
 
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
@@ -85,6 +87,10 @@ function resetForm(){
 </template>
 
 <style scoped>
+.choose {
+    margin-bottom: 2vw;
+}
+
 .a{
     accent-color: #B73042;
     margin-right: 8px;
