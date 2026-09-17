@@ -2,10 +2,12 @@
 import { computed } from 'vue'
 import { estadoAtividades } from '@/AtividadesCards.js'
 import PreviewDocx from '@/components/PreviewDocx.vue'
+import { estadoPratica } from '@/PraticaCards.js'
+
 const atividadesAdicionadas = computed(() => {
-  return estadoAtividades.lista.filter(
-    atividade => atividade.criadoPor
-  )
+  const regulares = estadoAtividades.lista.filter(atividade => atividade.criadoPor)
+  const praticas = estadoPratica.lista.filter(atividade => atividade.criadoPor)
+  return [...regulares, ...praticas]
 })
 </script>
 <template>
@@ -103,7 +105,7 @@ const atividadesAdicionadas = computed(() => {
   font-size: 14px;
 }
 .descricao {
-  max-width: 550px;
+
   margin: 0 0 20px 0;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
