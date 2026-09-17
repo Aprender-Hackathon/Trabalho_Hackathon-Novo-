@@ -1,6 +1,9 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
 import { materias, datas, conteudos, conteudoMateria } from '@/data/opcoesForm';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const materiaSelecionada = ref('');
 const conteudoSelecionado = ref('');
@@ -23,11 +26,36 @@ const arquivosAceitos = computed(() => {
   if (tipoAtv.value === 'regular') return '.docx';
   return '';
 });
+
+
+const mostrarAlert = ref(false);
+
+function atvCriada() {
+    mostrarAlert.value = true;
+    setTimeout(() => {
+    mostraAviso.value = false;
+    setTimeout(() => {
+      router.push('/');
+    }, 400);
+  }, 2000);
+}
 </script>
 
 <template>
     <div class="formulario">
-    <form action="" @reset="resetForm">
+
+
+        <Transition name="alert">
+            <div v-if="mostrarAlert" class="aviso-sucesso">
+                <div>
+                <p class="aviso">Atividade criada com sucesso!</p>
+                </div>
+            </div>
+        </Transition>
+
+
+
+    <form action="" @reset="resetForm" @submit.prevent="atvCriada">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
@@ -60,7 +88,7 @@ const arquivosAceitos = computed(() => {
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
             <label for="data" class="pergunta">Data comemorativa:</label>
-            <select class="escolhe" id="data" name="data" required>
+            <select class="escolhe" id="data" name="data" :required="tipoAtv === 'pratica'">
             <option value="" selected disabled>Selecione a data</option>
             <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
             </select>
@@ -71,14 +99,14 @@ const arquivosAceitos = computed(() => {
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia" class="pergunta">Matéria:</label>
-            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" required>
+            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione a matéria</option>
             <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
             <label for="conteudo" class="pergunta">Conteúdo:</label>
-            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" required>
+            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione o conteúdo</option>
             <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
             </select>
@@ -99,6 +127,40 @@ const arquivosAceitos = computed(() => {
 </template>
 
 <style scoped>
+.aviso{
+  margin: 0;
+  font-weight: bold;
+  color: #B73042;
+  font-size: 2vw;
+}
+
+.alert-enter-active,
+.alert-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.alert-enter-from,
+.alert-leave-to {
+  opacity: 0;
+}
+
+.aviso-sucesso {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+
+    text-align: center;
+    max-width: 380px;
+    margin: auto;
+    background: #FFFBF6;
+    border: 5px solid #D1495B;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
 strong{
     font-size: 1.2vw;
     color: #D1495B;
