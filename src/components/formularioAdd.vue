@@ -1,7 +1,9 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
-import { materias, datas, conteudos, conteudoMateria } from '@/data/opcoesForm';
+import { materias, datas, conteudoMateria } from '@/data/opcoesForm';
 import { useRouter } from 'vue-router';
+import { estadoAtividades } from '@/AtividadesCards.js';
+import { estadoPratica } from '@/PraticaCards.js';
 
 const router = useRouter();
 
@@ -19,6 +21,8 @@ const tipoAtv = ref('');
 
 function resetForm(){
  tipoAtv.value = '';
+ materiaSelecionada.value = '';
+ conteudoSelecionado.value = '';
 }
 
 const arquivosAceitos = computed(() => {
@@ -38,6 +42,39 @@ function atvCriada() {
       router.push('/historico');
     }, 400);
   }, 2000);
+function salvarAtividade(event) {
+  const form = event.target;
+  const dados = new FormData(form);
+  const arquivo = dados.get('arquivoAtv');
+  const nomeArquivo = arquivo && arquivo.name ? arquivo.name : '';
+  const extensao = nomeArquivo.split('.').pop()?.toLowerCase();
+
+  const usuarioSalvo = localStorage.getItem('userData');
+  const usuarioLogado = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+
+  const novaAtividade = {
+    id: Date.now(),
+    titulo: dados.get('titulo'),
+    descricao: dados.get('desc'),
+    arquivo: nomeArquivo,
+    previewTipo: extensao === 'docx' ? 'docx' : extensao === 'pdf' ? 'pdf' : '',
+    criadoPor: usuarioLogado ? usuarioLogado.id : null,
+    salvo: false,
+  };
+
+  if (tipoAtv.value === 'regular') {
+    novaAtividade.materia = materiaSelecionada.value;
+    novaAtividade.conteudo = conteudoSelecionado.value;
+    estadoAtividades.lista.push(novaAtividade);
+  } else if (tipoAtv.value === 'pratica') {
+    novaAtividade.data = dados.get('data');
+    estadoPratica.lista.push(novaAtividade);
+  }
+
+  form.reset();
+  resetForm();
+  
+  router.push('/historico-pag');
 }
 </script>
 
@@ -55,11 +92,11 @@ function atvCriada() {
 
 
 
-    <form action="" @reset="resetForm" @submit.prevent="atvCriada">
+    <form action="" @reset="resetForm" @submit.prevent="atvCriada(); salvarAtividade()">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
-    
+
         <div>
             <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
         <label for="regular">Atividade Regular</label><br>
@@ -71,13 +108,7 @@ function atvCriada() {
 
     <div class="espaco">
         <label for="inputArquivo" class="pergunta">Insira o arquivo da atividade: <br> <strong v-if="arquivosAceitos">( sendo aceitos apenas arquivos em: {{ arquivosAceitos }} )</strong></label>
-        <input 
-        class="atividade"
-        id="inputArquivo" 
-        type="file" 
-        required
-        :accept="arquivosAceitos"
-        />
+        <input class="atividade" id="inputArquivo" name="arquivoAtv" type="file" required :accept="arquivosAceitos" />
     </div>
 
     <div class="espaco">
@@ -94,7 +125,6 @@ function atvCriada() {
             </select>
         </div>
     </div>
-    
 
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
@@ -179,12 +209,13 @@ strong{
     margin-right: 8px;
 }
 
- .botoes{
+.botoes{
     display: flex;
     justify-content: center;
     gap: 5vw;
     margin: 2vw auto;
- }
+}
+
 .formulario{
     margin: 5vw auto;
     padding: 0 2.5vw;
@@ -193,21 +224,20 @@ strong{
 
 button {
     background-color: #D1495B;
-  color: #FFFBF6;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  padding: 10px 28px;
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  outline: none;
-
-  transition: transform 0.1s ease;
+    color: #FFFBF6;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 0.1s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 button:active {
@@ -220,6 +250,7 @@ button:active {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 .escolhe{
     max-width: 600px;
     border-radius: 50px;

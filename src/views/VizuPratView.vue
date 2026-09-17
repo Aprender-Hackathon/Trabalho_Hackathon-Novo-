@@ -32,7 +32,7 @@ function alternarMostrarAtvs() {
 </script>
 
 <template>
-    <div v-if="atividade">
+    <div v-if="atividade" class="pagina-detalhe">
         <VerAtvPrat
             :id="atividade.id"
             :titulo="atividade.titulo"
@@ -42,12 +42,16 @@ function alternarMostrarAtvs() {
             :arquivo="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
+        
         <AbaComentarios/>
-       <BotaoMaisResultados 
-    @carregar="alternarMostrarAtvs" 
-    class="mais"
-    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
-/>
+
+        <div class="container-botao">
+            <BotaoMaisResultados 
+                @carregar="alternarMostrarAtvs" 
+                class="mais"
+                :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+            />
+        </div>
 
         <div v-if="mostrarAtvs" class="cards">
           <BotaoPratica
@@ -66,14 +70,28 @@ function alternarMostrarAtvs() {
 </template>
 
 <style scoped>
+.pagina-detalhe {
+  width: 100%;
+}
+
+.container-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+}
 
 .mais {
-  margin-bottom: 2vw;
+  margin: 0 auto;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px 70px;
 }
-
 </style>

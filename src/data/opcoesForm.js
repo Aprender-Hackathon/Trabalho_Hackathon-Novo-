@@ -8,8 +8,8 @@ export const conteudos = [...new Set(estadoAtividades.lista.map(item => item.con
 export const datas = [...new Set(estadoPratica.lista.map(item => item.data))]
 
 export const conteudoMateria = {
-  Artes: ['Artes Visuais', 
-    'História da Arte', 
+  Artes: ['Artes Visuais',
+    'História da Arte',
     'Música'],
 
   Biologia: [
@@ -34,29 +34,29 @@ export const conteudoMateria = {
       'Saúde e Qualidade de Vida'
     ],
 
-  'Ensino Religioso': ['Identidade e Diversidade', 
-    'Religião e Cultura', 
+  'Ensino Religioso': ['Identidade e Diversidade',
+    'Religião e Cultura',
     'Valores e Ética'
 ],
 
-  Espanhol: ['Comunicação Básica', 
-    'Leitura e Compreensão', 
+  Espanhol: ['Comunicação Básica',
+    'Leitura e Compreensão',
     'Verbos e Uso da Língua'
 ],
 
-  Filosofia: ['Conhecimento e Razão', 
-    'Ética e Moral', 
-    'Filosofia Clássica', 
-    'Filosofia Medieval', 
-    'Filosofia Política', 
+  Filosofia: ['Conhecimento e Razão',
+    'Ética e Moral',
+    'Filosofia Clássica',
+    'Filosofia Medieval',
+    'Filosofia Política',
     'Introdução e Origem'
 ],
 
-  Física: ['Calor e Termodinâmica', 
-    'Eletricidade e Magnetismo', 
-    'Energia e Momento', 
-    'Forças e Dinâmica', 
-    'Gases', 'Movimento', 
+  Física: ['Calor e Termodinâmica',
+    'Eletricidade e Magnetismo',
+    'Energia e Momento',
+    'Forças e Dinâmica',
+    'Gases', 'Movimento',
     'Ondas e Óptica'],
 
   Geografia: [
