@@ -180,7 +180,6 @@ button:active {
 }
 
 
-/* Tela de no máximo 600px */
 @media (max-width: 600px) {
     .formulario{
         padding: 0 1rem;

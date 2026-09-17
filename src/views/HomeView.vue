@@ -4,13 +4,11 @@ import EducacaoSection from '@/components/EducacaoSection.vue'
 import ProcesoSection from '@/components/ProcesoSection.vue'
 import CategoriasSection from '@/components/CategoriasSection.vue'
 import FaixaSobreNos from '@/components/FaixaSobreNos.vue'
-import BotaoAddAtvd from '@/components/BotaoAddAtvd.vue'
 </script>
 
 <template>
   <div>
     <BannerSection />
-    <BotaoAddAtvd/>
     <EducacaoSection />
     <ProcesoSection />
     <CategoriasSection />
