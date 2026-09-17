@@ -35,7 +35,7 @@ function atvCriada() {
     setTimeout(() => {
     mostrarAlert.value = false;
     setTimeout(() => {
-      router.push('/');
+      router.push('/historico');
     }, 400);
   }, 2000);
 }
