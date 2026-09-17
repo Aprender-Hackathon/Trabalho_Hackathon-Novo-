@@ -40,7 +40,7 @@
 footer {
     margin: 0;
     width: 100%;
-    position: relative; 
+    position: relative;
 }
 
 .conteudo {
@@ -72,9 +72,9 @@ p {
     border: none;
     background: none;
     cursor: pointer;
-    
+
     position: absolute;
-    top: -25px; 
+    top: -42px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
