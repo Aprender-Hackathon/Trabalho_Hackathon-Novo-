@@ -31,6 +31,17 @@ const arquivosAceitos = computed(() => {
   return '';
 });
 
+
+const mostrarAlert = ref(false);
+
+function atvCriada() {
+    mostrarAlert.value = true;
+    setTimeout(() => {
+    mostrarAlert.value = false;
+    setTimeout(() => {
+      router.push('/historico');
+    }, 400);
+  }, 2000);
 function salvarAtividade(event) {
   const form = event.target;
   const dados = new FormData(form);
@@ -69,7 +80,19 @@ function salvarAtividade(event) {
 
 <template>
     <div class="formulario">
-    <form action="" @submit.prevent="salvarAtividade" @reset="resetForm">
+
+
+        <Transition name="alert">
+            <div v-if="mostrarAlert" class="aviso-sucesso">
+                <div>
+                <p class="aviso">Atividade criada com sucesso!</p>
+                </div>
+            </div>
+        </Transition>
+
+
+
+    <form action="" @reset="resetForm" @submit.prevent="atvCriada(); salvarAtividade()">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
@@ -89,7 +112,7 @@ function salvarAtividade(event) {
     </div>
 
     <div class="espaco">
-        <label for="titulo">Título:</label>
+        <label for="titulo" class="pergunta">Título:</label>
         <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
     </div>
 
@@ -134,6 +157,40 @@ function salvarAtividade(event) {
 </template>
 
 <style scoped>
+.aviso{
+  margin: 0;
+  font-weight: bold;
+  color: #B73042;
+  font-size: 2vw;
+}
+
+.alert-enter-active,
+.alert-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.alert-enter-from,
+.alert-leave-to {
+  opacity: 0;
+}
+
+.aviso-sucesso {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+
+    text-align: center;
+    max-width: 380px;
+    margin: auto;
+    background: #FFFBF6;
+    border: 5px solid #D1495B;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
 strong{
     font-size: 1.2vw;
     color: #D1495B;
@@ -213,5 +270,42 @@ button:active {
     padding: 10px 20px;
     border: none;
     margin: 0 1vw 0 0;
+}
+
+
+@media (max-width: 600px) {
+    .formulario{
+        padding: 0 1rem;
+    }
+
+    .pergunta{
+        font-size: 1.1rem;
+    }
+
+    strong{
+        font-size: 0.95rem;
+    }
+
+    .botoes{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .botoes button{
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .a{
+        transform: scale(1.2);
+        margin-right: 10px;
+    }
+
+    .atividade::file-selector-button{
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
 }
 </style>

@@ -1,6 +1,7 @@
-<script setup>
-
+<script>
+import { RouterLink } from 'vue-router';
 </script>
+
 <template>
   <router-link to="/formulario" class="botao">+</router-link>
 </template>

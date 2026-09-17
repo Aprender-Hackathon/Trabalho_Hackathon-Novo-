@@ -95,12 +95,17 @@ const router = createRouter({
       path: '/salvo-pag',
       redirect: '/salvos',
     },
-{
-  path: '/formulario',
-  alias: '/formulario-add',
-  name: 'formulario',
-  component: () => import('../views/FormularioView.vue')
-},
+    {
+      path: '/historico',
+      name: 'historico',
+      component: () => import('../views/HistoricoView.vue')
+    },
+    {
+      path: '/formulario',
+      alias: '/formulario-add',
+      name: 'formulario',
+      component: () => import('../views/FormularioView.vue')
+    },
   ],
 })
 
