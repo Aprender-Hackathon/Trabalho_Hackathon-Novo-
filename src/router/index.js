@@ -94,11 +94,7 @@ const router = createRouter({
     {
       path: '/salvo-pag',
       redirect: '/salvos',
-    },{
-  path: '/historico',
-  name: 'historico',
-  component: () => import('../views/HistoricoView.vue')
-},
+    },
 {
   path: '/formulario',
   alias: '/formulario-add',

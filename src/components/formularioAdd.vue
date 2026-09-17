@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
-import { materias, datas,  conteudoMateria } from '@/data/opcoesForm';
+import { materias, datas, conteudoMateria } from '@/data/opcoesForm';
 import { useRouter } from 'vue-router';
 import { estadoAtividades } from '@/AtividadesCards.js';
 import { estadoPratica } from '@/PraticaCards.js';
@@ -38,13 +38,16 @@ function salvarAtividade(event) {
   const nomeArquivo = arquivo && arquivo.name ? arquivo.name : '';
   const extensao = nomeArquivo.split('.').pop()?.toLowerCase();
 
+  const usuarioSalvo = localStorage.getItem('userData');
+  const usuarioLogado = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+
   const novaAtividade = {
     id: Date.now(),
     titulo: dados.get('titulo'),
     descricao: dados.get('desc'),
     arquivo: nomeArquivo,
     previewTipo: extensao === 'docx' ? 'docx' : extensao === 'pdf' ? 'pdf' : '',
-    criadoPor: true,
+    criadoPor: usuarioLogado ? usuarioLogado.id : null,
     salvo: false,
   };
 
@@ -59,7 +62,8 @@ function salvarAtividade(event) {
 
   form.reset();
   resetForm();
-  router.push('/historico');
+  
+  router.push('/historico-pag');
 }
 </script>
 
@@ -92,25 +96,24 @@ function salvarAtividade(event) {
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
             <label for="data" class="pergunta">Data comemorativa:</label>
-            <select class="escolhe" id="data" name="data" required>
+            <select class="escolhe" id="data" name="data" :required="tipoAtv === 'pratica'">
             <option value="" selected disabled>Selecione a data</option>
             <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
             </select>
         </div>
     </div>
 
-
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia" class="pergunta">Matéria:</label>
-            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" required>
+            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione a matéria</option>
             <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
             <label for="conteudo" class="pergunta">Conteúdo:</label>
-            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" required>
+            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione o conteúdo</option>
             <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
             </select>
@@ -149,12 +152,13 @@ strong{
     margin-right: 8px;
 }
 
- .botoes{
+.botoes{
     display: flex;
     justify-content: center;
     gap: 5vw;
     margin: 2vw auto;
- }
+}
+
 .formulario{
     margin: 5vw auto;
     padding: 0 2.5vw;
@@ -163,21 +167,20 @@ strong{
 
 button {
     background-color: #D1495B;
-  color: #FFFBF6;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  padding: 10px 28px;
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  outline: none;
-
-  transition: transform 0.1s ease;
+    color: #FFFBF6;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 0.1s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 button:active {
@@ -190,6 +193,7 @@ button:active {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 .escolhe{
     max-width: 600px;
     border-radius: 50px;
@@ -210,5 +214,4 @@ button:active {
     border: none;
     margin: 0 1vw 0 0;
 }
-
 </style>
