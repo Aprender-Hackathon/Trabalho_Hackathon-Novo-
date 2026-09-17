@@ -33,7 +33,7 @@ const mostrarAlert = ref(false);
 function atvCriada() {
     mostrarAlert.value = true;
     setTimeout(() => {
-    mostraAviso.value = false;
+    mostrarAlert.value = false;
     setTimeout(() => {
       router.push('/');
     }, 400);
