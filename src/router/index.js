@@ -52,6 +52,11 @@ const router = createRouter({
       component: () => import('../views/UsuarioView.vue')
     },
     {
+      path: '/usuario-professor',
+      name: 'usuarioProfessor',
+      component: () => import('../views/ProfessorUsuarioView.vue')
+    },
+    {
       path: '/login-pag',
       name: 'login',
       component: () => import('../views/LoginView.vue')
@@ -80,6 +85,11 @@ const router = createRouter({
       path: '/escolhe-cadastro',
       name: 'escolheCadastro',
       component: () => import('../views/PaginaescolhecadastroView.vue')
+    },
+     {
+      path: '/historico-pag',
+      name: 'historico',
+      component: () => import('../views/HistoricoView.vue')
     },
     {
       path: '/salvo-pag',
