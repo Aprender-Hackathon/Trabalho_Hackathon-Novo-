@@ -32,7 +32,7 @@ function alternarMostrarAtvs() {
 </script>
 
 <template>
-    <div v-if="atividade">
+    <div v-if="atividade" class="pagina-detalhe">
         <VerAtv
             :id="atividade.id"
             :titulo="atividade.titulo"
@@ -73,19 +73,28 @@ function alternarMostrarAtvs() {
 </template>
 
 <style scoped>
-.container-botao {
-  display: flex;
-  justify-content: center;
+.pagina-detalhe {
   width: 100%;
 }
 
+.container-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+}
+
 .mais {
-  margin-bottom: 2vw;
+  margin: 0 auto;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px 70px;
 }
 </style>

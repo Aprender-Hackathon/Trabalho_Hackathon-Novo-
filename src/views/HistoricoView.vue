@@ -2,6 +2,7 @@
 import BotaoAddAtvd from '@/components/BotaoAddAtvd.vue'
 import HistoricoLista from '@/components/HistoricoLista.vue'
 </script>
+
 <template>
   <div class="pagina-historico">
     <main class="conteudo-historico">
@@ -19,6 +20,7 @@ import HistoricoLista from '@/components/HistoricoLista.vue'
     </main>
   </div>
 </template>
+
 <style scoped>
 .conteudo-historico {
   width: 100%;

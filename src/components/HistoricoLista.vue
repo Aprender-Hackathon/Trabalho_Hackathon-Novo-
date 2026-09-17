@@ -1,15 +1,26 @@
 <script setup>
 import { computed } from 'vue'
 import { estadoAtividades } from '@/AtividadesCards.js'
-import PreviewDocx from '@/components/PreviewDocx.vue'
 import { estadoPratica } from '@/PraticaCards.js'
+import PreviewDocx from '@/components/PreviewDocx.vue'
 
 const atividadesAdicionadas = computed(() => {
-  const regulares = estadoAtividades.lista.filter(atividade => atividade.criadoPor)
-  const praticas = estadoPratica.lista.filter(atividade => atividade.criadoPor)
+  const usuarioSalvo = localStorage.getItem('userData')
+  if (!usuarioSalvo) return []
+
+  const usuarioLogado = JSON.parse(usuarioSalvo)
+
+  const regulares = estadoAtividades.lista.filter(
+    atividade => atividade.criadoPor === usuarioLogado.id
+  )
+  const praticas = estadoPratica.lista.filter(
+    atividade => atividade.criadoPor === usuarioLogado.id
+  )
+
   return [...regulares, ...praticas]
 })
 </script>
+
 <template>
   <section class="historico-lista">
     <article
@@ -29,8 +40,8 @@ const atividadesAdicionadas = computed(() => {
             {{ atividade.titulo }}
           </h2>
           <div class="materia-conteudo">
-            <span>{{ atividade.materia }}</span>
-            <span>{{ atividade.conteudo }}</span>
+            <span v-if="atividade.materia">{{ atividade.materia }}</span>
+            <span v-if="atividade.conteudo">{{ atividade.conteudo }}</span>
           </div>
           <p class="descricao">
             {{ atividade.descricao }}
@@ -48,6 +59,7 @@ const atividadesAdicionadas = computed(() => {
     </p>
   </section>
 </template>
+
 <style scoped>
 .historico-lista {
   width: 100%;
@@ -105,7 +117,6 @@ const atividadesAdicionadas = computed(() => {
   font-size: 14px;
 }
 .descricao {
-
   margin: 0 0 20px 0;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
