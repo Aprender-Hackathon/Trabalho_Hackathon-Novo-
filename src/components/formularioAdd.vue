@@ -41,7 +41,7 @@ function atvCriada() {
     setTimeout(() => {
     mostrarAlert.value = false;
     setTimeout(() => {
-      router.push('/historico');
+      router.push('/historico-pag');
     }, 400);
   }, 2000);
 }
@@ -76,7 +76,7 @@ function salvarAtividade(event) {
 
   form.reset();
   resetForm();
-  
+
   router.push('/historico-pag');
 }
 </script>
