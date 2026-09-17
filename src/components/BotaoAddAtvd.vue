@@ -1,5 +1,8 @@
+<script setup>
+
+</script>
 <template>
-  <router-link to="/FormularioView.vue" class="botao">+</router-link>
+  <router-link to="/formulario" class="botao">+</router-link>
 </template>
 
 <style>
