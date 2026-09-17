@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/formulario" class="btn-adicionar">
+  <router-link to="/historico-pag" class="btn-adicionar">
     <svg
       class="icon"
       viewBox="0 0 24 24"

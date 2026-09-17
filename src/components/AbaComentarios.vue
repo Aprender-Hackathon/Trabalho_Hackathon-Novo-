@@ -1,8 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const usuarioAtual = ref('Maria')
+const usuarioAtual = ref('Visitante')
 const comentariosAbertos = ref(true)
+
+onMounted(() => {
+  const dadosSalvos = localStorage.getItem('userData')
+  if (dadosSalvos) {
+    const usuario = JSON.parse(dadosSalvos)
+    if (usuario.name) {
+      usuarioAtual.value = usuario.name
+    }
+  }
+})
 
 const comentarios = ref([
   { id: 1, autor: 'Maria', texto: 'Gostei muito dessa atividade!' },

@@ -86,6 +86,11 @@ const router = createRouter({
       name: 'escolheCadastro',
       component: () => import('../views/PaginaescolhecadastroView.vue')
     },
+     {
+      path: '/historico-pag',
+      name: 'historico',
+      component: () => import('../views/HistoricoView.vue')
+    },
     {
       path: '/salvo-pag',
       redirect: '/salvos',

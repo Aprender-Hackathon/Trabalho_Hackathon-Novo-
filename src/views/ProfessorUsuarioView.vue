@@ -1,8 +1,12 @@
 <template>
   <div class="full-screen-container">
     <div class="profile-card">
-      <div class="avatar-container">
-        <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
+      
+      <div class="avatar-wrapper">
+        <div class="avatar-container">
+          <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
+        </div>
+        <BotaoAdicionar />
       </div>
 
       <div class="info-container">
@@ -16,34 +20,24 @@
 
           <div class="info-field">
             <span>{{ user.email || 'Informe seu e-mail' }}</span>
-            <button
-              class="icon-btn"
-              type="button"
-              title="Editar e-mail"
-              @click="openModal('email')"
-            >
+            <button class="icon-btn" type="button" title="Editar e-mail" @click="openModal('email')">
               <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
             </button>
-</div>
-            <div class="info-field">
-                <span>{{ user.localizacao || 'Informe sua localização' }}</span>
-                <button
-                 class="icon-btn"
-                 type="button"
-                  title="Editar localização"
-                 @click="openModal('localizacao')">
-                <img src="../assets/pencil.png" alt="Editar" class="pencil-icon"/>
-                </button>
-            </div>
+          </div>
 
-            <div class="info-field">
+          <div class="info-field">
+            <span>{{ user.localizacao || 'Informe sua localização' }}</span>
+            <button class="icon-btn" type="button" title="Editar localização" @click="openModal('localizacao')">
+              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
+            </button>
+          </div>
+
+          <div class="info-field">
             <span>{{ user.instituicao || 'Informe sua instituição' }}</span>
             <button class="icon-btn" type="button" title="Editar minha instituição" @click="openModal('instituicao')">
-            <img src="../assets/pencil.png" alt="Editar" class="pencil-icon"/>
+              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
             </button>
-
-        </div>
-          
+          </div>
         </div>
 
         <div class="actions">
@@ -55,13 +49,26 @@
     <div v-if="activeField" class="modal-overlay" @click.self="closeModal">
       <div class="modal-card">
         <div class="modal-header">
-          <h3>Alterar {{ activeField === 'name' ? 'nome' : 'e-mail' }}</h3>
+          <h3>
+            Alterar 
+            {{ 
+              activeField === 'name' ? 'nome' : 
+              activeField === 'email' ? 'e-mail' : 
+              activeField === 'localizacao' ? 'localização' : 'instituição' 
+            }}
+          </h3>
           <button class="close-btn" type="button" @click="closeModal">✕</button>
         </div>
 
         <div class="modal-body">
           <label class="input-label">
-            Novo {{ activeField === 'name' ? 'nome' : 'e-mail' }} <span class="required">*</span>
+            Novo 
+            {{ 
+              activeField === 'name' ? 'nome' : 
+              activeField === 'email' ? 'e-mail' : 
+              activeField === 'localizacao' ? 'localização' : 'instituição' 
+            }} 
+            <span class="required">*</span>
           </label>
           <input v-model="tempValue" class="modal-input" @keyup.enter="saveModal" autofocus />
         </div>
@@ -72,23 +79,24 @@
       </div>
     </div>
   </div>
-</template>
 
+</template>
 
 <script setup>
 import { reactive, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-
+import BotaoAdicionar from '../components/BotaoAdicionar.vue'
 const router = useRouter()
 
 const user = reactive({
   name: '',
   email: '',
+  localizacao: '',
+  instituicao: ''
 })
 
 const activeField = ref(null)
 const tempValue = ref('')
-
 
 onMounted(() => {
   const savedData = localStorage.getItem('userData')
@@ -96,6 +104,8 @@ onMounted(() => {
     const parsedData = JSON.parse(savedData)
     user.name = parsedData.name || ''
     user.email = parsedData.email || ''
+    user.localizacao = parsedData.localizacao || ''
+    user.instituicao = parsedData.instituicao || ''
   }
 })
 
@@ -109,14 +119,15 @@ const closeModal = () => {
   tempValue.value = ''
 }
 
-
 const saveModal = () => {
   if (activeField.value) {
     user[activeField.value] = tempValue.value
 
     localStorage.setItem('userData', JSON.stringify({
       name: user.name,
-      email: user.email
+      email: user.email,
+      localizacao: user.localizacao,
+      instituicao: user.instituicao
     }))
   }
   closeModal()
@@ -128,7 +139,6 @@ const handleLogout = () => {
   router.push('/')
 }
 </script>
-
 
 <style scoped>
 *, *::before, *::after {
@@ -147,18 +157,25 @@ const handleLogout = () => {
 
 .profile-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 40px;
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
   padding: 30px;
   font-family: sans-serif;
 }
 
-.avatar-container {
-  width: 260px;
-  height: 260px;
+.avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   flex-shrink: 0;
+}
+
+.avatar-container {
+  width: 220px;
+  height: 220px;
 }
 
 .avatar-img {
@@ -322,13 +339,14 @@ const handleLogout = () => {
 @media (max-width: 768px) {
   .profile-card {
     flex-direction: column;
+    align-items: center;
     gap: 24px;
     padding: 20px 10px;
   }
 
   .avatar-container {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 
   .actions {

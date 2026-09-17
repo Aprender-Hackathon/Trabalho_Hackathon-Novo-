@@ -42,12 +42,16 @@ function alternarMostrarAtvs() {
             :arquivo="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
+        
         <AbaComentarios/>
-       <BotaoMaisResultados 
-    @carregar="alternarMostrarAtvs" 
-    class="mais"
-    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
-/>
+
+        <div class="container-botao">
+            <BotaoMaisResultados 
+                @carregar="alternarMostrarAtvs" 
+                class="mais"
+                :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+            />
+        </div>
 
         <div v-if="mostrarAtvs" class="cards">
           <BotaoPratica
@@ -66,14 +70,19 @@ function alternarMostrarAtvs() {
 </template>
 
 <style scoped>
+.container-botao {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .mais {
   margin-bottom: 2vw;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 70px;
 }
-
 </style>

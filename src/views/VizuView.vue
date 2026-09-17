@@ -44,43 +44,48 @@ function alternarMostrarAtvs() {
             :isSalvo="atividade.salvo"
         />
         <AbaComentarios/>
-        <BotaoMaisResultados 
-    @carregar="alternarMostrarAtvs" 
-    class="mais"
-    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
-/>
+
+        <div class="container-botao">
+            <BotaoMaisResultados 
+                @carregar="alternarMostrarAtvs" 
+                class="mais"
+                :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+            />
+        </div>
 
         <div v-if="mostrarAtvs" class="cards">
-
-    <BotaoExplorar
-      v-for="item in atvsRelacionadas"
-      :key="item.id"
-      :id="item.id"
-      :titulo="item.titulo"
-      :imagem="item.imagem"
-      :arquivo="item.arquivo"
-      :previewTipo="item.previewTipo"
-      :materia="item.materia"
-      :conteudo="item.conteudo"
-      :isSalvo="item.salvo"
-      @salvar="alternarSalvar(item.id)"
-      @click="mostrarAtvs = false"
-    />
-
-
+            <BotaoExplorar
+              v-for="item in atvsRelacionadas"
+              :key="item.id"
+              :id="item.id"
+              :titulo="item.titulo"
+              :imagem="item.imagem"
+              :arquivo="item.arquivo"
+              :previewTipo="item.previewTipo"
+              :materia="item.materia"
+              :conteudo="item.conteudo"
+              :isSalvo="item.salvo"
+              @salvar="alternarSalvar(item.id)"
+              @click="mostrarAtvs = false"
+            />
         </div>
     </div>
 </template>
 
 <style scoped>
+.container-botao {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 .mais {
   margin-bottom: 2vw;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 70px;
 }
-
 </style>

@@ -83,7 +83,19 @@ const router = useRouter()
 const route = useRoute()
 
 const salvo = () => router.push('/salvos')
-const perfil = () => router.push('/usuario-pag')
+const perfil = () => {
+  const savedData = localStorage.getItem('userData')
+  
+  if (savedData) {
+    const user = JSON.parse(savedData)
+    
+    if (user.role === 'professor') {
+      router.push('/usuario-professor')
+      return
+    }
+  }
+  router.push('/usuario-pag')
+}
 
 const isLoggedIn = ref(false)
 
