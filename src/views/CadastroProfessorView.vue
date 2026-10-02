@@ -44,21 +44,19 @@
                 required
               />
             </div>
+          </div>
 
-            <div class="field-group">
-              <label>Instituição:</label>
-              <div class="input-wrapper">
-                <img src="@/assets/img/instituicao.png" alt="Instituição" class="input-icon" />
-                <input
-                  v-model="instituicao"
-                  type="text"
-                  placeholder="Digite sua instituição"
-                  required
-                />
-              </div>
-
+          <div class="field-group">
+            <label>Instituição:</label>
+            <div class="input-wrapper">
+              <img src="@/assets/img/instituicao.png" alt="Instituição" class="input-icon" />
+              <input
+                v-model="instituicao"
+                type="text"
+                placeholder="Digite sua instituição"
+                required
+              />
             </div>
-            
           </div>
 
           <div class="field-group">
@@ -82,7 +80,6 @@
         <div class="card-footer">
           <p>Já tem uma conta?</p>
           <RouterLink to="/login-pag" class="login-link">Entre aqui</RouterLink>
-
         </div>
       </div>
     </div>
@@ -97,19 +94,27 @@ const router = useRouter()
 
 const name = ref('')
 const email = ref('')
+const localizacao = ref('')  
+const instituicao = ref('')  
 const password = ref('')
 
 const handleRegister = () => {
+  const userId = Date.now()
+
   const userData = {
+    id: userId,
     name: name.value,
-    email: email.value
+    email: email.value,
+    localizacao: localizacao.value,
+    instituicao: instituicao.value,
+    role: 'professor' 
   }
 
   localStorage.setItem('userData', JSON.stringify(userData))
   localStorage.setItem('isLoggedIn', 'true')
 
   window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+  router.push('/usuario-professor') 
 }
 
 const goHome = () => {

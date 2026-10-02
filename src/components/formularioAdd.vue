@@ -1,6 +1,11 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
-import { materias, datas, conteudos, conteudoMateria } from '@/data/opcoesForm';
+import { materias, datas, conteudoMateria } from '@/data/opcoesForm';
+import { useRouter } from 'vue-router';
+import { estadoAtividades } from '@/AtividadesCards.js';
+import { estadoPratica } from '@/PraticaCards.js';
+
+const router = useRouter();
 
 const materiaSelecionada = ref('');
 const conteudoSelecionado = ref('');
@@ -16,6 +21,8 @@ const tipoAtv = ref('');
 
 function resetForm(){
  tipoAtv.value = '';
+ materiaSelecionada.value = '';
+ conteudoSelecionado.value = '';
 }
 
 const arquivosAceitos = computed(() => {
@@ -23,15 +30,76 @@ const arquivosAceitos = computed(() => {
   if (tipoAtv.value === 'regular') return '.docx';
   return '';
 });
+
+
+const mostrarAlert = ref(false);
+
+function atvCriada() {
+
+    mostrarAlert.value = true;
+
+    setTimeout(() => {
+    mostrarAlert.value = false;
+    setTimeout(() => {
+      router.push('/historico-pag');
+    }, 400);
+  }, 2000);
+}
+function salvarAtividade(event) {
+  const form = event.target;
+  const dados = new FormData(form);
+  const arquivo = dados.get('arquivoAtv');
+  const nomeArquivo = arquivo && arquivo.name ? arquivo.name : '';
+  const extensao = nomeArquivo.split('.').pop()?.toLowerCase();
+
+  const usuarioSalvo = localStorage.getItem('userData');
+  const usuarioLogado = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+
+  const novaAtividade = {
+    id: Date.now(),
+    titulo: dados.get('titulo'),
+    descricao: dados.get('desc'),
+    arquivo: nomeArquivo,
+    previewTipo: extensao === 'docx' ? 'docx' : extensao === 'pdf' ? 'pdf' : '',
+    criadoPor: usuarioLogado ? usuarioLogado.id : null,
+    salvo: false,
+  };
+
+  if (tipoAtv.value === 'regular') {
+    novaAtividade.materia = materiaSelecionada.value;
+    novaAtividade.conteudo = conteudoSelecionado.value;
+    estadoAtividades.lista.push(novaAtividade);
+  } else if (tipoAtv.value === 'pratica') {
+    novaAtividade.data = dados.get('data');
+    estadoPratica.lista.push(novaAtividade);
+  }
+
+  form.reset();
+  resetForm();
+
+  router.push('/historico-pag');
+}
 </script>
 
 <template>
     <div class="formulario">
-    <form action="" @reset="resetForm">
+
+
+        <Transition name="alert">
+            <div v-if="mostrarAlert" class="aviso-sucesso">
+                <div>
+                <p class="aviso">Atividade criada com sucesso!</p>
+                </div>
+            </div>
+        </Transition>
+
+
+
+    <form action="" @reset="resetForm" @submit.prevent="atvCriada(); salvarAtividade()">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
-    
+
         <div>
             <input class="a" type="radio" id="regular" name="atividade" value="regular" v-model="tipoAtv" required>
         <label for="regular">Atividade Regular</label><br>
@@ -43,42 +111,35 @@ const arquivosAceitos = computed(() => {
 
     <div class="espaco">
         <label for="inputArquivo" class="pergunta">Insira o arquivo da atividade: <br> <strong v-if="arquivosAceitos">( sendo aceitos apenas arquivos em: {{ arquivosAceitos }} )</strong></label>
-        <input 
-        class="atividade"
-        id="inputArquivo" 
-        type="file" 
-        required
-        :accept="arquivosAceitos"
-        />
+        <input class="atividade" id="inputArquivo" name="arquivoAtv" type="file" required :accept="arquivosAceitos" />
     </div>
 
     <div class="espaco">
-        <label for="titulo">Título:</label>
+        <label for="titulo" class="pergunta">Título:</label>
         <input class="texto" type="text" id="titulo" name="titulo" placeholder="Título da atividade" required>
     </div>
 
     <div class="atvs-prat" v-show="tipoAtv === 'pratica'">
         <div class="espaco">
             <label for="data" class="pergunta">Data comemorativa:</label>
-            <select class="escolhe" id="data" name="data" required>
+            <select class="escolhe" id="data" name="data" :required="tipoAtv === 'pratica'">
             <option value="" selected disabled>Selecione a data</option>
             <option v-for="(d, i) in datas" :key="i" :value="d">{{ d }}</option>
             </select>
         </div>
     </div>
-    
 
     <div class="atvs-exp" v-show="tipoAtv === 'regular'">
         <div class="espaco">
             <label for="materia" class="pergunta">Matéria:</label>
-            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" required>
+            <select class="escolhe" id="materia" name="materia" v-model="materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione a matéria</option>
             <option v-for="(m, i) in materias" :key="i" :value="m">{{ m }}</option>
             </select>
         </div>
         <div class="espaco">
             <label for="conteudo" class="pergunta">Conteúdo:</label>
-            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" required>
+            <select class="escolhe" id="conteudo" name="conteudo" v-model="conteudoSelecionado" :disabled="!materiaSelecionada" :required="tipoAtv === 'regular'">
             <option value="" selected disabled>Selecione o conteúdo</option>
             <option v-for="(c, i) in conteudoPraMateria" :key="i" :value="c">{{ c }}</option>
             </select>
@@ -99,6 +160,40 @@ const arquivosAceitos = computed(() => {
 </template>
 
 <style scoped>
+.aviso{
+  margin: 0;
+  font-weight: bold;
+  color: #B73042;
+  font-size: 2vw;
+}
+
+.alert-enter-active,
+.alert-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.alert-enter-from,
+.alert-leave-to {
+  opacity: 0;
+}
+
+.aviso-sucesso {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+
+    text-align: center;
+    max-width: 380px;
+    margin: auto;
+    background: #FFFBF6;
+    border: 5px solid #D1495B;
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+
 strong{
     font-size: 1.2vw;
     color: #D1495B;
@@ -117,12 +212,13 @@ strong{
     margin-right: 8px;
 }
 
- .botoes{
+.botoes{
     display: flex;
     justify-content: center;
     gap: 5vw;
     margin: 2vw auto;
- }
+}
+
 .formulario{
     margin: 5vw auto;
     padding: 0 2.5vw;
@@ -131,21 +227,20 @@ strong{
 
 button {
     background-color: #D1495B;
-  color: #FFFBF6;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  padding: 10px 28px;
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  outline: none;
-
-  transition: transform 0.1s ease;
+    color: #FFFBF6;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: transform 0.1s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 button:active {
@@ -158,6 +253,7 @@ button:active {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 .escolhe{
     max-width: 600px;
     border-radius: 50px;
@@ -179,4 +275,40 @@ button:active {
     margin: 0 1vw 0 0;
 }
 
+
+@media (max-width: 600px) {
+    .formulario{
+        padding: 0 1rem;
+    }
+
+    .pergunta{
+        font-size: 1.1rem;
+    }
+
+    strong{
+        font-size: 0.95rem;
+    }
+
+    .botoes{
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .botoes button{
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .a{
+        transform: scale(1.2);
+        margin-right: 10px;
+    }
+
+    .atividade::file-selector-button{
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+}
 </style>
