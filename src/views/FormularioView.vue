@@ -13,4 +13,10 @@ import formularioAdd from '@/components/formularioAdd.vue';
  div {
     margin: 2rem;
  }
+
+ h1 {
+    max-width: 990px;   /* <-- ajuste este número para alinhar com o formulário */
+    margin: 0 auto 2rem;
+    text-align: left;
+ }
 </style>
