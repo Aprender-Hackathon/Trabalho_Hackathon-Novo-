@@ -1,0 +1,35 @@
+{
+  "visitantes": [
+    {
+      "id_visitante": "1",
+      "nome_usuario": "Carlos Silva",
+      "email_usuario": "carlos@email.com",
+      "senha_usuario": "silv3str3"
+    },
+    {
+      "id_visitante": "2",
+      "nome_usuario": "Charllote Diaz",
+      "email_usuario": "diazz.charllote@email.com",
+      "senha_usuario": "118lote14dias"
+    }
+  ],
+  "professores": [
+    {
+      "id": "1",
+      "nome": "Regiane Souza",
+      "siape_ou_registro": "MG12345",
+      "materia": "Matemática",
+      "escola": "Escola Estadual Central"
+    }
+  ],
+  "responsaveis": [
+    {
+      "id": "1",
+      "nome": "Marcos Oliveira",
+      "cpf": "123.456.789-00",
+      "telefone": "(11) 99999-0000",
+      "nome_aluno": "Larissa Oliveira"
+    }
+  ]
+}
+// tá tudo errado 
