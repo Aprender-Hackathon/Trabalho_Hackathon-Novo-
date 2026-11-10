@@ -3,7 +3,6 @@ import { useRouter } from 'vue-router'
 import BaixarDocx from './BaixarDocx.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
 import PreviewDocx from './PreviewDocx.vue'
-import { estadoAtividades } from '@/AtividadesCards.js'
 
 const router = useRouter()
 
@@ -18,26 +17,55 @@ const props = defineProps({
   isSalvo: Boolean
 })
 
+const perfilUsuario = localStorage.getItem("userRole") || "professor";
+
 function voltar() {
   router.back()
 }
 
-function alternarSalvar() {
-  if (props.id === undefined || !estadoAtividades?.lista) return
 
-  const item = estadoAtividades.lista.find(a => String(a.id) === String(props.id))
-  if (item) {
-    item.salvo = !item.salvo
+//  EXCLUIR (Professor)
+async function deletarAtividadeAtual() {
+  if (perfilUsuario !== "professor") {
+    alert("Acesso negado: Apenas professores podem excluir.");
+    return;
+  }
+
+  if (!confirm("Tem certeza que deseja excluir esta atividade?")) return;
+
+  try {
+    const endpoint = props.materia 
+      ? `http://localhost:3000/atividades/${props.id}` 
+      : `http://localhost:3000/atividades_praticas/${props.id}`;
+
+    const resposta = await fetch(endpoint, { method: "DELETE" });
+    if (!resposta.ok) throw new Error("Erro ao excluir atividade.");
+
+    alert("Atividade excluída com sucesso!");
+    router.push('/historico-pag');
+  } catch (erro) {
+    alert("Erro ao excluir: " + erro.message);
   }
 }
+
+// EDITAR (Professor)
+function editarAtividadeAtual() {
+  if (perfilUsuario !== "professor") {
+    alert("Acesso negado.");
+    return;
+  }
+  router.push(`/editar-atividade/${props.id}`);
+}
+
+console.log(deletarAtividadeAtual, editarAtividadeAtual);
 </script>
 
 <template>
   <div class="all">
 
     <button class="voltar" @click="voltar">
-  <img src="/images/back.svg" alt="Voltar" />
-</button>
+      <img src="/images/back.svg" alt="Voltar" />
+    </button>
 
     <PreviewDocx
       v-if="docx"
@@ -77,6 +105,16 @@ function alternarSalvar() {
           @salvar="alternarSalvar"
         />
 
+      </div>
+
+      <!-- PAINEL DE CONTROLE EXCLUSIVO PARA O PROFESSOR (Editar / Excluir) -->
+      <div v-if="perfilUsuario === 'professor'" class="acoes-professor-detalhes" style="margin-top: 20px; display: flex; gap: 10px;">
+        <button @click="editarAtividadeAtual" style="background-color: #2196F3; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+          Editar Atividade
+        </button>
+        <button @click="deletarAtividadeAtual" style="background-color: #d1495b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+          Excluir Atividade
+        </button>
       </div>
     </div>
 

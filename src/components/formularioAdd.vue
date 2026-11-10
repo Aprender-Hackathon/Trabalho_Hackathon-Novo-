@@ -2,8 +2,6 @@
 import { ref, computed, watch } from 'vue';
 import { materias, datas, conteudoMateria } from '@/data/opcoesForm';
 import { useRouter } from 'vue-router';
-import { estadoAtividades } from '@/AtividadesCards.js';
-import { estadoPratica } from '@/PraticaCards.js';
 
 const router = useRouter();
 
@@ -45,39 +43,55 @@ function atvCriada() {
     }, 400);
   }, 2000);
 }
-function salvarAtividade(event) {
-  const form = event.target;
-  const dados = new FormData(form);
-  const arquivo = dados.get('arquivoAtv');
-  const nomeArquivo = arquivo && arquivo.name ? arquivo.name : '';
-  const extensao = nomeArquivo.split('.').pop()?.toLowerCase();
+async function salvarAtividade(event) {
+  // Cancela o recarregamento da página apenas se o evento existir
+  if (event && event.preventDefault) {
+    event.preventDefault();
+  }
 
-  const usuarioSalvo = localStorage.getItem('userData');
-  const usuarioLogado = usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+  // Se você usa ref() nos inputs do formulário, monte o objeto com as variáveis.
+  // Caso use formulário tradicional, tentamos pegar o target do evento ou os dados direto dos refs:
+  const formElement = event?.target || document.querySelector('form');
+  const formData = formElement ? new FormData(formElement) : null;
+
+  const tipo = formData?.get('tipoAtv') || 'pratica';
 
   const novaAtividade = {
     id: Date.now(),
-    titulo: dados.get('titulo'),
-    descricao: dados.get('desc'),
-    arquivo: nomeArquivo,
-    previewTipo: extensao === 'docx' ? 'docx' : extensao === 'pdf' ? 'pdf' : '',
-    criadoPor: usuarioLogado ? usuarioLogado.id : null,
-    salvo: false,
+    titulo: formData?.get('titulo') || '',
+    descricao: formData?.get('descricao') || '',
+    materia: formData?.get('materia') || '',
+    conteudo: formData?.get('conteudo') || '',
+    data: formData?.get('data') || 'Natal',
+    salvo: false
   };
 
-  if (tipoAtv.value === 'regular') {
-    novaAtividade.materia = materiaSelecionada.value;
-    novaAtividade.conteudo = conteudoSelecionado.value;
-    estadoAtividades.lista.push(novaAtividade);
-  } else if (tipoAtv.value === 'pratica') {
-    novaAtividade.data = dados.get('data');
-    estadoPratica.lista.push(novaAtividade);
+  const endpoint = tipo === 'pratica' 
+    ? 'http://localhost:3000/atividades_praticas'
+    : 'http://localhost:3000/atividades';
+
+  try {
+    const resposta = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(novaAtividade)
+    });
+
+    if (!resposta.ok) {
+      throw new Error(`Erro no servidor: ${resposta.statusText}`);
+    }
+
+    const dadosSalvos = await resposta.json();
+    console.log('Salvo com sucesso no JSON Server:', dadosSalvos);
+
+    alert('Atividade criada com sucesso!');
+    router.push(tipo === 'pratica' ? '/atividades-praticas' : '/historico-pag');
+  } catch (erro) {
+    console.error('Erro ao salvar atividade:', erro);
+    alert('Falha ao salvar a atividade.');
   }
-
-  form.reset();
-  resetForm();
-
-  router.push('/historico-pag');
 }
 </script>
 
