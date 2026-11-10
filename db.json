@@ -5,8 +5,97 @@
       "nome": "Regiane Souza",
       "email-instituicao": "regiane.souzaa@central.al.edu.br",
       "materia": "Matemática",
-      "escola": "Escola Estadual Central",
+      "data-nasc": "06/01/1994",
+      "id_escola": "6",
       "senha": "moz1r361"
+    },
+    {
+      "id": "2",
+      "nome": "Camila Fernandes",
+      "email-instituicao": "camila.fernandes2@exemplo.edu.br",
+      "materia": "Língua Portuguesa",
+      "id_escola": "7",
+      "senha": "teste-prof-2"
+    },
+    {
+      "id": "3",
+      "nome": "Rafael Martins",
+      "email-instituicao": "rafael.martins3@exemplo.edu.br",
+      "materia": "Matemática",
+      "id_escola": "2",
+      "senha": "teste-prof-3"
+    },
+    {
+      "id": "4",
+      "nome": "Juliana Costa",
+      "email-instituicao": "juliana.costa4@exemplo.edu.br",
+      "materia": "Ciências",
+      "id_escola": "12",
+      "senha": "teste-prof-4"
+    },
+    {
+      "id": "5",
+      "nome": "Eduardo Almeida",
+      "email-instituicao": "eduardo.almeida5@exemplo.edu.br",
+      "materia": "História",
+      "id_escola": "1",
+      "senha": "teste-prof-5"
+    },
+    {
+      "id": "6",
+      "nome": "Patrícia Ribeiro",
+      "email-instituicao": "patricia.ribeiro6@exemplo.edu.br",
+      "materia": "Geografia",
+      "id_escola": "5",
+      "senha": "teste-prof-6"
+    },
+    {
+      "id": "7",
+      "nome": "Felipe Carvalho",
+      "email-instituicao": "felipe.carvalho7@exemplo.edu.br",
+      "materia": "Artes",
+      "id_escola": "11",
+      "senha": "teste-prof-7"
+    },
+    {
+      "id": "8",
+      "nome": "Mariana Lopes",
+      "email-instituicao": "mariana.lopes8@exemplo.edu.br",
+      "materia": "Educação Física",
+      "id_escola": "8",
+      "senha": "teste-prof-8"
+    },
+    {
+      "id": "9",
+      "nome": "Bruno Ferreira",
+      "email-instituicao": "bruno.ferreira9@exemplo.edu.br",
+      "materia": "Inglês",
+      "id_escola": "3",
+      "senha": "teste-prof-9"
+    },
+    {
+      "id": "10",
+      "nome": "Aline Souza",
+      "email-instituicao": "aline.souza10@exemplo.edu.br",
+      "materia": "Matemática",
+      "id_escola": "19",
+      "senha": "teste-prof-10"
+    },
+    {
+      "id": "11",
+      "nome": "Gabriel Santos",
+      "email-instituicao": "gabriel.santos11@exemplo.edu.br",
+      "materia": "Língua Portuguesa",
+      "id_escola": "21",
+      "senha": "teste-prof-11"
+    },
+    {
+      "id": "12",
+      "nome": "Renata Oliveira",
+      "email-instituicao": "renata.oliveira12@exemplo.edu.br",
+      "materia": "Ciências",
+      "id_escola": "15",
+      "senha": "teste-prof-12"
     }
   ],
   "responsaveis": [
@@ -19,11 +108,12 @@
       "senha": "clali74"
     }
   ],
-  "alunos": [
+  "usuarios": [
     {
       "id": "1",
       "nome": "Clara Oliveira Cardoso",
       "data-nasc": "23/04/2017",
+      "email": "claralinda@email.com",
       "id-responsavel": "1",
       "senha": "clali74"
     },
@@ -31,21 +121,22 @@
       "id": "2",
       "nome": "Lívia Oliveira Cardoso",
       "data-nasc": "30/07/2020",
+      "email": "liviazinha@email.com",
       "id-responsavel": "1",
       "senha": "clali74"
-    }
-  ],
-  "visitantes": [
+    },
     {
-      "id_visitante": "1",
+      "id_visitante": "3",
       "nome": "Carlos Silva",
       "email": "carlos@email.com",
+      "id-responsavel": null,
       "senha": "silv3str3"
     },
     {
-      "id_visitante": "2",
+      "id_visitante": "4",
       "nome": "Charllote Diaz",
       "email": "diazz.charllote@email.com",
+      "id-responsavel": null,
       "senha": "118lote14dias"
     }
   ],
