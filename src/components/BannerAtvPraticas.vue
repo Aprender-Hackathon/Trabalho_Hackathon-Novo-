@@ -32,8 +32,9 @@
 <style scoped>
 .banner-gigante {
   position: relative;
-  width: 100%;
-  background-color: #FAF8F5;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background-color: #f4ebdc;
   padding: 60px 5%;
   box-sizing: border-box;
   overflow: hidden;

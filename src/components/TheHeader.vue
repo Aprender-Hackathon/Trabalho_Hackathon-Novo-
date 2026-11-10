@@ -54,6 +54,23 @@
 
           <div class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0">
             <template v-if="isLoggedIn">
+              <RouterLink to="/historico-pag" class="btn-add-round" aria-label="Adicionar" title="Adicionar">
+                <svg
+                  class="add-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="12" y1="18" x2="12" y2="12" />
+                  <line x1="9" y1="15" x2="15" y2="15" />
+                </svg>
+              </RouterLink>
+
               <button class="btn-icon" aria-label="Favoritos" @click="salvo">
                 <img src="/src/assets/img/coracao.png" alt="Favoritos" class="action-icon" />
               </button>
@@ -66,7 +83,7 @@
               <RouterLink to="/login-pag" class="btn btn-outline-custom btn-sm fw-bold px-3">
                 Entrar
               </RouterLink>
-              <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm fw-bold px-3">
+              <RouterLink to="/escolhe-cadastro" class="btn btn-custom btn-sm fw-bold px-3">
                 Cadastrar
               </RouterLink>
             </template>
@@ -79,32 +96,45 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import LogoSite from '@/components/LogoSite.vue'
 
 const router = useRouter()
+const route = useRoute()
 
-const salvo = () => {
-  router.push('/salvos')
-}
-
+const salvo = () => router.push('/salvos')
 const perfil = () => {
+  const savedData = localStorage.getItem('userData')
+
+  if (savedData) {
+    const user = JSON.parse(savedData)
+
+    if (user.role === 'professor') {
+      router.push('/usuario-professor')
+      return
+    }
+  }
   router.push('/usuario-pag')
 }
 
-const isLoggedIn = ref(true)
+const isLoggedIn = ref(false)
 
 const checkAuth = () => {
-  const storedAuth = localStorage.getItem('isLoggedIn')
-  if (storedAuth !== null) {
-    isLoggedIn.value = storedAuth === 'true'
-  }
+  isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true'
 }
+
+watch(() => route.path, checkAuth)
 
 onMounted(() => {
   checkAuth()
   window.addEventListener('storage', checkAuth)
+  window.addEventListener('auth-change', checkAuth)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('storage', checkAuth)
+  window.removeEventListener('auth-change', checkAuth)
 })
 </script>
 
@@ -125,7 +155,11 @@ onMounted(() => {
 }
 
 .nav-link:hover {
-  color: #e65261 !important;
+  border-radius: 50px;
+}
+
+.nav-link.router-link-active {
+  border: #e65261 solid 3px;
   border-radius: 50px;
 }
 
@@ -153,6 +187,31 @@ onMounted(() => {
   width: 30px !important;
   height: 30px !important;
   object-fit: contain;
+}
+
+.btn-add-round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0.2rem;
+  border-radius: 50%;
+  background-color: #e65261;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+.btn-add-round:hover {
+  transform: scale(1.1);
+}
+
+.add-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
 }
 
 .btn-custom {

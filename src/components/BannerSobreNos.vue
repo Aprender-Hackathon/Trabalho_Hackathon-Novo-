@@ -54,7 +54,7 @@
   max-width: 100vw;
   margin-left: calc(50% - 50vw);
   min-height: 100vh;
-  background-color: #FAF7F2;
+  background-color: #f4ebdc;
   padding: 60px 7%;
   box-sizing: border-box;
   overflow: hidden;
@@ -199,12 +199,10 @@
     height: 90px;
   }
 
-
   .mancha-baixo-vermelha {
     width: 110px;
     height: 90px;
   }
-
 
   .mancha-baixo-verde {
     width: 120px;

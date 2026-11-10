@@ -32,7 +32,7 @@ function alternarMostrarAtvs() {
 </script>
 
 <template>
-    <div v-if="atividade">
+    <div v-if="atividade" class="pagina-detalhe">
         <VerAtv
             :id="atividade.id"
             :titulo="atividade.titulo"
@@ -44,43 +44,57 @@ function alternarMostrarAtvs() {
             :isSalvo="atividade.salvo"
         />
         <AbaComentarios/>
-        <BotaoMaisResultados 
-    @carregar="alternarMostrarAtvs" 
-    class="mais"
-    :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
-/>
+
+        <div class="container-botao">
+            <BotaoMaisResultados 
+                @carregar="alternarMostrarAtvs" 
+                class="mais"
+                :text="mostrarAtvs ? 'Mostrar Menos' : 'Mostrar Mais'"
+            />
+        </div>
 
         <div v-if="mostrarAtvs" class="cards">
-
-    <BotaoExplorar
-      v-for="item in atvsRelacionadas"
-      :key="item.id"
-      :id="item.id"
-      :titulo="item.titulo"
-      :imagem="item.imagem"
-      :arquivo="item.arquivo"
-      :previewTipo="item.previewTipo"
-      :materia="item.materia"
-      :conteudo="item.conteudo"
-      :isSalvo="item.salvo"
-      @salvar="alternarSalvar(item.id)"
-      @click="mostrarAtvs = false"
-    />
-
-
+            <BotaoExplorar
+              v-for="item in atvsRelacionadas"
+              :key="item.id"
+              :id="item.id"
+              :titulo="item.titulo"
+              :imagem="item.imagem"
+              :arquivo="item.arquivo"
+              :previewTipo="item.previewTipo"
+              :materia="item.materia"
+              :conteudo="item.conteudo"
+              :isSalvo="item.salvo"
+              @salvar="alternarSalvar(item.id)"
+              @click="mostrarAtvs = false"
+            />
         </div>
     </div>
 </template>
 
 <style scoped>
+.pagina-detalhe {
+  width: 100%;
+}
+
+.container-botao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+}
 
 .mais {
-  margin-bottom: 2vw;
+  margin: 0 auto;
 }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   padding: 20px 70px;
 }
-
 </style>

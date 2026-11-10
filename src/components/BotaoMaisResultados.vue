@@ -1,34 +1,71 @@
 <script setup>
+defineProps({
+  text: {
+    type: String,
+    default: 'Mais Resultados'
+  }
+})
+
 defineEmits(['carregar'])
-</script>    
+</script>   
 
 <template>
-  <div>
+  <div class="container-botao">
     <button class="MaisResultados" @click="$emit('carregar')">
-      <span>Mais Resultados</span>
-      <img src="/seta.png" />
+      <span>{{ text }}</span>
+      <img src="/seta.png" class="icone-seta" alt="Seta" />
     </button>
   </div>
 </template>
 
 <style scoped>
+.container-botao {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
 .MaisResultados {
-  width: 240px; 
-  height: 42px;
+  width: 100%;
+  max-width: 280px;
+  min-width: 180px;
+  min-height: 44px;
+  padding: 8px 16px;
   background: #fffaf5;
   border: 4px solid #d5485a;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
-  font-weight: bold;
-  margin: 0 auto;
   gap: 15px;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.MaisResultados img {
-  width: 12px;
+.icone-seta {
+  max-height: 16px;
+  width: auto;
+}
+
+.MaisResultados:hover {
+  background-color: #ffe6d9;
+  transform: translateY(-1px);
+}
+
+.MaisResultados:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .MaisResultados {
+    max-width: 90%;
+    font-size: 15px;
+    gap: 10px;
+    border-width: 3px;
+  }
 }
 </style>

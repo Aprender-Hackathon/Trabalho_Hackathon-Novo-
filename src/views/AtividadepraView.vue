@@ -44,10 +44,8 @@ function alternarSalvar(id) {
   }
 }
 
-
 const atividadesFiltradas = computed(() => {
   return estadoPratica.lista.filter((item) => {
-   
     const matchData =
       filtroEscolhido.value.data === 'Tudo' ||
       (item.data && item.data.trim().toLowerCase() === filtroEscolhido.value.data.trim().toLowerCase())
@@ -65,12 +63,10 @@ const atividadesFiltradas = computed(() => {
 
 <template>
   <div class="explorar-container">
-        <BannerAtvPraticas />
-    <FiltroPratica @filtro="filtroEscolhido = $event" />
-
-    <FiltroPratica 
-      :filtroInicial="filtroEscolhido" 
-      @filtro="atualizarFiltro" 
+    <BannerAtvPraticas />
+    <FiltroPratica
+      :filtroInicial="filtroEscolhido"
+      @filtro="atualizarFiltro"
     />
 
     <div class="cards">
@@ -94,11 +90,30 @@ const atividadesFiltradas = computed(() => {
 .explorar-container {
   min-height: 100vh;
   padding-bottom: 4rem;
+  width: 100%;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px 70px;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px;
+  padding: 16px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards :deep(> *) {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 24px;
+    padding: 20px 70px;
+  }
 }
 </style>
