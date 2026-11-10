@@ -11,6 +11,10 @@ const texto = ref('')
 const arquivo = ref(null)
 const caixa = ref(null)
 
+const posicaoEditando = ref(null)
+const menuAberto = ref(null)
+const textoEditado = ref('')
+
 function carregar() {
   const salvo = localStorage.getItem('mensagensChat')
   if (salvo) {
@@ -34,10 +38,12 @@ function rolarParaBaixo() {
 onMounted(() => {
   carregar()
   window.addEventListener('storage', carregar)
+  document.addEventListener('click', fecharMenu)
 })
 
 onUnmounted(() => {
   window.removeEventListener('storage', carregar)
+  document.removeEventListener('click', fecharMenu)
 })
 
 function escolherArquivo(evento) {
@@ -67,7 +73,7 @@ function enviar() {
     professor: souProfessor,
     texto: texto.value,
     arquivo: arquivo.value,
-    hora: new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }),
+    editada: false,
   })
 
   try {
@@ -82,6 +88,53 @@ function enviar() {
   arquivo.value = null
   document.getElementById('campoArquivo').value = ''
   rolarParaBaixo()
+}
+
+function abrirMenu(posicao) {
+  if (menuAberto.value === posicao) {
+    menuAberto.value = null
+  } else {
+    menuAberto.value = posicao
+  }
+}
+
+function fecharMenu() {
+  menuAberto.value = null
+}
+
+function excluir(posicao) {
+  menuAberto.value = null
+  if (!confirm('Quer mesmo excluir esta mensagem?')) {
+    return
+  }
+
+  mensagens.value.splice(posicao, 1)
+  salvar()
+  posicaoEditando.value = null
+}
+
+function comecarEdicao(posicao) {
+  menuAberto.value = null
+  posicaoEditando.value = posicao
+  textoEditado.value = mensagens.value[posicao].texto
+}
+
+function cancelarEdicao() {
+  posicaoEditando.value = null
+}
+
+function salvarEdicao(posicao) {
+  const mensagem = mensagens.value[posicao]
+
+  if (textoEditado.value.trim() === '' && !mensagem.arquivo) {
+    alert('A mensagem não pode ficar vazia. Se quiser, exclua ela.')
+    return
+  }
+
+  mensagem.texto = textoEditado.value
+  mensagem.editada = true
+  salvar()
+  posicaoEditando.value = null
 }
 </script>
 
@@ -103,12 +156,28 @@ function enviar() {
         <div v-for="(m, posicao) in mensagens" :key="posicao" class="mensagem">
           <strong>{{ m.autor }}</strong>
           <span v-if="m.professor"> (professor)</span>
+          <small v-if="m.editada"> (editada)</small>
 
-          <p v-if="m.texto">{{ m.texto }}</p>
+          <div v-if="posicaoEditando === posicao">
+            <input v-model="textoEditado" @keyup.enter="salvarEdicao(posicao)" />
+            <button @click="salvarEdicao(posicao)">Salvar</button>
+            <button @click="cancelarEdicao">Cancelar</button>
+          </div>
+
+          <p v-else-if="m.texto">{{ m.texto }}</p>
 
           <a v-if="m.arquivo" :href="m.arquivo.dados" :download="m.arquivo.nome">
             📎 {{ m.arquivo.nome }}
           </a>
+
+          <div v-if="m.autor === meuNome && posicaoEditando !== posicao" class="menu">
+            <button class="pontinhos" @click.stop="abrirMenu(posicao)">⋮</button>
+
+            <div v-if="menuAberto === posicao" class="menu-lista">
+              <button @click="comecarEdicao(posicao)">Editar</button>
+              <button @click="excluir(posicao)">Excluir</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -145,5 +214,42 @@ function enviar() {
 .mensagem {
   border-bottom: 1px solid #ccc;
   padding: 6px 0;
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.pontinhos {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.menu-lista {
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.menu-lista button {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-lista button:hover {
+  background: #eee;
 }
 </style>
