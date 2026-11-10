@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "api": "json-server --watch db.json --port 3000",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -24,6 +25,7 @@
     "bootstrap": "^5.3.8",
     "docx-preview": "^0.4.0",
     "html2canvas": "^1.4.1",
+    "json-server": "^1.0.0-beta.15",
     "vue": "rc",
     "vue-router": "^5.2.0"
   },

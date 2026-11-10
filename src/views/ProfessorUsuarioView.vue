@@ -1,141 +1,189 @@
 <template>
-  <div class="full-screen-container">
-    <div class="profile-card">
+  <div class="box">
+    <div class="card">
 
-      <div class="avatar-wrapper">
-        <div class="avatar-container">
-          <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
+      <div class="avatar-area">
+        <div class="foto-box">
+          <img src="../assets/user.png" alt="Perfil" class="foto" />
         </div>
       </div>
 
-      <div class="info-container">
-        <div class="fields-group">
-          <div class="info-field">
-            <span>{{ user.name || 'Informe seu nome' }}</span>
-            <button class="icon-btn" type="button" title="Editar nome" @click="openModal('name')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
+      <div class="info-area">
+        <div class="lista-campos">
+          <div class="linha">
+            <span>{{ usuario.nome || 'Informe seu nome' }}</span>
+            <button class="btn-icone" type="button" @click="abrirModal('nome')">
+              <img src="../assets/pencil.png" alt="Editar" class="lapis" />
             </button>
           </div>
 
-          <div class="info-field">
-            <span>{{ user.email || 'Informe seu e-mail' }}</span>
-            <button class="icon-btn" type="button" title="Editar e-mail" @click="openModal('email')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
+          <div class="linha">
+            <span>{{ usuario.email || 'Informe seu e-mail' }}</span>
+            <button class="btn-icone" type="button" @click="abrirModal('email')">
+              <img src="../assets/pencil.png" alt="Editar" class="lapis" />
             </button>
           </div>
 
-          <div class="info-field">
-            <span>{{ user.localizacao || 'Informe sua localização' }}</span>
-            <button class="icon-btn" type="button" title="Editar localização" @click="openModal('localizacao')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
+          <div class="linha">
+            <span>{{ usuario.localizacao || 'Informe sua matéria' }}</span>
+            <button class="btn-icone" type="button" @click="abrirModal('localizacao')">
+              <img src="../assets/pencil.png" alt="Editar" class="lapis" />
             </button>
           </div>
 
-          <div class="info-field">
-            <span>{{ user.instituicao || 'Informe sua instituição' }}</span>
-            <button class="icon-btn" type="button" title="Editar minha instituição" @click="openModal('instituicao')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
+          <div class="linha">
+            <span>{{ usuario.instituicao || 'Informe sua instituição' }}</span>
+            <button class="btn-icone" type="button" @click="abrirModal('instituicao')">
+              <img src="../assets/pencil.png" alt="Editar" class="lapis" />
             </button>
           </div>
         </div>
 
-        <div class="actions">
-          <button class="pink-btn" type="button" @click="handleLogout">Sair</button>
+        <div class="botoes">
+          <button class="btn" type="button" @click="excluirProfessor">Excluir Conta</button>
+          <button class="btn" type="button" @click="lidarSair">Sair</button>
         </div>
       </div>
     </div>
 
-    <div v-if="activeField" class="modal-overlay" @click.self="closeModal">
-      <div class="modal-card">
-        <div class="modal-header">
+    <div v-if="campoAtivo" class="overlay" @click.self="fecharModal">
+      <div class="modal">
+        <div class="modal-topo">
           <h3>
             Alterar
             {{
-              activeField === 'name' ? 'nome' :
-              activeField === 'email' ? 'e-mail' :
-              activeField === 'localizacao' ? 'localização' : 'instituição'
+              campoAtivo === 'nome' ? 'nome' :
+              campoAtivo === 'email' ? 'e-mail' :
+              campoAtivo === 'localizacao' ? 'matéria' : 'instituição'
             }}
           </h3>
-          <button class="close-btn" type="button" @click="closeModal">✕</button>
+          <button class="btn-fechar" type="button" @click="fecharModal">✕</button>
         </div>
 
-        <div class="modal-body">
-          <label class="input-label">
+        <div class="modal-meio">
+          <label>
             Novo
             {{
-              activeField === 'name' ? 'nome' :
-              activeField === 'email' ? 'e-mail' :
-              activeField === 'localizacao' ? 'localização' : 'instituição'
+              campoAtivo === 'nome' ? 'nome' :
+              campoAtivo === 'email' ? 'e-mail' :
+              campoAtivo === 'localizacao' ? 'matéria' : 'instituição'
             }}
-            <span class="required">*</span>
+            <span class="asterisco">*</span>
           </label>
-          <input v-model="tempValue" class="modal-input" @keyup.enter="saveModal" autofocus />
+          <input v-model="valorTemporario" class="input-text" @keyup.enter="salvarModal" autofocus />
         </div>
 
-        <div class="modal-footer">
-          <button class="pink-btn" type="button" @click="saveModal">Salvar</button>
+        <div class="modal-baixo">
+          <button class="btn" type="button" @click="salvarModal">Salvar</button>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
 import { reactive, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-const router = useRouter()
 
-const user = reactive({
-  name: '',
+const roteador = useRouter()
+const URL_API = 'http://localhost:3000/professores'
+
+const usuario = reactive({
+  id: '1',
+  nome: '',
   email: '',
   localizacao: '',
-  instituicao: ''
+  instituicao: '',
+  senha: ''
 })
 
-const activeField = ref(null)
-const tempValue = ref('')
+const campoAtivo = ref(null)
+const valorTemporario = ref('')
 
-onMounted(() => {
-  const savedData = localStorage.getItem('userData')
-  if (savedData) {
-    const parsedData = JSON.parse(savedData)
-    user.name = parsedData.name || ''
-    user.email = parsedData.email || ''
-    user.localizacao = parsedData.localizacao || ''
-    user.instituicao = parsedData.instituicao || ''
+async function carregarDadosProfessor() {
+  try {
+    const resposta = await fetch(`${URL_API}/${usuario.id}`)
+    if (!resposta.ok) throw new Error('Erro ao buscar professor')
+    
+    const dados = await resposta.json()
+    usuario.nome = dados.nome || ''
+    usuario.email = dados['email-instituicao'] || dados.email || ''
+    usuario.localizacao = dados.materia || ''
+    usuario.instituicao = dados.escola || ''
+    usuario.senha = dados.senha || ''
+  } catch (err) {
+    console.error(err)
+    alert('Erro ao carregar dados do servidor.')
   }
-})
-
-const openModal = (field) => {
-  activeField.value = field
-  tempValue.value = user[field]
 }
 
-const closeModal = () => {
-  activeField.value = null
-  tempValue.value = ''
+const abrirModal = (campo) => {
+  campoAtivo.value = campo
+  valorTemporario.value = usuario[campo]
 }
 
-const saveModal = () => {
-  if (activeField.value) {
-    user[activeField.value] = tempValue.value
+const fecharModal = () => {
+  campoAtivo.value = null
+  valorTemporario.value = ''
+}
 
-    localStorage.setItem('userData', JSON.stringify({
-      name: user.name,
-      email: user.email,
-      localizacao: user.localizacao,
-      instituicao: user.instituicao
-    }))
+const salvarModal = async () => {
+  if (campoAtivo.value) {
+    usuario[campoAtivo.value] = valorTemporario.value
+
+    const dadosAtualizados = {
+      id: usuario.id,
+      nome: usuario.nome,
+      'email-instituicao': usuario.email,
+      materia: usuario.localizacao,
+      escola: usuario.instituicao,
+      senha: usuario.senha
+    }
+
+    try {
+      const resposta = await fetch(`${URL_API}/${usuario.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dadosAtualizados)
+      })
+
+      if (!resposta.ok) throw new Error('Erro ao atualizar')
+      alert('Dados salvos com sucesso!')
+    } catch (err) {
+      console.error(err)
+      alert('Não foi possível salvar os dados.')
+    }
   }
-  closeModal()
+  fecharModal()
 }
 
-const handleLogout = () => {
+const excluirProfessor = async () => {
+  const confirmacao = confirm('Tem certeza de que deseja excluir este cadastro de professor?')
+  if (!confirmacao) return
+
+  try {
+    const resposta = await fetch(`${URL_API}/${usuario.id}`, {
+      method: 'DELETE'
+    })
+
+    if (!resposta.ok) throw new Error('Erro ao excluir')
+    alert('Cadastro excluído!')
+    lidarSair()
+  } catch (err) {
+    console.error(err)
+    alert('Não foi possível excluir o cadastro.')
+  }
+}
+
+const lidarSair = () => {
   localStorage.removeItem('isLoggedIn')
   window.dispatchEvent(new Event('storage'))
-  router.push('/')
+  roteador.push('/')
 }
+
+onMounted(() => {
+  carregarDadosProfessor()
+})
 </script>
 
 <style scoped>
@@ -143,7 +191,7 @@ const handleLogout = () => {
   box-sizing: border-box;
 }
 
-.full-screen-container {
+.box {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -153,7 +201,7 @@ const handleLogout = () => {
   padding: 20px;
 }
 
-.profile-card {
+.card {
   display: flex;
   align-items: flex-start;
   gap: 40px;
@@ -163,7 +211,7 @@ const handleLogout = () => {
   font-family: sans-serif;
 }
 
-.avatar-wrapper {
+.avatar-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,19 +219,19 @@ const handleLogout = () => {
   flex-shrink: 0;
 }
 
-.avatar-container {
+.foto-box {
   width: 220px;
   height: 220px;
 }
 
-.avatar-img {
+.foto {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
 }
 
-.info-container {
+.info-area {
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -191,14 +239,14 @@ const handleLogout = () => {
   width: 100%;
 }
 
-.fields-group {
+.lista-campos {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.info-field {
+.linha {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -212,7 +260,7 @@ const handleLogout = () => {
   word-break: break-word;
 }
 
-.icon-btn {
+.btn-icone {
   background: none;
   border: none;
   cursor: pointer;
@@ -222,18 +270,19 @@ const handleLogout = () => {
   flex-shrink: 0;
 }
 
-.pencil-icon {
+.lapis {
   width: 18px;
   height: 18px;
   object-fit: contain;
 }
 
-.actions {
+.botoes {
   display: flex;
   justify-content: flex-end;
+  gap: 10px;
 }
 
-.pink-btn {
+.btn {
   background-color: #e38b93;
   color: #000;
   font-weight: bold;
@@ -247,11 +296,11 @@ const handleLogout = () => {
   outline: none;
 }
 
-.pink-btn:hover {
+.btn:hover {
   filter: brightness(0.95);
 }
 
-.modal-overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -265,7 +314,7 @@ const handleLogout = () => {
   padding: 16px;
 }
 
-.modal-card {
+.modal {
   background-color: #ffffff;
   width: 100%;
   max-width: 440px;
@@ -278,20 +327,20 @@ const handleLogout = () => {
   font-family: sans-serif;
 }
 
-.modal-header {
+.modal-topo {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.modal-header h3 {
+.modal-topo h3 {
   margin: 0;
   font-size: 1.15rem;
   color: #1a1a1a;
   font-weight: 700;
 }
 
-.close-btn {
+.btn-fechar {
   background: none;
   border: none;
   font-size: 1.1rem;
@@ -299,24 +348,24 @@ const handleLogout = () => {
   color: #666;
 }
 
-.modal-body {
+.modal-meio {
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 100%;
 }
 
-.input-label {
+.modal-meio label {
   font-size: 0.9rem;
   color: #444;
   font-weight: 600;
 }
 
-.required {
+.asterisco {
   color: #e53935;
 }
 
-.modal-input {
+.input-text {
   width: 100%;
   padding: 10px 14px;
   border: 2px solid #e38b93;
@@ -325,53 +374,49 @@ const handleLogout = () => {
   outline: none;
 }
 
-.modal-input:focus {
+.input-text:focus {
   border-color: #d17880;
 }
 
-.modal-footer {
+.modal-baixo {
   display: flex;
   justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
-  .profile-card {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 20px 10px;
-  }
-
-  .avatar-container {
-    width: 180px;
-    height: 180px;
-  }
-
-  .actions {
-    justify-content: center;
-  }
-
-  .pink-btn {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .full-screen-container {
+@media (max-width: 600px) {
+  .box {
     padding: 12px;
   }
 
-  .avatar-container {
+  .card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .foto-box {
     width: 150px;
     height: 150px;
   }
 
-  .info-field {
+  .linha {
     font-size: 1rem;
     padding: 12px 16px;
   }
 
-  .modal-card {
+  .botoes {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .modal {
+    max-width: 100%;
     padding: 20px;
   }
 }
