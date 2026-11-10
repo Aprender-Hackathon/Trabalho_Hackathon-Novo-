@@ -1,12 +1,11 @@
 <script setup>
 
-function subir(){
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
-}
-
+    function subir(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
 
 </script>
 
@@ -41,7 +40,7 @@ function subir(){
 footer {
     margin: 0;
     width: 100%;
-    position: relative; 
+    position: relative;
 }
 
 .conteudo {
@@ -73,9 +72,9 @@ p {
     border: none;
     background: none;
     cursor: pointer;
-    
+
     position: absolute;
-    top: -25px; 
+    top: -42px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;

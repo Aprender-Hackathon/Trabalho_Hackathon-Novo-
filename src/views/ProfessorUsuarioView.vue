@@ -1,12 +1,11 @@
 <template>
   <div class="full-screen-container">
     <div class="profile-card">
-      
+
       <div class="avatar-wrapper">
         <div class="avatar-container">
           <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
         </div>
-        <BotaoAdicionar />
       </div>
 
       <div class="info-container">
@@ -50,11 +49,11 @@
       <div class="modal-card">
         <div class="modal-header">
           <h3>
-            Alterar 
-            {{ 
-              activeField === 'name' ? 'nome' : 
-              activeField === 'email' ? 'e-mail' : 
-              activeField === 'localizacao' ? 'localização' : 'instituição' 
+            Alterar
+            {{
+              activeField === 'name' ? 'nome' :
+              activeField === 'email' ? 'e-mail' :
+              activeField === 'localizacao' ? 'localização' : 'instituição'
             }}
           </h3>
           <button class="close-btn" type="button" @click="closeModal">✕</button>
@@ -62,12 +61,12 @@
 
         <div class="modal-body">
           <label class="input-label">
-            Novo 
-            {{ 
-              activeField === 'name' ? 'nome' : 
-              activeField === 'email' ? 'e-mail' : 
-              activeField === 'localizacao' ? 'localização' : 'instituição' 
-            }} 
+            Novo
+            {{
+              activeField === 'name' ? 'nome' :
+              activeField === 'email' ? 'e-mail' :
+              activeField === 'localizacao' ? 'localização' : 'instituição'
+            }}
             <span class="required">*</span>
           </label>
           <input v-model="tempValue" class="modal-input" @keyup.enter="saveModal" autofocus />
@@ -85,7 +84,6 @@
 <script setup>
 import { reactive, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import BotaoAdicionar from '../components/BotaoAdicionar.vue'
 const router = useRouter()
 
 const user = reactive({
