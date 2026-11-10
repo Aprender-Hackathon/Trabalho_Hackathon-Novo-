@@ -5962,5 +5962,188 @@
       "salvo": false
     }
   ],
-  "escolas": []
+  "escolas": [
+    {
+      "id": 1,
+      "nome": "EEB Neusa Ostetto Cardoso",
+      "municipio": "Araranguá",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 2,
+      "nome": "EEB Cel. Pedro Christiano Feddersen",
+      "municipio": "Blumenau",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 3,
+      "nome": "EEB Lebon Régis",
+      "municipio": "Campo Alegre",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 4,
+      "nome": "EEB Irmã Maria Felicitas",
+      "municipio": "Canoinhas",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 5,
+      "nome": "EEB Prof. Irene Stonoga",
+      "municipio": "Chapecó",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 6,
+      "nome": "EEB Walter Fontana",
+      "municipio": "Concórdia",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 7,
+      "nome": "EEB Joaquim Ramos",
+      "municipio": "Criciúma",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 8,
+      "nome": "EEB Sólon Rosa",
+      "municipio": "Curitibanos",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 9,
+      "nome": "EEB Ildefonso Linhares",
+      "municipio": "Florianópolis",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 10,
+      "nome": "EEB Frei Godofredo",
+      "municipio": "Gaspar",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 11,
+      "nome": "EEF Almirante Tamandaré",
+      "municipio": "Guaramirim",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 12,
+      "nome": "EEB São José",
+      "municipio": "Herval d'Oeste",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 13,
+      "nome": "EEB Walmor Ribeiro",
+      "municipio": "Ibirama",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 14,
+      "nome": "EEB Engenheiro Álvaro Catão",
+      "municipio": "Imbituba",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 15,
+      "nome": "EEF Francisco de Paula Seara",
+      "municipio": "Itajaí",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 16,
+      "nome": "EEB Rudolfo Meyer",
+      "municipio": "Joinville",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 17,
+      "nome": "EEB Cora Batalha da Silveira",
+      "municipio": "Lages",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 18,
+      "nome": "EEB Prof. Maria Paula Feres",
+      "municipio": "Mafra",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 19,
+      "nome": "EEB Ângelo Cascaes Tancredo",
+      "municipio": "Palhoça",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 20,
+      "nome": "EEB Henrique Fontes",
+      "municipio": "Tubarão",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 21,
+      "nome": "EEF Hugo Roepke",
+      "municipio": "Timbó",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 22,
+      "nome": "EEB Inspetor Eurico Rauen",
+      "municipio": "Videira",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 23,
+      "nome": "EEB Prof. Jaldyr Bhering Faustino da Silva",
+      "municipio": "São Miguel do Oeste",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 24,
+      "nome": "EEB São Ludgero",
+      "municipio": "São Ludgero",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 25,
+      "nome": "EEB Prof. Emérita Duarte Silva e Souza",
+      "municipio": "Biguaçu",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": 26,
+      "nome": "EEB Presidente Médici",
+      "municipio": "Joinville",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    }
+  ]
 }
