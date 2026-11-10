@@ -110,7 +110,7 @@ async function salvarProfessor() {
       localStorage.setItem('isLoggedIn', 'true')
       window.dispatchEvent(new Event('auth-change'))
       
-      roteador.push('/usuario-professor')
+      roteador.push('/')
     }
   } catch {
     alert('Erro ao salvar os dados.')
