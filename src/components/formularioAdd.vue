@@ -35,13 +35,16 @@ const arquivosAceitos = computed(() => {
 const mostrarAlert = ref(false);
 
 function atvCriada() {
+
     mostrarAlert.value = true;
+
     setTimeout(() => {
     mostrarAlert.value = false;
     setTimeout(() => {
-      router.push('/historico');
+      router.push('/historico-pag');
     }, 400);
   }, 2000);
+}
 function salvarAtividade(event) {
   const form = event.target;
   const dados = new FormData(form);
@@ -73,7 +76,7 @@ function salvarAtividade(event) {
 
   form.reset();
   resetForm();
-  
+
   router.push('/historico-pag');
 }
 </script>

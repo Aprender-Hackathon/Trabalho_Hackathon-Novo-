@@ -29,20 +29,35 @@ import HistoricoLista from '@/components/HistoricoLista.vue'
   padding: 35px 55px 40px;
   box-sizing: border-box;
 }
+
+/* Título em cima, botão embaixo */
 .topo-historico {
   width: 100%;
-  min-height: 110px;
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
 }
+.topo-historico h1 {
+  order: 1;
+  margin: 0;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 48px; /* <-- tamanho do título (era 58px) */
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111820;
+  text-align: center;
+}
+
+/* Botão alinhado com a borda esquerda da miniatura do histórico */
 .botao-add {
-  position: absolute;
-  left: 45px;
-  top: 0;
-  width: 100px;
-  height: 100px;
+  order: 2;
+  position: static;
+  width: 170px;
+  height: 170px;
+  margin: 0 0 0 110px; /* <-- ajuste este número para alinhar com a miniatura */
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,30 +66,44 @@ import HistoricoLista from '@/components/HistoricoLista.vue'
 .botao-add :deep(button),
 .botao-add :deep(a) {
   cursor: pointer;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 28px !important;
+  border-width: 5px !important;
+  font-size: 95px;
+  font-weight: 900;
+  line-height: 1;
 }
-.topo-historico h1 {
-  margin: 0;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: 54px;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #111820;
-  text-align: center;
+.botao-add :deep(svg),
+.botao-add :deep(img) {
+  width: 70px !important;
+  height: 70px !important;
+  stroke-width: 4;
 }
+
+/* Linha mais fina e rosada, com espaço em cima e embaixo */
 .linha-historico {
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   background-color: #e34d61;
-  margin-top: 5px;
-  margin-bottom: 18px;
+  opacity: 0.7;
+  margin-top: 60px;
+  margin-bottom: 50px;
 }
+
 .secao-historico {
   width: 100%;
 }
 .secao-historico h2 {
   margin: 0 0 12px;
   font-family: 'Baloo 2', sans-serif;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 800;
   line-height: 1.1;
   color: #111820;
@@ -97,31 +126,69 @@ import HistoricoLista from '@/components/HistoricoLista.vue'
   width: 100%;
   margin-bottom: 20px;
 }
+
+/* ===== Card do histórico (nomes de classe prováveis) ===== */
+.secao-historico :deep(.atividade img),
+.secao-historico :deep(.atividade .imagem),
+.secao-historico :deep(.atividade .miniatura) {
+  width: 120px !important;
+  height: 160px !important;
+  object-fit: cover;
+  align-self: flex-start;
+}
+.secao-historico :deep(.atividade h3),
+.secao-historico :deep(.atividade .titulo) {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #b8283e !important;
+}
+.secao-historico :deep(.atividade .tag),
+.secao-historico :deep(.atividade .tags span),
+.secao-historico :deep(.atividade .etiqueta) {
+  background: none !important;
+  color: #000 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 13px !important;
+}
+.secao-historico :deep(.atividade p),
+.secao-historico :deep(.atividade .descricao),
+.secao-historico :deep(.atividade .arquivo) {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 13px !important;
+  color: #000 !important;
+}
+
 @media (max-width: 650px) {
   .conteudo-historico {
     padding: 25px 22px 25px;
   }
   .topo-historico {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
     gap: 18px;
   }
   .botao-add {
-    position: static;
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
+    margin-left: 0;
+  }
+  .botao-add :deep(button),
+  .botao-add :deep(a) {
+    font-size: 64px;
+    border-radius: 20px !important;
+    border-width: 4px !important;
   }
   .topo-historico h1 {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.05;
   }
   .linha-historico {
-    margin-top: 25px;
-    margin-bottom: 18px;
+    margin-top: 40px;
+    margin-bottom: 32px;
   }
   .secao-historico h2 {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 12px;
   }
   .secao-historico :deep(.nenhuma-atividade),
