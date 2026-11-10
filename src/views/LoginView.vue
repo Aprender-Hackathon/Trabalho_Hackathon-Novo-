@@ -48,7 +48,7 @@
 
         <p class="signup-text">
           Ainda não tem uma conta? <br>
-          <RouterLink to="/cadastro-pag" class="signup-btn">Cadastre-se aqui</RouterLink>
+          <RouterLink to="/escolhe-cadastro" class="signup-btn">Cadastre-se aqui</RouterLink>
         </p>
       </div>
     </div>
@@ -65,6 +65,18 @@ const emailOrUser = ref('')
 const password = ref('')
 
 const handleLogin = () => {
+  const savedData = localStorage.getItem('userData')
+  let userData = savedData ? JSON.parse(savedData) : null
+
+  if (!userData || !userData.id) {
+    userData = {
+      id: Date.now(),
+      name: emailOrUser.value,
+      email: emailOrUser.value
+    }
+  }
+
+  localStorage.setItem('userData', JSON.stringify(userData))
   localStorage.setItem('isLoggedIn', 'true')
   window.dispatchEvent(new Event('auth-change'))
   router.push('/')

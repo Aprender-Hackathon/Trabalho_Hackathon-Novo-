@@ -74,14 +74,15 @@ const password = ref('')
 const handleRegister = () => {
   const userData = {
     name: name.value,
-    email: email.value
+    email: email.value,
+    role: 'usuario' 
   }
 
   localStorage.setItem('userData', JSON.stringify(userData))
   localStorage.setItem('isLoggedIn', 'true')
 
   window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+  router.push('/usuario-pag')
 }
 
 const goHome = () => {

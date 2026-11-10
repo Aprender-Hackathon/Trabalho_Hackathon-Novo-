@@ -1,13 +1,19 @@
 <script setup>
+defineProps({
+  text: {
+    type: String,
+    default: 'Mais Resultados'
+  }
+})
 
 defineEmits(['carregar'])
+</script>   
 
-</script>
 <template>
   <div class="container-botao">
     <button class="MaisResultados" @click="$emit('carregar')">
-      <span>Mais Resultados</span>
-      <img src="/seta.png" alt="Seta" class="icone-seta" />
+      <span>{{ text }}</span>
+      <img src="/seta.png" class="icone-seta" alt="Seta" />
     </button>
   </div>
 </template>
@@ -17,6 +23,7 @@ defineEmits(['carregar'])
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px 0;
 }
 

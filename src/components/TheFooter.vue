@@ -1,12 +1,11 @@
 <script setup>
 
-function subir(){
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    })
-}
-
+    function subir(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
 
 </script>
 
@@ -27,7 +26,7 @@ function subir(){
                 <img src="/images/face.svg" alt="Logo do Facebook">
             </a>
             <a class="redes-icone" href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-                <img src="/public/images/tiktok.svg" alt="Logo do Tiktok">
+                <img src="/images/tiktok.svg" alt="Logo do Tiktok">
             </a>
     </div>
     </div>
@@ -40,9 +39,12 @@ function subir(){
 <style scoped>
 footer {
     margin: 0;
+    width: 100%;
+    position: relative;
 }
+
 .conteudo {
-    background-color: rgb(0, 121, 140, 0.500);
+    background-color: rgba(0, 121, 140, 0.5);
     padding: 2vw 5vw;
     color: #FFF7EE;
     display: flex;
@@ -50,29 +52,35 @@ footer {
     align-items: center;
     gap: 20vw;
 }
-.as{
+
+.as {
     display: flex;
     gap: 10px;
 }
 
-p{
+p {
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     cursor: default;
 }
 
-.up{
-display: flex;
-justify-content: center;
-padding: 0;
-margin: 5px auto 0 auto;
-border: none;
-background: none;
-line-height: 0;
-align-items: center;
+.up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
-h2{
+h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +89,6 @@ h2{
 }
 
 @media (max-width: 600px) {
-
     .conteudo {
         flex-direction: column;
         justify-content: center;
