@@ -1,44 +1,12 @@
 {
   "professores": [
-    {
+        {
       "id": "1",
       "nome": "Regiane Souza",
       "email-instituicao": "regiane.souzaa@central.al.edu.br",
       "materia": "Matemática",
       "escola": "Escola Estadual Central",
       "senha": "moz1r361"
-    },
-    {
-      "nome": "eloisa",
-      "email-instituicao": "anna@gmail.com",
-      "materia": "ingles",
-      "escola": "ifc",
-      "senha": "annapavanello",
-      "id": "gAsd3eBQp-I"
-    },
-    {
-      "nome": "eloisa",
-      "email-instituicao": "anna@gmail.com",
-      "materia": "ingles",
-      "escola": "ifc",
-      "senha": "annapavanello",
-      "id": "crcp7mKrFNQ"
-    },
-    {
-      "nome": "anna",
-      "email-instituicao": "anna@gmail.com",
-      "materia": "oi",
-      "escola": "teste",
-      "senha": "annapavanello",
-      "id": "ilT-rax3egg"
-    },
-    {
-      "nome": "anna ",
-      "email-instituicao": "anna@gmail.com",
-      "materia": "geografia",
-      "escola": "pedro ivo",
-      "senha": "annapavanello",
-      "id": "ViBz21RcEgk"
     }
   ],
   "responsaveis": [

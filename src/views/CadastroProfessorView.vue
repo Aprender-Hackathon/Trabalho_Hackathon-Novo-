@@ -7,15 +7,16 @@
 
       <div class="card">
         <h3>{{ editandoId ? 'Editar Professor' : 'Cadastrar Professor' }}</h3>
-        <form @submit.prevent="salvarProfessor">
+        <form @submit.prevent="salvarProfessor" autocomplete="off">
           <input v-model="nome" class="input-text" placeholder="Nome" required />
-          <input v-model="email" class="input-text" type="email" placeholder="E-mail" required />
+          <input v-model="email" class="input-text" type="email" placeholder="E-mail" required autocomplete="new-email" />
           <input v-model="materia" class="input-text" placeholder="Matéria" required />
           <input v-model="escola" class="input-text" placeholder="Escola" required />
-          <input v-model="senha" class="input-text" type="password" placeholder="Senha" required />
+          <input v-model="senha" class="input-text" type="password" placeholder="Senha" required autocomplete="new-password" />
           
           <div class="acoes-form">
             <button type="submit" class="btn">Salvar</button>
+            <button type="button" class="btn btn-limpar" @click="limparFormulario">Limpar Campos</button>
             <button v-if="editandoId" type="button" class="btn btn-cancelar" @click="limparFormulario">Cancelar</button>
           </div>
         </form>
@@ -245,6 +246,11 @@ form {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.btn-limpar {
+  background-color: #4a7c82;
+  color: white;
 }
 
 .btn-cancelar {
