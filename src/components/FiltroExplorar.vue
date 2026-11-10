@@ -89,9 +89,9 @@ const conteudosPorMateria = {
 
   Espanhol: ['Comunicação Básica', 'Leitura e Compreensão', 'Verbos e Uso da Língua'],
 
-  'Filosofia': ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia Clássica', 'Filosofia Medieval', 'Filosofia Política', 'Introdução e Origem'],
+  Filosofia: ['Conhecimento e Razão', 'Ética e Moral', 'Filosofia Clássica', 'Filosofia Medieval', 'Filosofia Política', 'Introdução e Origem'],
 
-  'Física': ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Momento', 'Forças e Dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
+  Física: ['Calor e Termodinâmica', 'Eletricidade e Magnetismo', 'Energia e Momento', 'Forças e Dinâmica', 'Gases', 'Movimento', 'Ondas e Óptica'],
 
   Geografia: [
     'Brasil e Mundo',
@@ -187,6 +187,7 @@ function selecionarMateria(materia) {
     conteudo: conteudoSelecionado.value,
   })
 }
+
 function selecionarConteudo(conteudo) {
   conteudoSelecionado.value = conteudo
   emit('filtro', {
@@ -201,10 +202,15 @@ function selecionarConteudo(conteudo) {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color: #fdfbf7;
-  padding: 24px 70px;
+  background-color: #F8EFE0;
+  border: 1.5px solid #EADBBF;
+  padding: 30px 40px;
   font-family: Arial, sans-serif;
-  justify-content: center;
+  max-width: 1100px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: none;
+  box-sizing: border-box;
 }
 
 .filter-row {
@@ -231,9 +237,9 @@ function selecionarConteudo(conteudo) {
 }
 
 .tag-btn {
-  background-color: #ffffff;
-  border: 1.5px solid #8ecae6;
-  color: #1a1a1a;
+  background-color: #FAF6EE;
+  border: 1px solid #E5DAC9;
+  color: #2b2b2b;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.95rem;
@@ -247,7 +253,8 @@ function selecionarConteudo(conteudo) {
 }
 
 .tag-btn:hover {
-  background-color: #f0f8ff;
+  background-color: #ffffff;
+  border-color: #D6C7B2;
 }
 
 .tag-btn.active {

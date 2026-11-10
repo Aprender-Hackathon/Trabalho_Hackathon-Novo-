@@ -23,7 +23,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 1.8vw;
     gap: 10px;
     font-family: 'Baloo 2';
