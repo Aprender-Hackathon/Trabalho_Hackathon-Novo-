@@ -5,7 +5,7 @@
       "nome": "Regiane Souza",
       "email-instituicao": "regiane.souzaa@central.al.edu.br",
       "materia": "Matemática",
-      "data-nasc": "06/01/1994",
+      "data_nasc": "06/01/1994",
       "id_escola": "6",
       "senha": "moz1r361"
     },
@@ -104,7 +104,7 @@
       "nome": "Marcos Oliveira",
       "email": "marcosoliv@gmail.com",
       "telefone": "(11) 99999-0000",
-      "data-nasc": "06/01/1994",
+      "data_nasc": "06/01/1994",
       "senha": "clali74"
     }
   ],
@@ -112,31 +112,31 @@
     {
       "id": "1",
       "nome": "Clara Oliveira Cardoso",
-      "data-nasc": "23/04/2017",
+      "data_nasc": "23/04/2017",
       "email": "claralinda@email.com",
-      "id-responsavel": "1",
+      "id_responsavel": "1",
       "senha": "clali74"
     },
     {
       "id": "2",
       "nome": "Lívia Oliveira Cardoso",
-      "data-nasc": "30/07/2020",
+      "data_nasc": "30/07/2020",
       "email": "liviazinha@email.com",
-      "id-responsavel": "1",
+      "id_responsavel": "1",
       "senha": "clali74"
     },
     {
       "id_visitante": "3",
       "nome": "Carlos Silva",
       "email": "carlos@email.com",
-      "id-responsavel": null,
+      "id_responsavel": null,
       "senha": "silv3str3"
     },
     {
       "id_visitante": "4",
       "nome": "Charllote Diaz",
       "email": "diazz.charllote@email.com",
-      "id-responsavel": null,
+      "id_responsavel": null,
       "senha": "118lote14dias"
     }
   ],

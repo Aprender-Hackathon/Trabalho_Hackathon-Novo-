@@ -1,3 +1,70 @@
+<script setup>
+import { onMounted, ref } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+
+const API_URL = 'http://localhost:3000';
+const router = useRouter()
+
+const usuarios = ref([]);
+
+
+async function carregar() {
+  const resposta = await fetch(`${API_URL}/usuarios`);
+  console.log('usuarios', resposta.json);
+
+  usuarios.value = await resposta.json();
+}
+
+function calcularIdade(dataNascimento){
+  const hoje = new Date();
+  const nascimento = new Date(`${dataNascimento}T00:00:00`);
+
+  let idade = hoje.getFullYear() - nascimento.getFullYear();
+
+  const naoFezAniversario = nascimento.getMonth() < hoje.getMonth() || (nascimento.getMonth() === hoje.getMonth() & nascimento.getDay() < hoje.getDay());
+
+  if (naoFezAniversario) {
+    idade--;
+  }
+
+  return idade;
+}
+
+const novoUsuario = ref({
+  nome: '',
+  data_nasc: '',
+  id_responsavel: '',
+  senha:'',
+  email: '',
+  id: '',
+});
+
+const aluno = computed(() => 
+  usuarios.value.filter( usuario =>
+    calcularIdade(usuario.data_nasc) < 18
+  )
+);
+
+const visitante = computed(() => 
+  usuarios.value.filter( usuario =>
+    calcularIdade(usuario.data_nasc) >= 18
+  )
+);
+
+async function salvarUsuario() {
+  await fetch(`${API_URL}/usuarios`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(novoUsuario.value),
+  });
+  router.push('/usuarios');
+}
+
+onMounted(carregarTutores);
+</script>
+
 <template>
   <div class="page-container">
     <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
@@ -60,35 +127,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const name = ref('')
-const email = ref('')
-const password = ref('')
-
-const handleRegister = () => {
-  const userData = {
-    name: name.value,
-    email: email.value,
-    role: 'usuario' 
-  }
-
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', 'true')
-
-  window.dispatchEvent(new Event('auth-change'))
-  router.push('/usuario-pag')
-}
-
-const goHome = () => {
-  router.push('/')
-}
-</script>
 
 <style scoped>
 .page-container {
