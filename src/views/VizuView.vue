@@ -1,33 +1,60 @@
 <script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import VerAtv from '@/components/VerAtv.vue';
+import AbaComentarios from '@/components/AbaComentarios.vue';
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue';
 import BotaoExplorar from '@/components/BotaoExplorar.vue';
-import { estadoAtividades } from '@/AtividadesCards';
-import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import AbaComentarios from '@/components/AbaComentarios.vue';
 
-const route = useRoute()
-const mostrarAtvs = ref(false)
+const route = useRoute();
+const listaAtividades = ref([]);
+const mostrarAtvs = ref(false);
 
-const atividade = computed(() => estadoAtividades.lista.find(item => item.id === Number(route.params.id)))
+async function carregarDetalhesRegulares() {
+  try {
+    const resposta = await fetch('http://localhost:3000/atividades');
+    if (resposta.ok) {
+      listaAtividades.value = await resposta.json();
+    }
+  } catch (erro) {
+    console.error('Erro ao buscar detalhes da atividade regular:', erro);
+  }
+}
 
-const atvsRelacionadas = computed (() => {
-    if (!atividade.value) return []
-    return estadoAtividades.lista.filter(
-        item => item.materia === atividade.value.materia && item.id !== atividade.value.id
-    )
-})
+onMounted(() => {
+  carregarDetalhesRegulares();
+});
 
-function alternarSalvar(id) {
-  const item = estadoAtividades.lista.find(a => a.id === id)
+const atividade = computed(() => 
+  listaAtividades.value.find(item => String(item.id) === String(route.params.id))
+);
+
+const atvsRelacionadas = computed(() => {
+  if (!atividade.value) return [];
+  return listaAtividades.value.filter(
+    item => item.materia === atividade.value.materia && String(item.id) !== String(atividade.value.id)
+  );
+});
+
+async function alternarSalvar(id) {
+  const item = listaAtividades.value.find(a => String(a.id) === String(id));
   if (item) {
-    item.salvo = !item.salvo
+    const novoStatus = !item.salvo;
+    item.salvo = novoStatus;
+    try {
+      await fetch(`http://localhost:3000/atividades/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ salvo: novoStatus })
+      });
+    } catch (e) {
+      console.error('Erro ao atualizar status de salvo:', e);
+    }
   }
 }
 
 function alternarMostrarAtvs() {
-    mostrarAtvs.value = !mostrarAtvs.value
+  mostrarAtvs.value = !mostrarAtvs.value;
 }
 </script>
 
@@ -43,6 +70,7 @@ function alternarMostrarAtvs() {
             :docx="atividade.arquivo"
             :isSalvo="atividade.salvo"
         />
+        
         <AbaComentarios/>
 
         <div class="container-botao">
@@ -69,6 +97,9 @@ function alternarMostrarAtvs() {
               @click="mostrarAtvs = false"
             />
         </div>
+    </div>
+    <div v-else style="text-align: center; padding: 4rem;">
+        <p>A carregar detalhes da atividade...</p>
     </div>
 </template>
 

@@ -44,25 +44,23 @@ function atvCriada() {
   }, 2000);
 }
 async function salvarAtividade(event) {
-  // Cancela o recarregamento da página apenas se o evento existir
   if (event && event.preventDefault) {
     event.preventDefault();
   }
 
-  // Se você usa ref() nos inputs do formulário, monte o objeto com as variáveis.
-  // Caso use formulário tradicional, tentamos pegar o target do evento ou os dados direto dos refs:
   const formElement = event?.target || document.querySelector('form');
-  const formData = formElement ? new FormData(formElement) : null;
+  const formData = new FormData(formElement);
 
-  const tipo = formData?.get('tipoAtv') || 'pratica';
+  const tipo = tipoAtv.value; 
 
   const novaAtividade = {
     id: Date.now(),
-    titulo: formData?.get('titulo') || '',
-    descricao: formData?.get('descricao') || '',
-    materia: formData?.get('materia') || '',
-    conteudo: formData?.get('conteudo') || '',
-    data: formData?.get('data') || 'Natal',
+    titulo: formData.get('titulo') || '',
+    descricao: formData.get('desc') || '',
+    materia: materiaSelecionada.value || '',
+    conteudo: conteudoSelecionado.value || '',
+    data: formData.get('data') || 'Geral',
+    arquivo: formData.get('arquivoAtv')?.name ? `/atividades/${formData.get('arquivoAtv').name}` : '',
     salvo: false
   };
 
@@ -73,24 +71,21 @@ async function salvarAtividade(event) {
   try {
     const resposta = await fetch(endpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(novaAtividade)
     });
 
-    if (!resposta.ok) {
-      throw new Error(`Erro no servidor: ${resposta.statusText}`);
-    }
+    if (!resposta.ok) throw new Error('Erro ao salvar no servidor.');
 
-    const dadosSalvos = await resposta.json();
-    console.log('Salvo com sucesso no JSON Server:', dadosSalvos);
+    mostrarAlert.value = true;
+    setTimeout(() => {
+      mostrarAlert.value = false;
+      router.push(tipo === 'pratica' ? '/atividades-praticas' : '/historico-pag');
+    }, 1500);
 
-    alert('Atividade criada com sucesso!');
-    router.push(tipo === 'pratica' ? '/atividades-praticas' : '/historico-pag');
   } catch (erro) {
     console.error('Erro ao salvar atividade:', erro);
-    alert('Falha ao salvar a atividade.');
+    alert('Falha ao salvar a atividade no JSON Server.');
   }
 }
 </script>
@@ -108,8 +103,7 @@ async function salvarAtividade(event) {
         </Transition>
 
 
-
-    <form action="" @reset="resetForm" @submit.prevent="atvCriada(); salvarAtividade()">
+<form @reset="resetForm" @submit.prevent="salvarAtividade">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>

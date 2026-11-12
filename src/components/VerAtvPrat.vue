@@ -1,4 +1,5 @@
 <script setup>
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import BaixarPdf from './BaixarPdf.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
@@ -16,8 +17,44 @@ const props = defineProps({
   isSalvo: Boolean
 })
 
+// Lê corretamente o papel do utilizador gravado no login/registo
+const usuarioLogado = JSON.parse(localStorage.getItem('userData') || '{}')
+const isProfessor = computed(() => usuarioLogado.role === 'professor')
+
 function voltar() {
   router.back()
+}
+
+// EDITAR (Professor)
+function editarAtividadePratica() {
+  if (!isProfessor.value) {
+    alert("Acesso negado: Apenas professores podem editar.");
+    return;
+  }
+  router.push(`/formulario/${props.id}`);
+}
+
+// EXCLUIR (Professor)
+async function deletarAtividadePratica() {
+  if (!isProfessor.value) {
+    alert("Acesso negado: Apenas professores podem excluir.");
+    return;
+  }
+
+  if (!confirm("Tem certeza que deseja excluir esta atividade prática?")) return;
+
+  try {
+    const resposta = await fetch(`http://localhost:3000/atividades_praticas/${props.id}`, { 
+      method: "DELETE" 
+    });
+    
+    if (!resposta.ok) throw new Error("Erro ao excluir no servidor.");
+
+    alert("Atividade excluída com sucesso!");
+    router.push('/atividades-praticas');
+  } catch (erro) {
+    alert("Erro ao excluir: " + erro.message);
+  }
 }
 
 function alternarSalvar() {
@@ -65,11 +102,20 @@ function alternarSalvar() {
           :isSalvo="isSalvo"
           @salvar="alternarSalvar"
         />
+
+        <!-- PAINEL DE CONTROLE EXCLUSIVO PARA O PROFESSOR -->
+        <div v-if="isProfessor" class="acoes-professor-detalhes" style="margin-top: 20px; display: flex; gap: 10px;">
+          <button @click="editarAtividadePratica" style="background-color: #2196F3; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Editar Atividade
+          </button>
+          <button @click="deletarAtividadePratica" style="background-color: #d1495b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Excluir Atividade
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </template>
-
 <style scoped>
 .celular {
   display: none;

@@ -1,4 +1,5 @@
 <script setup>
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import BaixarDocx from './BaixarDocx.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
@@ -17,16 +18,25 @@ const props = defineProps({
   isSalvo: Boolean
 })
 
-const perfilUsuario = localStorage.getItem("userRole") || "professor";
+const usuarioLogado = JSON.parse(localStorage.getItem('userData') || '{}')
+const isProfessor = computed(() => usuarioLogado.role === 'professor')
 
 function voltar() {
   router.back()
 }
 
+// EDITAR (Professor)
+function editarAtividade() {
+  if (!isProfessor.value) {
+    alert("Acesso negado: Apenas professores podem editar.");
+    return;
+  }
+  router.push(`/formulario/${props.id}`);
+}
 
-//  EXCLUIR (Professor)
-async function deletarAtividadeAtual() {
-  if (perfilUsuario !== "professor") {
+// EXCLUIR (Professor)
+async function deletarAtividade() {
+  if (!isProfessor.value) {
     alert("Acesso negado: Apenas professores podem excluir.");
     return;
   }
@@ -34,93 +44,67 @@ async function deletarAtividadeAtual() {
   if (!confirm("Tem certeza que deseja excluir esta atividade?")) return;
 
   try {
-    const endpoint = props.materia 
-      ? `http://localhost:3000/atividades/${props.id}` 
-      : `http://localhost:3000/atividades_praticas/${props.id}`;
-
-    const resposta = await fetch(endpoint, { method: "DELETE" });
-    if (!resposta.ok) throw new Error("Erro ao excluir atividade.");
+    const resposta = await fetch(`http://localhost:3000/atividades/${props.id}`, { 
+      method: "DELETE" 
+    });
+    
+    if (!resposta.ok) throw new Error("Erro ao excluir no servidor.");
 
     alert("Atividade excluída com sucesso!");
-    router.push('/historico-pag');
+    router.push('/explorar');
   } catch (erro) {
     alert("Erro ao excluir: " + erro.message);
   }
 }
-
-// EDITAR (Professor)
-function editarAtividadeAtual() {
-  if (perfilUsuario !== "professor") {
-    alert("Acesso negado.");
-    return;
-  }
-  router.push(`/editar-atividade/${props.id}`);
-}
-
-console.log(deletarAtividadeAtual, editarAtividadeAtual);
 </script>
 
 <template>
   <div class="all">
-
     <button class="voltar" @click="voltar">
       <img src="/images/back.svg" alt="Voltar" />
     </button>
 
-    <PreviewDocx
-      v-if="docx"
-      :arquivo="docx"
-      class="image"
-    />
-
+    <img :src="imagem" :alt="titulo" class="image" />
     <div class="lado">
       <div class="cima">
         <h3>{{ titulo }}</h3>
 
-        <div class="mat_con">
+        <div class="data">
           <p>{{ materia }}</p>
-          <p>{{ conteudo }}</p>
         </div>
-
         <p class="descricao">
           {{ descricao }}
         </p>
       </div>
 
       <div class="baixo">
-
         <BaixarDocx :docx="docx" />
+        <PreviewDocx :docx="docx" />
 
         <BotaoSalvar
           size="L"
           class="computador"
           :isSalvo="isSalvo"
-          @salvar="alternarSalvar"
         />
 
         <BotaoSalvar
           size="M"
           class="celular"
           :isSalvo="isSalvo"
-          @salvar="alternarSalvar"
         />
 
-      </div>
-
-      <!-- PAINEL DE CONTROLE EXCLUSIVO PARA O PROFESSOR (Editar / Excluir) -->
-      <div v-if="perfilUsuario === 'professor'" class="acoes-professor-detalhes" style="margin-top: 20px; display: flex; gap: 10px;">
-        <button @click="editarAtividadeAtual" style="background-color: #2196F3; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
-          Editar Atividade
-        </button>
-        <button @click="deletarAtividadeAtual" style="background-color: #d1495b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
-          Excluir Atividade
-        </button>
+        <div v-if="isProfessor" class="acoes-professor-detalhes" style="margin-top: 20px; display: flex; gap: 10px;">
+          <button @click="editarAtividade" style="background-color: #2196F3; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Editar Atividade
+          </button>
+          <button @click="deletarAtividade" style="background-color: #d1495b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Excluir Atividade
+          </button>
+        </div>
       </div>
     </div>
-
   </div>
 </template>
-
 <style scoped>
 
 .celular {
