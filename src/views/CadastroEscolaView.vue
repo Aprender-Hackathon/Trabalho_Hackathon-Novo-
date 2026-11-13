@@ -19,8 +19,6 @@
         <option>Federal</option>
         <option>Privada</option>
       </select>
-
-      <!-- Ao digitar o CEP, rua, bairro, cidade e estado são preenchidos sozinhos -->
       <input v-model="form.cep" placeholder="CEP (ex.: 89245-000)" maxlength="9" required @input="buscarCep" />
       <p v-if="erroCep" class="erro">{{ erroCep }}</p>
       <input v-model="form.logradouro" placeholder="Rua" readonly />
@@ -56,8 +54,6 @@ const form = ref({
   estado: '',
   numero: '',
 })
-
-// Busca o endereço no ViaCEP quando o CEP tem 8 números
 async function buscarCep() {
   const numeros = form.value.cep.replace(/\D/g, '').slice(0, 8)
   form.value.cep = numeros.length > 5 ? `${numeros.slice(0, 5)}-${numeros.slice(5)}` : numeros
@@ -84,7 +80,6 @@ async function buscarCep() {
   }
 }
 
-// CADASTRAR (Create)
 async function cadastrar() {
   if (!form.value.cidade) {
     erroCep.value = 'Digite um CEP válido para preencher o endereço.'

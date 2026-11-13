@@ -128,7 +128,7 @@ router.beforeEach((to) => {
     const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
     if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') return true
   } catch {
-    // localStorage com dado quebrado: trata como não logado
+  
   }
   return { name: 'login' }
 })

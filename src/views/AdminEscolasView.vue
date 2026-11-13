@@ -1,8 +1,6 @@
 <template>
   <div class="pagina">
     <h1>Escolas</h1>
-
-    <!-- ATUALIZAR: este formulário só aparece quando você clica em "Atualizar" -->
     <form v-if="editando" class="caixa" @submit.prevent="atualizar">
       <h2>Atualizar escola</h2>
 
@@ -22,8 +20,6 @@
         <option>Federal</option>
         <option>Privada</option>
       </select>
-
-      <!-- Ao digitar o CEP, rua, bairro, cidade e estado são preenchidos sozinhos -->
       <input v-model="form.cep" placeholder="CEP (ex.: 89245-000)" maxlength="9" required @input="buscarCep" />
       <p v-if="erroCep" class="erro">{{ erroCep }}</p>
       <input v-model="form.logradouro" placeholder="Rua" readonly />
@@ -37,8 +33,6 @@
         <button type="button" class="btn btn-cinza" @click="cancelar">Cancelar</button>
       </div>
     </form>
-
-    <!-- LER: lista de escolas -->
     <div class="caixa">
       <p v-if="escolas.length === 0">Nenhuma escola cadastrada.</p>
 
@@ -61,7 +55,7 @@ import { ref, onMounted } from 'vue'
 const URL_API = 'http://localhost:3000/escolas'
 
 const escolas = ref([])
-const editando = ref(null) // guarda o id da escola que está sendo atualizada
+const editando = ref(null)
 const erroCep = ref('')
 
 const form = ref({
@@ -85,8 +79,6 @@ async function carregar() {
     alert('Não foi possível carregar as escolas. A API (npm run api) está rodando?')
   }
 }
-
-// ATUALIZAR: abre o formulário já preenchido
 function abrirEdicao(escola) {
   editando.value = escola.id
   erroCep.value = ''
@@ -108,7 +100,6 @@ function cancelar() {
   editando.value = null
 }
 
-// Busca o endereço no ViaCEP quando o CEP tem 8 números
 async function buscarCep() {
   const numeros = form.value.cep.replace(/\D/g, '').slice(0, 8)
   form.value.cep = numeros.length > 5 ? `${numeros.slice(0, 5)}-${numeros.slice(5)}` : numeros
@@ -135,7 +126,6 @@ async function buscarCep() {
   }
 }
 
-// ATUALIZAR: salva as alterações
 async function atualizar() {
   if (!form.value.cidade) {
     erroCep.value = 'Digite um CEP válido para preencher o endereço.'
@@ -155,7 +145,6 @@ async function atualizar() {
   }
 }
 
-// DELETAR
 async function deletar(escola) {
   if (!confirm(`Deseja deletar "${escola.nome}"?`)) return
 
