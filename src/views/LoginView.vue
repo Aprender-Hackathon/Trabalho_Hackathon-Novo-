@@ -64,8 +64,30 @@ const router = useRouter()
 
 const emailOrUser = ref('')
 const password = ref('')
+// Login do administrador: confere com a coleção "administradores" do db.json
+const loginComoAdmin = async () => {
+  try {
+    const resposta = await fetch(
+      `http://localhost:3000/administradores?login=${encodeURIComponent(emailOrUser.value.trim())}`
+    )
+    if (!resposta.ok) return false
+
+    const [admin] = await resposta.json()
+    if (!admin || admin.senha !== password.value) return false
+
+    localStorage.setItem('userData', JSON.stringify({ id: admin.id, nome: admin.login, role: 'admin' }))
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/admin')
+    return true
+  } catch {
+    return false // se a API estiver desligada, segue o login normal
+  }
+}
 
 const handleLogin = async () => {
+  if (await loginComoAdmin()) return
+
   try {
     const resposta = await fetch(`${API_URL}/usuarios`)
     const usuarios = await resposta.json()
@@ -80,11 +102,12 @@ const handleLogin = async () => {
       return
     }
 
-    localStorage.setItem('userData', JSON.stringify({
-      id: usuario.id,
-      name: usuario.nome,
-      email: usuario.email
-    }))
+   localStorage.setItem('userData', JSON.stringify({
+  id: usuario.id,
+  name: usuario.nome,
+  nome: usuario.nome,
+  email: usuario.email
+}))
     localStorage.setItem('isLoggedIn', 'true')
     window.dispatchEvent(new Event('auth-change'))
     router.push('/')
@@ -93,7 +116,6 @@ const handleLogin = async () => {
     alert('Erro ao conectar com o servidor.')
   }
 }
-
 const goHome = () => {
   router.push('/')
 }
