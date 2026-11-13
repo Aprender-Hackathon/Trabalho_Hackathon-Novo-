@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const logado = localStorage.getItem('isLoggedIn') === 'true'
 const usuario = JSON.parse(localStorage.getItem('userData') || '{}')
@@ -9,42 +9,20 @@ const souProfessor = usuario.role === 'professor'
 const mensagens = ref([])
 const texto = ref('')
 const arquivo = ref(null)
-const caixa = ref(null)
-
-const posicaoEditando = ref(null)
 const menuAberto = ref(null)
+const posicaoEditando = ref(null)
 const textoEditado = ref('')
 
-function carregar() {
+onMounted(() => {
   const salvo = localStorage.getItem('mensagensChat')
   if (salvo) {
     mensagens.value = JSON.parse(salvo)
   }
-  rolarParaBaixo()
-}
+})
 
 function salvar() {
   localStorage.setItem('mensagensChat', JSON.stringify(mensagens.value))
 }
-
-function rolarParaBaixo() {
-  nextTick(() => {
-    if (caixa.value) {
-      caixa.value.scrollTop = caixa.value.scrollHeight
-    }
-  })
-}
-
-onMounted(() => {
-  carregar()
-  window.addEventListener('storage', carregar)
-  document.addEventListener('click', fecharMenu)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('storage', carregar)
-  document.removeEventListener('click', fecharMenu)
-})
 
 function escolherArquivo(evento) {
   const arq = evento.target.files[0]
@@ -73,21 +51,12 @@ function enviar() {
     professor: souProfessor,
     texto: texto.value,
     arquivo: arquivo.value,
-    editada: false,
   })
-
-  try {
-    salvar()
-  } catch {
-    mensagens.value.pop()
-    alert('Não deu para enviar: o espaço do navegador acabou.')
-    return
-  }
+  salvar()
 
   texto.value = ''
   arquivo.value = null
   document.getElementById('campoArquivo').value = ''
-  rolarParaBaixo()
 }
 
 function abrirMenu(posicao) {
@@ -98,43 +67,27 @@ function abrirMenu(posicao) {
   }
 }
 
-function fecharMenu() {
-  menuAberto.value = null
-}
-
-function excluir(posicao) {
-  menuAberto.value = null
-  if (!confirm('Quer mesmo excluir esta mensagem?')) {
-    return
-  }
-
-  mensagens.value.splice(posicao, 1)
-  salvar()
-  posicaoEditando.value = null
-}
-
-function comecarEdicao(posicao) {
+function editar(posicao) {
   menuAberto.value = null
   posicaoEditando.value = posicao
   textoEditado.value = mensagens.value[posicao].texto
 }
 
-function cancelarEdicao() {
+function salvarEdicao(posicao) {
+  if (textoEditado.value.trim() === '') {
+    return
+  }
+  mensagens.value[posicao].texto = textoEditado.value
+  salvar()
   posicaoEditando.value = null
 }
 
-function salvarEdicao(posicao) {
-  const mensagem = mensagens.value[posicao]
-
-  if (textoEditado.value.trim() === '' && !mensagem.arquivo) {
-    alert('A mensagem não pode ficar vazia. Se quiser, exclua ela.')
-    return
+function excluir(posicao) {
+  menuAberto.value = null
+  if (confirm('Quer mesmo excluir esta mensagem?')) {
+    mensagens.value.splice(posicao, 1)
+    salvar()
   }
-
-  mensagem.texto = textoEditado.value
-  mensagem.editada = true
-  salvar()
-  posicaoEditando.value = null
 }
 </script>
 
@@ -146,50 +99,60 @@ function salvarEdicao(posicao) {
       <RouterLink to="/login-pag">Entrar</RouterLink>
     </div>
 
-    <div v-else>
-      <h1>Conversas</h1>
-      <p>Você está como: {{ meuNome }} ({{ souProfessor ? 'professor' : 'aluno' }})</p>
+    <div v-else class="chat">
+      <div class="topo">
+        <h1>Conversas</h1>
+      </div>
 
-      <div class="caixa" ref="caixa">
+      <div class="caixa">
         <p v-if="mensagens.length === 0">Nenhuma mensagem ainda.</p>
 
-        <div v-for="(m, posicao) in mensagens" :key="posicao" class="mensagem">
-          <strong>{{ m.autor }}</strong>
-          <span v-if="m.professor"> (professor)</span>
-          <small v-if="m.editada"> (editada)</small>
+        <div
+          v-for="(m, posicao) in mensagens"
+          :key="posicao"
+          class="linha"
+          :class="{ minha: m.autor === meuNome }"
+        >
+          <div class="balao">
+            <div class="menu">
+              <button class="pontinhos" @click="abrirMenu(posicao)">⋮</button>
 
-          <div v-if="posicaoEditando === posicao">
-            <input v-model="textoEditado" @keyup.enter="salvarEdicao(posicao)" />
-            <button @click="salvarEdicao(posicao)">Salvar</button>
-            <button @click="cancelarEdicao">Cancelar</button>
-          </div>
-
-          <p v-else-if="m.texto">{{ m.texto }}</p>
-
-          <a v-if="m.arquivo" :href="m.arquivo.dados" :download="m.arquivo.nome">
-            📎 {{ m.arquivo.nome }}
-          </a>
-
-          <div v-if="m.autor === meuNome && posicaoEditando !== posicao" class="menu">
-            <button class="pontinhos" @click.stop="abrirMenu(posicao)">⋮</button>
-
-            <div v-if="menuAberto === posicao" class="menu-lista">
-              <button @click="comecarEdicao(posicao)">Editar</button>
-              <button @click="excluir(posicao)">Excluir</button>
+              <div v-if="menuAberto === posicao" class="menu-lista">
+                <button @click="editar(posicao)">Editar</button>
+                <button @click="excluir(posicao)">Excluir</button>
+              </div>
             </div>
+
+            <strong v-if="m.autor !== meuNome">
+              {{ m.autor }}<span v-if="m.professor"> (professor)</span>
+            </strong>
+
+            <div v-if="posicaoEditando === posicao" class="editando">
+              <input v-model="textoEditado" @keyup.enter="salvarEdicao(posicao)" />
+              <button @click="salvarEdicao(posicao)">Salvar</button>
+              <button @click="posicaoEditando = null">Cancelar</button>
+            </div>
+
+            <p v-else-if="m.texto">{{ m.texto }}</p>
+
+            <a v-if="m.arquivo" :href="m.arquivo.dados" :download="m.arquivo.nome">
+              {{ m.arquivo.nome }}
+            </a>
           </div>
         </div>
       </div>
 
-      <p v-if="arquivo">Arquivo escolhido: {{ arquivo.nome }}</p>
+      <p v-if="arquivo" class="escolhido">Arquivo escolhido: {{ arquivo.nome }}</p>
 
-      <div>
-        <input id="campoArquivo" type="file" @change="escolherArquivo" />
-      </div>
-
-      <div>
-        <input v-model="texto" @keyup.enter="enviar" placeholder="Digite sua mensagem" />
-        <button @click="enviar">Enviar</button>
+      <div class="enviar">
+        <label class="clipe" title="Enviar atividade">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
+            <path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6h-1.5z" />
+          </svg>
+          <input id="campoArquivo" type="file" hidden @change="escolherArquivo" />
+        </label>
+        <input v-model="texto" @keyup.enter="enviar" placeholder="Escreva uma mensagem…" />
+        <button @click="enviar" class="botao">Enviar</button>
       </div>
     </div>
   </div>
@@ -198,58 +161,134 @@ function salvarEdicao(posicao) {
 <style scoped>
 .pagina {
   max-width: 700px;
-  margin: 20px auto;
+  margin: 20px auto 80px;
   padding: 0 16px;
 }
 
-.caixa {
-  height: 350px;
-  overflow-y: auto;
-  border: 2px solid black;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: white;
+.chat {
+  border: 3px solid #e65261;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.mensagem {
-  border-bottom: 1px solid #ccc;
-  padding: 6px 0;
+.topo {
+  background: #238b97;
+  color: white;
+  padding: 12px 18px;
+}
+
+.topo h1 {
+  margin: 0;
+}
+
+.caixa {
+  min-height: 300px;
+  padding: 14px;
+  background: #fdf6ec;
+}
+
+.linha {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.linha.minha {
+  justify-content: flex-end;
+}
+
+.balao {
   position: relative;
+  max-width: 75%;
+  padding: 8px 32px 8px 12px;
+  background: white;
+  border-radius: 14px;
+  overflow-wrap: anywhere;
+}
+
+.linha.minha .balao {
+  background: #fce293;
+}
+
+.balao p {
+  margin: 0;
 }
 
 .menu {
   position: absolute;
-  top: 4px;
+  top: 2px;
   right: 4px;
 }
 
 .pontinhos {
   background: none;
   border: none;
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
 }
 
 .menu-lista {
   position: absolute;
   right: 0;
+  width: 120px;
   background: white;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
+  border-radius: 8px;
   z-index: 5;
 }
 
 .menu-lista button {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  text-align: left;
   background: none;
   border: none;
-  padding: 8px 20px;
-  text-align: left;
   cursor: pointer;
 }
 
-.menu-lista button:hover {
-  background: #eee;
+.editando {
+  display: flex;
+  gap: 6px;
+}
+
+.editando input {
+  flex: 1;
+  min-width: 0;
+}
+
+.escolhido {
+  margin: 0;
+  padding: 6px 14px;
+  background: #cfe9ee;
+}
+
+.enviar {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: #fce293;
+}
+
+.enviar input {
+  flex: 1;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 20px;
+}
+
+.clipe {
+  display: flex;
+  align-items: center;
+  color: #238b97;
+  cursor: pointer;
+}
+
+.botao {
+  padding: 8px 18px;
+  background: #e65261;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 </style>
