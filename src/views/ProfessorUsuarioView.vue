@@ -1,378 +1,118 @@
 <template>
-  <div class="full-screen-container">
-    <div class="profile-card">
-
-      <div class="avatar-wrapper">
-        <div class="avatar-container">
-          <img src="../assets/user.png" alt="Foto de perfil" class="avatar-img" />
-        </div>
-      </div>
-
-      <div class="info-container">
-        <div class="fields-group">
-          <div class="info-field">
-            <span>{{ user.name || 'Informe seu nome' }}</span>
-            <button class="icon-btn" type="button" title="Editar nome" @click="openModal('name')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
-            </button>
-          </div>
-
-          <div class="info-field">
-            <span>{{ user.email || 'Informe seu e-mail' }}</span>
-            <button class="icon-btn" type="button" title="Editar e-mail" @click="openModal('email')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
-            </button>
-          </div>
-
-          <div class="info-field">
-            <span>{{ user.localizacao || 'Informe sua localização' }}</span>
-            <button class="icon-btn" type="button" title="Editar localização" @click="openModal('localizacao')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
-            </button>
-          </div>
-
-          <div class="info-field">
-            <span>{{ user.instituicao || 'Informe sua instituição' }}</span>
-            <button class="icon-btn" type="button" title="Editar minha instituição" @click="openModal('instituicao')">
-              <img src="../assets/pencil.png" alt="Editar" class="pencil-icon" />
-            </button>
-          </div>
+  <div class="box">
+    <div class="card">
+      <div class="info-area">
+        <h2>Painel do Professor</h2>
+        
+        <div class="linha">
+          <span>Nome: {{ usuario.nome }}</span>
         </div>
 
-        <div class="actions">
-          <button class="pink-btn" type="button" @click="handleLogout">Sair</button>
-        </div>
-      </div>
-    </div>
-
-    <div v-if="activeField" class="modal-overlay" @click.self="closeModal">
-      <div class="modal-card">
-        <div class="modal-header">
-          <h3>
-            Alterar
-            {{
-              activeField === 'name' ? 'nome' :
-              activeField === 'email' ? 'e-mail' :
-              activeField === 'localizacao' ? 'localização' : 'instituição'
-            }}
-          </h3>
-          <button class="close-btn" type="button" @click="closeModal">✕</button>
+        <div class="linha">
+          <span>E-mail: {{ usuario.email }}</span>
         </div>
 
-        <div class="modal-body">
-          <label class="input-label">
-            Novo
-            {{
-              activeField === 'name' ? 'nome' :
-              activeField === 'email' ? 'e-mail' :
-              activeField === 'localizacao' ? 'localização' : 'instituição'
-            }}
-            <span class="required">*</span>
-          </label>
-          <input v-model="tempValue" class="modal-input" @keyup.enter="saveModal" autofocus />
+        <div class="linha">
+          <span>Matéria: {{ usuario.materia }}</span>
         </div>
 
-        <div class="modal-footer">
-          <button class="pink-btn" type="button" @click="saveModal">Salvar</button>
+        <div class="linha">
+          <span>Escola: {{ usuario.escola }}</span>
+        </div>
+
+        <div class="botoes">
+          <button class="btn" @click="sair">Sair</button>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-const router = useRouter()
 
-const user = reactive({
-  name: '',
+const roteador = useRouter()
+
+const usuario = reactive({
+  nome: '',
   email: '',
-  localizacao: '',
-  instituicao: ''
+  materia: '',
+  escola: ''
 })
-
-const activeField = ref(null)
-const tempValue = ref('')
 
 onMounted(() => {
-  const savedData = localStorage.getItem('userData')
-  if (savedData) {
-    const parsedData = JSON.parse(savedData)
-    user.name = parsedData.name || ''
-    user.email = parsedData.email || ''
-    user.localizacao = parsedData.localizacao || ''
-    user.instituicao = parsedData.instituicao || ''
+  const dadosSalvos = localStorage.getItem('userData')
+  
+  if (dadosSalvos) {
+    const prof = JSON.parse(dadosSalvos)
+    usuario.nome = prof.nome
+    usuario.email = prof['email-instituicao'] || prof.email
+    usuario.materia = prof.materia
+    usuario.escola = prof.escola
   }
 })
 
-const openModal = (field) => {
-  activeField.value = field
-  tempValue.value = user[field]
-}
-
-const closeModal = () => {
-  activeField.value = null
-  tempValue.value = ''
-}
-
-const saveModal = () => {
-  if (activeField.value) {
-    user[activeField.value] = tempValue.value
-
-    localStorage.setItem('userData', JSON.stringify({
-      name: user.name,
-      email: user.email,
-      localizacao: user.localizacao,
-      instituicao: user.instituicao
-    }))
-  }
-  closeModal()
-}
-
-const handleLogout = () => {
+const sair = () => {
+  localStorage.removeItem('userData')
   localStorage.removeItem('isLoggedIn')
-  window.dispatchEvent(new Event('storage'))
-  router.push('/')
+  roteador.push('/')
 }
 </script>
 
 <style scoped>
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-.full-screen-container {
+.box {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  background-color: #fefefe;
+  font-family: sans-serif;
   padding: 20px;
 }
 
-.profile-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
-  max-width: 750px;
+.card {
+  background-color: #fcd581;
   padding: 30px;
-  font-family: sans-serif;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
 }
 
-.avatar-wrapper {
+.info-area {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  flex-shrink: 0;
+  gap: 15px;
 }
 
-.avatar-container {
-  width: 220px;
-  height: 220px;
+h2 {
+  color: #1a5660;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.info-container {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  flex-grow: 1;
-  width: 100%;
-}
-
-.fields-group {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-}
-
-.info-field {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f7d7d7;
-  padding: 14px 20px;
+.linha {
+  background-color: white;
+  padding: 12px;
   border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.15rem;
-  color: #000;
-  user-select: none;
-  word-break: break-word;
-}
-
-.icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0 0 0 12px;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.pencil-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-}
-
-.actions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.pink-btn {
-  background-color: #e38b93;
-  color: #000;
   font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  padding: 10px 28px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: filter 0.2s;
-  user-select: none;
-  outline: none;
+  color: #333;
 }
 
-.pink-btn:hover {
-  filter: brightness(0.95);
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  padding: 16px;
-}
-
-.modal-card {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 440px;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-family: sans-serif;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal-header h3 {
-  margin: 0;
-  font-size: 1.15rem;
-  color: #1a1a1a;
-  font-weight: 700;
-}
-
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  color: #666;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.input-label {
-  font-size: 0.9rem;
-  color: #444;
-  font-weight: 600;
-}
-
-.required {
-  color: #e53935;
-}
-
-.modal-input {
-  width: 100%;
-  padding: 10px 14px;
-  border: 2px solid #e38b93;
-  border-radius: 8px;
-  font-size: 1rem;
-  outline: none;
-}
-
-.modal-input:focus {
-  border-color: #d17880;
-}
-
-.modal-footer {
+.botoes {
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .profile-card {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 20px 10px;
-  }
-
-  .avatar-container {
-    width: 180px;
-    height: 180px;
-  }
-
-  .actions {
-    justify-content: center;
-  }
-
-  .pink-btn {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .full-screen-container {
-    padding: 12px;
-  }
-
-  .avatar-container {
-    width: 150px;
-    height: 150px;
-  }
-
-  .info-field {
-    font-size: 1rem;
-    padding: 12px 16px;
-  }
-
-  .modal-card {
-    padding: 20px;
-  }
+.btn {
+  background-color: #e65252;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
 }
 </style>
