@@ -12,6 +12,11 @@
                     Cadastrar como Professor(a)
                 </RouterLink>
             </div>
+            <div class="col-md-6">
+                <RouterLink to="/cadastro-escola" class="btn btn-custom btn-sm fw-bold px-3">
+                    Cadastrar Escola
+                </RouterLink>
+            </div>
         </div>
     </div>
 </template>
