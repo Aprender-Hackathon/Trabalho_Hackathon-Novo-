@@ -39,7 +39,11 @@
                 Atividades Práticas
               </RouterLink>
             </li>
-
+<li class="nav-item" v-if="isLoggedIn">
+  <RouterLink to="/conversas" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
+    Conversas
+  </RouterLink>
+</li>
             <li class="nav-item">
               <RouterLink to="/sobre-nos" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
@@ -105,7 +109,10 @@ const perfil = () => {
 
   if (savedData) {
     const user = JSON.parse(savedData)
-
+        if (user.role === 'admin') {
+      router.push('/admin')
+      return
+    }
     if (user.role === 'professor') {
       router.push('/usuario-professor')
       return
