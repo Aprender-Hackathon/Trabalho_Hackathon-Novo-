@@ -59,6 +59,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+const API_URL = 'http://localhost:3000'
 const router = useRouter()
 
 const emailOrUser = ref('')
@@ -87,21 +88,33 @@ const loginComoAdmin = async () => {
 const handleLogin = async () => {
   if (await loginComoAdmin()) return
 
-  const savedData = localStorage.getItem('userData')
-  let userData = savedData ? JSON.parse(savedData) : null
+  try {
+    const resposta = await fetch(`${API_URL}/usuarios`)
+    const usuarios = await resposta.json()
 
-  if (!userData || !userData.id) {
-    userData = {
-      id: Date.now(),
-      name: emailOrUser.value,
-      email: emailOrUser.value
+    const usuario = usuarios.find(u =>
+      (u.email === emailOrUser.value || u.nome === emailOrUser.value) &&
+      u.senha === password.value
+    )
+
+    if (!usuario) {
+      alert('E-mail/usuário ou senha incorretos.')
+      return
     }
-  }
 
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', 'true')
-  window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+   localStorage.setItem('userData', JSON.stringify({
+  id: usuario.id,
+  name: usuario.nome,
+  nome: usuario.nome,
+  email: usuario.email
+}))
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+  } catch (erro) {
+    console.error(erro)
+    alert('Erro ao conectar com o servidor.')
+  }
 }
 const goHome = () => {
   router.push('/')
