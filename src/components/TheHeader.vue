@@ -109,7 +109,10 @@ const perfil = () => {
 
   if (savedData) {
     const user = JSON.parse(savedData)
-
+        if (user.role === 'admin') {
+      router.push('/admin')
+      return
+    }
     if (user.role === 'professor') {
       router.push('/usuario-professor')
       return

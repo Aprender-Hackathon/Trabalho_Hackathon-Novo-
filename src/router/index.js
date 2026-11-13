@@ -100,13 +100,42 @@ const router = createRouter({
       path: '/salvo-pag',
       redirect: '/salvos',
     },
+     {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('../views/AdminView.vue'),
+      meta: { requerAdmin: true }
+    },
+        {
+      path: '/admin/escolas',
+      name: 'adminEscolas',
+      component: () => import('../views/AdminEscolasView.vue'),
+      meta: { requerAdmin: true }
+    },
+        {
+      path: '/cadastro-escola',
+      name: 'cadastroEscola',
+      component: () => import('../views/CadastroEscolaView.vue')
+    },
     {
       path: '/formulario',
       alias: '/formulario-add',
       name: 'formulario',
       component: () => import('../views/FormularioView.vue')
     },
+
   ],
+})
+router.beforeEach((to) => {
+  if (!to.meta.requerAdmin) return true
+
+  try {
+    const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
+    if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') return true
+  } catch {
+  
+  }
+  return { name: 'login' }
 })
 
 export default router
