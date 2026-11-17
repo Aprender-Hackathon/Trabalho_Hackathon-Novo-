@@ -47,6 +47,7 @@ const saveModal = () => {
 
 const handleLogout = () => {
   localStorage.removeItem('isLoggedIn')
+  localStorage.removeItem('userData')
   window.dispatchEvent(new Event('storage'))
   router.push('/')
 }

@@ -49,18 +49,17 @@ async function salvarAtividade(event) {
   }
 
   const formElement = event?.target || document.querySelector('form');
-  const formData = new FormData(formElement);
+  const formData = formElement ? new FormData(formElement) : null;
 
-  const tipo = tipoAtv.value; 
+  const tipo = formData?.get('tipoAtv') || 'pratica';
 
   const novaAtividade = {
     id: Date.now(),
-    titulo: formData.get('titulo') || '',
-    descricao: formData.get('desc') || '',
-    materia: materiaSelecionada.value || '',
-    conteudo: conteudoSelecionado.value || '',
-    data: formData.get('data') || 'Geral',
-    arquivo: formData.get('arquivoAtv')?.name ? `/atividades/${formData.get('arquivoAtv').name}` : '',
+    titulo: formData?.get('titulo') || '',
+    descricao: formData?.get('descricao') || '',
+    materia: formData?.get('materia') || '',
+    conteudo: formData?.get('conteudo') || '',
+    data: formData?.get('data') || 'Natal',
     salvo: false
   };
 
@@ -71,21 +70,24 @@ async function salvarAtividade(event) {
   try {
     const resposta = await fetch(endpoint, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(novaAtividade)
     });
 
-    if (!resposta.ok) throw new Error('Erro ao salvar no servidor.');
+    if (!resposta.ok) {
+      throw new Error(`Erro no servidor: ${resposta.statusText}`);
+    }
 
-    mostrarAlert.value = true;
-    setTimeout(() => {
-      mostrarAlert.value = false;
-      router.push(tipo === 'pratica' ? '/atividades-praticas' : '/historico-pag');
-    }, 1500);
+    const dadosSalvos = await resposta.json();
+    console.log('Salvo com sucesso no JSON Server:', dadosSalvos);
 
+    alert('Atividade criada com sucesso!');
+    router.push(tipo === 'pratica' ? '/atividades-praticas' : '/historico-pag');
   } catch (erro) {
     console.error('Erro ao salvar atividade:', erro);
-    alert('Falha ao salvar a atividade no JSON Server.');
+    alert('Falha ao salvar a atividade.');
   }
 }
 </script>
@@ -103,7 +105,8 @@ async function salvarAtividade(event) {
         </Transition>
 
 
-<form @reset="resetForm" @submit.prevent="salvarAtividade">
+
+    <form action="" @reset="resetForm" @submit.prevent="atvCriada(); salvarAtividade()">
 
     <div class="choose">
         <p class="pergunta">A atividade é regular (tem uma disciplina em objetivo, ex.: matemática, português, etc.) ou comemorativa (correspondente a um dia comemorativo, ex.: páscoa, natal, etc)?</p>
