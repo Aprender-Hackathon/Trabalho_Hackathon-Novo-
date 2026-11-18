@@ -36,6 +36,7 @@ const novoUsuario = ref({
   senha:'',
   email: '',
   id: '',
+  tipo_perfil: ''
 });
 
 const categoria = computed(() => {
@@ -67,8 +68,9 @@ async function salvarUsuario() {
     return;
   }
 
+  novoUsuario.value.tipo_perfil = categoria.value === 'Aluno' ? 'aluno' : 'visitante';
+
   try {
-    // tira o id vazio para o servidor gerar um id novo
     const { id, ...dados } = novoUsuario.value;
 
     const resposta = await fetch(`${API_URL}/usuarios`, {
@@ -83,15 +85,16 @@ async function salvarUsuario() {
       throw new Error('Erro ao cadastrar usuário');
     }
 
-  // usuário criado pelo servidor (já com id)
   const usuarioCriado = await resposta.json();
 
-  // deixa o usuário logado, igual ao login faz
-  localStorage.setItem('userData', JSON.stringify({
-    id: usuarioCriado.id,
-    name: usuarioCriado.nome,
-    email: usuarioCriado.email
-  }));
+  const { senha, ...dadosSemSenha } = usuarioCriado
+
+localStorage.setItem('userData', JSON.stringify({
+  ...dadosSemSenha,
+  name: usuarioCriado.nome,
+  role: calcularIdade(usuarioCriado.data_nasc) < 18 ? 'aluno' : 'visitante'
+}))
+
   localStorage.setItem('isLoggedIn', 'true');
   window.dispatchEvent(new Event('auth-change'));
 

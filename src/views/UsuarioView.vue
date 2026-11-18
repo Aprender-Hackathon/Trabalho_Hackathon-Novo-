@@ -17,11 +17,11 @@
             <span>E-mail: {{ usuario.email || 'Não informado' }}</span>
           </div>
 
-          <div class="linha">
+          <div class="linha" v-if="ehProfessor">
             <span>Matéria: {{ usuario.materia || 'Não informada' }}</span>
           </div>
 
-          <div class="linha">
+          <div class="linha" v-if="ehProfessor">
             <span>Escola: {{ usuario.escola || 'Não informada' }}</span>
           </div>
         </div>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { reactive, onMounted } from 'vue'
+import { reactive, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const roteador = useRouter()
@@ -44,17 +44,21 @@ const usuario = reactive({
   nome: '',
   email: '',
   materia: '',
-  escola: ''
+  escola: '',
+  role: ''
 })
+
+const ehProfessor = computed(() => usuario.role === 'professor')
 
 onMounted(() => {
   const dadosSalvos = localStorage.getItem('userData')
   if (dadosSalvos) {
-    const prof = JSON.parse(dadosSalvos)
-    usuario.nome = prof.nome
-    usuario.email = prof['email-instituicao'] || prof.email
-    usuario.materia = prof.materia
-    usuario.escola = prof.escola
+    const dados = JSON.parse(dadosSalvos)
+    usuario.nome = dados.nome || dados.name
+    usuario.email = dados['email-instituicao'] || dados.email
+    usuario.materia = dados.materia
+    usuario.escola = dados.escola
+    usuario.role = dados.role
   }
 })
 

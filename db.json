@@ -2,6 +2,7 @@
   "administradores": [
     {
       "id": "1",
+      "tipo_perfil": "administrador",
       "login": "admin",
       "senha": "admin123",
       "tipo": "administrador"
@@ -11,36 +12,56 @@
     {
       "id": "1",
       "nome": "Regiane Souza",
-      "email-instituicao": "regiane.souzaa@central.al.edu.br",
-      "materia": "Matemática",
+      "tipo_perfil": "professor",
       "data_nasc": "06/01/1994",
       "id_escola": "6",
+      "email-instituicao": "regiane.souzaa@central.al.edu.br",
+      "materia": "Matemática",
       "senha": "moz1r361"
     },
     {
+      "id": "r4ZtUW-dbGs",
       "nome": "sdfghjk",
+      "tipo_perfil": "professor",
+      "escola": "sasdfghjk",
       "email-instituicao": "dfghjk@gmail.com",
       "materia": "português",
-      "escola": "sasdfghjk",
-      "senha": "dsdfghjklç",
-      "id": "r4ZtUW-dbGs"
+      "senha": "dsdfghjklç"
     },
     {
+      "id": "2fC3OUYc_Qg",
       "nome": "sdghjklkhf",
+      "tipo_perfil": "professor",
+      "escola": "sdfghjkl",
       "email-instituicao": "sdfhjkl@gmail.com",
       "materia": "português",
-      "escola": "sdfghjkl",
-      "senha": "sdfghjkl",
-      "id": "2fC3OUYc_Qg"
+      "senha": "sdfghjkl"
+    },
+    {
+      "nome": "fghjk",
+      "email-instituicao": "cvbn@gmail.com",
+      "materia": "sdfgh",
+      "escola": "dfghj",
+      "senha": "sdfgh",
+      "id": "Fss9opip76o"
+    },
+    {
+      "nome": "Alcione Medeiros de Alcantara",
+      "email-instituicao": "alciclone@hotmail.com.edu",
+      "materia": "Ciências",
+      "escola": "Dom Bosco",
+      "senha": "zxcvbnm",
+      "id": "epzjBBKEUjM"
     }
   ],
   "responsaveis": [
     {
       "id": "1",
       "nome": "Marcos Oliveira",
+      "tipo_perfil": "responsavel",
+      "data_nasc": "06/01/1994",
       "email": "marcosoliv@gmail.com",
       "telefone": "(11) 99999-0000",
-      "data_nasc": "06/01/1994",
       "senha": "clali74"
     }
   ],
@@ -48,83 +69,65 @@
     {
       "id": "1",
       "nome": "Clara Oliveira Cardoso",
+      "tipo_perfil": "aluno",
       "data_nasc": "23/04/2017",
-      "email": "claralinda@email.com",
       "id_responsavel": "1",
-      "senha": "clali74"
+      "email": "claralinda@email.com",
+      "senha": "clalia74"
     },
     {
       "id": "2",
       "nome": "Lívia Oliveira Cardoso",
+      "tipo_perfil": "aluno",
       "data_nasc": "30/07/2020",
-      "email": "liviazinha@email.com",
       "id_responsavel": "1",
-      "senha": "clali74"
+      "email": "liviazinha@email.com",
+      "senha": "clalia74"
     },
     {
-      "id_visitante": "3",
+      "id": "FmEpDE6Vh98",
       "nome": "Carlos Silva",
+      "tipo_perfil": "visitante",
+      "data_nasc": "23/04/2007",
+      "id_responsavel": null,
       "email": "carlos@email.com",
-      "id_responsavel": null,
-      "senha": "silv3str3",
-      "id": "FmEpDE6Vh98"
+      "senha": "silv3str3"
     },
     {
-      "id_visitante": "4",
+      "id": "83sw6gq_5QA",
       "nome": "Charllote Diaz",
-      "email": "diazz.charllote@email.com",
+      "tipo_perfil": "visitante",
+      "data_nasc": "23/04/2001",
       "id_responsavel": null,
-      "senha": "118lote14dias",
-      "id": "83sw6gq_5QA"
+      "email": "diazz.charllote@email.com",
+      "senha": "118lote14dias"
     },
     {
-      "nome": "",
-      "data_nasc": "2009-09-21",
-      "id_responsavel": "",
-      "senha": "1234567890",
-      "email": "bifflarissa@gmail.com",
-      "id": "HHwmoiYvNxc",
-      "name": "Lari"
-    },
-    {
+      "id": "yRC_JuOCDog",
       "nome": "Larissa Biff",
+      "tipo_perfil": "aluno",
       "data_nasc": "2009-09-21",
-      "id_responsavel": "",
-      "senha": "1234567890",
+      "id_responsavel": "1",
       "email": "bifflarissa@gmail.com",
-      "id": "yRC_JuOCDog"
+      "senha": "1234567890"
     },
     {
-      "nome": "Larissa Biff",
-      "data_nasc": "2009-09-21",
-      "id_responsavel": "",
-      "senha": "1234567890",
-      "email": "bifflarissa@gmail.com",
-      "id": "avlh0JH4TkY"
+      "id": "wbO08h-51d4",
+      "nome": "Jorge Gonçalvez",
+      "tipo_perfil": "aluno",
+      "data_nasc": "2016-04-02",
+      "id_responsavel": "1",
+      "email": "jgongon@gmail.com",
+      "senha": "qwertyuiop"
     },
     {
-      "nome": "Larissa Biff",
-      "data_nasc": "2009-09-21",
+      "nome": "Clara Joséfa de Cardoso",
+      "data_nasc": "1988-08-08",
       "id_responsavel": "",
-      "senha": "1234567890",
-      "email": "bifflarissa@gmail.com",
-      "id": "-Jiqo7O8vyM"
-    },
-    {
-      "nome": "Larissa Biff",
-      "data_nasc": "2009-09-21",
-      "id_responsavel": "",
-      "senha": "1234567890",
-      "email": "bifflarissa@gmail.com",
-      "id": "07Ye2a8lZDo"
-    },
-    {
-      "nome": "Larissa Biff",
-      "data_nasc": "2009-09-21",
-      "id_responsavel": "",
-      "senha": "1234567890",
-      "email": "bifflarissa@gmail.com",
-      "id": "bTJr3dobteA"
+      "senha": "0987654321",
+      "email": "zefacardoso@gmail.com",
+      "tipo_perfil": "visitante",
+      "id": "bVC7elyYAGE"
     }
   ],
   "atividades_praticas": [

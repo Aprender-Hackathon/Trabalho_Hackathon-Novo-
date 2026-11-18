@@ -85,6 +85,22 @@ const loginComoAdmin = async () => {
   }
 }
 
+  function calcularIdade(dataNascimento) {
+  const hoje = new Date()
+  const nascimento = new Date(`${dataNascimento}T00:00:00`)
+  let idade = hoje.getFullYear() - nascimento.getFullYear()
+  const naoFezAniversario =
+    nascimento.getMonth() > hoje.getMonth() ||
+    (nascimento.getMonth() === hoje.getMonth() && nascimento.getDate() > hoje.getDate())
+  if (naoFezAniversario) idade--
+  return idade
+}
+
+function descobrirTipo(usuario) {
+  if (usuario.role) return usuario.role
+  return calcularIdade(usuario.data_nasc) < 18 ? 'aluno' : 'visitante'
+}
+
 const handleLogin = async () => {
   if (await loginComoAdmin()) return
 
@@ -102,12 +118,13 @@ const handleLogin = async () => {
       return
     }
 
-   localStorage.setItem('userData', JSON.stringify({
-  id: usuario.id,
-  name: usuario.nome,
-  nome: usuario.nome,
-  email: usuario.email
-}))
+    localStorage.setItem('userData', JSON.stringify({
+    id: usuario.id,
+    name: usuario.nome,
+    nome: usuario.nome,
+    email: usuario.email
+    }))
+    
     localStorage.setItem('isLoggedIn', 'true')
     window.dispatchEvent(new Event('auth-change'))
     router.push('/')
@@ -116,6 +133,8 @@ const handleLogin = async () => {
     alert('Erro ao conectar com o servidor.')
   }
 }
+
+
 const goHome = () => {
   router.push('/')
 }
