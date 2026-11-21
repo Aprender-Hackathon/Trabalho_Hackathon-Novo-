@@ -1,149 +1,42 @@
-<template>
-  <div class="box">
-    <div class="card">
-      <div class="avatar-area">
-        <div class="foto-box">
-          <img src="../assets/user.png" alt="Perfil" class="foto" />
-        </div>
-      </div>
-
-      <div class="info-area">
-        <div class="lista-campos">
-          <div class="linha">
-            <span>Nome: {{ usuario.nome || 'Não informado' }}</span>
-          </div>
-
-          <div class="linha">
-            <span>E-mail: {{ usuario.email || 'Não informado' }}</span>
-          </div>
-
-          <div class="linha">
-            <span>Matéria: {{ usuario.materia || 'Não informada' }}</span>
-          </div>
-
-          <div class="linha">
-            <span>Escola: {{ usuario.escola || 'Não informada' }}</span>
-          </div>
-        </div>
-
-        <div class="botoes">
-          <button class="btn" type="button" @click="sair">Sair</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { reactive, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-
-const roteador = useRouter()
+import AlunoResponsavel from '@/components/AlunoResponsavel.vue'
 
 const usuario = reactive({
+  id: '',
   nome: '',
   email: '',
   materia: '',
-  escola: ''
+  escola: '',
 })
 
 onMounted(() => {
   const dadosSalvos = localStorage.getItem('userData')
   if (dadosSalvos) {
-    const prof = JSON.parse(dadosSalvos)
-    usuario.nome = prof.nome
-    usuario.email = prof['email-instituicao'] || prof.email
-    usuario.materia = prof.materia
-    usuario.escola = prof.escola
+    try {
+      const prof = JSON.parse(dadosSalvos)
+      usuario.id = prof.id || ''
+      usuario.nome = prof.nome || ''
+      usuario.email = prof.email || ''
+      usuario.materia = prof.materia || ''
+      usuario.escola = prof.escola || ''
+    } catch (e) {
+      console.error('Erro ao ler userData do localStorage', e)
+    }
   }
 })
-
-const sair = () => {
-  localStorage.removeItem('userData')
-  localStorage.removeItem('isLoggedIn')
-  window.dispatchEvent(new Event('auth-change'))
-  roteador.push('/')
-}
 </script>
 
-<style scoped>
-.box {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
+<template>
+  <div class="usuario-page" style="padding: 2rem;">
+    <!-- Informações do Responsável -->
+    <div class="perfil-info" style="margin-bottom: 2rem; background: #fff; padding: 1.5rem; border-radius: 16px;">
+      <h2>Perfil do Responsável</h2>
+      <p><strong>Nome:</strong> {{ usuario.nome || 'Não informado' }}</p>
+      <p><strong>E-mail:</strong> {{ usuario.email || 'Não informado' }}</p>
+    </div>
 
-.card {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  width: 100%;
-  max-width: 650px;
-  padding: 30px;
-  font-family: sans-serif;
-}
-
-.avatar-area {
-  flex-shrink: 0;
-}
-
-.foto-box {
-  width: 180px;
-  height: 180px;
-}
-
-.foto {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-  background-color: #ccc;
-}
-
-.info-area {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-.lista-campos {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-.linha {
-  background-color: #f7d7d7;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  color: #000;
-}
-
-.botoes {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn {
-  background-color: #e38b93;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-@media (max-width: 600px) {
-  .card {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-</style>
+    <!-- Componente de Gerenciamento de Alunos Vinculados -->
+    <AlunoResponsavel :responsavel-id="usuario.id" />
+  </div>
+</template>
