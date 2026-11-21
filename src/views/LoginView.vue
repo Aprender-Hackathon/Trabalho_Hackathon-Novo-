@@ -1,11 +1,13 @@
 <template>
   <div class="page-container">
     <div class="brand-panel">
-      <h1>Bem vindo(a)<br>de volta!</h1>
+      <h1>Bem vindo(a)<br />de volta!</h1>
     </div>
 
     <div class="form-panel">
-      <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
+      <button type="button" class="close-btn" aria-label="Fechar" @click="goHome">
+        ✖
+      </button>
 
       <h2>Entrar com</h2>
 
@@ -40,15 +42,19 @@
             />
           </div>
 
-          <button type="submit" class="submit-btn">Entrar</button>
+          <button type="submit" class="submit-btn" :disabled="entrando">
+            {{ entrando ? 'Entrando...' : 'Entrar' }}
+          </button>
         </form>
 
         <a href="#" class="forgot-link"></a>
         <RouterLink to="/esqueceu-senha">Esqueceu a senha?</RouterLink>
 
         <p class="signup-text">
-          Ainda não tem uma conta? <br>
-          <RouterLink to="/escolhe-cadastro" class="signup-btn">Cadastre-se aqui</RouterLink>
+          Ainda não tem uma conta? <br />
+          <RouterLink to="/escolhe-cadastro" class="signup-btn">
+            Cadastre-se aqui
+          </RouterLink>
         </p>
       </div>
     </div>
@@ -60,50 +66,90 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const API = 'http://localhost:3000'
 
 const emailOrUser = ref('')
 const password = ref('')
-// Login do administrador: confere com a coleção "administradores" do db.json
-const loginComoAdmin = async () => {
-  try {
-    const resposta = await fetch(
-      `http://localhost:3000/administradores?login=${encodeURIComponent(emailOrUser.value.trim())}`
-    )
-    if (!resposta.ok) return false
+const entrando = ref(false)
 
-    const [admin] = await resposta.json()
-    if (!admin || admin.senha !== password.value) return false
+// Procura as contas que têm o login ou o e-mail digitado.
+async function buscarContas(colecao, campo, valor) {
+  const filtro = new URLSearchParams({ [campo]: valor })
+  const resposta = await fetch(`${API}/${colecao}?${filtro}`)
 
-    localStorage.setItem('userData', JSON.stringify({ id: admin.id, nome: admin.login, role: 'admin' }))
-    localStorage.setItem('isLoggedIn', 'true')
-    window.dispatchEvent(new Event('auth-change'))
-    router.push('/admin')
-    return true
-  } catch {
-    return false // se a API estiver desligada, segue o login normal
+  if (!resposta.ok) {
+    throw new Error('Falha ao consultar a API.')
   }
+
+  return resposta.json()
 }
 
-const handleLogin = async () => {
-  if (await loginComoAdmin()) return
-
-  const savedData = localStorage.getItem('userData')
-  let userData = savedData ? JSON.parse(savedData) : null
-
-  if (!userData || !userData.id) {
-    userData = {
-      id: Date.now(),
-      name: emailOrUser.value,
-      email: emailOrUser.value
-    }
-  }
-
-  localStorage.setItem('userData', JSON.stringify(userData))
+// Guarda os dados da conta e abre a página correspondente.
+function abrirPerfil(dados, rota) {
+  localStorage.setItem('userData', JSON.stringify(dados))
   localStorage.setItem('isLoggedIn', 'true')
   window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+  router.push(rota)
 }
-const goHome = () => {
+
+async function handleLogin() {
+  if (entrando.value) return
+
+  const identificacao = emailOrUser.value.trim()
+  const senha = password.value
+  entrando.value = true
+
+  try {
+    const administradores = await buscarContas('administradores', 'login', identificacao)
+    const admin = administradores.find((conta) => conta.senha === senha)
+
+    if (admin) {
+      abrirPerfil({ id: admin.id, nome: admin.login, role: 'admin' }, '/admin')
+      return
+    }
+
+    const professores = await buscarContas('professores', 'email-instituicao', identificacao)
+    const professor = professores.find((conta) => conta.senha === senha)
+
+    if (professor) {
+      const sessao = {
+        id: professor.id,
+        nome: professor.nome,
+        email: professor['email-instituicao'],
+        'email-instituicao': professor['email-instituicao'],
+        materia: professor.materia,
+        escola: professor.escola,
+        role: 'professor'
+      }
+
+      abrirPerfil(sessao, '/usuario-professor')
+      return
+    }
+
+    const responsaveis = await buscarContas('responsaveis', 'email', identificacao)
+    const responsavel = responsaveis.find((conta) => conta.senha === senha)
+
+    if (responsavel) {
+      const sessao = {
+        id: responsavel.id,
+        nome: responsavel.nome,
+        email: responsavel.email,
+        role: 'responsavel'
+      }
+
+      abrirPerfil(sessao, '/usuario-pag')
+      return
+    }
+
+    alert('Conta não encontrada ou senha incorreta.')
+  } catch {
+    alert('Não foi possível consultar a API. Confira se o npm run api está rodando na porta 3000.')
+  } finally {
+    entrando.value = false
+  }
+}
+
+function goHome() {
   router.push('/')
 }
 </script>
@@ -184,7 +230,7 @@ const goHome = () => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .google-btn {
@@ -322,7 +368,6 @@ a {
   .card-box {
     max-width: 100%;
     padding: 25px 20px;
-    border-radius: 20px;
   }
 
   .google-btn {

@@ -6,43 +6,31 @@
       <h1 class="titulo">Painel de Professores</h1>
 
       <div class="card">
-        <h3>{{ editandoId ? 'Editar Professor' : 'Cadastrar Professor' }}</h3>
+        <h3>Cadastrar Professor</h3>
+
         <form @submit.prevent="salvarProfessor" autocomplete="off">
           <input v-model="nome" class="input-text" placeholder="Nome" required />
-          <input v-model="email" class="input-text" type="email" placeholder="E-mail" required autocomplete="new-email" />
+          <input v-model="email" class="input-text" type="email" placeholder="E-mail" required />
           <input v-model="materia" class="input-text" placeholder="Matéria" required />
           <input v-model="escola" class="input-text" placeholder="Escola" required />
-          <input v-model="senha" class="input-text" type="password" placeholder="Senha" required autocomplete="new-password" />
-          
+          <input
+            v-model="senha"
+            class="input-text"
+            type="password"
+            placeholder="Senha"
+            autocomplete="new-password"
+            required
+          />
+
           <div class="acoes-form">
-            <button type="submit" class="btn">Salvar</button>
-            <button type="button" class="btn btn-limpar" @click="limparFormulario">Limpar Campos</button>
-            <button v-if="editandoId" type="button" class="btn btn-cancelar" @click="limparFormulario">Cancelar</button>
+            <button type="submit" class="btn" :disabled="salvando">
+              {{ salvando ? 'Salvando...' : 'Salvar' }}
+            </button>
+            <button type="button" class="btn btn-limpar" @click="limparFormulario">
+              Limpar Campos
+            </button>
           </div>
         </form>
-      </div>
-
-      <div class="card tabela-card">
-        <h3>Professores Cadastrados</h3>
-        <table class="tabela">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Matéria</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="prof in lista" :key="prof.id">
-              <td>{{ prof.nome }}</td>
-              <td>{{ prof.materia }}</td>
-              <td>
-                <button class="btn-acao btn-editar" @click="prepararEdicao(prof)">Editar</button>
-                <button class="btn-acao btn-excluir" @click="excluir(prof.id)">Excluir</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>
@@ -56,13 +44,12 @@ const roteador = useRouter()
 const URL_API = 'http://localhost:3000/professores'
 
 const lista = ref([])
-const editandoId = ref(null)
-
 const nome = ref('')
 const email = ref('')
 const materia = ref('')
 const escola = ref('')
 const senha = ref('')
+const salvando = ref(false)
 
 async function buscarProfessores() {
   try {
@@ -70,65 +57,58 @@ async function buscarProfessores() {
     if (!resposta.ok) throw new Error()
     lista.value = await resposta.json()
   } catch {
-    alert('Erro ao carregar a lista.')
+    alert('Erro ao carregar a lista. Confira se a API está rodando.')
   }
 }
 
 async function salvarProfessor() {
+  if (salvando.value) return
+
   const dados = {
     nome: nome.value,
-    'email-instituicao': email.value,
+    'email-instituicao': email.value.trim(),
     materia: materia.value,
     escola: escola.value,
     senha: senha.value
   }
 
+  salvando.value = true
+
   try {
-    let resposta
-    if (editandoId.value) {
-      resposta = await fetch(`${URL_API}/${editandoId.value}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
-      })
+    const resposta = await fetch(URL_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dados)
+    })
 
-      if (!resposta.ok) throw new Error()
-      alert('Editado com sucesso!')
-      limparFormulario()
-      buscarProfessores()
-    } else {
-      resposta = await fetch(URL_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
-      })
+    if (!resposta.ok) throw new Error()
 
-      if (!resposta.ok) throw new Error()
+    const dadosCriados = await resposta.json()
 
-      const dadosCriados = await resposta.json()
-
-      localStorage.setItem('userData', JSON.stringify(dadosCriados))
-      localStorage.setItem('isLoggedIn', 'true')
-      window.dispatchEvent(new Event('auth-change'))
-      
-      roteador.push('/')
+    // Guarda o ID que a API criou e identifica a conta como professor.
+    const sessao = {
+      id: dadosCriados.id,
+      nome: dadosCriados.nome,
+      email: dadosCriados['email-instituicao'],
+      'email-instituicao': dadosCriados['email-instituicao'],
+      materia: dadosCriados.materia,
+      escola: dadosCriados.escola,
+      role: 'professor'
     }
+
+    localStorage.setItem('userData', JSON.stringify(sessao))
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+
+    roteador.push('/usuario-professor')
   } catch {
-    alert('Erro ao salvar os dados.')
+    alert('Erro ao salvar os dados. Confira se a API está rodando.')
+  } finally {
+    salvando.value = false
   }
 }
 
-function prepararEdicao(prof) {
-  editandoId.value = prof.id
-  nome.value = prof.nome
-  email.value = prof['email-instituicao'] || prof.email
-  materia.value = prof.materia
-  escola.value = prof.escola
-  senha.value = prof.senha
-}
-
 function limparFormulario() {
-  editandoId.value = null
   nome.value = ''
   email.value = ''
   materia.value = ''
@@ -136,31 +116,12 @@ function limparFormulario() {
   senha.value = ''
 }
 
-async function excluir(id) {
-  const confirmar = confirm('Tem certeza que deseja excluir?')
-  if (!confirmar) return
 
-  try {
-    const resposta = await fetch(`${URL_API}/${id}`, {
-      method: 'DELETE'
-    })
-
-    if (!resposta.ok) throw new Error()
-
-    alert('Excluído com sucesso!')
-    buscarProfessores()
-  } catch {
-    alert('Erro ao tentar excluir.')
-  }
-}
-
-const voltarHome = () => {
+function voltarHome() {
   roteador.push('/')
 }
 
-onMounted(() => {
-  buscarProfessores()
-})
+onMounted(buscarProfessores)
 </script>
 
 <style scoped>
@@ -253,17 +214,14 @@ form {
   color: white;
 }
 
-.btn-cancelar {
-  background-color: #999;
-}
-
 .tabela {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.tabela th, .tabela td {
+.tabela th,
+.tabela td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #dfb969;
@@ -277,11 +235,6 @@ form {
   cursor: pointer;
   font-weight: bold;
   margin-right: 5px;
-}
-
-.btn-editar {
-  background-color: #2b8b97;
-  color: white;
 }
 
 .btn-excluir {

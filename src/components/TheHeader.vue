@@ -106,22 +106,21 @@ const route = useRoute()
 
 const salvo = () => router.push('/salvos')
 const perfil = () => {
-  const savedData = localStorage.getItem('userData')
+  const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
 
-  if (savedData) {
-    const user = JSON.parse(savedData)
-        if (user.role === 'admin') {
-      router.push('/admin')
-      return
-    }
-    if (user.role === 'professor') {
-      router.push('/usuario-professor')
-      return
-    }
+  if (usuario?.role === 'admin') {
+    router.push('/admin')
+    return
   }
+
+  // Alguns cadastros de professor têm matéria, mas vieram sem o campo role.
+  if (usuario?.role === 'professor' || (usuario?.role == null && usuario?.materia != null)) {
+    router.push('/usuario-professor')
+    return
+  }
+
   router.push('/usuario-pag')
 }
-
 const isLoggedIn = ref(false)
 
 const checkAuth = () => {

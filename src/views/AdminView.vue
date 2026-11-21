@@ -1,10 +1,12 @@
-<template>
+  <template>
   <div class="admin">
     <h1>Administrador</h1>
 
     <div class="botoes">
       <RouterLink to="/admin/escolas" class="botao">Visualizar escolas</RouterLink>
-      <button class="botao" @click="emBreve">Visualizar professores</button>
+      <RouterLink to="/admin/professores" class="botao">
+      Visualizar professores
+      </RouterLink>
       <button class="botao" @click="emBreve">Visualizar alunos</button>
       <button class="botao" @click="emBreve">Visualizar pais</button>
     </div>

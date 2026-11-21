@@ -123,6 +123,12 @@ component: () => import('../components/Comunidade.vue')
       name: 'formulario',
       component: () => import('../views/FormularioView.vue')
     },
+    {
+      path: '/admin/professores',
+      name: 'adminProfessores',
+      component: () => import('../views/AdminProfessoresView.vue'),
+      meta: { requerAdmin: true }
+    }
 
   ],
 })
@@ -131,11 +137,14 @@ router.beforeEach((to) => {
 
   try {
     const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
-    if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') return true
-  } catch {
 
+    if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') {
+      return true
+    }
+  } catch {
+    return { name: 'login' }
   }
+
   return { name: 'login' }
 })
-
 export default router
