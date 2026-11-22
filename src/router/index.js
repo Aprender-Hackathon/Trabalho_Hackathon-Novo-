@@ -72,6 +72,11 @@ const router = createRouter({
       component: () => import('../views/EsqueceusenhaView.vue')
     },
     {
+  path: '/comunidade',
+  name: 'comunidade',
+component: () => import('../components/Comunidade.vue')
+},
+    {
       path: '/salvos',
       name: 'salvos',
       component: () => import('../views/SalvosView.vue')
@@ -128,7 +133,7 @@ router.beforeEach((to) => {
     const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
     if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') return true
   } catch {
-  
+
   }
   return { name: 'login' }
 })

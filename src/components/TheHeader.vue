@@ -39,7 +39,12 @@
                 Atividades Práticas
               </RouterLink>
             </li>
-
+<li class="nav-item" v-if="isLoggedIn">
+              <RouterLink to="/comunidade" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
+                <img src="/src/assets/img/sobre.png" alt="Comunidade" class="nav-icon" />
+                Comunidade
+              </RouterLink>
+            </li>
             <li class="nav-item">
               <RouterLink to="/sobre-nos" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />

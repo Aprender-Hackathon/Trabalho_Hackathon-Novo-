@@ -71,6 +71,7 @@ A nota não foi máxima porque ainda existem muitas melhorias a serem feitas. Me
 - **Desenvolvimento:**
   ```sh
   npm run dev
+  npm run api
   ```
 - **Build de produção:**
   ```sh
