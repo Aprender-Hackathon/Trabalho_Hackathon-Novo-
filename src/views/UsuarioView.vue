@@ -9,6 +9,8 @@ const usuario = reactive({
   escola: '',
 })
 
+const ehProfessor = computed(() => usuario.role === 'professor')
+
 onMounted(() => {
   const dadosSalvos = localStorage.getItem('userData')
   if (dadosSalvos) {

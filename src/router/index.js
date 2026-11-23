@@ -123,7 +123,18 @@ component: () => import('../components/Comunidade.vue')
       name: 'formulario',
       component: () => import('../views/FormularioView.vue')
     },
-
+    {
+      path: '/admin/alunos',
+      name: 'adminAlunos',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      props: { tipo: 'alunos' }
+    },
+    {
+      path: '/admin/visitantes',
+      name: 'adminVisitantes',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      props: { tipo: 'visitantes' }
+    }
   ],
 })
 router.beforeEach((to) => {

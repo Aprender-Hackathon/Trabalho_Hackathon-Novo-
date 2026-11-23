@@ -5,8 +5,9 @@
     <div class="botoes">
       <RouterLink to="/admin/escolas" class="botao">Visualizar escolas</RouterLink>
       <button class="botao" @click="emBreve">Visualizar professores</button>
-      <button class="botao" @click="emBreve">Visualizar alunos</button>
-      <button class="botao" @click="emBreve">Visualizar pais</button>
+      <button class="botao" @click="emBreve">Visualizar Alunos</button>
+      <button class="botao" @click="emBreve">Visualizar Visitantes</button>
+      <button class="botao" @click="emBreve">Visualizar Responsáveis</button>
     </div>
 
     <button class="sair" @click="sair">Sair</button>
