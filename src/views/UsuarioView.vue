@@ -1,54 +1,36 @@
-
 <script setup>
-import { reactive, ref, onMounted } from 'vue'
+import { reactive, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
-const router = useRouter()
+const roteador = useRouter()
 
-const user = reactive({
-  name: '',
+const usuario = reactive({
+  nome: '',
   email: '',
+  materia: '',
+  escola: '',
+  role: ''
 })
 
-const activeField = ref(null)
-const tempValue = ref('')
+const ehProfessor = computed(() => usuario.role === 'professor')
 
 onMounted(() => {
-  const savedData = localStorage.getItem('userData')
-  if (savedData) {
-    const parsedData = JSON.parse(savedData)
-    user.name = parsedData.name || ''
-    user.email = parsedData.email || ''
+  const dadosSalvos = localStorage.getItem('userData')
+  if (dadosSalvos) {
+    const dados = JSON.parse(dadosSalvos)
+    usuario.nome = dados.nome || dados.name || ''
+    usuario.email = dados['email-instituicao'] || dados.email || ''
+    usuario.materia = dados.materia || ''
+    usuario.escola = dados.escola || ''
+    usuario.role = dados.role || dados.tipo_perfil || ''
   }
 })
 
-const openModal = (field) => {
-  activeField.value = field
-  tempValue.value = user[field]
-}
-
-const closeModal = () => {
-  activeField.value = null
-  tempValue.value = ''
-}
-
-const saveModal = () => {
-  if (activeField.value) {
-    user[activeField.value] = tempValue.value
-
-    localStorage.setItem('userData', JSON.stringify({
-      name: user.name,
-      email: user.email
-    }))
-  }
-  closeModal()
-}
-
-const handleLogout = () => {
-  localStorage.removeItem('isLoggedIn')
+const sair = () => {
   localStorage.removeItem('userData')
-  window.dispatchEvent(new Event('storage'))
-  router.push('/')
+  localStorage.removeItem('isLoggedIn')
+  window.dispatchEvent(new Event('auth-change'))
+  roteador.push('/')
 }
 </script>
 
@@ -87,42 +69,6 @@ const handleLogout = () => {
     </div>
   </div>
 </template>
-
-<script setup>
-import { reactive, computed, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-
-const roteador = useRouter()
-
-const usuario = reactive({
-  nome: '',
-  email: '',
-  materia: '',
-  escola: '',
-  role: ''
-})
-
-const ehProfessor = computed(() => usuario.role === 'professor')
-
-onMounted(() => {
-  const dadosSalvos = localStorage.getItem('userData')
-  if (dadosSalvos) {
-    const dados = JSON.parse(dadosSalvos)
-    usuario.nome = dados.nome || dados.name
-    usuario.email = dados['email-instituicao'] || dados.email
-    usuario.materia = dados.materia
-    usuario.escola = dados.escola
-    usuario.role = dados.role
-  }
-})
-
-const sair = () => {
-  localStorage.removeItem('userData')
-  localStorage.removeItem('isLoggedIn')
-  window.dispatchEvent(new Event('auth-change'))
-  roteador.push('/')
-}
-</script>
 
 <style scoped>
 .box {
