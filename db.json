@@ -29,29 +29,36 @@
       "senha": "dsdfghjklç"
     },
     {
-      "id": "2fC3OUYc_Qg",
-      "nome": "sdghjklkhf",
-      "tipo_perfil": "professor",
-      "escola": "sdfghjkl",
-      "email-instituicao": "sdfhjkl@gmail.com",
-      "materia": "português",
-      "senha": "sdfghjkl"
+      "nome": "Alana",
+      "email-instituicao": "wesslingalana@gmail.com",
+      "materia": "História",
+      "escola": "IFC",
+      "senha": "dfghjkjhgf",
+      "id": "5iDtTJ1oxoc"
     },
     {
-      "nome": "fghjk",
-      "email-instituicao": "cvbn@gmail.com",
-      "materia": "sdfgh",
-      "escola": "dfghj",
-      "senha": "sdfgh",
-      "id": "Fss9opip76o"
+      "nome": "wsdfghj",
+      "email-instituicao": "xcvhjk2@gmail.com",
+      "materia": "portuuês",
+      "escola": "fghjk",
+      "senha": "dfghjk",
+      "id": "ETO8KOBra2E"
     },
     {
-      "nome": "Alcione Medeiros de Alcantara",
-      "email-instituicao": "alciclone@hotmail.com.edu",
-      "materia": "Ciências",
-      "escola": "Dom Bosco",
-      "senha": "zxcvbnm",
-      "id": "epzjBBKEUjM"
+      "nome": "sdkavgjkadv",
+      "email-instituicao": "dkc@gmail.com",
+      "materia": "História",
+      "escola": "dfghjk",
+      "senha": "dfghjkl",
+      "id": "hwGJcV0A-ko"
+    },
+    {
+      "nome": "fbwuefowea",
+      "email-instituicao": "asf@gmail.com",
+      "materia": "qwerty",
+      "escola": "ertyu",
+      "senha": "qwertyuio",
+      "id": "46jJI6xsgLI"
     }
   ],
   "responsaveis": [
@@ -6199,6 +6206,18 @@
       "cidade": "Fortaleza",
       "estado": "CE",
       "numero": "145"
+    },
+    {
+      "nome": "Cólegio João Henrique Cardoso",
+      "codigoInep": "47863209",
+      "redeEnsino": "Municipal",
+      "cep": "89212-525",
+      "logradouro": "Rua Cidade de Nagazaki",
+      "bairro": "Santa Catarina",
+      "cidade": "Joinville",
+      "estado": "SC",
+      "numero": "152",
+      "id": "E5bwKXOuO1k"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
