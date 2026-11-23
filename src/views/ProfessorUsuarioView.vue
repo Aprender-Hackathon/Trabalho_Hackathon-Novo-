@@ -219,7 +219,6 @@ async function excluirConta() {
       return
     }
 
-    // Encerra a sessão apenas se ela ainda for a da conta excluída.
     if (localStorage.getItem('userData') === sessao) {
       sair()
     }

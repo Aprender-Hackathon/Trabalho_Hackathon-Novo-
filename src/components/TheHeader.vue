@@ -112,8 +112,6 @@ const perfil = () => {
     router.push('/admin')
     return
   }
-
-  // Alguns cadastros de professor têm matéria, mas vieram sem o campo role.
   if (usuario?.role === 'professor' || (usuario?.role == null && usuario?.materia != null)) {
     router.push('/usuario-professor')
     return

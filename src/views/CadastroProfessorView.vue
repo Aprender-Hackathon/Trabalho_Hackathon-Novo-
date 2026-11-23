@@ -85,7 +85,6 @@ async function salvarProfessor() {
 
     const dadosCriados = await resposta.json()
 
-    // Guarda o ID que a API criou e identifica a conta como professor.
     const sessao = {
       id: dadosCriados.id,
       nome: dadosCriados.nome,

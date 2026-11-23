@@ -72,7 +72,6 @@ const emailOrUser = ref('')
 const password = ref('')
 const entrando = ref(false)
 
-// Procura as contas que têm o login ou o e-mail digitado.
 async function buscarContas(colecao, campo, valor) {
   const filtro = new URLSearchParams({ [campo]: valor })
   const resposta = await fetch(`${API}/${colecao}?${filtro}`)
@@ -84,7 +83,7 @@ async function buscarContas(colecao, campo, valor) {
   return resposta.json()
 }
 
-// Guarda os dados da conta e abre a página correspondente.
+
 function abrirPerfil(dados, rota) {
   localStorage.setItem('userData', JSON.stringify(dados))
   localStorage.setItem('isLoggedIn', 'true')
