@@ -89,7 +89,6 @@
       "senha": "clalia74"
     },
     {
-      "id": "FmEpDE6Vh98",
       "nome": "Carlos Silva",
       "tipo_perfil": "visitante",
       "email": "carlos@email.com",
@@ -97,7 +96,6 @@
       "id": "0GBChCHBOc4"
     },
     {
-      "id": "83sw6gq_5QA",
       "nome": "Charllote Diaz",
       "tipo_perfil": "visitante",
       "email": "diazz.charllote@email.com",
@@ -138,8 +136,6 @@
       "email": "arthur@gmail.com",
       "tipo_perfil": "visitante",
       "id": "O2Rs_Kzi45o"
-    },
-
     }
   ],
   "atividades_praticas": [
