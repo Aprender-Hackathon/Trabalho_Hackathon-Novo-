@@ -1,6 +1,5 @@
 <script setup>
 import { reactive, onMounted } from 'vue'
-import AlunoResponsavel from '@/components/AlunoResponsavel.vue'
 
 const usuario = reactive({
   id: '',
@@ -35,8 +34,5 @@ onMounted(() => {
       <p><strong>Nome:</strong> {{ usuario.nome || 'Não informado' }}</p>
       <p><strong>E-mail:</strong> {{ usuario.email || 'Não informado' }}</p>
     </div>
-
-    <!-- Componente de Gerenciamento de Alunos Vinculados -->
-    <AlunoResponsavel :responsavel-id="usuario.id" />
   </div>
 </template>
