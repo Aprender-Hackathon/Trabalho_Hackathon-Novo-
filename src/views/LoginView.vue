@@ -60,24 +60,104 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const API_URL = 'http://localhost:3000'
 
 const emailOrUser = ref('')
 const password = ref('')
+// Login do administrador: confere com a coleção "administradores" do db.json
+const loginComoAdmin = async () => {
+  try {
+    const resposta = await fetch(
+      `http://localhost:3000/administradores?login=${encodeURIComponent(emailOrUser.value.trim())}`
+    )
+    if (!resposta.ok) return false
 
-const handleLogin = () => {
+    const [admin] = await resposta.json()
+    if (!admin || admin.senha !== password.value) return false
 
- const userData = {
-  id: Date.now(),
-  name: emailOrUser.value,
-  email: emailOrUser.value,
-  role: 'usuario'
- }
-
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', 'true')
-  window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+    localStorage.setItem('userData', JSON.stringify({ 
+      id: admin.id, 
+      nome: admin.login, 
+      tipo_perfil: 'administrador' 
+    }))
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/admin')
+    return true
+  } catch {
+    return false // se a API estiver desligada, segue o login normal
+  }
 }
+
+const loginComoProfessor = async () => {
+  try {
+    const resposta = await fetch(
+      `${API_URL}/professores?email-instituicao=${encodeURIComponent(emailOrUser.value.trim())}`
+    )
+
+    if (!resposta.ok) return false
+
+    const [professor] = await resposta.json()
+
+    if (!professor || professor.senha !== password.value) return false
+
+    const dadosSemSenha = { ...professor }
+    delete dadosSemSenha.senha
+
+    localStorage.setItem('userData', JSON.stringify({
+      ...dadosSemSenha,
+      name: professor.nome,
+      tipo_perfil: 'professor'
+    }))
+
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+
+    return true
+  } catch {
+    return false
+  }
+}
+
+
+const handleLogin = async () => {
+  if (await loginComoAdmin()) return
+
+  if (await loginComoProfessor()) return
+
+  try {
+    const resposta = await fetch(`${API_URL}/usuarios`)
+    const usuarios = await resposta.json()
+
+    const usuario = usuarios.find(u =>
+      (u.email === emailOrUser.value || u.nome === emailOrUser.value) &&
+      u.senha === password.value
+    )
+
+    if (!usuario) {
+      alert('E-mail/usuário ou senha incorretos.')
+      return
+    }
+
+    localStorage.setItem('userData', JSON.stringify({
+    id: usuario.id,
+    name: usuario.nome,
+    nome: usuario.nome,
+    email: usuario.email,
+    tipo_perfil: 'visitante'
+    }))
+    
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+    
+  } catch (erro) {
+    console.error(erro)
+    alert('Erro ao conectar com o servidor.')
+  }
+}
+
 
 const goHome = () => {
   router.push('/')

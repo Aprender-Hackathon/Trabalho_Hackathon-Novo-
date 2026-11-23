@@ -72,6 +72,11 @@ const router = createRouter({
       component: () => import('../views/EsqueceusenhaView.vue')
     },
     {
+  path: '/comunidade',
+  name: 'comunidade',
+component: () => import('../components/Comunidade.vue')
+},
+    {
       path: '/salvos',
       name: 'salvos',
       component: () => import('../views/SalvosView.vue')
@@ -86,27 +91,90 @@ const router = createRouter({
       name: 'escolheCadastro',
       component: () => import('../views/PaginaescolhecadastroView.vue')
     },
-     {
+    {
       path: '/historico-pag',
       name: 'historico',
-      component: () => import('../views/HistoricoView.vue')
+      component: () => import('../views/HistoricoView.vue'),
+      meta: { requerProfessor: true }
     },
     {
       path: '/salvo-pag',
       redirect: '/salvos',
     },
+     {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('../views/AdminView.vue'),
+      meta: { requerAdmin: true }
+    },
+        {
+      path: '/admin/escolas',
+      name: 'adminEscolas',
+      component: () => import('../views/AdminEscolasView.vue'),
+      meta: { requerAdmin: true }
+    },
+        {
+      path: '/cadastro-escola',
+      name: 'cadastroEscola',
+      component: () => import('../views/CadastroEscolaView.vue')
+    },
     {
       path: '/formulario',
       alias: '/formulario-add',
       name: 'formulario',
-      component: () => import('../views/FormularioView.vue')
+      component: () => import('../views/FormularioView.vue'),
+      meta: { requerProfessor: true }
     },
     {
-      path: '/formulario/:id?', // <-- Adicionámos o /:id? para servir para criar e editar
+      path: '/admin/alunos',
+      name: 'adminAlunos',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      props: { tipo: 'alunos' }
+    },
+    {
+
+     path: '/formulario/:id?', // <-- Adicionámos o /:id? para servir para criar e editar
       name: 'formulario',
       component: () => import('../views/FormularioView.vue')
     },
+    {
+      path: '/admin/visitantes',
+      name: 'adminVisitantes',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      meta: { requerAdmin: true }
+    },
   ],
+})
+router.beforeEach((to) => {
+  let usuario = null
+
+  try {
+    usuario = JSON.parse(
+      localStorage.getItem('userData') || 'null'
+    )
+  } catch {
+    usuario = null
+  }
+
+  const logado = localStorage.getItem('isLoggedIn') === 'true'
+
+  if (to.meta.requerAdmin) {
+    if (logado && usuario?.tipo_perfil === 'administrador') {
+      return true
+    }
+
+    return { name: 'login' }
+  }
+
+  if (to.meta.requerProfessor) {
+    if (logado && usuario?.tipo_perfil === 'professor') {
+      return true
+    }
+
+    return { name: 'login' }
+  }
+
+  return true
 })
 
 export default router

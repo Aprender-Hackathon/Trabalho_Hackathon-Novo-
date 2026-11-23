@@ -4,12 +4,17 @@
         <div class="row">
             <div class="col-md-9">
                 <RouterLink to="/cadastro-pag" class="btn btn-custom btn-sm fw-bold px-3">
-                    Cadastrar como Aluno/Visitante
+                    Cadastrar como Visitante
                 </RouterLink>
             </div>
             <div class="col-md-6">
                 <RouterLink to="/cadastro-professor" class="btn btn-custom btn-sm fw-bold px-3">
                     Cadastrar como Professor(a)
+                </RouterLink>
+            </div>
+            <div class="col-md-6">
+                <RouterLink to="/cadastro-escola" class="btn btn-custom btn-sm fw-bold px-3">
+                    Cadastrar Escola
                 </RouterLink>
             </div>
         </div>

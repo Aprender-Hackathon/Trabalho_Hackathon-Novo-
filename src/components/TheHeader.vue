@@ -39,7 +39,12 @@
                 Atividades Práticas
               </RouterLink>
             </li>
-
+<li class="nav-item" v-if="isLoggedIn">
+              <RouterLink to="/comunidade" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
+                <img src="/src/assets/img/sobre.png" alt="Comunidade" class="nav-icon" />
+                Comunidade
+              </RouterLink>
+            </li>
             <li class="nav-item">
               <RouterLink to="/sobre-nos" class="nav-link nav-link-highlight d-flex align-items-center gap-2">
                 <img src="/src/assets/img/sobre.png" alt="Sobre Nós" class="nav-icon" />
@@ -50,7 +55,13 @@
 
           <div class="d-flex align-items-center gap-3 header-actions justify-content-center justify-content-lg-end mt-2 mt-lg-0">
             <template v-if="isLoggedIn">
-              <RouterLink to="/historico-pag" class="btn-add-round" aria-label="Adicionar" title="Adicionar">
+              <RouterLink
+                  v-if="isProfessor"
+                  to="/historico-pag"
+                  class="btn-add-round"
+                  aria-label="Adicionar"
+                  title="Adicionar"
+              >
                 <svg
                   class="add-icon"
                   viewBox="0 0 24 24"
@@ -100,24 +111,38 @@ const router = useRouter()
 const route = useRoute()
 
 const salvo = () => router.push('/salvos')
+
 const perfil = () => {
   const savedData = localStorage.getItem('userData')
 
   if (savedData) {
     const user = JSON.parse(savedData)
 
-    if (user.role === 'professor') {
+    if (user.tipo_perfil === 'administrador') {
+      router.push('/admin')
+      return
+    }
+
+    if (user.tipo_perfil === 'professor') {
       router.push('/usuario-professor')
       return
     }
   }
+
   router.push('/usuario-pag')
 }
 
 const isLoggedIn = ref(false)
+const isProfessor = ref(false)
 
 const checkAuth = () => {
   isLoggedIn.value = localStorage.getItem('isLoggedIn') === 'true'
+
+  const usuario = JSON.parse(
+    localStorage.getItem('userData') || 'null'
+  )
+
+  isProfessor.value = usuario?.tipo_perfil === 'professor'
 }
 
 watch(() => route.path, checkAuth)
