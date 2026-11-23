@@ -3,11 +3,9 @@
     <h1>Administrador</h1>
 
     <div class="botoes">
-      <RouterLink to="/admin/escolas" class="botao">Visualizar escolas</RouterLink>
-      <button class="botao" @click="emBreve">Visualizar professores</button>
-      <button class="botao" @click="emBreve">Visualizar Alunos</button>
-      <button class="botao" @click="emBreve">Visualizar Visitantes</button>
-      <button class="botao" @click="emBreve">Visualizar Responsáveis</button>
+      <RouterLink to="/admin/visitantes" class="botao">Visualizar Visitantes</RouterLink>
+      <button class="botao" @click="emBreve">Visualizar Professores</button>
+      <RouterLink to="/admin/escolas" class="botao">Visualizar Escolas</RouterLink>
     </div>
 
     <button class="sair" @click="sair">Sair</button>

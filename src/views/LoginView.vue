@@ -59,8 +59,8 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const API_URL = 'http://localhost:3000'
 const router = useRouter()
+const API_URL = 'http://localhost:3000'
 
 const emailOrUser = ref('')
 const password = ref('')
@@ -75,7 +75,11 @@ const loginComoAdmin = async () => {
     const [admin] = await resposta.json()
     if (!admin || admin.senha !== password.value) return false
 
-    localStorage.setItem('userData', JSON.stringify({ id: admin.id, nome: admin.login, role: 'admin' }))
+    localStorage.setItem('userData', JSON.stringify({ 
+      id: admin.id, 
+      nome: admin.login, 
+      tipo_perfil: 'administrador' 
+    }))
     localStorage.setItem('isLoggedIn', 'true')
     window.dispatchEvent(new Event('auth-change'))
     router.push('/admin')
@@ -85,24 +89,41 @@ const loginComoAdmin = async () => {
   }
 }
 
-  function calcularIdade(dataNascimento) {
-  const hoje = new Date()
-  const nascimento = new Date(`${dataNascimento}T00:00:00`)
-  let idade = hoje.getFullYear() - nascimento.getFullYear()
-  const naoFezAniversario =
-    nascimento.getMonth() > hoje.getMonth() ||
-    (nascimento.getMonth() === hoje.getMonth() && nascimento.getDate() > hoje.getDate())
-  if (naoFezAniversario) idade--
-  return idade
-}
+const loginComoProfessor = async () => {
+  try{
+    const resposta = await fetch(
+      `${API_URL}/professores?email-instituicao=${encodeURIComponent(emailOrUser.value.trim())}`
+    )
 
-function descobrirTipo(usuario) {
-  if (usuario.role) return usuario.role
-  return calcularIdade(usuario.data_nasc) < 18 ? 'aluno' : 'visitante'
+    if (!resposta.ok) return false
+
+    const [professor] = await resposta.json()
+
+    if(!professor || professor.senha !== password.value) return false
+
+    const dadosSemSenha = { ...professor }
+    delete dadosSemSenha.senha
+
+    localStorage.setItem('userData', JSON.stringify({
+      ...dadosSemSenha,
+      name: professor.nome,
+      tipo_perfil: 'professor'
+    }))
+
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+
+    return true
+  } catch {
+    return false
+  }
 }
 
 const handleLogin = async () => {
   if (await loginComoAdmin()) return
+
+  if (await loginComoProfessor()) return
 
   try {
     const resposta = await fetch(`${API_URL}/usuarios`)
@@ -122,12 +143,14 @@ const handleLogin = async () => {
     id: usuario.id,
     name: usuario.nome,
     nome: usuario.nome,
-    email: usuario.email
+    email: usuario.email,
+    tipo_perfil: 'visitante'
     }))
     
     localStorage.setItem('isLoggedIn', 'true')
     window.dispatchEvent(new Event('auth-change'))
     router.push('/')
+    
   } catch (erro) {
     console.error(erro)
     alert('Erro ao conectar com o servidor.')

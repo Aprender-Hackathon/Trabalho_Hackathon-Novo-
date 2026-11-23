@@ -14,100 +14,54 @@ async function carregar() {
   usuarios.value = await resposta.json();
 }
 
-function calcularIdade(dataNascimento){
-  const hoje = new Date();
-  const nascimento = new Date(`${dataNascimento}T00:00:00`);
-
-  let idade = hoje.getFullYear() - nascimento.getFullYear();
-
-  const naoFezAniversario = nascimento.getMonth() > hoje.getMonth() || (nascimento.getMonth() === hoje.getMonth() && nascimento.getDate() > hoje.getDate());
-
-  if (naoFezAniversario) {
-    idade--;
-  }
-
-  return idade;
-}
-
 const novoUsuario = ref({
   nome: '',
-  data_nasc: '',
-  id_responsavel: '',
-  senha:'',
+  senha: '',
   email: '',
   id: '',
-  tipo_perfil: ''
+  tipo_perfil: 'visitante'
 });
-
-const categoria = computed(() => {
-  if (!novoUsuario.value.data_nasc) return '';
-
-  const idade = calcularIdade(novoUsuario.value.data_nasc);
-
-  if (idade < 0) return 'Data inválida';
-
-  return idade < 18 ? 'Aluno' : 'Visitante';
-});
-
-const aluno = computed(() => 
-  usuarios.value.filter( usuario =>
-    calcularIdade(usuario.data_nasc) < 18
-  )
-);
-
-const visitante = computed(() => 
-  usuarios.value.filter( usuario =>
-    calcularIdade(usuario.data_nasc) >= 18
-  )
-);
 
 async function salvarUsuario() {
-  
-  if (categoria.value === 'Data inválida') {
-    alert('Informe uma data de nascimento válida.');
-    return;
-  }
-
-  novoUsuario.value.tipo_perfil = categoria.value === 'Aluno' ? 'aluno' : 'visitante';
-
   try {
     const { id, ...dados } = novoUsuario.value;
 
-    const resposta = await fetch(`${API_URL}/usuarios`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(dados)
-  });
+    dados.tipo_perfil = 'visitante';
 
-  if (!resposta.ok) {
+    const resposta = await fetch(`${API_URL}/usuarios`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
+
+    if (!resposta.ok) {
       throw new Error('Erro ao cadastrar usuário');
     }
 
-  const usuarioCriado = await resposta.json();
+    const usuarioCriado = await resposta.json();
 
-  const { senha, ...dadosSemSenha } = usuarioCriado
+    const { senha, ...dadosSemSenha } = usuarioCriado;
 
-localStorage.setItem('userData', JSON.stringify({
-  ...dadosSemSenha,
-  name: usuarioCriado.nome,
-  role: calcularIdade(usuarioCriado.data_nasc) < 18 ? 'aluno' : 'visitante'
-}))
+    localStorage.setItem('userData', JSON.stringify({
+      ...dadosSemSenha,
+      name: usuarioCriado.nome
+    }));
 
-  localStorage.setItem('isLoggedIn', 'true');
-  window.dispatchEvent(new Event('auth-change'));
+    localStorage.setItem('isLoggedIn', 'true');
+    window.dispatchEvent(new Event('auth-change'));
 
-  alert('Cadastro realizado com sucesso!');
+    alert('Cadastro realizado com sucesso!');
 
-  router.push('/usuario-pag');
+    router.push('/usuario-pag');
 
   } catch (erro) {
     console.error(erro);
     alert('Não foi possível realizar o cadastro.');
   }
-
 }
+
 
 function goHome() {
   router.push('/');
@@ -170,22 +124,6 @@ onMounted(carregar);
               />
             </div>
           </div>
-
-          <div class="field-group">
-            <label>Data de nascimento:</label>
-
-            <div class="input-wrapper">
-              <input
-                v-model="novoUsuario.data_nasc"
-                type="date"
-                required
-              />
-            </div>
-          </div>
-
-          <p v-if="categoria">
-            Categoria: {{ categoria }}
-          </p>
 
           <div class="btn-container">
             <button type="submit" class="submit-btn">Criar Conta</button>
