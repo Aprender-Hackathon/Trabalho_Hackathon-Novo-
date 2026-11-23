@@ -1,3 +1,75 @@
+<script setup>
+import { onMounted, ref, computed } from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+
+const API_URL = 'http://localhost:3000';
+const router = useRouter()
+
+const usuarios = ref([]);
+
+
+async function carregar() {
+  const resposta = await fetch(`${API_URL}/usuarios`);
+
+  usuarios.value = await resposta.json();
+}
+
+const novoUsuario = ref({
+  nome: '',
+  senha: '',
+  email: '',
+  id: '',
+  tipo_perfil: 'visitante'
+});
+
+async function salvarUsuario() {
+  try {
+    const { id, ...dados } = novoUsuario.value;
+
+    dados.tipo_perfil = 'visitante';
+
+    const resposta = await fetch(`${API_URL}/usuarios`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
+
+    if (!resposta.ok) {
+      throw new Error('Erro ao cadastrar usuário');
+    }
+
+    const usuarioCriado = await resposta.json();
+
+    const { senha, ...dadosSemSenha } = usuarioCriado;
+
+    localStorage.setItem('userData', JSON.stringify({
+      ...dadosSemSenha,
+      name: usuarioCriado.nome
+    }));
+
+    localStorage.setItem('isLoggedIn', 'true');
+    window.dispatchEvent(new Event('auth-change'));
+
+    alert('Cadastro realizado com sucesso!');
+
+    router.push('/usuario-pag');
+
+  } catch (erro) {
+    console.error(erro);
+    alert('Não foi possível realizar o cadastro.');
+  }
+}
+
+
+function goHome() {
+  router.push('/');
+}
+
+onMounted(carregar);
+</script>
+
 <template>
   <div class="page-container">
     <button class="close-btn" aria-label="Fechar" @click="goHome">✖</button>
@@ -6,13 +78,16 @@
       <h1 class="main-title">Cadastre-se</h1>
 
       <div class="card-box">
-        <form @submit.prevent="handleRegister">
+
+        <form @submit.prevent="salvarUsuario">
           <div class="field-group">
+
             <label>Nome:</label>
             <div class="input-wrapper">
               <img src="@/assets/img/user_cadastro.png" alt="Usuário" class="input-icon" />
+
               <input
-                v-model="name"
+                v-model="novoUsuario.nome"
                 type="text"
                 placeholder="Digite seu nome"
                 required
@@ -21,11 +96,13 @@
           </div>
 
           <div class="field-group">
+
             <label>E-Mail:</label>
             <div class="input-wrapper">
               <img src="@/assets/img/envelope_cadastro.png" alt="E-mail" class="input-icon" />
+
               <input
-                v-model="email"
+                v-model="novoUsuario.email"
                 type="email"
                 placeholder="Digite seu e-mail"
                 required
@@ -34,11 +111,13 @@
           </div>
 
           <div class="field-group">
+
             <label>Senha:</label>
             <div class="input-wrapper">
               <img src="@/assets/img/cadeado_cadastro.png" alt="Senha" class="input-icon" />
+
               <input
-                v-model="password"
+                v-model="novoUsuario.senha"
                 type="password"
                 placeholder="Crie sua senha"
                 required
@@ -49,7 +128,8 @@
           <div class="btn-container">
             <button type="submit" class="submit-btn">Criar Conta</button>
           </div>
-        </form>
+
+          </form>
 
         <div class="card-footer">
           <p>Já tem uma conta?</p>
@@ -60,35 +140,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const name = ref('')
-const email = ref('')
-const password = ref('')
-
-const handleRegister = () => {
-  const userData = {
-    name: name.value,
-    email: email.value,
-    role: 'usuario' 
-  }
-
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', 'true')
-
-  window.dispatchEvent(new Event('auth-change'))
-  router.push('/usuario-pag')
-}
-
-const goHome = () => {
-  router.push('/')
-}
-</script>
 
 <style scoped>
 .page-container {

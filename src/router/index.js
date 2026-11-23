@@ -91,10 +91,11 @@ component: () => import('../components/Comunidade.vue')
       name: 'escolheCadastro',
       component: () => import('../views/PaginaescolhecadastroView.vue')
     },
-     {
+    {
       path: '/historico-pag',
       name: 'historico',
-      component: () => import('../views/HistoricoView.vue')
+      component: () => import('../views/HistoricoView.vue'),
+      meta: { requerProfessor: true }
     },
     {
       path: '/salvo-pag',
@@ -121,21 +122,53 @@ component: () => import('../components/Comunidade.vue')
       path: '/formulario',
       alias: '/formulario-add',
       name: 'formulario',
-      component: () => import('../views/FormularioView.vue')
+      component: () => import('../views/FormularioView.vue'),
+      meta: { requerProfessor: true }
     },
-
+    {
+      path: '/admin/alunos',
+      name: 'adminAlunos',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      props: { tipo: 'alunos' }
+    },
+    {
+      path: '/admin/visitantes',
+      name: 'adminVisitantes',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      meta: { requerAdmin: true }
+    }
   ],
 })
 router.beforeEach((to) => {
-  if (!to.meta.requerAdmin) return true
+  let usuario = null
 
   try {
-    const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
-    if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') return true
+    usuario = JSON.parse(
+      localStorage.getItem('userData') || 'null'
+    )
   } catch {
-
+    usuario = null
   }
-  return { name: 'login' }
+
+  const logado = localStorage.getItem('isLoggedIn') === 'true'
+
+  if (to.meta.requerAdmin) {
+    if (logado && usuario?.tipo_perfil === 'administrador') {
+      return true
+    }
+
+    return { name: 'login' }
+  }
+
+  if (to.meta.requerProfessor) {
+    if (logado && usuario?.tipo_perfil === 'professor') {
+      return true
+    }
+
+    return { name: 'login' }
+  }
+
+  return true
 })
 
 export default router

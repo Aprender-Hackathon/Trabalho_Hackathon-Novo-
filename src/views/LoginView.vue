@@ -60,6 +60,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const API_URL = 'http://localhost:3000'
 
 const emailOrUser = ref('')
 const password = ref('')
@@ -74,7 +75,11 @@ const loginComoAdmin = async () => {
     const [admin] = await resposta.json()
     if (!admin || admin.senha !== password.value) return false
 
-    localStorage.setItem('userData', JSON.stringify({ id: admin.id, nome: admin.login, role: 'admin' }))
+    localStorage.setItem('userData', JSON.stringify({ 
+      id: admin.id, 
+      nome: admin.login, 
+      tipo_perfil: 'administrador' 
+    }))
     localStorage.setItem('isLoggedIn', 'true')
     window.dispatchEvent(new Event('auth-change'))
     router.push('/admin')
@@ -84,25 +89,75 @@ const loginComoAdmin = async () => {
   }
 }
 
+const loginComoProfessor = async () => {
+  try{
+    const resposta = await fetch(
+      `${API_URL}/professores?email-instituicao=${encodeURIComponent(emailOrUser.value.trim())}`
+    )
+
+    if (!resposta.ok) return false
+
+    const [professor] = await resposta.json()
+
+    if(!professor || professor.senha !== password.value) return false
+
+    const dadosSemSenha = { ...professor }
+    delete dadosSemSenha.senha
+
+    localStorage.setItem('userData', JSON.stringify({
+      ...dadosSemSenha,
+      name: professor.nome,
+      tipo_perfil: 'professor'
+    }))
+
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+
+    return true
+  } catch {
+    return false
+  }
+}
+
 const handleLogin = async () => {
   if (await loginComoAdmin()) return
 
-  const savedData = localStorage.getItem('userData')
-  let userData = savedData ? JSON.parse(savedData) : null
+  if (await loginComoProfessor()) return
 
-  if (!userData || !userData.id) {
-    userData = {
-      id: Date.now(),
-      name: emailOrUser.value,
-      email: emailOrUser.value
+  try {
+    const resposta = await fetch(`${API_URL}/usuarios`)
+    const usuarios = await resposta.json()
+
+    const usuario = usuarios.find(u =>
+      (u.email === emailOrUser.value || u.nome === emailOrUser.value) &&
+      u.senha === password.value
+    )
+
+    if (!usuario) {
+      alert('E-mail/usuário ou senha incorretos.')
+      return
     }
-  }
 
-  localStorage.setItem('userData', JSON.stringify(userData))
-  localStorage.setItem('isLoggedIn', 'true')
-  window.dispatchEvent(new Event('auth-change'))
-  router.push('/')
+    localStorage.setItem('userData', JSON.stringify({
+    id: usuario.id,
+    name: usuario.nome,
+    nome: usuario.nome,
+    email: usuario.email,
+    tipo_perfil: 'visitante'
+    }))
+    
+    localStorage.setItem('isLoggedIn', 'true')
+    window.dispatchEvent(new Event('auth-change'))
+    router.push('/')
+    
+  } catch (erro) {
+    console.error(erro)
+    alert('Erro ao conectar com o servidor.')
+  }
 }
+
+
 const goHome = () => {
   router.push('/')
 }

@@ -80,7 +80,8 @@ async function salvarProfessor() {
     'email-instituicao': email.value,
     materia: materia.value,
     escola: escola.value,
-    senha: senha.value
+    senha: senha.value,
+    tipo_perfil: 'professor'
   }
 
   try {
@@ -107,10 +108,16 @@ async function salvarProfessor() {
 
       const dadosCriados = await resposta.json()
 
+      const dadosSemSenha = {...dadosCriados}
+      delete dadosSemSenha.senha
+
+
+
       localStorage.setItem('userData', JSON.stringify(dadosCriados))
       localStorage.setItem('isLoggedIn', 'true')
       window.dispatchEvent(new Event('auth-change'))
       
+      window.dispatchEvent(new Event('auth-change'))
       roteador.push('/')
     }
   } catch {
