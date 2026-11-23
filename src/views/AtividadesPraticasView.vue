@@ -1,26 +1,57 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import FiltroPratica from '@/components/FiltroPratica.vue'
 import BotaoPratica from '@/components/BotaoPratica.vue'
-import { estadoPratica } from '@/PraticaCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
 const limite = ref(20)
+const listaPratica = ref([]) // Guarda os dados vindos do JSON Server
+const carregando = ref(false)
 
 const filtroEscolhido = ref({
   data: 'Tudo',
 })
 
-function alternarSalvar(id) {
-  const item = estadoPratica.lista.find(a => a.id === id)
+// Busca os dados atualizados do JSON Server ao abrir a tela
+async function buscarAtividadesPraticas() {
+  carregando.value = true
+  try {
+    const resposta = await fetch('http://localhost:3000/atividades_praticas')
+    if (resposta.ok) {
+      listaPratica.value = await resposta.json()
+    }
+  } catch (erro) {
+    console.error('Erro ao buscar atividades práticas:', erro)
+  } finally {
+    carregando.value = false
+  }
+}
+
+onMounted(() => {
+  buscarAtividadesPraticas()
+})
+
+async function alternarSalvar(id) {
+  const item = listaPratica.value.find(a => String(a.id) === String(id))
   if (item) {
-    item.salvo = !item.salvo
+    const novoStatus = !item.salvo
+    item.salvo = novoStatus
+    
+    // Atualiza também no JSON Server (PUT)
+    try {
+      await fetch(`http://localhost:3000/atividades_praticas/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ salvo: novoStatus })
+      })
+    } catch (e) {
+      console.error('Erro ao alternar status de salvo:', e)
+    }
   }
 }
 
 const atividadesFiltradas = computed(() => {
-  const lista = estadoPratica?.lista || []
-  return lista.filter((item) => {
+  return listaPratica.value.filter((item) => {
     return (
       filtroEscolhido.value.data === 'Tudo' ||
       item.data === filtroEscolhido.value.data
@@ -33,7 +64,9 @@ const atividadesFiltradas = computed(() => {
   <div class="explorar-container">
     <FiltroPratica @filtro="filtroEscolhido = $event" />
 
-    <div class="cards">
+    <p v-if="carregando" style="text-align: center;">Carregando atividades...</p>
+
+    <div class="cards" v-else>
       <BotaoPratica
         v-for="item in atividadesFiltradas.slice(0, limite)"
         :key="item.id"

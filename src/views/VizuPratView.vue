@@ -1,33 +1,60 @@
 <script setup>
+import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import VerAtvPrat from '@/components/VerAtvPrat.vue';
+import AbaComentarios from '@/components/AbaComentarios.vue';
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue';
 import BotaoPratica from '@/components/BotaoPratica.vue';
-import estadoPratica from '@/PraticaCards';
-import { computed, ref } from 'vue';
-import { useRoute } from 'vue-router';
-import AbaComentarios from '@/components/AbaComentarios.vue';
 
-const route = useRoute()
-const mostrarAtvs = ref(false)
+const route = useRoute();
+const listaPratica = ref([]);
+const mostrarAtvs = ref(false);
 
-const atividade = computed(() => estadoPratica.lista.find(item => item.id === Number(route.params.id)))
+async function carregarDetalhesPraticos() {
+  try {
+    const resposta = await fetch('http://localhost:3000/atividades_praticas');
+    if (resposta.ok) {
+      listaPratica.value = await resposta.json();
+    }
+  } catch (erro) {
+    console.error('Erro ao buscar detalhes da atividade prática:', erro);
+  }
+}
 
-const atvsRelacionadas = computed (() => {
-    if (!atividade.value) return []
-    return estadoPratica.lista.filter(
-        item => item.data === atividade.value.data && item.id !== atividade.value.id
-    )
-})
+onMounted(() => {
+  carregarDetalhesPraticos();
+});
 
-function alternarSalvar(id) {
-  const item = estadoPratica.lista.find(a => a.id === id)
+const atividade = computed(() => 
+  listaPratica.value.find(item => String(item.id) === String(route.params.id))
+);
+
+const atvsRelacionadas = computed(() => {
+  if (!atividade.value) return [];
+  return listaPratica.value.filter(
+    item => item.data === atividade.value.data && String(item.id) !== String(atividade.value.id)
+  );
+});
+
+async function alternarSalvar(id) {
+  const item = listaPratica.value.find(a => String(a.id) === String(id));
   if (item) {
-    item.salvo = !item.salvo
+    const novoStatus = !item.salvo;
+    item.salvo = novoStatus;
+    try {
+      await fetch(`http://localhost:3000/atividades_praticas/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ salvo: novoStatus })
+      });
+    } catch (e) {
+      console.error('Erro ao atualizar status de salvo:', e);
+    }
   }
 }
 
 function alternarMostrarAtvs() {
-    mostrarAtvs.value = !mostrarAtvs.value
+  mostrarAtvs.value = !mostrarAtvs.value;
 }
 </script>
 
@@ -61,11 +88,14 @@ function alternarMostrarAtvs() {
             :titulo="item.titulo"
             :imagem="item.imagem"
             :data="item.data"
-            :isSalvo="item.salvo"
+            :isSalvo="item.isSalvo"
             @salvar="alternarSalvar(item.id)"
             @click="mostrarAtvs = false"
           />
         </div>
+    </div>
+    <div v-else style="text-align: center; padding: 4rem;">
+        <p>A carregar detalhes da atividade...</p>
     </div>
 </template>
 
@@ -73,7 +103,6 @@ function alternarMostrarAtvs() {
 .pagina-detalhe {
   width: 100%;
 }
-
 .container-botao {
   display: flex;
   justify-content: center;
@@ -82,11 +111,9 @@ function alternarMostrarAtvs() {
   margin: 2rem 0;
   text-align: center;
 }
-
 .mais {
   margin: 0 auto;
 }
-
 .cards {
   display: flex;
   flex-wrap: wrap;

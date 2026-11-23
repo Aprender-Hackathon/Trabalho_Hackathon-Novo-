@@ -56,7 +56,10 @@ onMounted(() => {
 const sair = () => {
   localStorage.removeItem('userData')
   localStorage.removeItem('isLoggedIn')
+localStorage.removeItem('userData')
+  window.dispatchEvent(new Event('storage'))
   roteador.push('/')
+
 }
 </script>
 

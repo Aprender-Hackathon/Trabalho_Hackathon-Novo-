@@ -132,11 +132,17 @@ component: () => import('../components/Comunidade.vue')
       props: { tipo: 'alunos' }
     },
     {
+
+     path: '/formulario/:id?', // <-- Adicionámos o /:id? para servir para criar e editar
+      name: 'formulario',
+      component: () => import('../views/FormularioView.vue')
+    },
+    {
       path: '/admin/visitantes',
       name: 'adminVisitantes',
       component: () => import('../views/AdminUsuariosView.vue'),
       meta: { requerAdmin: true }
-    }
+    },
   ],
 })
 router.beforeEach((to) => {

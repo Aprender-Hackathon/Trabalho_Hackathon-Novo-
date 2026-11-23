@@ -1,9 +1,9 @@
 <script setup>
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import BaixarDocx from './BaixarDocx.vue'
 import BotaoSalvar from './BotaoSalvar.vue'
 import PreviewDocx from './PreviewDocx.vue'
-import { estadoAtividades } from '@/AtividadesCards.js'
 
 const router = useRouter()
 
@@ -18,71 +18,93 @@ const props = defineProps({
   isSalvo: Boolean
 })
 
+const usuarioLogado = JSON.parse(localStorage.getItem('userData') || '{}')
+const isProfessor = computed(() => usuarioLogado.role === 'professor')
+
 function voltar() {
   router.back()
 }
 
-function alternarSalvar() {
-  if (props.id === undefined || !estadoAtividades?.lista) return
+// EDITAR (Professor)
+function editarAtividade() {
+  if (!isProfessor.value) {
+    alert("Acesso negado: Apenas professores podem editar.");
+    return;
+  }
+  router.push(`/formulario/${props.id}`);
+}
 
-  const item = estadoAtividades.lista.find(a => String(a.id) === String(props.id))
-  if (item) {
-    item.salvo = !item.salvo
+// EXCLUIR (Professor)
+async function deletarAtividade() {
+  if (!isProfessor.value) {
+    alert("Acesso negado: Apenas professores podem excluir.");
+    return;
+  }
+
+  if (!confirm("Tem certeza que deseja excluir esta atividade?")) return;
+
+  try {
+    const resposta = await fetch(`http://localhost:3000/atividades/${props.id}`, { 
+      method: "DELETE" 
+    });
+    
+    if (!resposta.ok) throw new Error("Erro ao excluir no servidor.");
+
+    alert("Atividade excluída com sucesso!");
+    router.push('/explorar');
+  } catch (erro) {
+    alert("Erro ao excluir: " + erro.message);
   }
 }
 </script>
 
 <template>
   <div class="all">
-
     <button class="voltar" @click="voltar">
-  <img src="/images/back.svg" alt="Voltar" />
-</button>
+      <img src="/images/back.svg" alt="Voltar" />
+    </button>
 
-    <PreviewDocx
-      v-if="docx"
-      :arquivo="docx"
-      class="image"
-    />
-
+    <img :src="imagem" :alt="titulo" class="image" />
     <div class="lado">
       <div class="cima">
         <h3>{{ titulo }}</h3>
 
-        <div class="mat_con">
+        <div class="data">
           <p>{{ materia }}</p>
-          <p>{{ conteudo }}</p>
         </div>
-
         <p class="descricao">
           {{ descricao }}
         </p>
       </div>
 
       <div class="baixo">
-
         <BaixarDocx :docx="docx" />
+        <PreviewDocx :docx="docx" />
 
         <BotaoSalvar
           size="L"
           class="computador"
           :isSalvo="isSalvo"
-          @salvar="alternarSalvar"
         />
 
         <BotaoSalvar
           size="M"
           class="celular"
           :isSalvo="isSalvo"
-          @salvar="alternarSalvar"
         />
 
+        <div v-if="isProfessor" class="acoes-professor-detalhes" style="margin-top: 20px; display: flex; gap: 10px;">
+          <button @click="editarAtividade" style="background-color: #2196F3; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Editar Atividade
+          </button>
+          <button @click="deletarAtividade" style="background-color: #d1495b; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
+            Excluir Atividade
+          </button>
+        </div>
       </div>
     </div>
-
   </div>
 </template>
-
 <style scoped>
 
 .celular {

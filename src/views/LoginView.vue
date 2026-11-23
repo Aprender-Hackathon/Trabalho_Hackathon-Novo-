@@ -90,7 +90,7 @@ const loginComoAdmin = async () => {
 }
 
 const loginComoProfessor = async () => {
-  try{
+  try {
     const resposta = await fetch(
       `${API_URL}/professores?email-instituicao=${encodeURIComponent(emailOrUser.value.trim())}`
     )
@@ -99,7 +99,7 @@ const loginComoProfessor = async () => {
 
     const [professor] = await resposta.json()
 
-    if(!professor || professor.senha !== password.value) return false
+    if (!professor || professor.senha !== password.value) return false
 
     const dadosSemSenha = { ...professor }
     delete dadosSemSenha.senha
@@ -119,6 +119,7 @@ const loginComoProfessor = async () => {
     return false
   }
 }
+
 
 const handleLogin = async () => {
   if (await loginComoAdmin()) return

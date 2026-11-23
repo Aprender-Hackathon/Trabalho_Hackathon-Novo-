@@ -1,3 +1,57 @@
+
+<script setup>
+import { reactive, ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const user = reactive({
+  name: '',
+  email: '',
+})
+
+const activeField = ref(null)
+const tempValue = ref('')
+
+onMounted(() => {
+  const savedData = localStorage.getItem('userData')
+  if (savedData) {
+    const parsedData = JSON.parse(savedData)
+    user.name = parsedData.name || ''
+    user.email = parsedData.email || ''
+  }
+})
+
+const openModal = (field) => {
+  activeField.value = field
+  tempValue.value = user[field]
+}
+
+const closeModal = () => {
+  activeField.value = null
+  tempValue.value = ''
+}
+
+const saveModal = () => {
+  if (activeField.value) {
+    user[activeField.value] = tempValue.value
+
+    localStorage.setItem('userData', JSON.stringify({
+      name: user.name,
+      email: user.email
+    }))
+  }
+  closeModal()
+}
+
+const handleLogout = () => {
+  localStorage.removeItem('isLoggedIn')
+  localStorage.removeItem('userData')
+  window.dispatchEvent(new Event('storage'))
+  router.push('/')
+}
+</script>
+
 <template>
   <div class="box">
     <div class="card">

@@ -3,18 +3,33 @@ import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import FiltroPratica from '@/components/FiltroPratica.vue'
 import BotaoPratica from '@/components/BotaoPratica.vue'
-import { estadoPratica } from '@/PraticaCards'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 import BannerAtvPraticas from '@/components/BannerAtvPraticas.vue'
 
 const route = useRoute()
 const limite = ref(20)
+const listaPratica = ref([])
+const carregando = ref(false)
 
 const filtroEscolhido = ref({
   materia: 'Tudo',
   conteudo: 'Tudo',
   data: 'Tudo'
 })
+
+async function buscarAtividadesPraticas() {
+  carregando.value = true
+  try {
+    const resposta = await fetch('http://localhost:3000/atividades_praticas')
+    if (resposta.ok) {
+      listaPratica.value = await resposta.json()
+    }
+  } catch (erro) {
+    console.error('Erro ao buscar dados:', erro)
+  } finally {
+    carregando.value = false
+  }
+}
 
 function lerParametroUrl() {
   if (route.query.data) {
@@ -24,6 +39,7 @@ function lerParametroUrl() {
 
 onMounted(() => {
   lerParametroUrl()
+  buscarAtividadesPraticas()
 })
 
 watch(() => route.query.data, () => {
@@ -37,15 +53,26 @@ function atualizarFiltro(novoFiltro) {
   }
 }
 
-function alternarSalvar(id) {
-  const item = estadoPratica.lista.find(a => a.id === id)
+async function alternarSalvar(id) {
+  const item = listaPratica.value.find(a => String(a.id) === String(id))
   if (item) {
-    item.salvo = !item.salvo
+    const novoStatus = !item.salvo
+    item.salvo = novoStatus
+    
+    try {
+      await fetch(`http://localhost:3000/atividades_praticas/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ salvo: novoStatus })
+      })
+    } catch (e) {
+      console.error('Erro ao alternar status de salvo:', e)
+    }
   }
 }
 
 const atividadesFiltradas = computed(() => {
-  return estadoPratica.lista.filter((item) => {
+  return listaPratica.value.filter((item) => {
     const matchData =
       filtroEscolhido.value.data === 'Tudo' ||
       (item.data && item.data.trim().toLowerCase() === filtroEscolhido.value.data.trim().toLowerCase())
@@ -69,7 +96,9 @@ const atividadesFiltradas = computed(() => {
       @filtro="atualizarFiltro"
     />
 
-    <div class="cards">
+    <p v-if="carregando" style="text-align: center; margin-top: 20px;">Carregando atividades...</p>
+
+    <div class="cards" v-else>
       <BotaoPratica
         v-for="item in atividadesFiltradas.slice(0, limite)"
         :key="item.id"
