@@ -6168,6 +6168,18 @@
       "cidade": "Fortaleza",
       "estado": "CE",
       "numero": "145"
+    },
+    {
+      "nome": "Cólegio João Henrique Cardoso",
+      "codigoInep": "47863209",
+      "redeEnsino": "Municipal",
+      "cep": "89212-525",
+      "logradouro": "Rua Cidade de Nagazaki",
+      "bairro": "Santa Catarina",
+      "cidade": "Joinville",
+      "estado": "SC",
+      "numero": "152",
+      "id": "E5bwKXOuO1k"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
