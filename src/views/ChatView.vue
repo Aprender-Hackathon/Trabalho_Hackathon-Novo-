@@ -13,7 +13,6 @@ const menuAberto = ref(null)
 const posicaoEditando = ref(null)
 const textoEditado = ref('')
 
-// 1. GET: Buscar mensagens do JSON Server ao carregar a tela
 onMounted(async () => {
   try {
     const resposta = await fetch('http://localhost:3000/mensagensChat')
@@ -42,7 +41,6 @@ function escolherArquivo(evento) {
   leitor.readAsDataURL(arq)
 }
 
-// 2. POST: Enviar nova mensagem para a API
 async function enviar() {
   if (texto.value.trim() === '' && arquivo.value === null) {
     return
@@ -90,7 +88,6 @@ function editar(msg) {
   textoEditado.value = msg.texto
 }
 
-// 3. PATCH: Atualizar apenas o texto da mensagem na API
 async function salvarEdicao(id) {
   if (textoEditado.value.trim() === '') {
     return
@@ -116,7 +113,6 @@ async function salvarEdicao(id) {
   }
 }
 
-// 4. DELETE: Excluir mensagem da API pelo ID
 async function excluir(id) {
   menuAberto.value = null
   if (confirm('Quer mesmo excluir esta mensagem?')) {

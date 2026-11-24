@@ -71,6 +71,33 @@
       "senha": "zxcvbnm",
       "tipo_perfil": "professor",
       "id": "NF7FzPSKjnY"
+    },
+    {
+      "nome": "123456789",
+      "email-instituicao": "annaclaramorettipavanello@gmail.com",
+      "materia": "hist",
+      "escola": "wefvbjk,",
+      "senha": "1234567890-",
+      "tipo_perfil": "professor",
+      "id": "L6OLkqM-5q4"
+    },
+    {
+      "nome": "paola",
+      "email-instituicao": "paola@gmail.com",
+      "materia": "matemática",
+      "escola": "ifc",
+      "senha": ",mnbvcx",
+      "tipo_perfil": "professor",
+      "id": "GhIQ9-UB_NU"
+    },
+    {
+      "nome": "Larissa",
+      "email-instituicao": "larissadejesuss@gmail.com",
+      "materia": "Português",
+      "escola": "IFC",
+      "senha": "kjhgfdsa",
+      "tipo_perfil": "professor",
+      "id": "84VjtL3bzq8"
     }
   ],
   "usuarios": [
@@ -6052,8 +6079,7 @@
     }
   ],
   "escolas": [
-   
-{
+    {
       "id": "1",
       "nome": "EEB Neusa Ostetto Cardoso",
       "municipio": "Araranguá",
@@ -6403,8 +6429,6 @@
       "numero": "152",
       "id": "E5bwKXOuO1k"
     }
-  
   ],
-   "mensagensChat": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
