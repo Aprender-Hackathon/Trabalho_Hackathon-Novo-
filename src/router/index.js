@@ -129,7 +129,8 @@ component: () => import('../components/Comunidade.vue')
       path: '/admin/alunos',
       name: 'adminAlunos',
       component: () => import('../views/AdminUsuariosView.vue'),
-        {
+    },
+    {
       path: '/admin/professores',
       name: 'adminProfessores',
       component: () => import('../views/AdminProfessoresView.vue'),
