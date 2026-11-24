@@ -113,25 +113,21 @@ const route = useRoute()
 const salvo = () => router.push('/salvos')
 
 const perfil = () => {
-  const savedData = localStorage.getItem('userData')
+  const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
+  const tipo = usuario?.tipo_perfil ?? usuario?.role
 
-  if (savedData) {
-    const user = JSON.parse(savedData)
+  if (tipo === 'administrador' || tipo === 'admin') {
+    router.push('/admin')
+    return
+  }
 
-    if (user.tipo_perfil === 'administrador') {
-      router.push('/admin')
-      return
-    }
-
-    if (user.tipo_perfil === 'professor') {
-      router.push('/usuario-professor')
-      return
-    }
+  if (tipo === 'professor' || (tipo == null && usuario?.materia != null)) {
+    router.push('/usuario-professor')
+    return
   }
 
   router.push('/usuario-pag')
 }
-
 const isLoggedIn = ref(false)
 const isProfessor = ref(false)
 

@@ -80,7 +80,6 @@ const form = ref({
   numero: '',
 })
 
-// LER
 async function carregar() {
   try {
     const resposta = await fetch(URL_API)

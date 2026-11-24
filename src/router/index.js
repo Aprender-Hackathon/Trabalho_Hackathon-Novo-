@@ -129,11 +129,15 @@ component: () => import('../components/Comunidade.vue')
       path: '/admin/alunos',
       name: 'adminAlunos',
       component: () => import('../views/AdminUsuariosView.vue'),
-      props: { tipo: 'alunos' }
+        {
+      path: '/admin/professores',
+      name: 'adminProfessores',
+      component: () => import('../views/AdminProfessoresView.vue'),
+      meta: { requerAdmin: true }
     },
     {
 
-     path: '/formulario/:id?', // <-- Adicionámos o /:id? para servir para criar e editar
+     path: '/formulario/:id?', 
       name: 'formulario',
       component: () => import('../views/FormularioView.vue')
     },
@@ -149,32 +153,23 @@ router.beforeEach((to) => {
   let usuario = null
 
   try {
-    usuario = JSON.parse(
-      localStorage.getItem('userData') || 'null'
-    )
+    usuario = JSON.parse(localStorage.getItem('userData') || 'null')
   } catch {
     usuario = null
   }
 
   const logado = localStorage.getItem('isLoggedIn') === 'true'
+  const tipo = usuario?.tipo_perfil ?? usuario?.role
 
-  if (to.meta.requerAdmin) {
-    if (logado && usuario?.tipo_perfil === 'administrador') {
-      return true
-    }
-
+  if (to.meta.requerAdmin && (!logado || (tipo !== 'administrador' && tipo !== 'admin'))) {
     return { name: 'login' }
   }
 
-  if (to.meta.requerProfessor) {
-    if (logado && usuario?.tipo_perfil === 'professor') {
-      return true
-    }
-
+  if (to.meta.requerProfessor && (!logado || tipo !== 'professor')) {
     return { name: 'login' }
   }
 
   return true
 })
-
 export default router
+
