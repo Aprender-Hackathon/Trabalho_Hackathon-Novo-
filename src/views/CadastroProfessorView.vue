@@ -50,6 +50,7 @@ const materia = ref('')
 const escola = ref('')
 const senha = ref('')
 const salvando = ref(false)
+const editandoId = ref(null)
 
 async function buscarProfessores() {
   try {
@@ -76,8 +77,9 @@ async function salvarProfessor() {
   salvando.value = true
 
   try {
-    if (editandoId.value) {
-      const resposta = await fetch(`URLAPI/{editandoId.value}`, {
+    if (editandoId.value !== null) {
+      const id = encodeURIComponent(editandoId.value)
+      const resposta = await fetch(`${URL_API}/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
@@ -87,7 +89,7 @@ async function salvarProfessor() {
 
       alert('Editado com sucesso!')
       limparFormulario()
-      buscarProfessores()
+      await buscarProfessores()
       return
     }
 
@@ -129,8 +131,8 @@ function limparFormulario() {
   materia.value = ''
   escola.value = ''
   senha.value = ''
+  editandoId.value = null
 }
-
 
 function voltarHome() {
   roteador.push('/')
