@@ -18,13 +18,23 @@ const props = defineProps({
   isSalvo: Boolean
 })
 
-const usuarioLogado = JSON.parse(localStorage.getItem('userData') || '{}')
-const isProfessor = computed(() => usuarioLogado.role === 'professor')
+const isProfessor = computed(() => {
+  const raw = localStorage.getItem('userData')
+  if (!raw) return false
 
-function voltar() {
-  router.back()
-}
+  try {
+    const user = JSON.parse(raw)
+    const perfil = (user.role || user.tipo_perfil || '').toString().toLowerCase()
 
+    return (
+      perfil === 'professor' ||
+      Boolean(user['email-instituicao']) ||
+      Boolean(user.materia && user.escola)
+    )
+  } catch {
+    return false
+  }
+})
 // EDITAR (Professor)
 function editarAtividade() {
   if (!isProfessor.value) {

@@ -93,16 +93,14 @@
       "nome": "Carlos Silva",
       "tipo_perfil": "visitante",
       "email": "carlos@email.com",
-      "senha": "silv3str3",
-      "id": "0GBChCHBOc4"
+      "senha": "silv3str3"
     },
     {
       "id": "83sw6gq_5QA",
       "nome": "Charllote Diaz",
       "tipo_perfil": "visitante",
       "email": "diazz.charllote@email.com",
-      "senha": "118lote14dias",
-      "id": "n_IvG39Z9s4"
+      "senha": "118lote14dias"
     },
     {
       "id": "yRC_JuOCDog",
@@ -138,8 +136,6 @@
       "email": "arthur@gmail.com",
       "tipo_perfil": "visitante",
       "id": "O2Rs_Kzi45o"
-    },
-
     }
   ],
   "atividades_praticas": [
