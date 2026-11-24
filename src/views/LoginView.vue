@@ -74,7 +74,7 @@ const entrando = ref(false)
 
 async function buscarContas(colecao, campo, valor) {
   const filtro = campo ? `?${new URLSearchParams({ [campo]: valor })}` : ''
-  const resposta = await fetch(`API/{colecao}${filtro}`)
+  const resposta = await fetch(`${API}/${colecao}${filtro}`)
 
   if (resposta.status === 404) return []
   if (!resposta.ok) throw new Error('Falha ao consultar a API.')
