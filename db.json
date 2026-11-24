@@ -71,24 +71,6 @@
       "senha": "zxcvbnm",
       "tipo_perfil": "professor",
       "id": "NF7FzPSKjnY"
-    },
-    {
-      "nome": "bia",
-      "email-instituicao": "bia@gmail.com",
-      "materia": "artes",
-      "escola": "ifc",
-      "senha": "2323",
-      "tipo_perfil": "professor",
-      "id": "Px8XWCVLR-w"
-    },
-    {
-      "nome": "Bea",
-      "email-instituicao": "bea@gmail.com",
-      "materia": "artes",
-      "escola": "ifc",
-      "senha": "23233",
-      "tipo_perfil": "professor",
-      "id": "B8azaiG82UU"
     }
   ],
   "usuarios": [
@@ -182,7 +164,7 @@
       "arquivo": "/Imagens feriados/Independencia do Brasil/IndependenciaDoBR3.pdf",
       "data": "Independência do Brasil",
       "descricao": "Atividade para cortar e colar.",
-      "salvo": true
+      "salvo": false
     },
     {
       "id": "661",
@@ -191,7 +173,7 @@
       "arquivo": "/Imagens feriados/Natal/Natal1.pdf",
       "data": "Natal",
       "descricao": "Atividade para colorir.",
-      "salvo": true
+      "salvo": false
     },
     {
       "id": "662",
@@ -254,15 +236,6 @@
       "arquivo": "/Imagens feriados/Pascoa/pascoa4.pdf",
       "data": "Páscoa",
       "descricao": "Atividade para pintar.",
-      "salvo": false
-    },
-    {
-      "id": "efNeS4XFxcA",
-      "titulo": "Desenho pintura",
-      "descricao": "",
-      "materia": "Artes",
-      "conteudo": "Artes Visuais",
-      "data": "Natal",
       "salvo": false
     }
   ],
@@ -6079,7 +6052,8 @@
     }
   ],
   "escolas": [
-    {
+   
+{
       "id": "1",
       "nome": "EEB Neusa Ostetto Cardoso",
       "municipio": "Araranguá",
@@ -6429,6 +6403,7 @@
       "numero": "152",
       "id": "E5bwKXOuO1k"
     }
+  
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
