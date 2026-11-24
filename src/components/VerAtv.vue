@@ -17,10 +17,23 @@ const props = defineProps({
   docx: String,
   isSalvo: Boolean
 })
+const isProfessor = computed(() => {
+  const raw = localStorage.getItem('userData')
+  if (!raw) return false
 
-const usuarioLogado = JSON.parse(localStorage.getItem('userData') || '{}')
-const isProfessor = computed(() => usuarioLogado.role === 'professor')
+  try {
+    const user = JSON.parse(raw)
+    const perfil = (user.role || user.tipo_perfil || '').toString().toLowerCase()
 
+    return (
+      perfil === 'professor' ||
+      Boolean(user['email-instituicao']) ||
+      Boolean(user.materia && user.escola)
+    )
+  } catch {
+    return false
+  }
+})
 function voltar() {
   router.back()
 }
