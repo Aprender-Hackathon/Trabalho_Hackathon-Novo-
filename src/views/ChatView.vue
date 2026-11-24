@@ -13,16 +13,17 @@ const menuAberto = ref(null)
 const posicaoEditando = ref(null)
 const textoEditado = ref('')
 
-onMounted(() => {
-  const salvo = localStorage.getItem('mensagensChat')
-  if (salvo) {
-    mensagens.value = JSON.parse(salvo)
+// 1. GET: Buscar mensagens do JSON Server ao carregar a tela
+onMounted(async () => {
+  try {
+    const resposta = await fetch('http://localhost:3000/mensagensChat')
+    if (resposta.ok) {
+      mensagens.value = await resposta.json()
+    }
+  } catch (erro) {
+    console.error('Erro ao carregar mensagens da API:', erro)
   }
 })
-
-function salvar() {
-  localStorage.setItem('mensagensChat', JSON.stringify(mensagens.value))
-}
 
 function escolherArquivo(evento) {
   const arq = evento.target.files[0]
@@ -41,52 +42,95 @@ function escolherArquivo(evento) {
   leitor.readAsDataURL(arq)
 }
 
-function enviar() {
+// 2. POST: Enviar nova mensagem para a API
+async function enviar() {
   if (texto.value.trim() === '' && arquivo.value === null) {
     return
   }
 
-  mensagens.value.push({
+  const novaMensagem = {
     autor: meuNome,
     professor: souProfessor,
     texto: texto.value,
     arquivo: arquivo.value,
-  })
-  salvar()
+  }
 
-  texto.value = ''
-  arquivo.value = null
-  document.getElementById('campoArquivo').value = ''
-}
+  try {
+    const resposta = await fetch('http://localhost:3000/mensagensChat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(novaMensagem)
+    })
 
-function abrirMenu(posicao) {
-  if (menuAberto.value === posicao) {
-    menuAberto.value = null
-  } else {
-    menuAberto.value = posicao
+    if (resposta.ok) {
+      const mensagemCriada = await resposta.json()
+      mensagens.value.push(mensagemCriada)
+
+      texto.value = ''
+      arquivo.value = null
+      const campoArq = document.getElementById('campoArquivo')
+      if (campoArq) campoArq.value = ''
+    }
+  } catch (erro) {
+    console.error('Erro ao enviar mensagem:', erro)
   }
 }
 
-function editar(posicao) {
-  menuAberto.value = null
-  posicaoEditando.value = posicao
-  textoEditado.value = mensagens.value[posicao].texto
+function abrirMenu(id) {
+  if (menuAberto.value === id) {
+    menuAberto.value = null
+  } else {
+    menuAberto.value = id
+  }
 }
 
-function salvarEdicao(posicao) {
+function editar(msg) {
+  menuAberto.value = null
+  posicaoEditando.value = msg.id
+  textoEditado.value = msg.texto
+}
+
+// 3. PATCH: Atualizar apenas o texto da mensagem na API
+async function salvarEdicao(id) {
   if (textoEditado.value.trim() === '') {
     return
   }
-  mensagens.value[posicao].texto = textoEditado.value
-  salvar()
-  posicaoEditando.value = null
+
+  try {
+    const resposta = await fetch(`http://localhost:3000/mensagensChat/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ texto: textoEditado.value })
+    })
+
+    if (resposta.ok) {
+      const mensagemAtualizada = await resposta.json()
+      const indice = mensagens.value.findIndex(m => m.id === id)
+      if (indice !== -1) {
+        mensagens.value[indice] = mensagemAtualizada
+      }
+      posicaoEditando.value = null
+    }
+  } catch (erro) {
+    console.error('Erro ao editar mensagem:', erro)
+  }
 }
 
-function excluir(posicao) {
+// 4. DELETE: Excluir mensagem da API pelo ID
+async function excluir(id) {
   menuAberto.value = null
   if (confirm('Quer mesmo excluir esta mensagem?')) {
-    mensagens.value.splice(posicao, 1)
-    salvar()
+    try {
+      const resposta = await fetch(`http://localhost:3000/mensagensChat/${id}`, {
+        method: 'DELETE'
+      })
+
+      if (resposta.ok) {
+        mensagens.value = mensagens.value.filter(m => m.id !== id)
+      }
+    } catch (erro) {
+      console.error('Erro ao excluir mensagem:', erro)
+    }
   }
 }
 </script>
@@ -108,18 +152,18 @@ function excluir(posicao) {
         <p v-if="mensagens.length === 0">Nenhuma mensagem ainda.</p>
 
         <div
-          v-for="(m, posicao) in mensagens"
-          :key="posicao"
+          v-for="m in mensagens"
+          :key="m.id"
           class="linha"
           :class="{ minha: m.autor === meuNome }"
         >
           <div class="balao">
             <div class="menu">
-              <button class="pontinhos" @click="abrirMenu(posicao)">⋮</button>
+              <button class="pontinhos" @click="abrirMenu(m.id)">⋮</button>
 
-              <div v-if="menuAberto === posicao" class="menu-lista">
-                <button @click="editar(posicao)">Editar</button>
-                <button @click="excluir(posicao)">Excluir</button>
+              <div v-if="menuAberto === m.id" class="menu-lista">
+                <button @click="editar(m)">Editar</button>
+                <button @click="excluir(m.id)">Excluir</button>
               </div>
             </div>
 
@@ -127,9 +171,9 @@ function excluir(posicao) {
               {{ m.autor }}<span v-if="m.professor"> (professor)</span>
             </strong>
 
-            <div v-if="posicaoEditando === posicao" class="editando">
-              <input v-model="textoEditado" @keyup.enter="salvarEdicao(posicao)" />
-              <button @click="salvarEdicao(posicao)">Salvar</button>
+            <div v-if="posicaoEditando === m.id" class="editando">
+              <input v-model="textoEditado" @keyup.enter="salvarEdicao(m.id)" />
+              <button @click="salvarEdicao(m.id)">Salvar</button>
               <button @click="posicaoEditando = null">Cancelar</button>
             </div>
 
@@ -164,38 +208,31 @@ function excluir(posicao) {
   margin: 20px auto 80px;
   padding: 0 16px;
 }
-
 .chat {
   border: 3px solid #e65261;
   border-radius: 20px;
   overflow: hidden;
 }
-
 .topo {
   background: #238b97;
   color: white;
   padding: 12px 18px;
 }
-
 .topo h1 {
   margin: 0;
 }
-
 .caixa {
   min-height: 300px;
   padding: 14px;
   background: #fdf6ec;
 }
-
 .linha {
   display: flex;
   margin-bottom: 8px;
 }
-
 .linha.minha {
   justify-content: flex-end;
 }
-
 .balao {
   position: relative;
   max-width: 75%;
@@ -204,28 +241,23 @@ function excluir(posicao) {
   border-radius: 14px;
   overflow-wrap: anywhere;
 }
-
 .linha.minha .balao {
   background: #fce293;
 }
-
 .balao p {
   margin: 0;
 }
-
 .menu {
   position: absolute;
   top: 2px;
   right: 4px;
 }
-
 .pontinhos {
   background: none;
   border: none;
   font-size: 20px;
   cursor: pointer;
 }
-
 .menu-lista {
   position: absolute;
   right: 0;
@@ -235,7 +267,6 @@ function excluir(posicao) {
   border-radius: 8px;
   z-index: 5;
 }
-
 .menu-lista button {
   display: block;
   width: 100%;
@@ -245,44 +276,37 @@ function excluir(posicao) {
   border: none;
   cursor: pointer;
 }
-
 .editando {
   display: flex;
   gap: 6px;
 }
-
 .editando input {
   flex: 1;
   min-width: 0;
 }
-
 .escolhido {
   margin: 0;
   padding: 6px 14px;
   background: #cfe9ee;
 }
-
 .enviar {
   display: flex;
   gap: 8px;
   padding: 10px;
   background: #fce293;
 }
-
 .enviar input {
   flex: 1;
   padding: 8px 14px;
   border: none;
   border-radius: 20px;
 }
-
 .clipe {
   display: flex;
   align-items: center;
   color: #238b97;
   cursor: pointer;
 }
-
 .botao {
   padding: 8px 18px;
   background: #e65261;
