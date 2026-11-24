@@ -233,7 +233,9 @@ function sair() {
   localStorage.removeItem('userData')
   localStorage.removeItem('isLoggedIn')
   window.dispatchEvent(new Event('auth-change'))
+  window.dispatchEvent(new Event('storage'))
   roteador.push('/')
+
 }
 </script>
 

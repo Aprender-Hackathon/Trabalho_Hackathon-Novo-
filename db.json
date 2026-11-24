@@ -2,6 +2,7 @@
   "administradores": [
     {
       "id": "1",
+      "tipo_perfil": "administrador",
       "login": "admin",
       "senha": "admin123",
       "tipo": "administrador"
@@ -11,84 +12,130 @@
     {
       "id": "1",
       "nome": "Regiane Souza",
+      "tipo_perfil": "professor",
+      "id_escola": "6",
       "email-instituicao": "regiane.souzaa@central.al.edu.br",
       "materia": "Matemática",
-      "escola": "Escola Estadual Central",
       "senha": "moz1r361"
     },
     {
+      "id": "r4ZtUW-dbGs",
       "nome": "sdfghjk",
+      "tipo_perfil": "professor",
+      "escola": "sasdfghjk",
       "email-instituicao": "dfghjk@gmail.com",
       "materia": "português",
-      "escola": "sasdfghjk",
-      "senha": "dsdfghjklç",
-      "id": "r4ZtUW-dbGs"
+      "senha": "dsdfghjklç"
     },
     {
-      "nome": "sdghjklkhf",
-      "email-instituicao": "sdfhjkl@gmail.com",
-      "materia": "português",
-      "escola": "sdfghjkl",
-      "senha": "sdfghjkl",
-      "id": "2fC3OUYc_Qg"
+      "nome": "Alana",
+      "email-instituicao": "wesslingalana@gmail.com",
+      "materia": "História",
+      "escola": "IFC",
+      "senha": "dfghjkjhgf",
+      "id": "5iDtTJ1oxoc",
+      "tipo_perfil": "professor"
     },
     {
-      "nome": "anna",
-      "email-instituicao": "jdnjwd@gmai.com",
-      "materia": "bfbeibw",
-      "escola": "uedbwki",
-      "senha": "ubjcwoueb",
-      "id": "ggz3C06q_v4"
+      "nome": "wsdfghj",
+      "email-instituicao": "xcvhjk2@gmail.com",
+      "materia": "portuuês",
+      "escola": "fghjk",
+      "senha": "dfghjk",
+      "id": "ETO8KOBra2E",
+      "tipo_perfil": "professor"
     },
     {
-      "nome": "Anna Clara",
-      "email-instituicao": "annaclaramorettipavanello@gmail.com",
-      "materia": "artes",
-      "escola": "ifc",
-      "senha": "12345@",
-      "id": "cEQ_Sez_OMA"
+      "nome": "sdkavgjkadv",
+      "email-instituicao": "dkc@gmail.com",
+      "materia": "História",
+      "escola": "dfghjk",
+      "senha": "dfghjkl",
+      "id": "hwGJcV0A-ko",
+      "tipo_perfil": "professor"
+    },
+    {
+      "nome": "fbwuefowea",
+      "email-instituicao": "asf@gmail.com",
+      "materia": "qwerty",
+      "escola": "ertyu",
+      "senha": "qwertyuio",
+      "id": "46jJI6xsgLI",
+      "tipo_perfil": "professor"
+    },
+    {
+      "nome": "Tiago Lopez",
+      "email-instituicao": "lopez.tiago@gmail.com",
+      "materia": "Ciências",
+      "escola": "Mozart",
+      "senha": "zxcvbnm",
+      "tipo_perfil": "professor",
+      "id": "NF7FzPSKjnY"
     }
   ],
-  "responsaveis": [
-    {
-      "id": "1",
-      "nome": "Marcos Oliveira",
-      "email": "marcosoliv@gmail.com",
-      "telefone": "(11) 99999-0000",
-      "data-nasc": "06/01/1994",
-      "senha": "clali74"
-    }
-  ],
-  "alunos": [
+  "usuarios": [
     {
       "id": "1",
       "nome": "Clara Oliveira Cardoso",
-      "data-nasc": "23/04/2017",
-      "id-responsavel": "1",
-      "senha": "clali74"
+      "tipo_perfil": "visitante",
+      "email": "claralinda@email.com",
+      "senha": "clalia74"
     },
     {
       "id": "2",
       "nome": "Lívia Oliveira Cardoso",
-      "data-nasc": "30/07/2020",
-      "id-responsavel": "1",
-      "senha": "clali74"
-    }
-  ],
-  "visitantes": [
-    {
-      "id_visitante": "1",
-      "nome": "Carlos Silva",
-      "email": "carlos@email.com",
-      "senha": "silv3str3",
-      "id": "9wzaYqPKnvA"
+      "tipo_perfil": "visitante",
+      "email": "liviazinha@email.com",
+      "senha": "clalia74"
     },
     {
-      "id_visitante": "2",
+      "nome": "Carlos Silva",
+      "tipo_perfil": "visitante",
+      "email": "carlos@email.com",
+      "senha": "silv3str3",
+      "id": "0GBChCHBOc4"
+    },
+    {
       "nome": "Charllote Diaz",
+      "tipo_perfil": "visitante",
       "email": "diazz.charllote@email.com",
       "senha": "118lote14dias",
-      "id": "04JZZ0XeFVA"
+      "id": "n_IvG39Z9s4"
+    },
+    {
+      "id": "yRC_JuOCDog",
+      "nome": "Larissa Biff",
+      "tipo_perfil": "visitante",
+      "email": "bifflarissa@gmail.com",
+      "senha": "1234567890"
+    },
+    {
+      "id": "wbO08h-51d4",
+      "nome": "Jorge Gonçalvez",
+      "tipo_perfil": "visitante",
+      "email": "jgongon@gmail.com",
+      "senha": "qwertyuiop"
+    },
+    {
+      "nome": "Clara Joséfa de Cardoso",
+      "senha": "0987654321",
+      "email": "zefacardoso@gmail.com",
+      "tipo_perfil": "visitante",
+      "id": "bVC7elyYAGE"
+    },
+    {
+      "nome": "Anabeth",
+      "senha": "1234567890",
+      "email": "anabeth@gmail.com",
+      "tipo_perfil": "visitante",
+      "id": "mOVEPzibtv8"
+    },
+    {
+      "nome": "Arthur da Silva",
+      "senha": "zxcvbnm",
+      "email": "arthur@gmail.com",
+      "tipo_perfil": "visitante",
+      "id": "O2Rs_Kzi45o"
     }
   ],
   "atividades_praticas": [
@@ -6005,6 +6052,189 @@
     }
   ],
   "escolas": [
+   
+{
+      "id": "1",
+      "nome": "EEB Neusa Ostetto Cardoso",
+      "municipio": "Araranguá",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "2",
+      "nome": "EEB Cel. Pedro Christiano Feddersen",
+      "municipio": "Blumenau",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "3",
+      "nome": "EEB Lebon Régis",
+      "municipio": "Campo Alegre",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "4",
+      "nome": "EEB Irmã Maria Felicitas",
+      "municipio": "Canoinhas",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "5",
+      "nome": "EEB Prof. Irene Stonoga",
+      "municipio": "Chapecó",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "6",
+      "nome": "EEB Walter Fontana",
+      "municipio": "Concórdia",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "7",
+      "nome": "EEB Joaquim Ramos",
+      "municipio": "Criciúma",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "8",
+      "nome": "EEB Sólon Rosa",
+      "municipio": "Curitibanos",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "9",
+      "nome": "EEB Ildefonso Linhares",
+      "municipio": "Florianópolis",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "10",
+      "nome": "EEB Frei Godofredo",
+      "municipio": "Gaspar",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "11",
+      "nome": "EEF Almirante Tamandaré",
+      "municipio": "Guaramirim",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "12",
+      "nome": "EEB São José",
+      "municipio": "Herval d'Oeste",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "13",
+      "nome": "EEB Walmor Ribeiro",
+      "municipio": "Ibirama",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "14",
+      "nome": "EEB Engenheiro Álvaro Catão",
+      "municipio": "Imbituba",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "15",
+      "nome": "EEF Francisco de Paula Seara",
+      "municipio": "Itajaí",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "16",
+      "nome": "EEB Rudolfo Meyer",
+      "municipio": "Joinville",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "17",
+      "nome": "EEB Cora Batalha da Silveira",
+      "municipio": "Lages",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "18",
+      "nome": "EEB Prof. Maria Paula Feres",
+      "municipio": "Mafra",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "19",
+      "nome": "EEB Ângelo Cascaes Tancredo",
+      "municipio": "Palhoça",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "20",
+      "nome": "EEB Henrique Fontes",
+      "municipio": "Tubarão",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "21",
+      "nome": "EEF Hugo Roepke",
+      "municipio": "Timbó",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "22",
+      "nome": "EEB Inspetor Eurico Rauen",
+      "municipio": "Videira",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "23",
+      "nome": "EEB Prof. Jaldyr Bhering Faustino da Silva",
+      "municipio": "São Miguel do Oeste",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "24",
+      "nome": "EEB São Ludgero",
+      "municipio": "São Ludgero",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "25",
+      "nome": "EEB Prof. Emérita Duarte Silva e Souza",
+      "municipio": "Biguaçu",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
+    {
+      "id": "26",
+      "nome": "EEB Presidente Médici",
+      "municipio": "Joinville",
+      "estado": "SC",
+      "tipoRede": "Estadual"
+    },
     {
       "nome": "Colégio Estadual Monte Verde",
       "codigoInep": "41010002",
@@ -6160,7 +6390,20 @@
       "cidade": "Fortaleza",
       "estado": "CE",
       "numero": "145"
+    },
+    {
+      "nome": "Cólegio João Henrique Cardoso",
+      "codigoInep": "47863209",
+      "redeEnsino": "Municipal",
+      "cep": "89212-525",
+      "logradouro": "Rua Cidade de Nagazaki",
+      "bairro": "Santa Catarina",
+      "cidade": "Joinville",
+      "estado": "SC",
+      "numero": "152",
+      "id": "E5bwKXOuO1k"
     }
+  
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

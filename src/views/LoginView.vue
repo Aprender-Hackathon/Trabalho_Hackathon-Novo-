@@ -73,16 +73,14 @@ const password = ref('')
 const entrando = ref(false)
 
 async function buscarContas(colecao, campo, valor) {
-  const filtro = new URLSearchParams({ [campo]: valor })
-  const resposta = await fetch(`${API}/${colecao}?${filtro}`)
+  const filtro = campo ? `?${new URLSearchParams({ [campo]: valor })}` : ''
+  const resposta = await fetch(`API/{colecao}${filtro}`)
 
-  if (!resposta.ok) {
-    throw new Error('Falha ao consultar a API.')
-  }
+  if (resposta.status === 404) return []
+  if (!resposta.ok) throw new Error('Falha ao consultar a API.')
 
   return resposta.json()
 }
-
 
 function abrirPerfil(dados, rota) {
   localStorage.setItem('userData', JSON.stringify(dados))
@@ -103,7 +101,12 @@ async function handleLogin() {
     const admin = administradores.find((conta) => conta.senha === senha)
 
     if (admin) {
-      abrirPerfil({ id: admin.id, nome: admin.login, role: 'admin' }, '/admin')
+      abrirPerfil({
+        id: admin.id,
+        nome: admin.login,
+        role: 'admin',
+        tipo_perfil: 'administrador'
+      }, '/admin')
       return
     }
 
@@ -111,17 +114,16 @@ async function handleLogin() {
     const professor = professores.find((conta) => conta.senha === senha)
 
     if (professor) {
-      const sessao = {
-        id: professor.id,
-        nome: professor.nome,
-        email: professor['email-instituicao'],
-        'email-instituicao': professor['email-instituicao'],
-        materia: professor.materia,
-        escola: professor.escola,
-        role: 'professor'
-      }
+      const dadosSemSenha = { ...professor }
+      delete dadosSemSenha.senha
 
-      abrirPerfil(sessao, '/usuario-professor')
+      abrirPerfil({
+        ...dadosSemSenha,
+        name: professor.nome,
+        email: professor['email-instituicao'],
+        role: 'professor',
+        tipo_perfil: 'professor'
+      }, '/usuario-professor')
       return
     }
 
@@ -129,20 +131,35 @@ async function handleLogin() {
     const responsavel = responsaveis.find((conta) => conta.senha === senha)
 
     if (responsavel) {
-      const sessao = {
+      abrirPerfil({
         id: responsavel.id,
         nome: responsavel.nome,
         email: responsavel.email,
         role: 'responsavel'
-      }
+      }, '/usuario-pag')
+      return
+    }
 
-      abrirPerfil(sessao, '/usuario-pag')
+    const usuarios = await buscarContas('usuarios')
+    const visitante = usuarios.find((conta) =>
+      (conta.email === identificacao || conta.nome === identificacao) &&
+      conta.senha === senha
+    )
+
+    if (visitante) {
+      abrirPerfil({
+        id: visitante.id,
+        name: visitante.nome,
+        nome: visitante.nome,
+        email: visitante.email,
+        tipo_perfil: 'visitante'
+      }, '/')
       return
     }
 
     alert('Conta não encontrada ou senha incorreta.')
   } catch {
-    alert('Não foi possível consultar a API. Confira se o npm run api está rodando na porta 3000.')
+    alert('Não foi possível consultar a API. Confira se ela está rodando na porta 3000.')
   } finally {
     entrando.value = false
   }
@@ -152,7 +169,6 @@ function goHome() {
   router.push('/')
 }
 </script>
-
 <style scoped>
 .page-container {
   display: flex;

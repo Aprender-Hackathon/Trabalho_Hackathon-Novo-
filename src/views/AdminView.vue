@@ -4,11 +4,10 @@
 
     <div class="botoes">
       <RouterLink to="/admin/escolas" class="botao">Visualizar escolas</RouterLink>
-      <RouterLink to="/admin/professores" class="botao">
-      Visualizar professores
-      </RouterLink>
+      <RouterLink to="/admin/professores" class="botao">Visualizar professores</RouterLink>
       <button class="botao" @click="emBreve">Visualizar alunos</button>
       <button class="botao" @click="emBreve">Visualizar pais</button>
+      <RouterLink to="/admin/visitantes" class="botao">Visualizar visitantes</RouterLink>
     </div>
 
     <button class="sair" @click="sair">Sair</button>

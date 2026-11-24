@@ -91,10 +91,11 @@ component: () => import('../components/Comunidade.vue')
       name: 'escolheCadastro',
       component: () => import('../views/PaginaescolhecadastroView.vue')
     },
-     {
+    {
       path: '/historico-pag',
       name: 'historico',
-      component: () => import('../views/HistoricoView.vue')
+      component: () => import('../views/HistoricoView.vue'),
+      meta: { requerProfessor: true }
     },
     {
       path: '/salvo-pag',
@@ -121,30 +122,54 @@ component: () => import('../components/Comunidade.vue')
       path: '/formulario',
       alias: '/formulario-add',
       name: 'formulario',
-      component: () => import('../views/FormularioView.vue')
+      component: () => import('../views/FormularioView.vue'),
+      meta: { requerProfessor: true }
     },
     {
+      path: '/admin/alunos',
+      name: 'adminAlunos',
+      component: () => import('../views/AdminUsuariosView.vue'),
+        {
       path: '/admin/professores',
       name: 'adminProfessores',
       component: () => import('../views/AdminProfessoresView.vue'),
       meta: { requerAdmin: true }
-    }
+    },
+    {
 
+     path: '/formulario/:id?', 
+      name: 'formulario',
+      component: () => import('../views/FormularioView.vue')
+    },
+    {
+      path: '/admin/visitantes',
+      name: 'adminVisitantes',
+      component: () => import('../views/AdminUsuariosView.vue'),
+      meta: { requerAdmin: true }
+    },
   ],
 })
 router.beforeEach((to) => {
-  if (!to.meta.requerAdmin) return true
+  let usuario = null
 
   try {
-    const usuario = JSON.parse(localStorage.getItem('userData') || 'null')
-
-    if (localStorage.getItem('isLoggedIn') === 'true' && usuario?.role === 'admin') {
-      return true
-    }
+    usuario = JSON.parse(localStorage.getItem('userData') || 'null')
   } catch {
+    usuario = null
+  }
+
+  const logado = localStorage.getItem('isLoggedIn') === 'true'
+  const tipo = usuario?.tipo_perfil ?? usuario?.role
+
+  if (to.meta.requerAdmin && (!logado || (tipo !== 'administrador' && tipo !== 'admin'))) {
     return { name: 'login' }
   }
 
-  return { name: 'login' }
+  if (to.meta.requerProfessor && (!logado || tipo !== 'professor')) {
+    return { name: 'login' }
+  }
+
+  return true
 })
 export default router
+

@@ -34,9 +34,11 @@
       </div>
     </form>
     <div class="caixa">
+      <input v-model="pesquisa" class="pesquisa" placeholder="Pesquisar escola pelo nome..." />
       <p v-if="escolas.length === 0">Nenhuma escola cadastrada.</p>
+      <p v-else-if="escolasFiltradas.length === 0">Nenhuma escola encontrada com esse nome.</p>
 
-      <div v-for="escola in escolas" :key="escola.id" class="escola">
+      <div v-for="escola in escolasFiltradas" :key="escola.id" class="escola">
         <span class="nome">{{ escola.nome }}</span>
         <div class="botoes">
           <button class="btn btn-azul" @click="abrirEdicao(escola)">Atualizar</button>
@@ -50,11 +52,19 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 const URL_API = 'http://localhost:3000/escolas'
 
 const escolas = ref([])
+const pesquisa = ref('')
+const escolasFiltradas = computed(() => {
+  const termo = pesquisa.value.trim().toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  if (!termo) return escolas.value
+  return escolas.value.filter(escola =>
+    (escola.nome || '').toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(termo)
+  )
+})
 const editando = ref(null)
 const erroCep = ref('')
 
@@ -185,6 +195,11 @@ select {
   border: 1px solid #dfb969;
   border-radius: 14px;
   background-color: #fff9eb;
+}
+
+.pesquisa {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .escola {

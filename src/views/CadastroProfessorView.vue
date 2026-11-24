@@ -69,12 +69,28 @@ async function salvarProfessor() {
     'email-instituicao': email.value.trim(),
     materia: materia.value,
     escola: escola.value,
-    senha: senha.value
+    senha: senha.value,
+    tipo_perfil: 'professor'
   }
 
   salvando.value = true
 
   try {
+    if (editandoId.value) {
+      const resposta = await fetch(`URLAPI/{editandoId.value}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      })
+
+      if (!resposta.ok) throw new Error()
+
+      alert('Editado com sucesso!')
+      limparFormulario()
+      buscarProfessores()
+      return
+    }
+
     const resposta = await fetch(URL_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -84,7 +100,6 @@ async function salvarProfessor() {
     if (!resposta.ok) throw new Error()
 
     const dadosCriados = await resposta.json()
-
     const sessao = {
       id: dadosCriados.id,
       nome: dadosCriados.nome,
@@ -92,7 +107,8 @@ async function salvarProfessor() {
       'email-instituicao': dadosCriados['email-instituicao'],
       materia: dadosCriados.materia,
       escola: dadosCriados.escola,
-      role: 'professor'
+      role: 'professor',
+      tipo_perfil: 'professor'
     }
 
     localStorage.setItem('userData', JSON.stringify(sessao))
