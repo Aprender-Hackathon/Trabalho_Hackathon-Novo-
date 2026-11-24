@@ -80,6 +80,15 @@
       "senha": "2323",
       "tipo_perfil": "professor",
       "id": "Px8XWCVLR-w"
+    },
+    {
+      "nome": "Bea",
+      "email-instituicao": "bea@gmail.com",
+      "materia": "artes",
+      "escola": "ifc",
+      "senha": "23233",
+      "tipo_perfil": "professor",
+      "id": "B8azaiG82UU"
     }
   ],
   "usuarios": [

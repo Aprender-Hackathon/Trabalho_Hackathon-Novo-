@@ -4,19 +4,19 @@ import FiltroPratica from '@/components/FiltroPratica.vue'
 import BotaoPratica from '@/components/BotaoPratica.vue'
 import BotaoMaisResultados from '@/components/BotaoMaisResultados.vue'
 
-const limite = ref(20) // quantidade de cards na tela
+const limite = ref(20) 
 const listaPratica = ref([]) // Guarda os dados vindos do JSON Server
-const carregando = ref(false) // avisa se a tela ja pegou os dados
+const carregando = ref(false) 
 
-const filtroEscolhido = ref({ // filtra a data comemorativa e coloca na opcao tudo e mostra tudo
+const filtroEscolhido = ref({ 
   data: 'Tudo',
 })
 
 // Busca os dados atualizados do JSON Server ao abrir a tela
-async function buscarAtividadesPraticas() {  // espera o carregamento 
+async function buscarAtividadesPraticas() {  
   carregando.value = true
   try {
-    const resposta = await fetch('http://localhost:3000/atividades_praticas') // GET no banco 
+    const resposta = await fetch('http://localhost:3000/atividades_praticas') 
     if (resposta.ok) {
       listaPratica.value = await resposta.json()
     }
